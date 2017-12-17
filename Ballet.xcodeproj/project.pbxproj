@@ -14,6 +14,9 @@
 		0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */; };
 		0E672D5F1FE70A9E00917D05 /* BalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D5E1FE70A9E00917D05 /* BalletTests.swift */; };
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
+		35A15FB013D7CC2206E2F9A2 /* Pods_BalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */; };
+		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
+		BA747B51C0D3133F0E105F2C /* Pods_Ballet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,15 @@
 		0E672D651FE70A9E00917D05 /* BalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E672D691FE70A9E00917D05 /* BalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalletUITests.swift; sourceTree = "<group>"; };
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.debug.xcconfig"; sourceTree = "<group>"; };
+		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E152B01F0B90AEE830F86A6 /* Pods-BalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ballet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.release.xcconfig"; sourceTree = "<group>"; };
+		D13614FBAFA2D5FD0E8509FD /* Pods-BalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BalletTests/Pods-BalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		E10EE793C0BF84DCB4FCE0D8 /* Pods-BalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalletTests/Pods-BalletTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA747B51C0D3133F0E105F2C /* Pods_Ballet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A15FB013D7CC2206E2F9A2 /* Pods_BalletUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				0E672D5D1FE70A9E00917D05 /* BalletTests */,
 				0E672D681FE70A9E00917D05 /* BalletUITests */,
 				0E672D471FE70A9D00917D05 /* Products */,
+				7DDE0FBBE4E025249860F8BD /* Pods */,
+				A9BB3D5B47CA1E7A6D19F6CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,29 @@
 			path = BalletUITests;
 			sourceTree = "<group>";
 		};
+		7DDE0FBBE4E025249860F8BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */,
+				A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */,
+				E10EE793C0BF84DCB4FCE0D8 /* Pods-BalletTests.debug.xcconfig */,
+				D13614FBAFA2D5FD0E8509FD /* Pods-BalletTests.release.xcconfig */,
+				8E152B01F0B90AEE830F86A6 /* Pods-BalletUITests.debug.xcconfig */,
+				28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A9BB3D5B47CA1E7A6D19F6CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */,
+				21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */,
+				5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E672D6E1FE70A9E00917D05 /* Build configuration list for PBXNativeTarget "Ballet" */;
 			buildPhases = (
+				1C3AFC7551E74A15D1DF4436 /* [CP] Check Pods Manifest.lock */,
 				0E672D421FE70A9D00917D05 /* Sources */,
 				0E672D431FE70A9D00917D05 /* Frameworks */,
 				0E672D441FE70A9D00917D05 /* Resources */,
+				F6CB821FED7114C5DFB719E8 /* [CP] Embed Pods Frameworks */,
+				1BACFDF244BA69C73260BA05 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E672D711FE70A9E00917D05 /* Build configuration list for PBXNativeTarget "BalletTests" */;
 			buildPhases = (
+				E6AC10D0B1C005382609C647 /* [CP] Check Pods Manifest.lock */,
 				0E672D561FE70A9E00917D05 /* Sources */,
 				0E672D571FE70A9E00917D05 /* Frameworks */,
 				0E672D581FE70A9E00917D05 /* Resources */,
+				E7FF8680A37416CF96362105 /* [CP] Embed Pods Frameworks */,
+				EBFC4F1868CDCF1CB6CD2B82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E672D741FE70A9E00917D05 /* Build configuration list for PBXNativeTarget "BalletUITests" */;
 			buildPhases = (
+				847CA4D67B051F11EE029B93 /* [CP] Check Pods Manifest.lock */,
 				0E672D611FE70A9E00917D05 /* Sources */,
 				0E672D621FE70A9E00917D05 /* Frameworks */,
 				0E672D631FE70A9E00917D05 /* Resources */,
+				0687D0AC71B2AC2F568346E2 /* [CP] Embed Pods Frameworks */,
+				476ABA6CFEB5FF0BEB1FCE0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +302,167 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0687D0AC71B2AC2F568346E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BACFDF244BA69C73260BA05 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ballet/Pods-Ballet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C3AFC7551E74A15D1DF4436 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ballet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		476ABA6CFEB5FF0BEB1FCE0B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		847CA4D67B051F11EE029B93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BalletUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6AC10D0B1C005382609C647 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BalletTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7FF8680A37416CF96362105 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BalletTests/Pods-BalletTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletTests/Pods-BalletTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBFC4F1868CDCF1CB6CD2B82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletTests/Pods-BalletTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6CB821FED7114C5DFB719E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Ballet/Pods-Ballet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ballet/Pods-Ballet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E672D421FE70A9D00917D05 /* Sources */ = {
@@ -424,10 +634,11 @@
 		};
 		0E672D6F1FE70A9E00917D05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYTD2A7AY2;
+				DEVELOPMENT_TEAM = 836ZS26RJG;
 				INFOPLIST_FILE = Ballet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.Ballet;
@@ -439,10 +650,11 @@
 		};
 		0E672D701FE70A9E00917D05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYTD2A7AY2;
+				DEVELOPMENT_TEAM = 836ZS26RJG;
 				INFOPLIST_FILE = Ballet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.Ballet;
@@ -454,6 +666,7 @@
 		};
 		0E672D721FE70A9E00917D05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E10EE793C0BF84DCB4FCE0D8 /* Pods-BalletTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +684,7 @@
 		};
 		0E672D731FE70A9E00917D05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D13614FBAFA2D5FD0E8509FD /* Pods-BalletTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +702,7 @@
 		};
 		0E672D751FE70A9E00917D05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E152B01F0B90AEE830F86A6 /* Pods-BalletUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +719,7 @@
 		};
 		0E672D761FE70A9E00917D05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
