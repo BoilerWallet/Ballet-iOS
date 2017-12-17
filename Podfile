@@ -14,7 +14,12 @@ target 'Ballet' do
   pod 'Cartography', '~> 3.0'
 
   # Networking
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.6'
+
+  # Encryption  
+  pod 'CryptoSwift', '~> 0.8'
+
+  pod 'EllipticCurveKeyPair', '2.0-beta1'
 
   target 'BalletTests' do
     inherit! :search_paths
