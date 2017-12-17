@@ -16,6 +16,8 @@
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
 		35A15FB013D7CC2206E2F9A2 /* Pods_BalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */; };
 		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
+		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
+		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
 		BA747B51C0D3133F0E105F2C /* Pods_Ballet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.debug.xcconfig"; sourceTree = "<group>"; };
 		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8E152B01F0B90AEE830F86A6 /* Pods-BalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ballet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		0E672D481FE70A9D00917D05 /* Ballet */ = {
 			isa = PBXGroup;
 			children = (
+				86E819E81FE717A30086952E /* Login */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
 				0E672D4B1FE70A9D00917D05 /* ViewController.swift */,
 				0E672D4D1FE70A9D00917D05 /* Main.storyboard */,
@@ -153,6 +158,15 @@
 				28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		86E819E81FE717A30086952E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				86E819E91FE717B00086952E /* Login.storyboard */,
+				86E819EB1FE717B90086952E /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A9BB3D5B47CA1E7A6D19F6CB /* Frameworks */ = {
@@ -243,6 +257,11 @@
 					0E672D451FE70A9D00917D05 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 0;
+							};
+						};
 					};
 					0E672D591FE70A9E00917D05 = {
 						CreatedOnToolsVersion = 9.1;
@@ -281,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
 				0E672D4F1FE70A9D00917D05 /* Main.storyboard in Resources */,
@@ -473,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 			);
@@ -642,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 836ZS26RJG;
+				DEVELOPMENT_TEAM = P3FVZEP449;
 				INFOPLIST_FILE = Ballet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.Ballet;
@@ -658,7 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 836ZS26RJG;
+				DEVELOPMENT_TEAM = P3FVZEP449;
 				INFOPLIST_FILE = Ballet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.Ballet;
