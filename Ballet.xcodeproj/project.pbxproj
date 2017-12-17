@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D491FE70A9D00917D05 /* AppDelegate.swift */; };
 		0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D4B1FE70A9D00917D05 /* ViewController.swift */; };
-		0E672D4F1FE70A9D00917D05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E672D4D1FE70A9D00917D05 /* Main.storyboard */; };
 		0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E672D501FE70A9D00917D05 /* Assets.xcassets */; };
 		0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */; };
 		0E672D5F1FE70A9E00917D05 /* BalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D5E1FE70A9E00917D05 /* BalletTests.swift */; };
@@ -18,6 +17,8 @@
 		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
 		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
 		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
+		86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819EE1FE71B290086952E /* Wallet.storyboard */; };
+		86E819F11FE71B360086952E /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819F01FE71B360086952E /* WalletViewController.swift */; };
 		BA747B51C0D3133F0E105F2C /* Pods_Ballet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +43,6 @@
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E672D491FE70A9D00917D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E672D4B1FE70A9D00917D05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E672D4E1FE70A9D00917D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E672D501FE70A9D00917D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E672D531FE70A9D00917D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E672D551FE70A9D00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		86E819EE1FE71B290086952E /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
+		86E819F01FE71B360086952E /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		8E152B01F0B90AEE830F86A6 /* Pods-BalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ballet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,10 +120,10 @@
 		0E672D481FE70A9D00917D05 /* Ballet */ = {
 			isa = PBXGroup;
 			children = (
+				86E819ED1FE71B200086952E /* Wallet */,
 				86E819E81FE717A30086952E /* Login */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
 				0E672D4B1FE70A9D00917D05 /* ViewController.swift */,
-				0E672D4D1FE70A9D00917D05 /* Main.storyboard */,
 				0E672D501FE70A9D00917D05 /* Assets.xcassets */,
 				0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */,
 				0E672D551FE70A9D00917D05 /* Info.plist */,
@@ -167,6 +169,15 @@
 				86E819EB1FE717B90086952E /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		86E819ED1FE71B200086952E /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				86E819EE1FE71B290086952E /* Wallet.storyboard */,
+				86E819F01FE71B360086952E /* WalletViewController.swift */,
+			);
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 		A9BB3D5B47CA1E7A6D19F6CB /* Frameworks */ = {
@@ -301,9 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
+				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
-				0E672D4F1FE70A9D00917D05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
+				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 			);
@@ -531,14 +543,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0E672D4D1FE70A9D00917D05 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E672D4E1FE70A9D00917D05 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

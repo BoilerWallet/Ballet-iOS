@@ -27,6 +27,9 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     if success {
                         // unlock wallet
+                        let story = UIStoryboard(name: "Wallet", bundle: nil)
+                        let viewcontroller = story.instantiateInitialViewController()
+                        self.present(viewcontroller!, animated: true, completion: nil)
                     } else {
                         let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified! Please try again.", preferredStyle: .alert)
                         ac.addAction(UIAlertAction(title: "Try Again", style: .default))

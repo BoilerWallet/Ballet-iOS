@@ -1,18 +1,19 @@
 //
-//  ViewController.swift
+//  WalletViewController.swift
 //  Ballet
 //
-//  Created by Koray Koska on 17.12.17.
+//  Created by Ben Koksa on 12/17/17.
 //  Copyright © 2017 Boilertalk. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class WalletViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
