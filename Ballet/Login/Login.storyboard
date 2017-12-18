@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,17 +15,92 @@
         <!--Login View Controller-->
         <scene sceneID="rvJ-MU-4VY">
             <objects>
-                <viewController id="HYQ-1R-E7B" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="HYQ-1R-E7B" customClass="LoginViewController" customModule="Ballet" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ns8-zq-foX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-ay-FWk">
+                                <rect key="frame" x="47" y="83.5" width="281" height="500"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne9-X3-FLj" customClass="FlatButton" customModule="Material">
+                                        <rect key="frame" x="32" y="418" width="217" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                        <state key="normal" title="Login"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                <color key="value" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonClicked:" destination="HYQ-1R-E7B" eventType="touchUpInside" id="ZbH-Cc-Pzk"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="43l-61-cxo" customClass="TextField" customModule="Material">
+                                        <rect key="frame" x="16" y="235" width="249" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="43l-61-cxo" firstAttribute="leading" secondItem="7hh-ay-FWk" secondAttribute="leading" constant="16" id="EcY-We-20d"/>
+                                    <constraint firstAttribute="trailing" secondItem="ne9-X3-FLj" secondAttribute="trailing" constant="32" id="FvC-dJ-b9v"/>
+                                    <constraint firstAttribute="trailing" secondItem="43l-61-cxo" secondAttribute="trailing" constant="16" id="LUl-k5-6yU"/>
+                                    <constraint firstItem="ne9-X3-FLj" firstAttribute="leading" secondItem="7hh-ay-FWk" secondAttribute="leading" constant="32" id="WV0-cj-zXZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ne9-X3-FLj" secondAttribute="bottom" constant="32" id="cqD-HW-qCM"/>
+                                    <constraint firstItem="43l-61-cxo" firstAttribute="centerY" secondItem="7hh-ay-FWk" secondAttribute="centerY" id="joy-lG-C0T"/>
+                                    <constraint firstItem="ne9-X3-FLj" firstAttribute="height" secondItem="7hh-ay-FWk" secondAttribute="height" multiplier="1/10" id="y5z-pk-0OS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mh-ft-Ia6" customClass="IconButton" customModule="Material">
+                                <rect key="frame" x="146.5" y="583.5" width="83.5" height="83.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Mh-ft-Ia6" secondAttribute="height" multiplier="1:1" id="WoJ-BG-Eaf"/>
+                                </constraints>
+                                <state key="normal" image="ic_fingerprint"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_fingerprint"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="biometryButtonClicked:" destination="HYQ-1R-E7B" eventType="touchUpInside" id="2E6-bb-aCj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WbC-QP-ga4" firstAttribute="bottom" secondItem="8Mh-ft-Ia6" secondAttribute="bottom" id="9Ff-W0-VJV"/>
+                            <constraint firstItem="7hh-ay-FWk" firstAttribute="height" secondItem="Ns8-zq-foX" secondAttribute="height" multiplier="3/4" id="FdG-ce-bkU"/>
+                            <constraint firstItem="7hh-ay-FWk" firstAttribute="width" secondItem="Ns8-zq-foX" secondAttribute="width" multiplier="3/4" id="MkZ-Ef-wNs"/>
+                            <constraint firstItem="7hh-ay-FWk" firstAttribute="centerY" secondItem="Ns8-zq-foX" secondAttribute="centerY" id="RGB-lo-0PB"/>
+                            <constraint firstItem="8Mh-ft-Ia6" firstAttribute="top" secondItem="7hh-ay-FWk" secondAttribute="bottom" id="YTM-B5-zZa"/>
+                            <constraint firstItem="8Mh-ft-Ia6" firstAttribute="centerX" secondItem="Ns8-zq-foX" secondAttribute="centerX" id="a2l-dh-JzA"/>
+                            <constraint firstItem="7hh-ay-FWk" firstAttribute="centerX" secondItem="Ns8-zq-foX" secondAttribute="centerX" id="wKK-Zc-Lrc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WbC-QP-ga4"/>
                     </view>
+                    <connections>
+                        <outlet property="biometryButton" destination="8Mh-ft-Ia6" id="Sci-hK-59B"/>
+                        <outlet property="loginButton" destination="ne9-X3-FLj" id="sNa-Xo-oTn"/>
+                        <outlet property="passwordField" destination="43l-61-cxo" id="Wai-Sw-chM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0j-5f-7Mq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111" y="60"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_fingerprint" width="24" height="24"/>
+    </resources>
 </document>

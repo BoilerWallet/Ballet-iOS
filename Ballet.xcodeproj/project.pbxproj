@@ -19,6 +19,7 @@
 		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
 		86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819EE1FE71B290086952E /* Wallet.storyboard */; };
 		86E819F11FE71B360086952E /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819F01FE71B360086952E /* WalletViewController.swift */; };
+		86E819F31FE72F270086952E /* ConstantHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819F21FE72F260086952E /* ConstantHolder.swift */; };
 		BA747B51C0D3133F0E105F2C /* Pods_Ballet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86E819EE1FE71B290086952E /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		86E819F01FE71B360086952E /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		86E819F21FE72F260086952E /* ConstantHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantHolder.swift; sourceTree = "<group>"; };
 		8E152B01F0B90AEE830F86A6 /* Pods-BalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ballet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				0E672D501FE70A9D00917D05 /* Assets.xcassets */,
 				0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */,
 				0E672D551FE70A9D00917D05 /* Info.plist */,
+				86E819F21FE72F260086952E /* ConstantHolder.swift */,
 			);
 			path = Ballet;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E819F31FE72F270086952E /* ConstantHolder.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
