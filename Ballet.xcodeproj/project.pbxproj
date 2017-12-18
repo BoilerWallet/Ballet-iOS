@@ -15,6 +15,7 @@
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
 		35A15FB013D7CC2206E2F9A2 /* Pods_BalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */; };
 		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
+		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
 		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
 		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
 		86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819EE1FE71B290086952E /* Wallet.storyboard */; };
@@ -57,6 +58,7 @@
 		28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.debug.xcconfig"; sourceTree = "<group>"; };
 		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86E819EE1FE71B290086952E /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
@@ -129,7 +131,7 @@
 				0E672D501FE70A9D00917D05 /* Assets.xcassets */,
 				0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */,
 				0E672D551FE70A9D00917D05 /* Info.plist */,
-				86E819F21FE72F260086952E /* ConstantHolder.swift */,
+				86439AB31FE7C8CC00060944 /* Toolbox */,
 			);
 			path = Ballet;
 			sourceTree = "<group>";
@@ -163,6 +165,15 @@
 				28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		86439AB31FE7C8CC00060944 /* Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				86E819F21FE72F260086952E /* ConstantHolder.swift */,
+				86439AB41FE7C8EB00060944 /* GradientView.swift */,
+			);
+			path = Toolbox;
 			sourceTree = "<group>";
 		};
 		86E819E81FE717A30086952E /* Login */ = {
@@ -485,6 +496,8 @@
 				"${BUILT_PRODUCTS_DIR}/EllipticCurveKeyPair/EllipticCurveKeyPair.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -494,6 +507,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EllipticCurveKeyPair.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,6 +524,7 @@
 			files = (
 				86E819F31FE72F270086952E /* ConstantHolder.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
+				86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,

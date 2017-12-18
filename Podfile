@@ -20,6 +20,9 @@ target 'Ballet' do
   pod 'CryptoSwift', '~> 0.8'
 
   pod 'EllipticCurveKeyPair', '2.0-beta1'
+  
+  # Database
+  pod 'RealmSwift', '~> 3.0'
 
   target 'BalletTests' do
     inherit! :search_paths
