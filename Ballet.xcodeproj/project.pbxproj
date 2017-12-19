@@ -17,6 +17,8 @@
 		35A15FB013D7CC2206E2F9A2 /* Pods_BalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */; };
 		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
 		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
+		8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */; };
+		8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */; };
 		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
 		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
 		86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819EE1FE71B290086952E /* Wallet.storyboard */; };
@@ -60,6 +62,8 @@
 		4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.debug.xcconfig"; sourceTree = "<group>"; };
 		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86E819EE1FE71B290086952E /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		0E672D481FE70A9D00917D05 /* Ballet */ = {
 			isa = PBXGroup;
 			children = (
+				8665F6ED1FE9B1AB008D84F5 /* Tab Bar */,
 				86E819ED1FE71B200086952E /* Wallet */,
 				86E819E81FE717A30086952E /* Login */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
@@ -174,6 +179,15 @@
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
 			);
 			path = Toolbox;
+			sourceTree = "<group>";
+		};
+		8665F6ED1FE9B1AB008D84F5 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */,
+				8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		86E819E81FE717A30086952E /* Login */ = {
@@ -325,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
@@ -526,6 +541,7 @@
 				86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
+				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 			);

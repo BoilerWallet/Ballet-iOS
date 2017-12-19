@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,28 +15,18 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MossGradient" translatesAutoresizingMaskIntoConstraints="NO" id="bye-KY-FKY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ballet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2O-8q-BB7">
-                                <rect key="frame" x="46" y="274.5" width="283.5" height="119.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="100"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bye-KY-FKY" secondAttribute="bottom" id="1EN-yz-FaW"/>
-                            <constraint firstItem="l2O-8q-BB7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1s6-3g-5cf"/>
                             <constraint firstItem="bye-KY-FKY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5OB-VY-Vme"/>
-                            <constraint firstItem="l2O-8q-BB7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ABC-gX-qcI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bye-KY-FKY" secondAttribute="trailing" id="Js5-MZ-lHh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l2O-8q-BB7" secondAttribute="trailing" id="MgE-Uv-a6O"/>
-                            <constraint firstItem="l2O-8q-BB7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XjQ-Pe-7Rg"/>
                             <constraint firstItem="bye-KY-FKY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eMi-XQ-3VU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
