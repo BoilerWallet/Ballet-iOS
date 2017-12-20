@@ -21,6 +21,9 @@ struct Colors {
     
     /// Light Grey
     static let lightGrey = UIColor(red:0.92, green:0.92, blue:0.95, alpha: 1)
+    
+    /// Background Color
+    static let background = UIColor(displayP3Red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
 
     /// Primary color with the given alpha value
     static func primaryColorWAlpha(alpha: Float) -> UIColor {

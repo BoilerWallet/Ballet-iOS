@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGb-ea-D3V">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Send View Controller-->
+        <scene sceneID="p9G-Zr-6Ds">
+            <objects>
+                <viewController id="FGb-ea-D3V" customClass="SendViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pvW-LW-F4M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-be-qxB" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="32" y="146" width="311" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Recipient"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EaC-Hw-Ofz" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="32" y="84" width="311" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Sender Account"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDe-35-lqu" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="32" y="208" width="133.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Amount"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhS-iz-saY" customClass="FlatButton" customModule="Material">
+                                <rect key="frame" x="64" y="557.5" width="247" height="61.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vhS-iz-saY" secondAttribute="height" multiplier="4:1" id="69g-kH-Zpf"/>
+                                </constraints>
+                                <state key="normal" title="Confirm"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="vhS-iz-saY" secondAttribute="trailing" constant="64" id="0bg-xg-xWw"/>
+                            <constraint firstItem="EaC-Hw-Ofz" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="6VQ-Pg-7lZ"/>
+                            <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="EaC-Hw-Ofz" secondAttribute="trailing" constant="32" id="Bjk-Ny-tWW"/>
+                            <constraint firstItem="DDe-35-lqu" firstAttribute="width" secondItem="MVe-be-qxB" secondAttribute="width" multiplier="3/7" id="LNc-Mo-oae"/>
+                            <constraint firstItem="DDe-35-lqu" firstAttribute="top" secondItem="MVe-be-qxB" secondAttribute="bottom" constant="32" id="UCE-jj-7WQ"/>
+                            <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="MVe-be-qxB" secondAttribute="trailing" constant="32" id="UNt-xe-ECA"/>
+                            <constraint firstItem="MVe-be-qxB" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="hZM-nb-ceM"/>
+                            <constraint firstItem="vhS-iz-saY" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="64" id="ht6-NB-e7c"/>
+                            <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="EaC-Hw-Ofz" secondAttribute="bottom" constant="32" id="kqE-qu-9Z1"/>
+                            <constraint firstItem="lts-gz-1DB" firstAttribute="bottom" secondItem="vhS-iz-saY" secondAttribute="bottom" constant="48" id="rFZ-LC-76Q"/>
+                            <constraint firstItem="EaC-Hw-Ofz" firstAttribute="top" secondItem="lts-gz-1DB" secondAttribute="top" constant="64" id="raI-6j-Bj3"/>
+                            <constraint firstItem="DDe-35-lqu" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="ytx-Ju-bov"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lts-gz-1DB"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountField" destination="DDe-35-lqu" id="lhq-EQ-Wxw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ov6-X8-1nU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="180" y="249.62518740629687"/>
+        </scene>
+    </scenes>
+</document>

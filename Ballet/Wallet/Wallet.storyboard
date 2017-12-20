@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,11 +18,30 @@
                     <view key="view" contentMode="scaleToFill" id="Sqm-RO-mee">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.4431372549" green="0.69803921570000005" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfp-RC-qHe" customClass="FABButton" customModule="Material">
+                                <rect key="frame" x="287" y="535" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hfp-RC-qHe" secondAttribute="height" multiplier="1:1" id="Ka5-ki-03h"/>
+                                    <constraint firstAttribute="width" constant="64" id="m4Y-16-rAU"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="FabClicked:" destination="V2y-gH-JdJ" eventType="touchUpInside" id="q8W-TW-5dd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z4C-Bh-cFu" firstAttribute="bottom" secondItem="hfp-RC-qHe" secondAttribute="bottom" constant="24" id="EIy-Nb-Hmj"/>
+                            <constraint firstItem="Z4C-Bh-cFu" firstAttribute="trailing" secondItem="hfp-RC-qHe" secondAttribute="trailing" constant="24" id="Szx-1H-vxR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Z4C-Bh-cFu"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="FABButton" destination="hfp-RC-qHe" id="eFg-3U-cN5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25e-hw-KHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

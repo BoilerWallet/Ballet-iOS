@@ -22,6 +22,13 @@ class TabBarViewController: UITabBarController {
             walletCont.tabBarItem = UITabBarItem(title: "Wallet", image: walletImg, tag: 0)
             tabBarList.append(walletCont)
         }
+        
+        if let sendCont = UIStoryboard(name: "Send", bundle: nil).instantiateInitialViewController() {
+            let walletImg = UIImage(named: "ic_send")?.withRenderingMode(.alwaysTemplate)
+            sendCont.tabBarItem = UITabBarItem(title: "Send", image: walletImg, tag: 0)
+            tabBarList.append(sendCont)
+        }
+        
         self.viewControllers = tabBarList
     }
 
