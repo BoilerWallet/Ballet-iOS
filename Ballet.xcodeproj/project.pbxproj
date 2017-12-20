@@ -19,6 +19,8 @@
 		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
 		8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */; };
 		8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */; };
+		8665F6F71FEAA239008D84F5 /* ETHDisplayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F61FEAA239008D84F5 /* ETHDisplayHeader.swift */; };
+		8665F6F91FEAA250008D84F5 /* ETHDisplayHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6F81FEAA250008D84F5 /* ETHDisplayHeader.xib */; };
 		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
 		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
 		86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819EE1FE71B290086952E /* Wallet.storyboard */; };
@@ -64,6 +66,8 @@
 		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8665F6F61FEAA239008D84F5 /* ETHDisplayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETHDisplayHeader.swift; sourceTree = "<group>"; };
+		8665F6F81FEAA250008D84F5 /* ETHDisplayHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETHDisplayHeader.xib; sourceTree = "<group>"; };
 		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86E819EE1FE71B290086952E /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		0E672D481FE70A9D00917D05 /* Ballet */ = {
 			isa = PBXGroup;
 			children = (
+				8665F6F51FEAA1C6008D84F5 /* ETHDisplayHeader */,
 				8665F6ED1FE9B1AB008D84F5 /* Tab Bar */,
 				86E819ED1FE71B200086952E /* Wallet */,
 				86E819E81FE717A30086952E /* Login */,
@@ -188,6 +193,15 @@
 				8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */,
 			);
 			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		8665F6F51FEAA1C6008D84F5 /* ETHDisplayHeader */ = {
+			isa = PBXGroup;
+			children = (
+				8665F6F61FEAA239008D84F5 /* ETHDisplayHeader.swift */,
+				8665F6F81FEAA250008D84F5 /* ETHDisplayHeader.xib */,
+			);
+			path = ETHDisplayHeader;
 			sourceTree = "<group>";
 		};
 		86E819E81FE717A30086952E /* Login */ = {
@@ -344,6 +358,7 @@
 				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
+				8665F6F91FEAA250008D84F5 /* ETHDisplayHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
+				8665F6F71FEAA239008D84F5 /* ETHDisplayHeader.swift in Sources */,
 				86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,

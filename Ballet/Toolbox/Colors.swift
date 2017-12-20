@@ -18,6 +18,9 @@ struct Colors {
 
     /// White
     static let white: UIColor = UIColor.white
+    
+    /// Light Grey
+    static let lightGrey = UIColor(red:0.92, green:0.92, blue:0.95, alpha: 1)
 
     /// Primary color with the given alpha value
     static func primaryColorWAlpha(alpha: Float) -> UIColor {
@@ -27,5 +30,10 @@ struct Colors {
     /// Secondary color with the given alpha value
     static func secondaryColorWAlpha(alpha: Float) -> UIColor {
         return secondaryColor.withAlphaComponent(CGFloat(alpha))
+    }
+    
+    /// Light Grey with the given alpha value
+    static func lightGreyWAlpha(alpha: Float) -> UIColor {
+        return lightGrey.withAlphaComponent(CGFloat(alpha))
     }
 }

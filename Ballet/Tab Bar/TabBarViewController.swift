@@ -15,11 +15,13 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let walletCont = WalletViewController()
-        let walletImg = UIImage(named: "ic_wallet")
-        walletCont.tabBarItem = UITabBarItem(title: "Wallet", image: walletImg, tag: 0)
+        var tabBarList = [UIViewController]()
         
-        let tabBarList = [walletCont]
+        if let walletCont = UIStoryboard(name: "Wallet", bundle: nil).instantiateInitialViewController() {
+            let walletImg = UIImage(named: "ic_wallet")?.withRenderingMode(.alwaysTemplate)
+            walletCont.tabBarItem = UITabBarItem(title: "Wallet", image: walletImg, tag: 0)
+            tabBarList.append(walletCont)
+        }
         self.viewControllers = tabBarList
     }
 
