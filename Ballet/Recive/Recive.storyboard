@@ -25,12 +25,22 @@
                                     <constraint firstAttribute="width" secondItem="ST7-xe-gj1" secondAttribute="height" multiplier="1:1" id="ZmW-e1-0Yk"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell your friend to scan this QR Code to send you money" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaW-zr-4Xi">
+                                <rect key="frame" x="48" y="52" width="279" height="94"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ST7-xe-gj1" firstAttribute="centerY" secondItem="C6x-ZD-6CQ" secondAttribute="centerY" id="K2A-um-n6y"/>
+                            <constraint firstItem="jaW-zr-4Xi" firstAttribute="top" secondItem="j1y-hK-Rpy" secondAttribute="top" constant="32" id="PBI-ng-JED"/>
                             <constraint firstItem="ST7-xe-gj1" firstAttribute="leading" secondItem="j1y-hK-Rpy" secondAttribute="leading" constant="32" id="V35-WF-Xte"/>
+                            <constraint firstItem="ST7-xe-gj1" firstAttribute="top" secondItem="jaW-zr-4Xi" secondAttribute="bottom" constant="32" id="VKg-G7-aey"/>
                             <constraint firstItem="j1y-hK-Rpy" firstAttribute="trailing" secondItem="ST7-xe-gj1" secondAttribute="trailing" constant="32" id="k0E-9B-zbj"/>
+                            <constraint firstItem="j1y-hK-Rpy" firstAttribute="trailing" secondItem="jaW-zr-4Xi" secondAttribute="trailing" constant="48" id="l7L-AS-eHW"/>
+                            <constraint firstItem="jaW-zr-4Xi" firstAttribute="leading" secondItem="j1y-hK-Rpy" secondAttribute="leading" constant="48" id="uoX-P2-XBc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j1y-hK-Rpy"/>
                     </view>
