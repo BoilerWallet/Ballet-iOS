@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCd-hh-u1B">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recive View Controller-->
+        <scene sceneID="2h6-iu-9BB">
+            <objects>
+                <viewController id="YCd-hh-u1B" customClass="ReciveViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C6x-ZD-6CQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ST7-xe-gj1">
+                                <rect key="frame" x="32" y="178" width="311" height="311"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ST7-xe-gj1" secondAttribute="height" multiplier="1:1" id="ZmW-e1-0Yk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ST7-xe-gj1" firstAttribute="centerY" secondItem="C6x-ZD-6CQ" secondAttribute="centerY" id="K2A-um-n6y"/>
+                            <constraint firstItem="ST7-xe-gj1" firstAttribute="leading" secondItem="j1y-hK-Rpy" secondAttribute="leading" constant="32" id="V35-WF-Xte"/>
+                            <constraint firstItem="j1y-hK-Rpy" firstAttribute="trailing" secondItem="ST7-xe-gj1" secondAttribute="trailing" constant="32" id="k0E-9B-zbj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j1y-hK-Rpy"/>
+                    </view>
+                    <connections>
+                        <outlet property="QRImageview" destination="ST7-xe-gj1" id="y0m-JW-6hw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQl-Rn-kj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="160"/>
+        </scene>
+    </scenes>
+</document>

@@ -24,9 +24,15 @@ class TabBarViewController: UITabBarController {
         }
         
         if let sendCont = UIStoryboard(name: "Send", bundle: nil).instantiateInitialViewController() {
-            let walletImg = UIImage(named: "ic_send")?.withRenderingMode(.alwaysTemplate)
-            sendCont.tabBarItem = UITabBarItem(title: "Send", image: walletImg, tag: 0)
+            let sendImg = UIImage(named: "ic_call_made")?.withRenderingMode(.alwaysTemplate)
+            sendCont.tabBarItem = UITabBarItem(title: "Send", image: sendImg, tag: 1)
             tabBarList.append(sendCont)
+        }
+        
+        if let reciveCont = UIStoryboard(name: "Recive", bundle: nil).instantiateInitialViewController() {
+            let reciveImg = UIImage(named: "ic_call_received")?.withRenderingMode(.alwaysTemplate)
+            reciveCont.tabBarItem = UITabBarItem(title: "Recive", image: reciveImg, tag: 2)
+            tabBarList.append(reciveCont)
         }
         
         self.viewControllers = tabBarList
