@@ -35,6 +35,12 @@ class TabBarViewController: UITabBarController {
             tabBarList.append(reciveCont)
         }
         
+        if let settingsCont = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() {
+            let settingsImg = UIImage(named: "ic_settings")?.withRenderingMode(.alwaysTemplate)
+            settingsCont.tabBarItem = UITabBarItem(title: "Settings", image: settingsImg, tag: 3)
+            tabBarList.append(settingsCont)
+        }
+        
         self.viewControllers = tabBarList
     }
 
