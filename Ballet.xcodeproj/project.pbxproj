@@ -18,6 +18,7 @@
 		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
 		863449E51FEC18B800738516 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863449E41FEC18B800738516 /* Settings.storyboard */; };
 		863449E71FEC18CC00738516 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449E61FEC18CC00738516 /* SettingsViewController.swift */; };
+		863449E91FEC231E00738516 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449E81FEC231E00738516 /* LabelExtension.swift */; };
 		863B23D21FEADE950061298A /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B23D11FEADE950061298A /* SendViewController.swift */; };
 		863B23D41FEADEA50061298A /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B23D31FEADEA50061298A /* Send.storyboard */; };
 		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
@@ -69,6 +70,7 @@
 		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		863449E41FEC18B800738516 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		863449E61FEC18CC00738516 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		863449E81FEC231E00738516 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		863B23D11FEADE950061298A /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		863B23D31FEADEA50061298A /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
 		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				86439AB41FE7C8EB00060944 /* GradientView.swift */,
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
+				863449E81FEC231E00738516 /* LabelExtension.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				863B23D21FEADE950061298A /* SendViewController.swift in Sources */,
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
+				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
