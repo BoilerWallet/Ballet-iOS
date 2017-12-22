@@ -10,6 +10,9 @@ target 'Ballet' do
   # Material
   pod 'Material', '~> 2.12'
 
+  # Dropdown
+  pod 'DropDown'  
+
   # Cartography
   pod 'Cartography', '~> 3.0'
 
@@ -24,6 +27,9 @@ target 'Ballet' do
   # Database
   pod 'RealmSwift', '~> 3.0'
 
+  # BlockiesSwift
+  pod 'BlockiesSwift', :git => 'https://github.com/Boilertalk/BlockiesSwift.git'
+  
   target 'BalletTests' do
     inherit! :search_paths
     # Pods for testing
