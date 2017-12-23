@@ -29,6 +29,10 @@ target 'Ballet' do
 
   # BlockiesSwift
   pod 'BlockiesSwift', :git => 'https://github.com/Boilertalk/BlockiesSwift.git'
+
+  # Fabric
+  pod 'Fabric'
+  pod 'Crashlytics'  
   
   target 'BalletTests' do
     inherit! :search_paths

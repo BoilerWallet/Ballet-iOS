@@ -17,6 +17,8 @@ class TabBarViewController: UITabBarController {
         
         var tabBarList = [UIViewController]()
         
+        // Change to Material Tab Bar
+        
         if let walletCont = UIStoryboard(name: "Wallet", bundle: nil).instantiateInitialViewController() {
             let walletImg = UIImage(named: "ic_wallet")?.withRenderingMode(.alwaysTemplate)
             walletCont.tabBarItem = UITabBarItem(title: "Wallet", image: walletImg, tag: 0)

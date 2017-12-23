@@ -19,7 +19,7 @@ class ReciveViewController: UIViewController {
         
         
         // TODO: Fetch Public Key from DB
-        let publickey = "0x1234567890"
+        let publickey = Values.defaultAccount.public_key
         
         let data = publickey.data(using: String.Encoding.utf8, allowLossyConversion: false)
         

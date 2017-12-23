@@ -11,6 +11,23 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
+    @IBAction func requestClicked(_ sender: Any) {
+        let conversation = self.activeConversation
+        let session = conversation?.selectedMessage?.session ?? MSSession()
+        
+        let layout = MSMessageTemplateLayout()
+        layout.caption = "caption"
+        
+        let message = MSMessage(session: session)
+        message.layout = layout
+        message.summaryText = "Sent Hello World message"
+        
+        conversation?.insert(message)
+    }
+    
+    @IBAction func payClicked(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

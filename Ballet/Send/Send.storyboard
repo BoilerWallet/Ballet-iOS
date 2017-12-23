@@ -29,17 +29,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Recipient"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EaC-Hw-Ofz" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="32" y="84" width="311" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Sender Account"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDe-35-lqu" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="32" y="208" width="133.5" height="30"/>
+                                <rect key="frame" x="32" y="208" width="134" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -54,26 +45,57 @@
                                 </constraints>
                                 <state key="normal" title="Confirm"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EX-EW-dnl">
+                                <rect key="frame" x="32" y="84" width="311" height="30"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJN-fy-KHR">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FJN-fy-KHR" secondAttribute="height" multiplier="1:1" id="jbH-DC-UUR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CL-XD-c4W">
+                                        <rect key="frame" x="42" y="0.0" width="269" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5CL-XD-c4W" firstAttribute="top" secondItem="0EX-EW-dnl" secondAttribute="top" id="0IO-2I-S4f"/>
+                                    <constraint firstAttribute="bottom" secondItem="FJN-fy-KHR" secondAttribute="bottom" id="5uv-k4-fkK"/>
+                                    <constraint firstItem="FJN-fy-KHR" firstAttribute="leading" secondItem="0EX-EW-dnl" secondAttribute="leading" id="A5v-ZB-XNu"/>
+                                    <constraint firstItem="FJN-fy-KHR" firstAttribute="top" secondItem="0EX-EW-dnl" secondAttribute="top" id="CXe-8a-Mdm"/>
+                                    <constraint firstAttribute="bottom" secondItem="5CL-XD-c4W" secondAttribute="bottom" id="Err-QF-Kfn"/>
+                                    <constraint firstItem="5CL-XD-c4W" firstAttribute="leading" secondItem="FJN-fy-KHR" secondAttribute="trailing" constant="12" id="XNT-CV-H9n"/>
+                                    <constraint firstAttribute="trailing" secondItem="5CL-XD-c4W" secondAttribute="trailing" id="v3y-RZ-2f6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="vhS-iz-saY" secondAttribute="trailing" constant="64" id="0bg-xg-xWw"/>
-                            <constraint firstItem="EaC-Hw-Ofz" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="6VQ-Pg-7lZ"/>
-                            <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="EaC-Hw-Ofz" secondAttribute="trailing" constant="32" id="Bjk-Ny-tWW"/>
-                            <constraint firstItem="DDe-35-lqu" firstAttribute="width" secondItem="MVe-be-qxB" secondAttribute="width" multiplier="3/7" id="LNc-Mo-oae"/>
+                            <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="0EX-EW-dnl" secondAttribute="trailing" constant="32" id="2XI-UJ-NlM"/>
+                            <constraint firstItem="0EX-EW-dnl" firstAttribute="top" secondItem="lts-gz-1DB" secondAttribute="top" constant="64" id="3bS-qB-ype"/>
+                            <constraint firstItem="0EX-EW-dnl" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="5ht-Mu-uEB"/>
+                            <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="0EX-EW-dnl" secondAttribute="bottom" constant="32" id="HL4-k7-0jV"/>
                             <constraint firstItem="DDe-35-lqu" firstAttribute="top" secondItem="MVe-be-qxB" secondAttribute="bottom" constant="32" id="UCE-jj-7WQ"/>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="MVe-be-qxB" secondAttribute="trailing" constant="32" id="UNt-xe-ECA"/>
+                            <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="pvW-LW-F4M" secondAttribute="top" constant="146" id="Uit-YA-2b9"/>
+                            <constraint firstItem="DDe-35-lqu" firstAttribute="width" secondItem="0EX-EW-dnl" secondAttribute="width" multiplier="3/7" id="gY8-e1-DBa"/>
                             <constraint firstItem="MVe-be-qxB" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="hZM-nb-ceM"/>
                             <constraint firstItem="vhS-iz-saY" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="64" id="ht6-NB-e7c"/>
-                            <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="EaC-Hw-Ofz" secondAttribute="bottom" constant="32" id="kqE-qu-9Z1"/>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="bottom" secondItem="vhS-iz-saY" secondAttribute="bottom" constant="48" id="rFZ-LC-76Q"/>
-                            <constraint firstItem="EaC-Hw-Ofz" firstAttribute="top" secondItem="lts-gz-1DB" secondAttribute="top" constant="64" id="raI-6j-Bj3"/>
                             <constraint firstItem="DDe-35-lqu" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="ytx-Ju-bov"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lts-gz-1DB"/>
                     </view>
                     <connections>
+                        <outlet property="accountLabel" destination="5CL-XD-c4W" id="vab-Cm-JsU"/>
                         <outlet property="amountField" destination="DDe-35-lqu" id="lhq-EQ-Wxw"/>
+                        <outlet property="blockieImageView" destination="FJN-fy-KHR" id="Iax-gq-aU1"/>
+                        <outlet property="fromAccount" destination="0EX-EW-dnl" id="qpc-p9-ru5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ov6-X8-1nU" userLabel="First Responder" sceneMemberID="firstResponder"/>

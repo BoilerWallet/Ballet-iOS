@@ -16,9 +16,16 @@
 		0EED236C1FE86E4F007F137F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED236B1FE86E4F007F137F /* Colors.swift */; };
 		35A15FB013D7CC2206E2F9A2 /* Pods_BalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */; };
 		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
+		86210EA21FED71B0002DDF43 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86210EA11FED71B0002DDF43 /* Values.swift */; };
 		863449E51FEC18B800738516 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863449E41FEC18B800738516 /* Settings.storyboard */; };
 		863449E91FEC231E00738516 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449E81FEC231E00738516 /* LabelExtension.swift */; };
 		863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449EA1FEC335100738516 /* SettingsTableViewController.swift */; };
+		863449F11FEC643800738516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863449F01FEC643800738516 /* Assets.xcassets */; };
+		863449F81FEC643800738516 /* Ballet-iMessage MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 863449F71FEC643800738516 /* Ballet-iMessage MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		863449FC1FEC643800738516 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863449FB1FEC643800738516 /* Messages.framework */; };
+		863449FF1FEC643800738516 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449FE1FEC643800738516 /* MessagesViewController.swift */; };
+		86344A021FEC643800738516 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86344A001FEC643800738516 /* MainInterface.storyboard */; };
+		86344A041FEC643800738516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86344A031FEC643800738516 /* Assets.xcassets */; };
 		863B23D21FEADE950061298A /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B23D11FEADE950061298A /* SendViewController.swift */; };
 		863B23D41FEADEA50061298A /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B23D31FEADEA50061298A /* Send.storyboard */; };
 		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
@@ -48,7 +55,28 @@
 			remoteGlobalIDString = 0E672D451FE70A9D00917D05;
 			remoteInfo = Ballet;
 		};
+		863449F91FEC643800738516 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E672D3E1FE70A9D00917D05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 863449F61FEC643800738516;
+			remoteInfo = "Ballet-iMessage MessagesExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86344A091FEC643800738516 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				863449F81FEC643800738516 /* Ballet-iMessage MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,9 +96,19 @@
 		28146EFFFE49F1103BA10C2A /* Pods-BalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.debug.xcconfig"; sourceTree = "<group>"; };
 		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86210EA11FED71B0002DDF43 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		863449E41FEC18B800738516 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		863449E81FEC231E00738516 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		863449EA1FEC335100738516 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		863449EE1FEC643700738516 /* Ballet-iMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ballet-iMessage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		863449F01FEC643800738516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		863449F21FEC643800738516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		863449F71FEC643800738516 /* Ballet-iMessage MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ballet-iMessage MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		863449FB1FEC643800738516 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		863449FE1FEC643800738516 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		86344A011FEC643800738516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		86344A031FEC643800738516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86344A051FEC643800738516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		863B23D11FEADE950061298A /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		863B23D31FEADEA50061298A /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
 		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -114,6 +152,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6FDCC5AC9A03F16AD460D99B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		863449F41FEC643800738516 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				863449FC1FEC643800738516 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,6 +176,8 @@
 				0E672D481FE70A9D00917D05 /* Ballet */,
 				0E672D5D1FE70A9E00917D05 /* BalletTests */,
 				0E672D681FE70A9E00917D05 /* BalletUITests */,
+				863449EF1FEC643700738516 /* Ballet-iMessage */,
+				863449FD1FEC643800738516 /* Ballet-iMessage MessagesExtension */,
 				0E672D471FE70A9D00917D05 /* Products */,
 				7DDE0FBBE4E025249860F8BD /* Pods */,
 				A9BB3D5B47CA1E7A6D19F6CB /* Frameworks */,
@@ -135,6 +190,8 @@
 				0E672D461FE70A9D00917D05 /* Ballet.app */,
 				0E672D5A1FE70A9E00917D05 /* BalletTests.xctest */,
 				0E672D651FE70A9E00917D05 /* BalletUITests.xctest */,
+				863449EE1FEC643700738516 /* Ballet-iMessage.app */,
+				863449F71FEC643800738516 /* Ballet-iMessage MessagesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +199,7 @@
 		0E672D481FE70A9D00917D05 /* Ballet */ = {
 			isa = PBXGroup;
 			children = (
+				86210EA01FED7197002DDF43 /* Database */,
 				863449E31FEC189A00738516 /* Settings */,
 				86BED7B61FEB184C00165571 /* Recive */,
 				863B23D01FEADE6F0061298A /* Send */,
@@ -189,6 +247,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		86210EA01FED7197002DDF43 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				86210EA11FED71B0002DDF43 /* Values.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		863449E31FEC189A00738516 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +262,26 @@
 				863449EA1FEC335100738516 /* SettingsTableViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		863449EF1FEC643700738516 /* Ballet-iMessage */ = {
+			isa = PBXGroup;
+			children = (
+				863449F01FEC643800738516 /* Assets.xcassets */,
+				863449F21FEC643800738516 /* Info.plist */,
+			);
+			path = "Ballet-iMessage";
+			sourceTree = "<group>";
+		};
+		863449FD1FEC643800738516 /* Ballet-iMessage MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				863449FE1FEC643800738516 /* MessagesViewController.swift */,
+				86344A001FEC643800738516 /* MainInterface.storyboard */,
+				86344A031FEC643800738516 /* Assets.xcassets */,
+				86344A051FEC643800738516 /* Info.plist */,
+			);
+			path = "Ballet-iMessage MessagesExtension";
 			sourceTree = "<group>";
 		};
 		863B23D01FEADE6F0061298A /* Send */ = {
@@ -259,6 +345,7 @@
 				A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */,
 				21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */,
 				5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */,
+				863449FB1FEC643800738516 /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +363,7 @@
 				0E672D441FE70A9D00917D05 /* Resources */,
 				F6CB821FED7114C5DFB719E8 /* [CP] Embed Pods Frameworks */,
 				1BACFDF244BA69C73260BA05 /* [CP] Copy Pods Resources */,
+				86357F3E1FEF008600DB2D20 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -328,19 +416,54 @@
 			productReference = 0E672D651FE70A9E00917D05 /* BalletUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		863449ED1FEC643700738516 /* Ballet-iMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86344A0A1FEC643900738516 /* Build configuration list for PBXNativeTarget "Ballet-iMessage" */;
+			buildPhases = (
+				863449EC1FEC643700738516 /* Resources */,
+				86344A091FEC643800738516 /* Embed App Extensions */,
+				6FDCC5AC9A03F16AD460D99B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				863449FA1FEC643800738516 /* PBXTargetDependency */,
+			);
+			name = "Ballet-iMessage";
+			productName = "Ballet-iMessage";
+			productReference = 863449EE1FEC643700738516 /* Ballet-iMessage.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		863449F61FEC643800738516 /* Ballet-iMessage MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86344A061FEC643800738516 /* Build configuration list for PBXNativeTarget "Ballet-iMessage MessagesExtension" */;
+			buildPhases = (
+				863449F31FEC643800738516 /* Sources */,
+				863449F41FEC643800738516 /* Frameworks */,
+				863449F51FEC643800738516 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ballet-iMessage MessagesExtension";
+			productName = "Ballet-iMessage MessagesExtension";
+			productReference = 863449F71FEC643800738516 /* Ballet-iMessage MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0E672D3E1FE70A9D00917D05 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Boilertalk;
 				TargetAttributes = {
 					0E672D451FE70A9D00917D05 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.NearFieldCommunicationTagReading = {
 								enabled = 0;
@@ -356,6 +479,14 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0E672D451FE70A9D00917D05;
+					};
+					863449ED1FEC643700738516 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					863449F61FEC643800738516 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -375,6 +506,8 @@
 				0E672D451FE70A9D00917D05 /* Ballet */,
 				0E672D591FE70A9E00917D05 /* BalletTests */,
 				0E672D641FE70A9E00917D05 /* BalletUITests */,
+				863449ED1FEC643700738516 /* Ballet-iMessage */,
+				863449F61FEC643800738516 /* Ballet-iMessage MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -406,6 +539,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		863449EC1FEC643700738516 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				863449F11FEC643800738516 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		863449F51FEC643800738516 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86344A041FEC643800738516 /* Assets.xcassets in Resources */,
+				86344A021FEC643800738516 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +643,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		86357F3E1FEF008600DB2D20 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 54f077d0991ed0eceba8fb8e9b2c923ffd4ebb55 7dc047d4f822010979d8e5fe4e16dc3a0d4ab8ff43dd1a0dd59cfcfa551b80cd";
+		};
 		E6AC10D0B1C005382609C647 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,8 +717,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ballet/Pods-Ballet-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BlockiesSwift/BlockiesSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/EllipticCurveKeyPair/EllipticCurveKeyPair.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
@@ -565,8 +730,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlockiesSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EllipticCurveKeyPair.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
@@ -592,6 +759,7 @@
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				863B23D21FEADE950061298A /* SendViewController.swift in Sources */,
+				86210EA21FED71B0002DDF43 /* Values.swift in Sources */,
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
@@ -615,6 +783,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		863449F31FEC643800738516 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				863449FF1FEC643800738516 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -628,6 +804,11 @@
 			target = 0E672D451FE70A9D00917D05 /* Ballet */;
 			targetProxy = 0E672D661FE70A9E00917D05 /* PBXContainerItemProxy */;
 		};
+		863449FA1FEC643800738516 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 863449F61FEC643800738516 /* Ballet-iMessage MessagesExtension */;
+			targetProxy = 863449F91FEC643800738516 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -637,6 +818,14 @@
 				0E672D531FE70A9D00917D05 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		86344A001FEC643800738516 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86344A011FEC643800738516 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -754,12 +943,15 @@
 			baseConfigurationReference = 4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P3FVZEP449;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 836ZS26RJG;
 				INFOPLIST_FILE = Ballet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.Ballet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.screamgood.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c64afcd8-e7a4-4037-8355-e732e50b0bb0";
+				PROVISIONING_PROFILE_SPECIFIER = Ballet;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -770,12 +962,15 @@
 			baseConfigurationReference = A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P3FVZEP449;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 836ZS26RJG;
 				INFOPLIST_FILE = Ballet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.Ballet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.screamgood.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c64afcd8-e7a4-4037-8355-e732e50b0bb0";
+				PROVISIONING_PROFILE_SPECIFIER = Ballet;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -851,6 +1046,72 @@
 			};
 			name = Release;
 		};
+		86344A071FEC643800738516 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3FVZEP449;
+				INFOPLIST_FILE = "Ballet-iMessage MessagesExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boilertalk.Ballet-iMessage.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86344A081FEC643800738516 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3FVZEP449;
+				INFOPLIST_FILE = "Ballet-iMessage MessagesExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boilertalk.Ballet-iMessage.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86344A0B1FEC643900738516 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3FVZEP449;
+				INFOPLIST_FILE = "Ballet-iMessage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boilertalk.Ballet-iMessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86344A0C1FEC643900738516 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3FVZEP449;
+				INFOPLIST_FILE = "Ballet-iMessage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boilertalk.Ballet-iMessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -886,6 +1147,24 @@
 			buildConfigurations = (
 				0E672D751FE70A9E00917D05 /* Debug */,
 				0E672D761FE70A9E00917D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86344A061FEC643800738516 /* Build configuration list for PBXNativeTarget "Ballet-iMessage MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86344A071FEC643800738516 /* Debug */,
+				86344A081FEC643800738516 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86344A0A1FEC643900738516 /* Build configuration list for PBXNativeTarget "Ballet-iMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86344A0B1FEC643900738516 /* Debug */,
+				86344A0C1FEC643900738516 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
