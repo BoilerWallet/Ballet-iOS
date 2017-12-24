@@ -8,6 +8,8 @@ platform :ios do
   #             and: https://docs.fastlane.tools/getting-started/android/beta-deployment/
   #
   lane :beta do |values|
+    increment_build_number
+
     match(type: "adhoc")
 
     # Fabric generated this lane for deployment to Crashlytics Beta
