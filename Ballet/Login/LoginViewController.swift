@@ -68,9 +68,6 @@ class LoginViewController: UIViewController {
                         self?.biometryButton.isEnabled = true
                         self?.biometryButton.imageView?.image = UIImage(named: "ic_fingerprint")?.withRenderingMode(.alwaysTemplate)
                         self?.biometryButton.imageView?.tintColor = Color.white
-                        if context.biometryType == .faceID {
-                            self?.biometryButton.imageView?.image = UIImage(named: "faceid")?.withRenderingMode(.alwaysTemplate)
-                        }
                     }
                 }
             }

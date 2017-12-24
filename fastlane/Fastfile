@@ -8,6 +8,8 @@ platform :ios do
   #             and: https://docs.fastlane.tools/getting-started/android/beta-deployment/
   #
   lane :beta do |values|
+    match(type: "adhoc")
+
     # Fabric generated this lane for deployment to Crashlytics Beta
     # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution uses ad-hoc provisioning
     build_app(scheme: 'Ballet', export_method: 'ad-hoc')

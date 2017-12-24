@@ -790,6 +790,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 836ZS26RJG;
 				INFOPLIST_FILE = Ballet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.screamgood.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -809,11 +810,12 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 836ZS26RJG;
 				INFOPLIST_FILE = Ballet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.screamgood.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c64afcd8-e7a4-4037-8355-e732e50b0bb0";
-				PROVISIONING_PROFILE_SPECIFIER = Ballet;
+				PROVISIONING_PROFILE = "da7cb552-ead4-4338-865c-41e4f3126470";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.screamgood.ballet";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
