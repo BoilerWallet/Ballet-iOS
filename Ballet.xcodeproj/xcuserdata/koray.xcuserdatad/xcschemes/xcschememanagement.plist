@@ -4,15 +4,38 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Ballet-iMessage MessagesExtension.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>18</integer>
-		</dict>
 		<key>Ballet.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>17</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0E672D451FE70A9D00917D05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0E672D591FE70A9E00917D05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0E672D641FE70A9E00917D05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>863449ED1FEC643700738516</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>863449F61FEC643800738516</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
