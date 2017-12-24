@@ -149,7 +149,7 @@
 				863449E31FEC189A00738516 /* Settings */,
 				86BED7B61FEB184C00165571 /* Recive */,
 				863B23D01FEADE6F0061298A /* Send */,
-				8665F6ED1FE9B1AB008D84F5 /* Tab Bar */,
+				8665F6ED1FE9B1AB008D84F5 /* TabBar */,
 				86E819ED1FE71B200086952E /* Wallet */,
 				86E819E81FE717A30086952E /* Login */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
@@ -229,13 +229,13 @@
 			path = Toolbox;
 			sourceTree = "<group>";
 		};
-		8665F6ED1FE9B1AB008D84F5 /* Tab Bar */ = {
+		8665F6ED1FE9B1AB008D84F5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */,
 				8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */,
 			);
-			path = "Tab Bar";
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		86BED7B61FEB184C00165571 /* Recive */ = {
