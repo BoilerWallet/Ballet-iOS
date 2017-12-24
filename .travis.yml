@@ -3,7 +3,9 @@ osx_image: xcode9.2
 cache:
   - cocoapods
 before_install:
+  - gem install cocoapods
   - gem install fastlane
+  - pod repo update
   - pod install
 script:
   - fastlane beta
