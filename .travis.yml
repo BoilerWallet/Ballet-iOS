@@ -13,3 +13,6 @@ script:
   - fastlane beta
   # Killing background sleep loop
   - kill %1
+branches:
+  only:
+    - master
