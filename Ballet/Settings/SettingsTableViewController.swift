@@ -25,6 +25,8 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var fifthLineImageView: UIImageView!
     
     var urls = ["https://svizzr.com/terms.html", "https://svizzr.com/privacy.html", "https://svizzr.com/opensource.html", "https://svizzr.com/imprint.html", "https://boilertalk.com/donate"]
+
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,21 +36,35 @@ class SettingsTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+
+        setupUI()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - UI setup
+
+    private func setupUI() {
+        // TabBar
+        prepareTabItem()
+
         let bg = UIView()
         bg.backgroundColor = Colors.background
         tableView.tableFooterView = bg
-        
+
         tableView.backgroundColor = Colors.background
         view.backgroundColor = Colors.background
-        
-        let array = [firstLineImageView, secondLineImageView, thirdLineImageView, fourthLineImageView]
-        
+
+        let array = [firstLineImageView, secondLineImageView, thirdLineImageView, fourthLineImageView, fifthLineImageView]
+
         for i in array {
             i?.image = UIImage(named: "ic_keyboard_arrow_right")?.withRenderingMode(.alwaysTemplate)
             i?.tintColor = Color.black.withAlphaComponent(0.54)
         }
-        
+
         let image = UIImage(named: "ic_clear")?.withRenderingMode(.alwaysTemplate)
         let button = UIButton()
         button.setImage(image, for: .normal)
@@ -56,15 +72,10 @@ class SettingsTableViewController: UITableViewController {
         button.addTarget(self, action: #selector(buttonDismissClicked), for: UIControlEvents.touchUpInside)
         navigationItem.leftViews = [button]
         navigationItem.rightViews = [UIButton()]
-        
+
         navigationItem.title = "Information"
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     // MARK: - Actions
     
     @objc func buttonDismissClicked() {
@@ -86,3 +97,12 @@ class SettingsTableViewController: UITableViewController {
     }
 }
 
+// MARK: - TabBar
+
+extension SettingsTableViewController {
+
+    fileprivate func prepareTabItem() {
+        // tabItem.title = "Settings"
+        tabItem.image = UIImage(named: "ic_settings")?.withRenderingMode(.alwaysTemplate)
+    }
+}

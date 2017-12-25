@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="64" id="m4Y-16-rAU"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="FabClicked:" destination="V2y-gH-JdJ" eventType="touchUpInside" id="q8W-TW-5dd"/>
+                                    <action selector="fabClicked:" destination="V2y-gH-JdJ" eventType="touchUpInside" id="WJJ-xB-9p5"/>
                                 </connections>
                             </button>
                         </subviews>

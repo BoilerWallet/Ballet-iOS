@@ -27,8 +27,8 @@
 		8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */; };
 		8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */; };
 		8676291F1FF1500700C60D4E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8676291E1FF1500700C60D4E /* Account.swift */; };
-		86BED7B81FEB186400165571 /* Recive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86BED7B71FEB186400165571 /* Recive.storyboard */; };
-		86BED7BA1FEB187300165571 /* ReciveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BED7B91FEB187300165571 /* ReciveViewController.swift */; };
+		86BED7B81FEB186400165571 /* Receive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86BED7B71FEB186400165571 /* Receive.storyboard */; };
+		86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BED7B91FEB187300165571 /* ReceiveViewController.swift */; };
 		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
 		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
 		86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819EE1FE71B290086952E /* Wallet.storyboard */; };
@@ -83,8 +83,8 @@
 		8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8676291E1FF1500700C60D4E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		86BED7B71FEB186400165571 /* Recive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recive.storyboard; sourceTree = "<group>"; };
-		86BED7B91FEB187300165571 /* ReciveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciveViewController.swift; sourceTree = "<group>"; };
+		86BED7B71FEB186400165571 /* Receive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Receive.storyboard; sourceTree = "<group>"; };
+		86BED7B91FEB187300165571 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86E819EE1FE71B290086952E /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
@@ -149,19 +149,18 @@
 		0E672D481FE70A9D00917D05 /* Ballet */ = {
 			isa = PBXGroup;
 			children = (
+				0EEB235E1FF19BF7009ED044 /* Resources */,
 				86210EA01FED7197002DDF43 /* Database */,
-				863449E31FEC189A00738516 /* Settings */,
-				86BED7B61FEB184C00165571 /* Recive */,
-				863B23D01FEADE6F0061298A /* Send */,
+				86E819E81FE717A30086952E /* Login */,
 				8665F6ED1FE9B1AB008D84F5 /* TabBar */,
 				86E819ED1FE71B200086952E /* Wallet */,
-				86E819E81FE717A30086952E /* Login */,
+				863B23D01FEADE6F0061298A /* Send */,
+				86BED7B61FEB184C00165571 /* Receive */,
+				863449E31FEC189A00738516 /* Settings */,
+				86439AB31FE7C8CC00060944 /* Toolbox */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
 				0E672D4B1FE70A9D00917D05 /* ViewController.swift */,
-				0E672D501FE70A9D00917D05 /* Assets.xcassets */,
 				0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */,
-				0E672D551FE70A9D00917D05 /* Info.plist */,
-				86439AB31FE7C8CC00060944 /* Toolbox */,
 			);
 			path = Ballet;
 			sourceTree = "<group>";
@@ -182,6 +181,15 @@
 				0E672D6B1FE70A9E00917D05 /* Info.plist */,
 			);
 			path = BalletUITests;
+			sourceTree = "<group>";
+		};
+		0EEB235E1FF19BF7009ED044 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E672D501FE70A9D00917D05 /* Assets.xcassets */,
+				0E672D551FE70A9D00917D05 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7DDE0FBBE4E025249860F8BD /* Pods */ = {
@@ -244,13 +252,13 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		86BED7B61FEB184C00165571 /* Recive */ = {
+		86BED7B61FEB184C00165571 /* Receive */ = {
 			isa = PBXGroup;
 			children = (
-				86BED7B71FEB186400165571 /* Recive.storyboard */,
-				86BED7B91FEB187300165571 /* ReciveViewController.swift */,
+				86BED7B71FEB186400165571 /* Receive.storyboard */,
+				86BED7B91FEB187300165571 /* ReceiveViewController.swift */,
 			);
-			path = Recive;
+			path = Receive;
 			sourceTree = "<group>";
 		};
 		86E819E81FE717A30086952E /* Login */ = {
@@ -404,7 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86BED7B81FEB186400165571 /* Recive.storyboard in Resources */,
+				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
@@ -624,7 +632,7 @@
 			files = (
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */,
-				86BED7BA1FEB187300165571 /* ReciveViewController.swift in Sources */,
+				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
@@ -798,7 +806,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 836ZS26RJG;
-				INFOPLIST_FILE = Ballet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Ballet/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.screamgood.ballet;
@@ -820,7 +828,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 836ZS26RJG;
-				INFOPLIST_FILE = Ballet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Ballet/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.screamgood.ballet;

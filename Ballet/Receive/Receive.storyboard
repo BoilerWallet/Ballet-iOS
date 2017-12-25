@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recive View Controller-->
+        <!--Receive View Controller-->
         <scene sceneID="2h6-iu-9BB">
             <objects>
-                <viewController id="YCd-hh-u1B" customClass="ReciveViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YCd-hh-u1B" customClass="ReceiveViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C6x-ZD-6CQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
