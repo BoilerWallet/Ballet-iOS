@@ -20,17 +20,19 @@ class Account {
         self.name = name
         self.wei = wei
     }
-    
+    /**
+     
+    */
     func asTxtMsg() -> String{
         return "\(self.name) - \(self.wei / Values.weiPerEther) ETH"
     }
     /**
      Generate Blockie with Custom Size
      
-     - Parameter size: Base Size of Image
-     - Parameter scale: Scale the Base Size
+     - parameter size: Base Size of Image
+     - parameter scale: Scale the Base Size
      
-     - Returns: returns blockie for the account with the size of size `*` scale as UIImage
+     - returns: returns blockie for the account with the size of size `*` scale as UIImage
      */
     func getBlockie(size: Int, scale: Int) -> UIImage{
         // Generate Blockie

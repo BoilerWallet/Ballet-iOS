@@ -1,5 +1,5 @@
 //
-//  SendDropdown.swift
+//  SendAccountDropDown.swift
 //  Ballet
 //
 //  Created by Ben Koksa on 12/25/17.
@@ -7,63 +7,30 @@
 //
 
 import UIKit
-//
-//class SendDropDown: UIViewController {
-//
-//    var button = dropDownBtn()
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view, typically from a nib.
-//
-//
-//        //Configure the button
-//        button = dropDownBtn.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-//        button.setTitle("Colors", for: .normal)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//
-//        //Add Button to the View Controller
-//        self.view.addSubview(button)
-//
-//        //button Constraints
-//        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-//        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
-//        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//
-//        //Set the drop down menu's options
-//        button.dropView.dropDownOptions = ["Blue", "Green", "Magenta", "White", "Black", "Pink"]
-//
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//}
 
-protocol dropDownProtocol {
-    func dropDownPressed(string : String)
+
+protocol AccountDropDownProtocol {
+    func AccountDropDownPressed(account : Account)
 }
 
-class dropDownBtn: UIButton, dropDownProtocol {
+class accountDropDownBtn: UIButton, AccountDropDownProtocol {
     
-    func dropDownPressed(string: String) {
-        self.setTitle(string, for: .normal)
-        self.dismissDropDown()
+    func AccountDropDownPressed(account: Account) {
+        self.setTitle(account.asTxtMsg(), for: .normal)
+        self.setImage(account.getBlockie(size: 12, scale: 2), for: UIControlState.normal)
+        self.dismissAccountDropDown()
     }
     
-    var dropView = dropDownView()
+    var dropView = AccountDropDownView()
     
     var height = NSLayoutConstraint()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.darkGray
         
-        dropView = dropDownView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
+        dropView = AccountDropDownView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
         dropView.delegate = self
         dropView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -113,7 +80,7 @@ class dropDownBtn: UIButton, dropDownProtocol {
         }
     }
     
-    func dismissDropDown() {
+    func dismissAccountDropDown() {
         isOpen = false
         NSLayoutConstraint.deactivate([self.height])
         self.height.constant = 0
@@ -129,13 +96,13 @@ class dropDownBtn: UIButton, dropDownProtocol {
     }
 }
 
-class dropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
+class AccountDropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
     
-    var dropDownOptions = [String]()
+    var AccountDropDownOptions = [Account]()
     
     var tableView = UITableView()
     
-    var delegate : dropDownProtocol!
+    var delegate : AccountDropDownProtocol!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -167,19 +134,19 @@ class dropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dropDownOptions.count
+        return AccountDropDownOptions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = dropDownOptions[indexPath.row]
+        cell.textLabel?.text = AccountDropDownOptions[indexPath.row].asTxtMsg()
         cell.backgroundColor = UIColor.darkGray
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate.dropDownPressed(string: dropDownOptions[indexPath.row])
+        self.delegate.AccountDropDownPressed(account: AccountDropDownOptions[indexPath.row])
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     

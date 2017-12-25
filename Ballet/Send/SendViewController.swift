@@ -13,7 +13,7 @@ import BlockiesSwift
 
 class SendViewController: UIViewController {
     
-    var accountBtn = dropDownBtn()
+    var accountBtn = accountDropDownBtn()
 
     @IBOutlet weak var amountField: TextField!
     @IBOutlet weak var fromAccount: UIView!
@@ -24,16 +24,18 @@ class SendViewController: UIViewController {
         
         amountField.keyboardType = UIKeyboardType.numberPad
         
-        accountBtn = dropDownBtn.init(frame: fromAccount.frame)
+        accountBtn = accountDropDownBtn.init(frame: fromAccount.frame)
         
         accountBtn.setTitle(Values.defaultAccount.asTxtMsg(), for: .normal)
+        accountBtn.setImage(Values.defaultAccount.getBlockie(size: 12, scale: 2), for: UIControlState.normal)
+        accountBtn.semanticContentAttribute = .forceLeftToRight
         
         //Add Button to the View Controller
         self.view.addSubview(accountBtn)
         //Set the drop down menu's options
-        accountBtn.dropView.dropDownOptions = [String]()
+        accountBtn.dropView.AccountDropDownOptions = [Account]()
         for account in Values.accounts {
-            accountBtn.dropView.dropDownOptions.append(account.asTxtMsg())
+            accountBtn.dropView.AccountDropDownOptions.append(account)
         }
         
         // loadAccount(Values.defaultAccount)
