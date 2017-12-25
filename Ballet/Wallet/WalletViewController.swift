@@ -9,6 +9,7 @@
 import UIKit
 import Material
 import StoreKit
+import SafariServices
 
 class WalletViewController: UIViewController {
 
@@ -58,12 +59,28 @@ class WalletViewController: UIViewController {
     @IBAction func fabClicked(_ sender: Any) {
     }
 
-    @objc func rateClicked() {
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
+    @objc private func rateClicked() {
+        if UserDefaults.standard.bool(forKey: "reviewed") {
+            donate()
         } else {
-            // Fallback on earlier versions
-            // TODO: Add Rating for iOS 10.2 and earlier
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+                UserDefaults.standard.set(true, forKey: "reviewed")
+            } else {
+                donate()
+            }
+        }
+    }
+
+    private func donate() {
+        let path = "https://ballet.boilertalk.com/donate"
+        guard let url = NSURL(string: path) else { return }
+
+        if #available(iOS 9.0, *) {
+            let controller: SFSafariViewController = SFSafariViewController(url: url as URL)
+            self.present(controller, animated: true, completion: nil)
+        } else {
+            UIApplication.shared.openURL(url as URL)
         }
     }
 }
