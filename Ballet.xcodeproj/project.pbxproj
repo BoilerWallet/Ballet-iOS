@@ -26,6 +26,7 @@
 		86605C381FF0764F00E4620E /* SendDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86605C371FF0764F00E4620E /* SendDropdown.swift */; };
 		8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */; };
 		8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */; };
+		8676291F1FF1500700C60D4E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8676291E1FF1500700C60D4E /* Account.swift */; };
 		86BED7B81FEB186400165571 /* Recive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86BED7B71FEB186400165571 /* Recive.storyboard */; };
 		86BED7BA1FEB187300165571 /* ReciveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BED7B91FEB187300165571 /* ReciveViewController.swift */; };
 		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
@@ -81,6 +82,7 @@
 		86605C371FF0764F00E4620E /* SendDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDropdown.swift; sourceTree = "<group>"; };
 		8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8676291E1FF1500700C60D4E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		86BED7B71FEB186400165571 /* Recive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recive.storyboard; sourceTree = "<group>"; };
 		86BED7B91FEB187300165571 /* ReciveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciveViewController.swift; sourceTree = "<group>"; };
 		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				86210EA11FED71B0002DDF43 /* Values.swift */,
+				8676291E1FF1500700C60D4E /* Account.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
+				8676291F1FF1500700C60D4E /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
