@@ -8,4 +8,4 @@ before_install:
   - pod repo update
   - pod install
 script:
-  - fastlane beta
+  - travis_wait 30 fastlane beta
