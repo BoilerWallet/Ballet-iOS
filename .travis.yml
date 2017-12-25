@@ -8,4 +8,8 @@ before_install:
   - pod repo update
   - pod install
 script:
-  - travis_wait 30 fastlane beta
+  # Output something every 10 minutes or Travis kills the job
+  - while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+  - fastlane beta
+  # Killing background sleep loop
+  - kill %1
