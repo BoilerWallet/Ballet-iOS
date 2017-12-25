@@ -12,11 +12,11 @@ import DropDown
 import BlockiesSwift
 
 class SendViewController: UIViewController {
+    
+    var accountBtn = dropDownBtn()
 
     @IBOutlet weak var amountField: TextField!
     @IBOutlet weak var fromAccount: UIView!
-    @IBOutlet weak var blockieImageView: UIImageView!
-    @IBOutlet weak var accountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +24,19 @@ class SendViewController: UIViewController {
         
         amountField.keyboardType = UIKeyboardType.numberPad
         
-//        let dropDown = DropDown()
-//
-//        // The view to which the drop down will appear on
-//        dropDown.anchorView = fromAccount // UIView or UIBarButtonItem
-//
-//        // The list of items to display. Can be changed dynamically
-//        dropDown.dataSource = ["Car", "Motorcycle", "Truck"]
-        loadAccount(Values.defaultAccount)
+        accountBtn = dropDownBtn.init(frame: fromAccount.frame)
+        
+        accountBtn.setTitle(Values.defaultAccount.asTxtMsg(), for: .normal)
+        
+        //Add Button to the View Controller
+        self.view.addSubview(accountBtn)
+        //Set the drop down menu's options
+        accountBtn.dropView.dropDownOptions = [String]()
+        for account in Values.accounts {
+            accountBtn.dropView.dropDownOptions.append(account.asTxtMsg())
+        }
+        
+        // loadAccount(Values.defaultAccount)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,10 +45,10 @@ class SendViewController: UIViewController {
     }
     
     func loadAccount(_ account: walletAccount) {
-        let blockie = Blockies(seed: account.public_key, size: 8, scale: 3)
-        let img = blockie.createImage(customScale: 2)
-        blockieImageView.image = img
-        let accountStr = account.name + " - " + 100000.description + " ETH"
-        accountLabel.text = accountStr
+//        let blockie = Blockies(seed: account.public_key, size: 8, scale: 3)
+//        let img = blockie.createImage(customScale: 2)
+//        blockieImageView.image = img
+//        let accountStr = account.name + " - " + 100000.description + " ETH"
+//        accountLabel.text = accountStr
     }
 }

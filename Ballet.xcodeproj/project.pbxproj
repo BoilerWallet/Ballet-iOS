@@ -23,6 +23,7 @@
 		863B23D21FEADE950061298A /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B23D11FEADE950061298A /* SendViewController.swift */; };
 		863B23D41FEADEA50061298A /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B23D31FEADEA50061298A /* Send.storyboard */; };
 		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
+		86605C381FF0764F00E4620E /* SendDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86605C371FF0764F00E4620E /* SendDropdown.swift */; };
 		8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */; };
 		8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */; };
 		86BED7B81FEB186400165571 /* Recive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86BED7B71FEB186400165571 /* Recive.storyboard */; };
@@ -77,6 +78,7 @@
 		863B23D11FEADE950061298A /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		863B23D31FEADEA50061298A /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
 		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		86605C371FF0764F00E4620E /* SendDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDropdown.swift; sourceTree = "<group>"; };
 		8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		86BED7B71FEB186400165571 /* Recive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recive.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				863B23D31FEADEA50061298A /* Send.storyboard */,
 				863B23D11FEADE950061298A /* SendViewController.swift */,
+				86605C371FF0764F00E4620E /* SendDropdown.swift */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
+				86605C381FF0764F00E4620E /* SendDropdown.swift in Sources */,
 				863B23D21FEADE950061298A /* SendViewController.swift in Sources */,
 				86210EA21FED71B0002DDF43 /* Values.swift in Sources */,
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
