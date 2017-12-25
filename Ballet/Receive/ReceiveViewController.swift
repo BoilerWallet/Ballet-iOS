@@ -17,7 +17,7 @@ class ReceiveViewController: UIViewController {
     var qrcodeImage: CIImage = CIImage()
 
     // MARK: - Initialization
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

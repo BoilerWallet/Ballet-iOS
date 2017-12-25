@@ -14,7 +14,7 @@ class WalletViewController: UIViewController {
     @IBOutlet weak var FABButton: FABButton!
 
     // MARK: - Initialization
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +27,7 @@ class WalletViewController: UIViewController {
     }
 
     // MARK: - UI setup
-    
+
     func setupUI() {
         // TabBar
         prepareTabItem()
