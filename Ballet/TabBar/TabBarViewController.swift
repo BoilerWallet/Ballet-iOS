@@ -9,45 +9,56 @@
 import UIKit
 import Material
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: TabsController {
+
+    // MARK: - Initialization
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        var tabBarList = [UIViewController]()
-        
-        // Change to Material Tab Bar
-        
-        if let walletCont = UIStoryboard(name: "Wallet", bundle: nil).instantiateInitialViewController() {
-            let walletImg = UIImage(named: "ic_wallet")?.withRenderingMode(.alwaysTemplate)
-            walletCont.tabBarItem = UITabBarItem(title: "Wallet", image: walletImg, tag: 0)
-            tabBarList.append(walletCont)
-        }
-        
-        if let sendCont = UIStoryboard(name: "Send", bundle: nil).instantiateInitialViewController() {
-            let sendImg = UIImage(named: "ic_call_made")?.withRenderingMode(.alwaysTemplate)
-            sendCont.tabBarItem = UITabBarItem(title: "Send", image: sendImg, tag: 1)
-            tabBarList.append(sendCont)
-        }
-        
-        if let reciveCont = UIStoryboard(name: "Recive", bundle: nil).instantiateInitialViewController() {
-            let reciveImg = UIImage(named: "ic_call_received")?.withRenderingMode(.alwaysTemplate)
-            reciveCont.tabBarItem = UITabBarItem(title: "Recive", image: reciveImg, tag: 2)
-            tabBarList.append(reciveCont)
-        }
-        
-        if let settingsCont = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() {
-            let settingsImg = UIImage(named: "ic_settings")?.withRenderingMode(.alwaysTemplate)
-            settingsCont.tabBarItem = UITabBarItem(title: "Settings", image: settingsImg, tag: 3)
-            tabBarList.append(settingsCont)
-        }
-        
-        self.viewControllers = tabBarList
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func prepare() {
+        // Setup SubView Controllers
+
+        var tabBarList = [UIViewController]()
+
+        if let walletCont = UIStoryboard(name: "Wallet", bundle: nil).instantiateInitialViewController() {
+            tabBarList.append(walletCont)
+        }
+
+        if let sendCont = UIStoryboard(name: "Send", bundle: nil).instantiateInitialViewController() {
+            tabBarList.append(sendCont)
+        }
+
+        if let receiveCont = UIStoryboard(name: "Receive", bundle: nil).instantiateInitialViewController() {
+            tabBarList.append(receiveCont)
+        }
+
+        if let settingsCont = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() {
+            tabBarList.append(settingsCont)
+        }
+
+        self.viewControllers = tabBarList
+
+        super.prepare()
+
+        // Colors
+
+        tabBar.setLineColor(Colors.secondaryColor, for: .selected)
+        tabBar.setTabItemsColor(Color.grey.base, for: .normal)
+        tabBar.setTabItemsColor(Colors.secondaryColor, for: .selected)
+        tabBar.setTabItemsColor(Colors.secondaryColor, for: .highlighted)
+
+        tabBar.tabBarStyle = .nonScrollable
+        // tabBarAlignment = .top
+        // tabBar.dividerColor = nil
+        // tabBar.lineHeight = 5.0
+        // tabBar.lineAlignment = .bottom
+        // tabBar.backgroundColor = Color.blue.darken2
     }
 }

@@ -14,30 +14,30 @@ class Account {
     var public_key: String
     var name: String
     var wei: Decimal
-    
+
     init (public_key: String, name: String, wei: Decimal) {
         self.public_key = public_key
         self.name = name
         self.wei = wei
     }
     /**
-     
-    */
+
+     */
     func asTxtMsg() -> String{
         return "\(self.name) - \(self.wei / Values.weiPerEther) ETH"
     }
     /**
      Generate Blockie with Custom Size
-     
+
      - parameter size: Base Size of Image
      - parameter scale: Scale the Base Size
-     
+
      - returns: returns blockie for the account with the size of size `*` scale as UIImage
      */
     func getBlockie(size: Int, scale: Int) -> UIImage{
         // Generate Blockie
         let blockie = Blockies(seed: self.public_key, size: size, scale: scale)
-        
+
         if let blockieimg = blockie.createImage() {
             return blockieimg
         }else{

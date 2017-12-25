@@ -10,9 +10,9 @@ import Foundation
 import Material
 
 extension UILabel {
-    
+
     /**
-     Setup the  title label as stated in the Material Design Guidelines with the default font size of 16
+     * Setup the  title label as stated in the Material Design Guidelines with the default font size of 16
      */
     func setupTitleLabel() {
         self.font = RobotoFont.regular(with: 16)
@@ -20,11 +20,11 @@ extension UILabel {
         self.adjustsFontSizeToFitWidth = false
         self.lineBreakMode = .byTruncatingTail
     }
-    
+
     /**
-     Setup the  title label as stated in the Material Design Guidelines with the given size as the font size
-     
-     - parameter size: The font size
+     * Setup the  title label as stated in the Material Design Guidelines with the given size as the font size
+     *
+     * - parameter size: The font size
      */
     func setupTitleLabelWithSize(size: CGFloat) {
         self.font = RobotoFont.regular(with: size)
@@ -32,9 +32,9 @@ extension UILabel {
         self.adjustsFontSizeToFitWidth = false
         self.lineBreakMode = .byTruncatingTail
     }
-    
+
     /**
-     Setup the  subtitle label as stated in the Material Design Guidelines with the default font size of 14
+     * Setup the  subtitle label as stated in the Material Design Guidelines with the default font size of 14
      */
     func setupSubTitleLabel() {
         self.font = RobotoFont.regular(with: 14)
@@ -42,11 +42,11 @@ extension UILabel {
         self.adjustsFontSizeToFitWidth = false
         self.lineBreakMode = .byTruncatingTail
     }
-    
+
     /**
-     Setup the  subtitle label as stated in the Material Design Guidelines with the given size as the font size
-     
-     - parameter size: The font size
+     * Setup the  subtitle label as stated in the Material Design Guidelines with the given size as the font size
+     *
+     * - parameter size: The font size
      */
     func setupSubTitleLabelWithSize(size: CGFloat) {
         self.font = RobotoFont.regular(with: size)
@@ -54,7 +54,7 @@ extension UILabel {
         self.adjustsFontSizeToFitWidth = false
         self.lineBreakMode = .byTruncatingTail
     }
-    
+
     /**
      Setup the  body label as stated in the Material Design Guidelines with the default font size of 14
      */
@@ -63,11 +63,11 @@ extension UILabel {
         self.textColor = Color.black.withAlphaComponent(0.54)
         self.sizeToFit()
     }
-    
+
     /**
-     Setup the  body label as stated in the Material Design Guidelines with the given size as the font size
-     
-     - parameter size: The font size
+     * Setup the  body label as stated in the Material Design Guidelines with the given size as the font size
+     *
+     * - parameter size: The font size
      */
     func setupBodyLabelWithSize(size: CGFloat) {
         self.font = RobotoFont.regular(with: size)

@@ -8,15 +8,18 @@
 
 import UIKit
 import Material
+import StoreKit
+import SafariServices
 
 class WalletViewController: UIViewController {
 
     @IBOutlet weak var FABButton: FABButton!
-    
+
+    // MARK: - Initialization
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupUI()
     }
 
@@ -24,17 +27,60 @@ class WalletViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func setupUI() {
+
+    // MARK: - UI setup
+
+    private func setupUI() {
         self.view.backgroundColor = Colors.background
+
+        setupToolbar()
+
         setupFAB()
     }
-    @IBAction func FabClicked(_ sender: Any) {
+
+    private func setupToolbar() {
+        navigationItem.titleLabel.text = "Ballet"
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+
+        let rate = IconButton(image: Icon.favoriteBorder, tintColor: Colors.lightPrimaryTextColor)
+        rate.addTarget(self, action: #selector(rateClicked), for: .touchUpInside)
+
+        navigationItem.rightViews = [rate]
     }
-    
-    func setupFAB() {
+
+    private func setupFAB() {
         FABButton.backgroundColor = Colors.secondaryColor
         let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate).tint(with: Colors.white)
         FABButton.setImage(image, for: .normal)
+    }
+
+    // MARK: - Actions
+
+    @IBAction func fabClicked(_ sender: Any) {
+    }
+
+    @objc private func rateClicked() {
+        if UserDefaults.standard.bool(forKey: "reviewed") {
+            donate()
+        } else {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+                UserDefaults.standard.set(true, forKey: "reviewed")
+            } else {
+                donate()
+            }
+        }
+    }
+
+    private func donate() {
+        let path = "https://ballet.boilertalk.com/donate"
+        guard let url = NSURL(string: path) else { return }
+
+        if #available(iOS 9.0, *) {
+            let controller: SFSafariViewController = SFSafariViewController(url: url as URL)
+            self.present(controller, animated: true, completion: nil)
+        } else {
+            UIApplication.shared.openURL(url as URL)
+        }
     }
 }
