@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import StoreKit
 
 class WalletViewController: UIViewController {
 
@@ -28,13 +29,22 @@ class WalletViewController: UIViewController {
 
     // MARK: - UI setup
 
-    func setupUI() {
-        // TabBar
-        prepareTabItem()
-
+    private func setupUI() {
         self.view.backgroundColor = Colors.background
 
+        setupToolbar()
+
         setupFAB()
+    }
+
+    private func setupToolbar() {
+        navigationItem.titleLabel.text = "Ballet"
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+
+        let rate = IconButton(image: Icon.favoriteBorder, tintColor: Colors.lightPrimaryTextColor)
+        rate.addTarget(self, action: #selector(rateClicked), for: .touchUpInside)
+
+        navigationItem.rightViews = [rate]
     }
 
     private func setupFAB() {
@@ -47,14 +57,13 @@ class WalletViewController: UIViewController {
 
     @IBAction func fabClicked(_ sender: Any) {
     }
-}
 
-// MARK: - TabBar
-
-extension WalletViewController {
-
-    fileprivate func prepareTabItem() {
-        // tabItem.title = "Wallet"
-        tabItem.image = UIImage(named: "ic_wallet")?.withRenderingMode(.alwaysTemplate)
+    @objc func rateClicked() {
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            // Fallback on earlier versions
+            // TODO: Add Rating for iOS 10.2 and earlier
+        }
     }
 }

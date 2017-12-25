@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Material
 
 struct Colors {
 
     /// The primary color of this application as defined by Material Design
-    static let primaryColor: UIColor = UIColor(red: 86/255, green: 86/255, blue: 86/255, alpha: 1)
+    static let primaryColor = Color.cyan.base
 
     /// The secondary color of this application as defined by Material Design
-    static let secondaryColor: UIColor = UIColor(red: 42/255, green: 240/255, blue: 253/255, alpha: 1)
+    static let secondaryColor = Color.pink.base
 
     /// White
     static let white: UIColor = UIColor.white
@@ -25,18 +26,17 @@ struct Colors {
     /// Background Color
     static let background = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
 
-    /// Primary color with the given alpha value
-    static func primaryColorWAlpha(alpha: Float) -> UIColor {
-        return primaryColor.withAlphaComponent(CGFloat(alpha))
-    }
+    // Font colors
+    static let darkPrimaryTextColor = Color.black.withAlphaComponent(0.87)
+    static let darkSecondaryTextColor = Color.black.withAlphaComponent(0.54)
+    static let darkDisabledTextColor = Color.black.withAlphaComponent(0.38)
+    static let darkDividerColor = Color.black.withAlphaComponent(0.12)
 
-    /// Secondary color with the given alpha value
-    static func secondaryColorWAlpha(alpha: Float) -> UIColor {
-        return secondaryColor.withAlphaComponent(CGFloat(alpha))
-    }
+    static let lightPrimaryTextColor = Color.white.withAlphaComponent(1.0)
+    static let lightSecondaryTextColor = Color.white.withAlphaComponent(0.7)
+    static let lightDisabledTextColor = Color.white.withAlphaComponent(0.5)
+    static let lightDividerColor = Color.white.withAlphaComponent(0.12)
 
-    /// Light Grey with the given alpha value
-    static func lightGreyWAlpha(alpha: Float) -> UIColor {
-        return lightGrey.withAlphaComponent(CGFloat(alpha))
-    }
+    static let navigationItemLabelColor = Color.black.withAlphaComponent(0.87)
+    // End Font colors
 }

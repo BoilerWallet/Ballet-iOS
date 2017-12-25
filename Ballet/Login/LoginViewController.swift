@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     // MARK: - UI setup
 
     private func setupUI() {
-        self.view.backgroundColor = Colors.primaryColorWAlpha(alpha: 0.8)
+        self.view.backgroundColor = Colors.background
 
         // Login button
         loginButton.backgroundColor = Colors.secondaryColor
