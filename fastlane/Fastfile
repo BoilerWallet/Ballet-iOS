@@ -1,4 +1,4 @@
-fastlane_version "2.70.3"
+fastlane_version '2.70.3'
 
 default_platform :ios
 
@@ -8,8 +8,7 @@ platform :ios do
   #             and: https://docs.fastlane.tools/getting-started/android/beta-deployment/
   #
   lane :beta do |values|
-    build_number = ENV["TRAVIS_BUILD_NUMBER"]
-
+    build_number = ENV['TRAVIS_BUILD_NUMBER']
     if build_number.nil?
       # TODO: Do something about this.
       # We need to somehow increase the build number.
@@ -19,34 +18,37 @@ platform :ios do
     end
 
     create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
-      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+      name: ENV['MATCH_KEYCHAIN_NAME'],
+      password: ENV['MATCH_KEYCHAIN_PASSWORD'],
       default_keychain: true,
       unlock: true,
       timeout: 3600,
       add_to_search_list: true
     )
     match(
-      type: "adhoc",
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+      type: 'adhoc',
+      keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
+      keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'],
       readonly: true
     )
 
+    cocoapods repo_update: true
+
     # Fabric generated this lane for deployment to Crashlytics Beta
-    # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution uses ad-hoc provisioning
+    # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution
+    # uses ad-hoc provisioning
     build_app(scheme: 'Ballet', export_method: 'ad-hoc')
 
-    emails = values[:test_email] ? values[:test_email] : [] # You can list more emails here
-    groups = values[:test_group] ? values[:test_group] : ['Developers'] # You can define groups on the web and reference them here
+    emails = values[:test_email] ? values[:test_email] : []
+    groups = values[:test_group] ? values[:test_group] : ['Developers']
 
     crashlytics(
       api_token: '54f077d0991ed0eceba8fb8e9b2c923ffd4ebb55',
       build_secret: '7dc047d4f822010979d8e5fe4e16dc3a0d4ab8ff43dd1a0dd59cfcfa551b80cd',
       emails: emails,
       groups: groups,
-      notes: 'Distributed with fastlane', # Check out the changelog_from_git_commits action
-      notifications: true # Should this distribution notify your testers via email?
+      notes: changelog_from_git_commits,
+      notifications: true
     )
 
     # for all available options run `fastlane action crashlytics`
