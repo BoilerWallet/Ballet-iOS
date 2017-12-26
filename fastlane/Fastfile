@@ -8,7 +8,15 @@ platform :ios do
   #             and: https://docs.fastlane.tools/getting-started/android/beta-deployment/
   #
   lane :beta do |values|
-    increment_build_number
+    build_number = ENV["TRAVIS_BUILD_NUMBER"]
+
+    if build_number.nil?
+      # TODO: Do something about this.
+      # We need to somehow increase the build number.
+      increment_build_number
+    else
+      increment_build_number build_number: build_number
+    end
 
     create_keychain(
       name: ENV["MATCH_KEYCHAIN_NAME"],
@@ -29,7 +37,7 @@ platform :ios do
     # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution uses ad-hoc provisioning
     build_app(scheme: 'Ballet', export_method: 'ad-hoc')
 
-    emails = values[:test_email] ? values[:test_email] : ['ben@boilertalk.com', 'koray@boilertalk.com'] # You can list more emails here
+    emails = values[:test_email] ? values[:test_email] : [] # You can list more emails here
     groups = values[:test_group] ? values[:test_group] : ['Developers'] # You can define groups on the web and reference them here
 
     crashlytics(
