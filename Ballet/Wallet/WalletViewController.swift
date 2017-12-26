@@ -13,7 +13,7 @@ import SafariServices
 
 class WalletViewController: UIViewController {
 
-    @IBOutlet weak var FABButton: FABButton!
+    @IBOutlet weak var addAccountButton: FABButton!
 
     // MARK: - Initialization
 
@@ -49,9 +49,15 @@ class WalletViewController: UIViewController {
     }
 
     private func setupFAB() {
-        FABButton.backgroundColor = Colors.secondaryColor
-        let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate).tint(with: Colors.white)
-        FABButton.setImage(image, for: .normal)
+        addAccountButton.backgroundColor = Colors.secondaryColor
+
+        let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate)
+        addAccountButton.setImage(image, for: .normal)
+        addAccountButton.setImage(image, for: .selected)
+
+        addAccountButton.tintColor = Colors.white
+
+        addAccountButton.pulseColor = .white
     }
 
     // MARK: - Actions
