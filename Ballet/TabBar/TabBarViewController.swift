@@ -24,7 +24,6 @@ class TabBarViewController: TabsController {
 
     override func prepare() {
         // Setup SubView Controllers
-
         var tabBarList = [UIViewController]()
 
         if let walletCont = UIStoryboard(name: "Wallet", bundle: nil).instantiateInitialViewController() {
@@ -48,10 +47,12 @@ class TabBarViewController: TabsController {
         super.prepare()
 
         // Colors
-
         tabBar.setLineColor(Colors.secondaryColor, for: .selected)
         tabBar.setTabItemsColor(Color.grey.base, for: .normal)
         tabBar.setTabItemsColor(Colors.secondaryColor, for: .selected)
         tabBar.setTabItemsColor(Colors.secondaryColor, for: .highlighted)
+
+        // Animation
+        motionTransitionType = .none
     }
 }
