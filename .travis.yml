@@ -9,7 +9,7 @@ before_install:
   - pod install
 script:
   # Output something every 10 minutes or Travis kills the job
-  - while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+  - while sleep 60; do echo "=====[ $SECONDS seconds still running ]====="; done &
   - fastlane beta
   # Killing background sleep loop
   - kill %1

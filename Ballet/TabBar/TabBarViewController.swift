@@ -53,12 +53,5 @@ class TabBarViewController: TabsController {
         tabBar.setTabItemsColor(Color.grey.base, for: .normal)
         tabBar.setTabItemsColor(Colors.secondaryColor, for: .selected)
         tabBar.setTabItemsColor(Colors.secondaryColor, for: .highlighted)
-
-        tabBar.tabBarStyle = .nonScrollable
-        // tabBarAlignment = .top
-        // tabBar.dividerColor = nil
-        // tabBar.lineHeight = 5.0
-        // tabBar.lineAlignment = .bottom
-        // tabBar.backgroundColor = Color.blue.darken2
     }
 }
