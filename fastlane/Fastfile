@@ -8,17 +8,6 @@ platform :ios do
   #             and: https://docs.fastlane.tools/getting-started/android/beta-deployment/
   #
   lane :beta do |values|
-    build_number = ENV['TRAVIS_BUILD_NUMBER']
-    if build_number.nil?
-      # TODO: Do something about this.
-      # We need to somehow increase the build number.
-      puts "There is no travis build number. #{build_number}"
-      increment_build_number
-    else
-      puts "Current travis build number is #{build_number}"
-      increment_build_number build_number: build_number
-    end
-
     create_keychain(
       name: ENV['MATCH_KEYCHAIN_NAME'],
       password: ENV['MATCH_KEYCHAIN_PASSWORD'],
@@ -34,7 +23,23 @@ platform :ios do
       readonly: true
     )
 
+    # CocoaPods
     cocoapods repo_update: true
+
+    # Increment build number
+    build_number = ENV['TRAVIS_BUILD_NUMBER']
+    if build_number.nil?
+      # TODO: Do something about this.
+      # We need to somehow increase the build number.
+      puts "There is no travis build number. #{build_number}"
+      increment_build_number
+    else
+      puts "Current travis build number is #{build_number}"
+      increment_build_number build_number: build_number
+    end
+    # Fabric specific
+    bn = `agvtool what-version -terse`
+    set_info_plist_value(path: './Ballet/Resources/Info.plist', key: 'CFBundleVersion', value: bn)
 
     # Fabric generated this lane for deployment to Crashlytics Beta
     # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution
