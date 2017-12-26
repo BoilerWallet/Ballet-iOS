@@ -39,7 +39,7 @@ platform :ios do
     # uses ad-hoc provisioning
     build_app(scheme: 'Ballet', export_method: 'ad-hoc')
 
-    emails = values[:test_email] ? values[:test_email] : []
+    emails = values[:test_email] ? values[:test_email] : nil
     groups = values[:test_group] ? values[:test_group] : ['Developers']
 
     crashlytics(
