@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-be-qxB" customClass="TextField" customModule="Material">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-be-qxB" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="32" y="146" width="311" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -29,8 +29,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Recipient"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDe-35-lqu" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="32" y="208" width="134" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDe-35-lqu" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="32" y="208" width="136" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -45,22 +45,14 @@
                                 </constraints>
                                 <state key="normal" title="Confirm"/>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0EX-EW-dnl">
-                                <rect key="frame" x="32" y="84" width="311" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="vhS-iz-saY" secondAttribute="trailing" constant="64" id="0bg-xg-xWw"/>
-                            <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="0EX-EW-dnl" secondAttribute="trailing" constant="32" id="2XI-UJ-NlM"/>
-                            <constraint firstItem="0EX-EW-dnl" firstAttribute="top" secondItem="lts-gz-1DB" secondAttribute="top" constant="64" id="3bS-qB-ype"/>
-                            <constraint firstItem="0EX-EW-dnl" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="5ht-Mu-uEB"/>
-                            <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="0EX-EW-dnl" secondAttribute="bottom" constant="32" id="HL4-k7-0jV"/>
+                            <constraint firstItem="DDe-35-lqu" firstAttribute="width" secondItem="MVe-be-qxB" secondAttribute="width" multiplier="7/16" id="JKw-5c-7Xy"/>
                             <constraint firstItem="DDe-35-lqu" firstAttribute="top" secondItem="MVe-be-qxB" secondAttribute="bottom" constant="32" id="UCE-jj-7WQ"/>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="MVe-be-qxB" secondAttribute="trailing" constant="32" id="UNt-xe-ECA"/>
                             <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="pvW-LW-F4M" secondAttribute="top" constant="146" id="Uit-YA-2b9"/>
-                            <constraint firstItem="DDe-35-lqu" firstAttribute="width" secondItem="0EX-EW-dnl" secondAttribute="width" multiplier="3/7" id="gY8-e1-DBa"/>
                             <constraint firstItem="MVe-be-qxB" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="hZM-nb-ceM"/>
                             <constraint firstItem="vhS-iz-saY" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="64" id="ht6-NB-e7c"/>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="bottom" secondItem="vhS-iz-saY" secondAttribute="bottom" constant="48" id="rFZ-LC-76Q"/>
@@ -71,7 +63,6 @@
                     <navigationItem key="navigationItem" id="Vmy-bJ-El7"/>
                     <connections>
                         <outlet property="amountField" destination="DDe-35-lqu" id="lhq-EQ-Wxw"/>
-                        <outlet property="fromAccount" destination="0EX-EW-dnl" id="qpc-p9-ru5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ov6-X8-1nU" userLabel="First Responder" sceneMemberID="firstResponder"/>

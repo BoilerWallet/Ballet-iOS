@@ -15,7 +15,7 @@ class SendViewController: UIViewController {
 
     // MARK: - Properties
 
-    var accountBtn = accountDropDownBtn()
+    // var accountBtn = accountDropDownBtn()
 
     @IBOutlet weak var amountField: TextField!
     @IBOutlet weak var fromAccount: UIView!
@@ -40,19 +40,34 @@ class SendViewController: UIViewController {
 
         amountField.keyboardType = UIKeyboardType.numberPad
 
-        accountBtn = accountDropDownBtn.init(frame: fromAccount.frame)
+//        accountBtn = accountDropDownBtn.init(frame: fromAccount.frame)
+//
+//        accountBtn.setTitle(Values.defaultAccount.asTxtMsg(), for: .normal)
+//        accountBtn.setImage(Values.defaultAccount.getBlockie(size: 12, scale: 2), for: UIControlState.normal)
+//        accountBtn.semanticContentAttribute = .forceLeftToRight
+//
+//        //Add Button to the View Controller
+//        self.view.addSubview(accountBtn)
+//        //Set the drop down menu's options
+//        accountBtn.dropView.AccountDropDownOptions = [Account]()
+//        for account in Values.accounts {
+//            accountBtn.dropView.AccountDropDownOptions.append(account)
+//        }
 
-        accountBtn.setTitle(Values.defaultAccount.asTxtMsg(), for: .normal)
-        accountBtn.setImage(Values.defaultAccount.getBlockie(size: 12, scale: 2), for: UIControlState.normal)
-        accountBtn.semanticContentAttribute = .forceLeftToRight
+        let dropDown = DropDown()
 
-        //Add Button to the View Controller
-        self.view.addSubview(accountBtn)
-        //Set the drop down menu's options
-        accountBtn.dropView.AccountDropDownOptions = [Account]()
+        // The view to which the drop down will appear on
+        dropDown.anchorView = fromAccount
+
+        // The list of items to display. Can be changed dynamically
+        dropDown.dataSource = [String]()
+
         for account in Values.accounts {
-            accountBtn.dropView.AccountDropDownOptions.append(account)
+            dropDown.dataSource.append(account.asTxtMsg())
         }
+
+        dropDown.show()
+
     }
 
     private func setupToolbar() {
