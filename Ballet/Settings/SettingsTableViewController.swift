@@ -1,6 +1,6 @@
-//
+git//
 //  SettingsTableViewController.swift
-//  Svizzr
+//  Ballet
 //
 //  Created by Ben Koska on 12/21/17.
 //  Copyright © 2017 Boilertalk. All rights reserved.
@@ -48,8 +48,6 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - UI setup
 
     private func setupUI() {
-        // TabBar
-        prepareTabItem()
 
         let bg = UIView()
         bg.backgroundColor = Colors.background
@@ -74,6 +72,8 @@ class SettingsTableViewController: UITableViewController {
         navigationItem.rightViews = [UIButton()]
 
         navigationItem.title = "Information"
+
+        setupToolbar()
     }
 
     // MARK: - Actions
@@ -95,14 +95,9 @@ class SettingsTableViewController: UITableViewController {
             UIApplication.shared.openURL(url as URL)
         }
     }
-}
 
-// MARK: - TabBar
-
-extension SettingsTableViewController {
-
-    fileprivate func prepareTabItem() {
-        // tabItem.title = "Settings"
-        tabItem.image = UIImage(named: "ic_settings")?.withRenderingMode(.alwaysTemplate)
+    private func setupToolbar() {
+        navigationItem.titleLabel.text = "Settings"
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
     }
 }

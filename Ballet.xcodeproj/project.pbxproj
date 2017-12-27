@@ -24,6 +24,7 @@
 		863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449EA1FEC335100738516 /* SettingsTableViewController.swift */; };
 		8634D6961FF30CDC00377AB6 /* EtherQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634D6951FF30CDC00377AB6 /* EtherQRCode.swift */; };
 		8634D6981FF311EF00377AB6 /* EtherTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634D6971FF311EF00377AB6 /* EtherTransaction.swift */; };
+		8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634D6991FF3D8F900377AB6 /* SettingsNavigationViewController.swift */; };
 		863B23D21FEADE950061298A /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B23D11FEADE950061298A /* SendViewController.swift */; };
 		863B23D41FEADEA50061298A /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B23D31FEADEA50061298A /* Send.storyboard */; };
 		863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */; };
@@ -88,6 +89,7 @@
 		863449FB1FEC643800738516 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8634D6951FF30CDC00377AB6 /* EtherQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherQRCode.swift; sourceTree = "<group>"; };
 		8634D6971FF311EF00377AB6 /* EtherTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherTransaction.swift; sourceTree = "<group>"; };
+		8634D6991FF3D8F900377AB6 /* SettingsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationViewController.swift; sourceTree = "<group>"; };
 		863B23D11FEADE950061298A /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		863B23D31FEADEA50061298A /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
 		863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveNavigationViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				863449E41FEC18B800738516 /* Settings.storyboard */,
 				863449EA1FEC335100738516 /* SettingsTableViewController.swift */,
+				8634D6991FF3D8F900377AB6 /* SettingsNavigationViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -294,8 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				86BED7B71FEB186400165571 /* Receive.storyboard */,
-				86BED7B91FEB187300165571 /* ReceiveViewController.swift */,
 				863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */,
+				86BED7B91FEB187300165571 /* ReceiveViewController.swift */,
 			);
 			path = Receive;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				0E6F221F1FF1D948001D50BC /* SendNavigationViewController.swift in Sources */,
 				8676291F1FF1500700C60D4E /* Account.swift in Sources */,
+				8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ class ReceiveViewController: UIViewController {
 
     // MARK: - Properties
 
-    @IBOutlet weak var QRImageview: UIImageView!
+    @IBOutlet weak var qrImageview: UIImageView!
 
     var qrcodeImage: CIImage = CIImage()
 
@@ -24,7 +24,7 @@ class ReceiveViewController: UIViewController {
 
         setupUI()
 
-        QRImageview.image = EtherQRCode(address: Values.defaultAccount.public_key, value: 1.0).generate()
+        qrImageview.image = EtherQRCode(address: Values.defaultAccount.public_key, value: 1.0).generate()
     }
 
     override func didReceiveMemoryWarning() {

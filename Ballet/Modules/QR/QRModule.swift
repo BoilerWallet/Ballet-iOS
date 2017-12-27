@@ -20,6 +20,11 @@ class QRModule {
     }
 
     func present(on: UIViewController) {
+        guard checkCamera() else {
+            // TODO: Add Popup Saying "No Cameras for larrys"
+            return
+        }
+
         let cont = UIStoryboard(name: "QRScanner", bundle: nil).instantiateInitialViewController() as? QRScannerViewController
         cont?.completion = completion
         if let cont = cont {
@@ -28,5 +33,13 @@ class QRModule {
             print("could not unwrap controler")
             Crashlytics.sharedInstance().logEvent("QRModule: Could Not Unwrap QR Scanner")
         }
+    }
+
+    private func checkCamera() -> Bool {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            return true
+        }
+
+        return false
     }
 }
