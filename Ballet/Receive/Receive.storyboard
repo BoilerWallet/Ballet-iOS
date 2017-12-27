@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCd-hh-u1B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EDX-tC-Jes">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell your friend to scan this QR Code to send you money" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaW-zr-4Xi">
-                                <rect key="frame" x="48" y="52" width="279" height="94"/>
+                                <rect key="frame" x="48" y="96" width="279" height="50"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,13 +44,80 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j1y-hK-Rpy"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8qI-RJ-arW"/>
                     <connections>
                         <outlet property="QRImageview" destination="ST7-xe-gj1" id="y0m-JW-6hw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQl-Rn-kj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="160"/>
+            <point key="canvasLocation" x="407.19999999999999" y="159.67016491754123"/>
+        </scene>
+        <!--Send Navigation View Controller-->
+        <scene sceneID="iH2-Nc-7aa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2MW-6p-Lvv" customClass="SendNavigationViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zXo-WT-c5I">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YCd-hh-u1B" kind="relationship" relationship="rootViewController" id="JKY-8r-4P8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jie-XK-y4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="159"/>
+        </scene>
+        <!--Send Navigation View Controller-->
+        <scene sceneID="uLf-1Y-vHP">
+            <objects>
+                <viewController id="3rf-LQ-LBY" customClass="SendNavigationViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OVz-3B-BvY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-8d-aR6" customClass="FlatButton" customModule="Material">
+                                <rect key="frame" x="64" y="557.5" width="247" height="61.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EBk-8d-aR6" secondAttribute="height" multiplier="4:1" id="Rj8-vC-Bnc"/>
+                                </constraints>
+                                <state key="normal" title="Confirm"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EBk-8d-aR6" firstAttribute="leading" secondItem="aqo-8L-g8Z" secondAttribute="leading" constant="64" id="FIP-Dc-XzR"/>
+                            <constraint firstItem="aqo-8L-g8Z" firstAttribute="bottom" secondItem="EBk-8d-aR6" secondAttribute="bottom" constant="48" id="KZG-5n-qOd"/>
+                            <constraint firstItem="aqo-8L-g8Z" firstAttribute="trailing" secondItem="EBk-8d-aR6" secondAttribute="trailing" constant="64" id="zlT-xP-sRQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aqo-8L-g8Z"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vh3-dT-goP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1FR-98-b3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="407" y="-556"/>
+        </scene>
+        <!--Send Navigation View Controller-->
+        <scene sceneID="As8-lb-XD6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EDX-tC-Jes" customClass="SendNavigationViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wz1-Qz-FP4" customClass="NavigationBar" customModule="Material">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3rf-LQ-LBY" kind="relationship" relationship="rootViewController" id="eZT-oN-chr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRi-yr-jMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="-556"/>
         </scene>
     </scenes>
 </document>

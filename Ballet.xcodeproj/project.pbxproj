@@ -22,10 +22,16 @@
 		863449E51FEC18B800738516 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863449E41FEC18B800738516 /* Settings.storyboard */; };
 		863449E91FEC231E00738516 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449E81FEC231E00738516 /* LabelExtension.swift */; };
 		863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449EA1FEC335100738516 /* SettingsTableViewController.swift */; };
+		8634D6961FF30CDC00377AB6 /* EtherQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634D6951FF30CDC00377AB6 /* EtherQRCode.swift */; };
+		8634D6981FF311EF00377AB6 /* EtherTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634D6971FF311EF00377AB6 /* EtherTransaction.swift */; };
 		863B23D21FEADE950061298A /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B23D11FEADE950061298A /* SendViewController.swift */; };
 		863B23D41FEADEA50061298A /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B23D31FEADEA50061298A /* Send.storyboard */; };
+		863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */; };
 		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
 		86605C381FF0764F00E4620E /* SendDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86605C371FF0764F00E4620E /* SendDropdown.swift */; };
+		8663235D1FF2CCF10027910E /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8663235C1FF2CCF10027910E /* QRScannerViewController.swift */; };
+		8663235F1FF2CCFE0027910E /* QRModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8663235E1FF2CCFE0027910E /* QRModule.swift */; };
+		866323611FF2D71A0027910E /* QRScanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866323601FF2D71A0027910E /* QRScanner.storyboard */; };
 		8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */; };
 		8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */; };
 		8676291F1FF1500700C60D4E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8676291E1FF1500700C60D4E /* Account.swift */; };
@@ -80,10 +86,16 @@
 		863449E81FEC231E00738516 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		863449EA1FEC335100738516 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		863449FB1FEC643800738516 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		8634D6951FF30CDC00377AB6 /* EtherQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherQRCode.swift; sourceTree = "<group>"; };
+		8634D6971FF311EF00377AB6 /* EtherTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherTransaction.swift; sourceTree = "<group>"; };
 		863B23D11FEADE950061298A /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		863B23D31FEADEA50061298A /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
+		863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveNavigationViewController.swift; sourceTree = "<group>"; };
 		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		86605C371FF0764F00E4620E /* SendDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDropdown.swift; sourceTree = "<group>"; };
+		8663235C1FF2CCF10027910E /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		8663235E1FF2CCFE0027910E /* QRModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRModule.swift; sourceTree = "<group>"; };
+		866323601FF2D71A0027910E /* QRScanner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRScanner.storyboard; sourceTree = "<group>"; };
 		8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8676291E1FF1500700C60D4E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 				863B23D01FEADE6F0061298A /* Send */,
 				86BED7B61FEB184C00165571 /* Receive */,
 				863449E31FEC189A00738516 /* Settings */,
+				8663235B1FF2CCB00027910E /* Modules */,
 				86439AB31FE7C8CC00060944 /* Toolbox */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
 				0E672D4B1FE70A9D00917D05 /* ViewController.swift */,
@@ -248,6 +261,26 @@
 			path = Toolbox;
 			sourceTree = "<group>";
 		};
+		8663235A1FF2CCA20027910E /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				8663235C1FF2CCF10027910E /* QRScannerViewController.swift */,
+				8663235E1FF2CCFE0027910E /* QRModule.swift */,
+				866323601FF2D71A0027910E /* QRScanner.storyboard */,
+				8634D6951FF30CDC00377AB6 /* EtherQRCode.swift */,
+				8634D6971FF311EF00377AB6 /* EtherTransaction.swift */,
+			);
+			path = QR;
+			sourceTree = "<group>";
+		};
+		8663235B1FF2CCB00027910E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8663235A1FF2CCA20027910E /* QR */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		8665F6ED1FE9B1AB008D84F5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +295,7 @@
 			children = (
 				86BED7B71FEB186400165571 /* Receive.storyboard */,
 				86BED7B91FEB187300165571 /* ReceiveViewController.swift */,
+				863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */,
 			);
 			path = Receive;
 			sourceTree = "<group>";
@@ -422,6 +456,7 @@
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
+				866323611FF2D71A0027910E /* QRScanner.storyboard in Resources */,
 				863B23D41FEADEA50061298A /* Send.storyboard in Resources */,
 				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
@@ -641,14 +676,19 @@
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
+				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				86605C381FF0764F00E4620E /* SendDropdown.swift in Sources */,
+				8634D6961FF30CDC00377AB6 /* EtherQRCode.swift in Sources */,
+				8663235F1FF2CCFE0027910E /* QRModule.swift in Sources */,
 				863B23D21FEADE950061298A /* SendViewController.swift in Sources */,
 				86210EA21FED71B0002DDF43 /* Values.swift in Sources */,
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
+				8634D6981FF311EF00377AB6 /* EtherTransaction.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
+				8663235D1FF2CCF10027910E /* QRScannerViewController.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				0E6F221F1FF1D948001D50BC /* SendNavigationViewController.swift in Sources */,
 				8676291F1FF1500700C60D4E /* Account.swift in Sources */,
