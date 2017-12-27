@@ -25,7 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
-  - BlockiesSwift (from `https://github.com/Boilertalk/BlockiesSwift.git`)
+  - BlockiesSwift (~> 0.1)
   - Cartography (~> 3.0)
   - Crashlytics
   - CryptoSwift (~> 0.8)
@@ -37,18 +37,9 @@ DEPENDENCIES:
   - Quick (~> 1.2)
   - RealmSwift (~> 3.0)
 
-EXTERNAL SOURCES:
-  BlockiesSwift:
-    :git: https://github.com/Boilertalk/BlockiesSwift.git
-
-CHECKOUT OPTIONS:
-  BlockiesSwift:
-    :commit: 97ccd8955b023209cca7197b52db05107829e90d
-    :git: https://github.com/Boilertalk/BlockiesSwift.git
-
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  BlockiesSwift: f97543a0d0f5cff8992f4771a3f25e676a54a0b9
+  BlockiesSwift: d92f88b51b417ac0bc1d188a2028d461fcad007d
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   CryptoSwift: f81907430ebbe38b8404b4f6fb40f3c576a8755f
@@ -62,6 +53,6 @@ SPEC CHECKSUMS:
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
 
-PODFILE CHECKSUM: 0eb083fee69c4146e1d8d64af400f814cd502096
+PODFILE CHECKSUM: 10f987fc8e2e710133ea036343bbb2f628cbafd2
 
 COCOAPODS: 1.3.1

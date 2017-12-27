@@ -28,7 +28,7 @@ target 'Ballet' do
   pod 'RealmSwift', '~> 3.0'
 
   # BlockiesSwift
-  pod 'BlockiesSwift', :git => 'https://github.com/Boilertalk/BlockiesSwift.git'
+  pod 'BlockiesSwift', '~> 0.1'
 
   # Fabric
   pod 'Fabric'
