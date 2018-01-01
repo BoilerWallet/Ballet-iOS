@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import EIP67
 
 class ReceiveViewController: UIViewController {
 
@@ -24,7 +25,8 @@ class ReceiveViewController: UIViewController {
 
         setupUI()
 
-        qrImageview.image = EtherQRCode(address: Values.defaultAccount.public_key, value: 1.0).generate()
+        let img = EIP67QRCode(address: Values.defaultAccount.public_key).image(scale: 2.5)
+        qrImageview.image = UIImage(ciImage: img)
     }
 
     override func didReceiveMemoryWarning() {

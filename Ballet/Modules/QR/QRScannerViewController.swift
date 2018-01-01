@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Material
 import Crashlytics
+import EIP67
 
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
@@ -19,7 +20,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var backButton: IconButton!
     
     var dataString = String()
-    var completion: ((_: String) -> Void)?
+    var completion: ((_: EIP67Response) -> Void)?
 
     private enum error: Error {
         case noCameraAvailable
@@ -54,7 +55,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                 dataString = machineReadableCode.stringValue!
                 if let completion = completion {
                     dismiss(animated: true, completion: {
-                        completion(self.dataString)
+                        let resp = EIP67Response(data: self.dataString)
+                        completion(resp)
                     })
                 }
             }

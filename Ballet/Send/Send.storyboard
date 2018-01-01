@@ -45,14 +45,36 @@
                                 </constraints>
                                 <state key="normal" title="Confirm"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rl-jz-DVD">
+                                <rect key="frame" x="32" y="80" width="311" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlV-ct-jTC">
+                                        <rect key="frame" x="0.0" y="4" width="295" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xlV-ct-jTC" secondAttribute="trailing" constant="16" id="Ndg-qC-0SD"/>
+                                    <constraint firstItem="xlV-ct-jTC" firstAttribute="leading" secondItem="4rl-jz-DVD" secondAttribute="leading" id="ZpT-Cs-xu4"/>
+                                    <constraint firstAttribute="bottom" secondItem="xlV-ct-jTC" secondAttribute="bottom" constant="4" id="bbE-w7-zS9"/>
+                                    <constraint firstItem="xlV-ct-jTC" firstAttribute="top" secondItem="4rl-jz-DVD" secondAttribute="top" constant="4" id="bpK-qM-Ftx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="vhS-iz-saY" secondAttribute="trailing" constant="64" id="0bg-xg-xWw"/>
+                            <constraint firstItem="4rl-jz-DVD" firstAttribute="top" secondItem="lts-gz-1DB" secondAttribute="top" constant="16" id="1kA-ny-TvL"/>
                             <constraint firstItem="DDe-35-lqu" firstAttribute="width" secondItem="MVe-be-qxB" secondAttribute="width" multiplier="7/16" id="JKw-5c-7Xy"/>
+                            <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="4rl-jz-DVD" secondAttribute="trailing" constant="32" id="MyP-Cq-juN"/>
                             <constraint firstItem="DDe-35-lqu" firstAttribute="top" secondItem="MVe-be-qxB" secondAttribute="bottom" constant="32" id="UCE-jj-7WQ"/>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="trailing" secondItem="MVe-be-qxB" secondAttribute="trailing" constant="32" id="UNt-xe-ECA"/>
                             <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="pvW-LW-F4M" secondAttribute="top" constant="146" id="Uit-YA-2b9"/>
+                            <constraint firstItem="4rl-jz-DVD" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="diy-U0-bUT"/>
+                            <constraint firstItem="MVe-be-qxB" firstAttribute="top" secondItem="4rl-jz-DVD" secondAttribute="bottom" constant="32" id="hU8-8t-hKf"/>
                             <constraint firstItem="MVe-be-qxB" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="32" id="hZM-nb-ceM"/>
                             <constraint firstItem="vhS-iz-saY" firstAttribute="leading" secondItem="lts-gz-1DB" secondAttribute="leading" constant="64" id="ht6-NB-e7c"/>
                             <constraint firstItem="lts-gz-1DB" firstAttribute="bottom" secondItem="vhS-iz-saY" secondAttribute="bottom" constant="48" id="rFZ-LC-76Q"/>
@@ -62,7 +84,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vmy-bJ-El7"/>
                     <connections>
+                        <outlet property="RecipientTextField" destination="MVe-be-qxB" id="Se2-ka-Bwc"/>
                         <outlet property="amountField" destination="DDe-35-lqu" id="lhq-EQ-Wxw"/>
+                        <outlet property="fromAccount" destination="4rl-jz-DVD" id="Dep-nA-zPo"/>
+                        <outlet property="fromLabel" destination="xlV-ct-jTC" id="NZt-Oy-ro3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ov6-X8-1nU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -20,6 +20,12 @@ class SendViewController: UIViewController {
     @IBOutlet weak var amountField: TextField!
     @IBOutlet weak var fromAccount: UIView!
 
+    @IBOutlet weak var RecipientTextField: TextField!
+    let dropDown = DropDown()
+
+    var selectedAccount: Account = Values.defaultAccount
+
+    @IBOutlet weak var fromLabel: UILabel!
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -36,25 +42,19 @@ class SendViewController: UIViewController {
     // MARK: - UI Setup
 
     private func setupUI() {
+
+        RecipientTextField.tag = 123
+        RecipientTextField.delegate = self
+
+        fromLabel.text = Values.defaultAccount.asTxtMsg()
+
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(dropDownPressed))
+        fromAccount.addGestureRecognizer(recognizer)
         setupToolbar()
 
+        setupDropDowns()
+
         amountField.keyboardType = UIKeyboardType.numberPad
-
-//        accountBtn = accountDropDownBtn.init(frame: fromAccount.frame)
-//
-//        accountBtn.setTitle(Values.defaultAccount.asTxtMsg(), for: .normal)
-//        accountBtn.setImage(Values.defaultAccount.getBlockie(size: 12, scale: 2), for: UIControlState.normal)
-//        accountBtn.semanticContentAttribute = .forceLeftToRight
-//
-//        //Add Button to the View Controller
-//        self.view.addSubview(accountBtn)
-//        //Set the drop down menu's options
-//        accountBtn.dropView.AccountDropDownOptions = [Account]()
-//        for account in Values.accounts {
-//            accountBtn.dropView.AccountDropDownOptions.append(account)
-//        }
-
-        let dropDown = DropDown()
 
         // The view to which the drop down will appear on
         dropDown.anchorView = fromAccount
@@ -66,7 +66,23 @@ class SendViewController: UIViewController {
             dropDown.dataSource.append(account.asTxtMsg())
         }
 
-        dropDown.show()
+    }
+
+    private func setupDropDowns() {
+        dropDown.anchorView = fromAccount
+        dropDown.dataSource = []
+
+        for account in Values.accounts {
+            dropDown.dataSource.append(account.asTxtMsg())
+        }
+
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.selectedAccount = Values.accounts[index]
+            self.fromLabel.text = item
+            self.dropDown.hide()
+        }
+
+        dropDown.width = fromAccount.frame.size.width
 
     }
 
@@ -84,8 +100,45 @@ class SendViewController: UIViewController {
 
     @objc private func scanQR() {
         let module = QRModule { (data) in
-            print(data)
+            print("Address: \(data.address)")
+            print("Amount: \(data.amount)")
+            print("Gas: \(data.gas)")
         }
         module.present(on: self)
+    }
+
+    @objc private func dropDownPressed() {
+        dropDown.show()
+    }
+}
+
+//MARK: - Text Field Delegate
+
+extension SendViewController: TextFieldDelegate {
+    func textField(textField: TextField, didChange text: String?) {
+        if (textField.tag == 123) {
+            if let txt = text {
+                if txt.count == 42 {
+                    let blockie = Blockies(seed: txt, size: (Int(textField.frame.height/3)), scale: 3)
+                    if let img = blockie.createImage() {
+                        let imageView = UIImageView(image: img)
+                        imageView.layer.cornerRadius = 20
+                        imageView.layer.masksToBounds = true
+
+                        imageView.frame = CGRect(x: 0, y: 0, width: textField.frame.height, height: textField.frame.height)
+                        textField.leftView = imageView
+                    }
+                } else {
+                    let img = UIImage(named: "ic_error_outline")?.withRenderingMode(.alwaysTemplate)
+                    if let img = img {
+                        if let img = img.tint(with: UIColor.red) {
+                            let imageView = UIImageView(image: img)
+                            imageView.frame = CGRect(x: 0, y: 0, width: textField.frame.height, height: textField.frame.height)
+                            textField.leftView = imageView
+                        }
+                    }
+                }
+            }
+        }
     }
 }

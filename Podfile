@@ -30,6 +30,9 @@ target 'Ballet' do
   # BlockiesSwift
   pod 'BlockiesSwift', '~> 0.1'
 
+  # Custom Pods
+  pod 'EIP67'
+
   # Fabric
   pod 'Fabric'
   pod 'Crashlytics'  

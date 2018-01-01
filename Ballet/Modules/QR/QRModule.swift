@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 import AVFoundation
 import Crashlytics
+import EIP67
 
 class QRModule {
 
-    var completion: (_: String) -> Void
+    var completion: (_: EIP67Response) -> Void
 
-    init(completion: @escaping (_: String) -> Void) {
+    init(completion: @escaping (_: EIP67Response) -> Void) {
         self.completion = completion
     }
 
