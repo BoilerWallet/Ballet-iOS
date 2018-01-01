@@ -22,6 +22,7 @@ class SendViewController: UIViewController {
 
     @IBOutlet weak var RecipientTextField: TextField!
     let dropDown = DropDown()
+    let amountDropDown = DropDown()
 
     var selectedAccount: Account = Values.defaultAccount
 
@@ -43,21 +44,21 @@ class SendViewController: UIViewController {
 
     private func setupUI() {
 
-        RecipientTextField.tag = 123
+        RecipientTextField.tag = 1
         RecipientTextField.delegate = self
 
         fromLabel.text = Values.defaultAccount.asTxtMsg()
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(dropDownPressed))
         fromAccount.addGestureRecognizer(recognizer)
+        
         setupToolbar()
 
         setupDropDowns()
 
-        amountField.keyboardType = UIKeyboardType.numberPad
-
-        // The view to which the drop down will appear on
-        dropDown.anchorView = fromAccount
+        amountField.keyboardType = UIKeyboardType.decimalPad
+        amountField.tag = 2
+        amountField.delegate = self
 
         // The list of items to display. Can be changed dynamically
         dropDown.dataSource = [String]()
@@ -83,6 +84,29 @@ class SendViewController: UIViewController {
         }
 
         dropDown.width = fromAccount.frame.size.width
+        
+        let label = UILabel()
+        label.text = "ETH"
+        
+        let amountRecognizer = UITapGestureRecognizer(target: self, action: #selector(amountDropDownPressed))
+        label.addGestureRecognizer(amountRecognizer)
+        
+        amountDropDown.anchorView = label
+        amountDropDown.dataSource = ["ETH", "BTH", "BCH", "EOS"]
+        
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            let label = UILabel()
+            label.text = item
+            
+            let amountRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.amountDropDownPressed))
+            label.addGestureRecognizer(amountRecognizer)
+            self.amountField.leftView = label
+            
+            self.dropDown.hide()
+        }
+
+        
+        amountField.leftView = label
 
     }
 
@@ -110,20 +134,36 @@ class SendViewController: UIViewController {
     @objc private func dropDownPressed() {
         dropDown.show()
     }
+    
+    @objc private func amountDropDownPressed() {
+        amountDropDown.show()
+    }
 }
 
 //MARK: - Text Field Delegate
 
 extension SendViewController: TextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let  char = string.cString(using: String.Encoding.utf8)!
+        
+        let isBackSpace = strcmp(char, "\\b")
+
+        if isBackSpace == -46 || isBackSpace == -92 {
+            self.amountField.keyboardType = UIKeyboardType.decimalPad
+            self.amountField.reloadInputViews()
+        }
+        
+        return true
+    }
+    
     func textField(textField: TextField, didChange text: String?) {
-        if (textField.tag == 123) {
+        if textField.tag == 1 { // Recipient Text Field
             if let txt = text {
                 if txt.count == 42 {
                     let blockie = Blockies(seed: txt, size: (Int(textField.frame.height/3)), scale: 3)
                     if let img = blockie.createImage() {
                         let imageView = UIImageView(image: img)
-                        imageView.layer.cornerRadius = 20
-                        imageView.layer.masksToBounds = true
 
                         imageView.frame = CGRect(x: 0, y: 0, width: textField.frame.height, height: textField.frame.height)
                         textField.leftView = imageView
@@ -137,6 +177,13 @@ extension SendViewController: TextFieldDelegate {
                             textField.leftView = imageView
                         }
                     }
+                }
+            }
+        } else if textField.tag == 2 { // Amount Text Field
+            if let txt = text {
+                if txt.last == "." {
+                    self.amountField.keyboardType = UIKeyboardType.numberPad
+                    self.amountField.reloadInputViews()
                 }
             }
         }
