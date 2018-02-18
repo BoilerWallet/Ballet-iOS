@@ -28,9 +28,6 @@
 		863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */; };
 		86439AB51FE7C8EB00060944 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86439AB41FE7C8EB00060944 /* GradientView.swift */; };
 		86605C381FF0764F00E4620E /* SendDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86605C371FF0764F00E4620E /* SendDropdown.swift */; };
-		8663235D1FF2CCF10027910E /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8663235C1FF2CCF10027910E /* QRScannerViewController.swift */; };
-		8663235F1FF2CCFE0027910E /* QRModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8663235E1FF2CCFE0027910E /* QRModule.swift */; };
-		866323611FF2D71A0027910E /* QRScanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866323601FF2D71A0027910E /* QRScanner.storyboard */; };
 		8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */; };
 		8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */; };
 		8676291F1FF1500700C60D4E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8676291E1FF1500700C60D4E /* Account.swift */; };
@@ -91,9 +88,6 @@
 		863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveNavigationViewController.swift; sourceTree = "<group>"; };
 		86439AB41FE7C8EB00060944 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		86605C371FF0764F00E4620E /* SendDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDropdown.swift; sourceTree = "<group>"; };
-		8663235C1FF2CCF10027910E /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
-		8663235E1FF2CCFE0027910E /* QRModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRModule.swift; sourceTree = "<group>"; };
-		866323601FF2D71A0027910E /* QRScanner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRScanner.storyboard; sourceTree = "<group>"; };
 		8665F6EB1FE9AFE6008D84F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8665F6F01FE9C042008D84F5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8676291E1FF1500700C60D4E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -143,6 +137,7 @@
 			children = (
 				0E672D481FE70A9D00917D05 /* Ballet */,
 				0E672D5D1FE70A9E00917D05 /* BalletTests */,
+				0E672D681FE70A9E00917D05 /* BalletUITests */,
 				0E672D471FE70A9D00917D05 /* Products */,
 				7DDE0FBBE4E025249860F8BD /* Pods */,
 				A9BB3D5B47CA1E7A6D19F6CB /* Frameworks */,
@@ -170,7 +165,6 @@
 				863B23D01FEADE6F0061298A /* Send */,
 				86BED7B61FEB184C00165571 /* Receive */,
 				863449E31FEC189A00738516 /* Settings */,
-				8663235B1FF2CCB00027910E /* Modules */,
 				86439AB31FE7C8CC00060944 /* Toolbox */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
 				0E672D4B1FE70A9D00917D05 /* ViewController.swift */,
@@ -252,30 +246,11 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
-				0E672D681FE70A9E00917D05 /* BalletUITests */,
 				86439AB41FE7C8EB00060944 /* GradientView.swift */,
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
 				863449E81FEC231E00738516 /* LabelExtension.swift */,
 			);
 			path = Toolbox;
-			sourceTree = "<group>";
-		};
-		8663235A1FF2CCA20027910E /* QR */ = {
-			isa = PBXGroup;
-			children = (
-				8663235C1FF2CCF10027910E /* QRScannerViewController.swift */,
-				8663235E1FF2CCFE0027910E /* QRModule.swift */,
-				866323601FF2D71A0027910E /* QRScanner.storyboard */,
-			);
-			path = QR;
-			sourceTree = "<group>";
-		};
-		8663235B1FF2CCB00027910E /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				8663235A1FF2CCA20027910E /* QR */,
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		8665F6ED1FE9B1AB008D84F5 /* TabBar */ = {
@@ -453,7 +428,6 @@
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
-				866323611FF2D71A0027910E /* QRScanner.storyboard in Resources */,
 				863B23D41FEADEA50061298A /* Send.storyboard in Resources */,
 				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
@@ -684,14 +658,12 @@
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				86605C381FF0764F00E4620E /* SendDropdown.swift in Sources */,
-				8663235F1FF2CCFE0027910E /* QRModule.swift in Sources */,
 				863B23D21FEADE950061298A /* SendViewController.swift in Sources */,
 				86210EA21FED71B0002DDF43 /* Values.swift in Sources */,
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
-				8663235D1FF2CCF10027910E /* QRScannerViewController.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				0E6F221F1FF1D948001D50BC /* SendNavigationViewController.swift in Sources */,
 				8676291F1FF1500700C60D4E /* Account.swift in Sources */,
