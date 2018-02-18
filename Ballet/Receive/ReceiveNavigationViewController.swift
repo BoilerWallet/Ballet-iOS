@@ -39,8 +39,8 @@ class ReceiveNavigationViewController: NavigationController {
         // Set tintcolor for navigationbar (for example back button)
         navigationBar.tintColor = Colors.lightPrimaryTextColor
     }
-    
-    
+
+
 
 }
 

@@ -75,4 +75,3 @@ extension UILabel {
         self.sizeToFit()
     }
 }
-

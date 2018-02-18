@@ -24,7 +24,7 @@ class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var fifthLineImageView: UIImageView!
 
-    var urls = ["https://svizzr.com/terms.html", "https://svizzr.com/privacy.html", "https://svizzr.com/opensource.html", "https://svizzr.com/imprint.html", "https://boilertalk.com/donate"]
+    var urls = ["https://boilertalk.com/terms.html", "https://boilertalk.com/privacy.html", "https://boilertalk.com/opensource.html", "https://boilertalk.com/imprint.html", "https://boilertalk.com/donate"]
 
     // MARK: - Initialization
 
