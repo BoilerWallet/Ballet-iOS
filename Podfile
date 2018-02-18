@@ -11,7 +11,7 @@ target 'Ballet' do
   pod 'Material', '~> 2.12'
 
   # Dropdown
-  pod 'DropDown'  
+  pod 'DropDown', '~> 2.3'
 
   # Cartography
   pod 'Cartography', '~> 3.0'
@@ -19,24 +19,19 @@ target 'Ballet' do
   # Networking
   pod 'Alamofire', '~> 4.6'
 
-  # Encryption  
-  pod 'CryptoSwift', '~> 0.8'
-
-  pod 'EllipticCurveKeyPair', '2.0-beta1'
-  
   # Database
   pod 'RealmSwift', '~> 3.0'
 
   # BlockiesSwift
   pod 'BlockiesSwift', '~> 0.1'
 
-  # Custom Pods
-  pod 'EIP67'
+  # Web3
+  pod 'Web3', :git => 'https://github.com/Boilertalk/Web3.swift', :branch => 'master'
 
   # Fabric
   pod 'Fabric'
-  pod 'Crashlytics'  
-  
+  pod 'Crashlytics'
+
   target 'BalletTests' do
     inherit! :search_paths
     # Pods for testing
