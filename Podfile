@@ -19,6 +19,9 @@ target 'Ballet' do
   # Networking
   pod 'Alamofire', '~> 4.6'
 
+  # Image
+  pod 'AlamofireImage', '~> 3.3'
+
   # Database
   pod 'RealmSwift', '~> 3.0'
 
