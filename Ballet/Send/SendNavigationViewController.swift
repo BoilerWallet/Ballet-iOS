@@ -1,15 +1,15 @@
 //
-//  ReceiveNavigationViewController.swift
+//  SendNavigationViewController.swift
 //  Ballet
 //
-//  Created by Ben Koska on 12/26/17.
-//  Copyright © 2017 Boilertalk. All rights reserved.
+//  Created by Koray Koska on 19.02.18.
+//  Copyright © 2018 Boilertalk. All rights reserved.
 //
 
 import UIKit
 import Material
 
-class ReceiveNavigationViewController: NavigationController {
+class SendNavigationViewController: NavigationController {
 
     // MARK: - Initialization
 
@@ -39,14 +39,24 @@ class ReceiveNavigationViewController: NavigationController {
         // Set tintcolor for navigationbar (for example back button)
         navigationBar.tintColor = Colors.lightPrimaryTextColor
     }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 }
 
 // MARK: - TabBar
 
-extension ReceiveNavigationViewController {
+extension SendNavigationViewController {
 
     fileprivate func prepareTabItem() {
         tabItem.title = nil
-        tabItem.image = UIImage(named: "ic_call_received")?.withRenderingMode(.alwaysTemplate)
+        tabItem.image = UIImage(named: "ic_call_made")?.withRenderingMode(.alwaysTemplate)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import Material
 import StoreKit
 import SafariServices
+import Cartography
 
 class WalletViewController: UIViewController {
 
@@ -35,7 +36,10 @@ class WalletViewController: UIViewController {
 
         setupToolbar()
 
-        setupFAB()
+        setupAddAccountButton()
+
+        // Motion
+        isMotionEnabled = true
     }
 
     private func setupToolbar() {
@@ -48,7 +52,7 @@ class WalletViewController: UIViewController {
         navigationItem.rightViews = [rate]
     }
 
-    private func setupFAB() {
+    private func setupAddAccountButton() {
         addAccountButton.backgroundColor = Colors.secondaryColor
 
         let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate)
@@ -58,11 +62,32 @@ class WalletViewController: UIViewController {
         addAccountButton.tintColor = Colors.white
 
         addAccountButton.pulseColor = .white
+
+        addAccountButton.addTarget(self, action: #selector(addAccountButtonClicked), for: .touchUpInside)
+
+        // Motion
+        let invisible = View()
+        invisible.backgroundColor = UIColor.clear
+        view.addSubview(invisible)
+        constrain(view, invisible) { view, invisible in
+            invisible.width == 56
+            invisible.height == 56
+            invisible.centerX == view.centerX
+            invisible.centerY == view.centerY
+        }
+
+        invisible.motionIdentifier = "AddAccount"
+        invisible.shapePreset = .circle
     }
 
     // MARK: - Actions
 
-    @IBAction func fabClicked(_ sender: Any) {
+    @objc private func addAccountButtonClicked() {
+        guard let controller = UIStoryboard(name: "AddAccount", bundle: nil).instantiateInitialViewController() else {
+            return
+        }
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true, completion: nil)
     }
 
     @objc private func rateClicked() {

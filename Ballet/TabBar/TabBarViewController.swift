@@ -15,6 +15,9 @@ class TabBarViewController: TabsController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Motion
+        isMotionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Send View Controller-->
         <scene sceneID="Ley-T1-d5r">
             <objects>
-                <viewController id="rPC-Qy-gkj" sceneMemberID="viewController">
+                <viewController id="rPC-Qy-gkj" customClass="SendViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zHV-LK-nUP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,12 +26,12 @@
             </objects>
             <point key="canvasLocation" x="540" y="61.619190404797607"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Send Navigation View Controller-->
         <scene sceneID="pze-Hp-xPF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mus-eD-7mC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mus-eD-7mC" customClass="SendNavigationViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IuH-sm-u0t">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IuH-sm-u0t" customClass="NavigationBar" customModule="Material">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

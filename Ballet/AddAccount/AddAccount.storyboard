@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQa-Ge-sjd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Account View Controller-->
+        <scene sceneID="1dA-Sa-wpU">
+            <objects>
+                <viewController id="DQa-Ge-sjd" customClass="AddAccountViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zDV-Mb-L6r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9q-jx-N3c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-Ma-OlZ">
+                                <rect key="frame" x="32" y="32" width="311" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="iHh-Ma-OlZ" secondAttribute="bottom" constant="32" id="29V-YX-UBM"/>
+                            <constraint firstAttribute="trailing" secondItem="v9q-jx-N3c" secondAttribute="trailing" id="ADo-nE-NHh"/>
+                            <constraint firstItem="v9q-jx-N3c" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="Gmm-cg-gXY"/>
+                            <constraint firstAttribute="bottom" secondItem="v9q-jx-N3c" secondAttribute="bottom" id="Ywk-en-J2N"/>
+                            <constraint firstItem="v9q-jx-N3c" firstAttribute="leading" secondItem="zDV-Mb-L6r" secondAttribute="leading" id="d9i-tZ-45m"/>
+                            <constraint firstItem="iHh-Ma-OlZ" firstAttribute="leading" secondItem="zDV-Mb-L6r" secondAttribute="leading" constant="32" id="ho6-ZF-F4V"/>
+                            <constraint firstAttribute="trailing" secondItem="iHh-Ma-OlZ" secondAttribute="trailing" constant="32" id="ku8-oT-OFR"/>
+                            <constraint firstItem="iHh-Ma-OlZ" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" constant="32" id="lVp-Ch-ccF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gyv-vi-ZnD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nqC-fR-nAg"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="v9q-jx-N3c" id="BwC-gm-2H0"/>
+                        <outlet property="cardView" destination="iHh-Ma-OlZ" id="4LP-0w-HDk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7r-g5-Ce0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520.79999999999995" y="145.27736131934034"/>
+        </scene>
+    </scenes>
+</document>
