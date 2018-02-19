@@ -21,6 +21,8 @@ class AddAccountViewController: UIViewController {
 
     @IBOutlet weak var cardView: UIView!
 
+    @IBOutlet weak var blockiesView: BlockiesSelectionView!
+
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -79,72 +81,7 @@ class AddAccountViewController: UIViewController {
             // TODO: Error handling
             return
         }
-
-        let container = View()
-        cardView.addSubview(container)
-
-        constrain(cardView, container) { cardView, container in
-            container.left == cardView.left
-            container.right == cardView.right
-            container.top == cardView.top
-            container.height == 2 * cardView.width / 3
-        }
-
-        let rowOne = View()
-        container.addSubview(rowOne)
-        let rowTwo = View()
-        container.addSubview(rowTwo)
-
-        constrain(container, rowOne, rowTwo) { container, rowOne, rowTwo in
-            rowOne.left == container.left
-            rowOne.right == container.right
-            rowOne.top == container.top
-            rowOne.height == container.height / 2
-
-            rowTwo.left == container.left
-            rowTwo.right == container.right
-            rowTwo.top == rowOne.bottom
-            rowTwo.height == container.height / 2
-        }
-
-        for i in 0..<2 {
-            let row = i == 0 ? rowOne : rowTwo
-            let first = View()
-            let second = View()
-            let third = View()
-            row.addSubview(first)
-            row.addSubview(second)
-            row.addSubview(third)
-
-            constrain(row, first, second, third, block: { row, first, second, third in
-                first.width == row.width / 3 - 16
-                first.height == row.height - 16
-                first.centerY == row.centerY
-                first.left == row.left + 12
-
-                second.width == row.width / 3 - 16
-                second.height == row.height - 16
-                second.centerY == row.centerY
-                second.left == first.right + 12
-
-                third.width == row.width / 3 - 16
-                third.height == row.height - 16
-                third.centerY == row.centerY
-                third.left == second.right + 12
-            })
-
-            let imageRow = [first, second, third]
-            for j in 0..<imageRow.count {
-                let imageView = UIImageView()
-                imageRow[j].addSubview(imageView)
-                constrain(imageRow[j], imageView, block: { container, imageView in
-                    imageView.width == container.width
-                    imageView.height == container.height
-                    imageView.center == container.center
-                })
-                imageView.image = Blockies(seed: accounts[i * 3 + j].address.hex(eip55: false), size: 8, scale: 3).createImage(customScale: 8)?.af_imageRounded(withCornerRadius: 50)
-            }
-        }
+        blockiesView.setAccounts(accounts: accounts.map({ return $0.address }))
     }
 
     // MARK: - Actions

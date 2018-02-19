@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +25,19 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-Ma-OlZ">
                                 <rect key="frame" x="32" y="32" width="311" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-FK-itL" customClass="BlockiesSelectionView" customModule="Ballet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="207.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iD0-FK-itL" firstAttribute="height" secondItem="iHh-Ma-OlZ" secondAttribute="width" multiplier="2/3" id="8vz-8J-Dnd"/>
+                                    <constraint firstItem="iD0-FK-itL" firstAttribute="leading" secondItem="iHh-Ma-OlZ" secondAttribute="leading" id="GrT-BN-huL"/>
+                                    <constraint firstItem="iD0-FK-itL" firstAttribute="top" secondItem="iHh-Ma-OlZ" secondAttribute="top" id="Tee-Tz-rQf"/>
+                                    <constraint firstAttribute="trailing" secondItem="iD0-FK-itL" secondAttribute="trailing" id="ng1-5n-4na"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,6 +56,7 @@
                     <navigationItem key="navigationItem" id="nqC-fR-nAg"/>
                     <connections>
                         <outlet property="backgroundView" destination="v9q-jx-N3c" id="BwC-gm-2H0"/>
+                        <outlet property="blockiesView" destination="iD0-FK-itL" id="QSN-hy-NDP"/>
                         <outlet property="cardView" destination="iHh-Ma-OlZ" id="4LP-0w-HDk"/>
                     </connections>
                 </viewController>

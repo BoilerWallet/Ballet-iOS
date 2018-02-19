@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
+		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
 		0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D491FE70A9D00917D05 /* AppDelegate.swift */; };
 		0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D4B1FE70A9D00917D05 /* ViewController.swift */; };
 		0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E672D501FE70A9D00917D05 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
+		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E672D491FE70A9D00917D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E672D4B1FE70A9D00917D05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				0EFA5D92203A413900A20781 /* AddAccount.storyboard */,
 				0EFA5D96203A41B700A20781 /* AddAccountViewController.swift */,
+				0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */,
+				0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */,
 			);
 			path = AddAccount;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
 				863B23D41FEADEA50061298A /* Send.storyboard in Resources */,
 				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
+				0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
 			);
@@ -650,6 +657,7 @@
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
+				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
