@@ -97,33 +97,10 @@ class LoadingIndicator: UIView {
 
         sections = [sec1, sec2, sec3, sec4]
 
-        setInitialSectionConstraints()
         setSectionsConstraints()
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + 1000000000)) {
             self.startSectionAnimations()
-        }
-    }
-
-    private func setInitialSectionConstraints() {
-        var views: [UIView] = []
-        for v in sections {
-            views.append(v)
-        }
-        for v in sectionContainers {
-            views.append(v)
-        }
-        guard views.count == 8 else {
-            return
-        }
-
-        constrain(views) { views in
-            for i in 0..<4 {
-                let section = views[i]
-                let container = views[4 + i]
-
-                section.center == container.center
-            }
         }
     }
 
@@ -146,6 +123,7 @@ class LoadingIndicator: UIView {
 
                 section.width == container.width * scale
                 section.height == container.height * scale
+                section.center == container.center
             }
         }
         for v in sections {
