@@ -19,45 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9q-jx-N3c">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-Ma-OlZ">
-                                <rect key="frame" x="32" y="32" width="311" height="603"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-FK-itL" customClass="BlockiesSelectionView" customModule="Ballet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="207.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sca-TA-WH4" customClass="BlockiesSelectionView" customModule="Ballet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="iD0-FK-itL" firstAttribute="height" secondItem="iHh-Ma-OlZ" secondAttribute="width" multiplier="2/3" id="8vz-8J-Dnd"/>
-                                    <constraint firstItem="iD0-FK-itL" firstAttribute="leading" secondItem="iHh-Ma-OlZ" secondAttribute="leading" id="GrT-BN-huL"/>
-                                    <constraint firstItem="iD0-FK-itL" firstAttribute="top" secondItem="iHh-Ma-OlZ" secondAttribute="top" id="Tee-Tz-rQf"/>
-                                    <constraint firstAttribute="trailing" secondItem="iD0-FK-itL" secondAttribute="trailing" id="ng1-5n-4na"/>
+                                    <constraint firstAttribute="width" secondItem="Sca-TA-WH4" secondAttribute="height" multiplier="3:2" id="Ppg-XI-OUu"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="iHh-Ma-OlZ" secondAttribute="bottom" constant="32" id="29V-YX-UBM"/>
-                            <constraint firstAttribute="trailing" secondItem="v9q-jx-N3c" secondAttribute="trailing" id="ADo-nE-NHh"/>
-                            <constraint firstItem="v9q-jx-N3c" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="Gmm-cg-gXY"/>
-                            <constraint firstAttribute="bottom" secondItem="v9q-jx-N3c" secondAttribute="bottom" id="Ywk-en-J2N"/>
-                            <constraint firstItem="v9q-jx-N3c" firstAttribute="leading" secondItem="zDV-Mb-L6r" secondAttribute="leading" id="d9i-tZ-45m"/>
-                            <constraint firstItem="iHh-Ma-OlZ" firstAttribute="leading" secondItem="zDV-Mb-L6r" secondAttribute="leading" constant="32" id="ho6-ZF-F4V"/>
-                            <constraint firstAttribute="trailing" secondItem="iHh-Ma-OlZ" secondAttribute="trailing" constant="32" id="ku8-oT-OFR"/>
-                            <constraint firstItem="iHh-Ma-OlZ" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" constant="32" id="lVp-Ch-ccF"/>
+                            <constraint firstItem="Sca-TA-WH4" firstAttribute="leading" secondItem="zDV-Mb-L6r" secondAttribute="leading" id="Lu0-TX-kJE"/>
+                            <constraint firstAttribute="trailing" secondItem="Sca-TA-WH4" secondAttribute="trailing" id="Syy-jD-bri"/>
+                            <constraint firstItem="Sca-TA-WH4" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="ndV-To-xOW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gyv-vi-ZnD"/>
                     </view>
                     <navigationItem key="navigationItem" id="nqC-fR-nAg"/>
                     <connections>
-                        <outlet property="backgroundView" destination="v9q-jx-N3c" id="BwC-gm-2H0"/>
-                        <outlet property="blockiesView" destination="iD0-FK-itL" id="QSN-hy-NDP"/>
-                        <outlet property="cardView" destination="iHh-Ma-OlZ" id="4LP-0w-HDk"/>
+                        <outlet property="blockiesView" destination="Sca-TA-WH4" id="d3L-cC-ws7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7r-g5-Ce0" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -64,20 +64,6 @@ class WalletViewController: UIViewController {
         addAccountButton.pulseColor = .white
 
         addAccountButton.addTarget(self, action: #selector(addAccountButtonClicked), for: .touchUpInside)
-
-        // Motion
-        let invisible = View()
-        invisible.backgroundColor = UIColor.clear
-        view.addSubview(invisible)
-        constrain(view, invisible) { view, invisible in
-            invisible.width == 56
-            invisible.height == 56
-            invisible.centerX == view.centerX
-            invisible.centerY == view.centerY
-        }
-
-        invisible.motionIdentifier = "AddAccount"
-        invisible.shapePreset = .circle
     }
 
     // MARK: - Actions
@@ -86,8 +72,8 @@ class WalletViewController: UIViewController {
         guard let controller = UIStoryboard(name: "AddAccount", bundle: nil).instantiateInitialViewController() else {
             return
         }
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true, completion: nil)
+
+        PopUpController.instantiate(from: self, with: controller)
     }
 
     @objc private func rateClicked() {

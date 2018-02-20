@@ -17,10 +17,6 @@ class AddAccountViewController: UIViewController {
 
     // MARK: - Properties
 
-    @IBOutlet weak var backgroundView: UIView!
-
-    @IBOutlet weak var cardView: UIView!
-
     @IBOutlet weak var blockiesView: BlockiesSelectionView!
 
     // MARK: - Initialization
@@ -38,12 +34,6 @@ class AddAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        cardView.layer.cornerRadius = 5
-        cardView.layer.masksToBounds = true
-    }
-
     // MARK: - UI setup
 
     private func setupUI() {
@@ -51,44 +41,27 @@ class AddAccountViewController: UIViewController {
         view.backgroundColor = UIColor.clear
         view.isOpaque = false
 
-        backgroundView.backgroundColor = Colors.darkSecondaryTextColor.withAlphaComponent(0.28)
-        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissButtonClicked)))
-
-        setupToolbar()
-
         // Motion
         isMotionEnabled = true
-        // motionTransitionType = .autoReverse(presenting: .zoom)
-        cardView.motionIdentifier = "AddAccount"
-    }
-
-    private func setupToolbar() {
-        navigationItem.titleLabel.text = "Add Account"
-        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
-
-        let dismiss = IconButton(image: UIImage(named: "ic_close")?.withRenderingMode(.alwaysTemplate), tintColor: Colors.lightPrimaryTextColor)
-        dismiss.addTarget(self, action: #selector(dismissButtonClicked), for: .touchUpInside)
-
-        navigationItem.leftViews = [dismiss]
     }
 
     private func showSelection() {
-        var accounts = [EthereumPrivateKey]()
-        for _ in 0..<6 {
-            try? accounts.append(EthereumPrivateKey())
+        DispatchQueue.global().async { [weak self] in
+            var accounts = [EthereumPrivateKey]()
+            for _ in 0..<6 {
+                try? accounts.append(EthereumPrivateKey())
+            }
+            guard accounts.count == 6 else {
+                // TODO: Error handling
+                return
+            }
+            DispatchQueue.main.sync {
+                self?.blockiesView.setAccounts(accounts: accounts.map({ return $0.address }))
+            }
         }
-        guard accounts.count == 6 else {
-            // TODO: Error handling
-            return
-        }
-        blockiesView.setAccounts(accounts: accounts.map({ return $0.address }))
     }
 
     // MARK: - Actions
-
-    @objc private func dismissButtonClicked() {
-        dismiss(animated: true, completion: nil)
-    }
 
     /*
     // MARK: - Navigation
