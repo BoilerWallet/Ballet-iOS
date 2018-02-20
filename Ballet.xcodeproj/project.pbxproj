@@ -17,6 +17,9 @@
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
 		0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */; };
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
+		0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */; };
+		0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */; };
+		0ECA6BB7203C6F7D001247F8 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB6203C6F7D001247F8 /* LoadingIndicator.swift */; };
 		0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */; };
 		0EED236C1FE86E4F007F137F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED236B1FE86E4F007F137F /* Colors.swift */; };
 		0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */; };
@@ -76,6 +79,9 @@
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpController.storyboard; sourceTree = "<group>"; };
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
+		0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0ECA6BB6203C6F7D001247F8 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationViewController.swift; sourceTree = "<group>"; };
 		0EED236B1FE86E4F007F137F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNavigationViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +219,23 @@
 			path = PopUpController;
 			sourceTree = "<group>";
 		};
+		0ECA6BB0203C6EB0001247F8 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */,
+				0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		0ECA6BB5203C6F66001247F8 /* LoadingIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				0ECA6BB6203C6F7D001247F8 /* LoadingIndicator.swift */,
+			);
+			path = LoadingIndicator;
+			sourceTree = "<group>";
+		};
 		0EEB235E1FF19BF7009ED044 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +291,8 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				0ECA6BB5203C6F66001247F8 /* LoadingIndicator */,
+				0ECA6BB0203C6EB0001247F8 /* LoadingView */,
 				0E7F7681203B7F2600DDD6F0 /* PopUpController */,
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
 				863449E81FEC231E00738516 /* LabelExtension.swift */,
@@ -455,6 +480,7 @@
 				863B23D41FEADEA50061298A /* Send.storyboard in Resources */,
 				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
 				0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */,
+				0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
 			);
@@ -694,6 +720,8 @@
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
+				0ECA6BB7203C6F7D001247F8 /* LoadingIndicator.swift in Sources */,
+				0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
