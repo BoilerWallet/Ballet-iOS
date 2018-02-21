@@ -10,6 +10,9 @@ target 'Ballet' do
   # Material
   pod 'Material', '~> 2.12'
 
+  # Lottie animations
+  pod 'lottie-ios', '~> 2.5'
+
   # Dropdown
   pod 'DropDown', '~> 2.3'
 

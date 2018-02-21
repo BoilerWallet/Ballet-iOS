@@ -18,6 +18,7 @@
                 <outlet property="fifth" destination="5Ts-cN-Uis" id="4U7-NB-X3o"/>
                 <outlet property="first" destination="qVk-Mh-iPC" id="8lW-38-0sK"/>
                 <outlet property="fourth" destination="CyI-hM-TKX" id="EwB-tS-nrV"/>
+                <outlet property="loadingView" destination="f5C-og-lRR" id="pbx-hP-Bnd"/>
                 <outlet property="second" destination="Qn8-b9-tEj" id="bMT-oe-Ebc"/>
                 <outlet property="sixth" destination="TGX-5R-MOL" id="Vxa-bS-JZI"/>
                 <outlet property="third" destination="Njt-xx-uBZ" id="W92-za-bd1"/>
@@ -35,7 +36,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVk-Mh-iPC">
-                                    <rect key="frame" x="12" y="111.5" width="109" height="109"/>
+                                    <rect key="frame" x="12" y="112" width="109" height="109"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="qVk-Mh-iPC" secondAttribute="height" multiplier="1:1" id="ep9-kU-wWr"/>
                                     </constraints>
@@ -101,17 +102,25 @@
                                 <constraint firstItem="TGX-5R-MOL" firstAttribute="leading" secondItem="5Ts-cN-Uis" secondAttribute="trailing" constant="12" id="qoz-LP-cNl"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5C-og-lRR" customClass="LoadingView" customModule="Ballet" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="sfj-EE-ZAI" firstAttribute="leading" secondItem="9CL-x1-rSs" secondAttribute="leading" id="2iU-aG-DkR"/>
                         <constraint firstAttribute="trailing" secondItem="sfj-EE-ZAI" secondAttribute="trailing" id="40e-va-b5g"/>
+                        <constraint firstItem="f5C-og-lRR" firstAttribute="leading" secondItem="9CL-x1-rSs" secondAttribute="leading" id="5sD-e7-yeU"/>
+                        <constraint firstItem="f5C-og-lRR" firstAttribute="top" secondItem="9CL-x1-rSs" secondAttribute="top" id="MQA-bM-Nv1"/>
+                        <constraint firstAttribute="trailing" secondItem="f5C-og-lRR" secondAttribute="trailing" id="UWn-dq-bCs"/>
                         <constraint firstAttribute="bottom" secondItem="sfj-EE-ZAI" secondAttribute="bottom" id="XGu-8M-49L"/>
                         <constraint firstItem="RJh-wk-5aL" firstAttribute="height" secondItem="9CL-x1-rSs" secondAttribute="height" multiplier="1/2" id="f7W-BM-X2p"/>
                         <constraint firstAttribute="trailing" secondItem="RJh-wk-5aL" secondAttribute="trailing" id="l7G-2R-Zt5"/>
                         <constraint firstItem="RJh-wk-5aL" firstAttribute="leading" secondItem="9CL-x1-rSs" secondAttribute="leading" id="mrY-Sp-Ooa"/>
                         <constraint firstItem="RJh-wk-5aL" firstAttribute="top" secondItem="9CL-x1-rSs" secondAttribute="top" id="qIK-DA-YI1"/>
                         <constraint firstItem="sfj-EE-ZAI" firstAttribute="top" secondItem="RJh-wk-5aL" secondAttribute="bottom" id="tb0-Rl-dwG"/>
+                        <constraint firstAttribute="bottom" secondItem="f5C-og-lRR" secondAttribute="bottom" id="uv0-3K-w4f"/>
                     </constraints>
                 </view>
             </subviews>

@@ -26,20 +26,20 @@
                                     <constraint firstAttribute="width" secondItem="Sca-TA-WH4" secondAttribute="height" multiplier="3:2" id="Ppg-XI-OUu"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRt-3B-En5" customClass="LoadingIndicator" customModule="Ballet" customModuleProvider="target">
-                                <rect key="frame" x="87" y="290" width="200" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td1-QL-2ej" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="267" y="258" width="100" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="YCN-XW-JGg"/>
-                                    <constraint firstAttribute="height" constant="45" id="jUS-n5-m4g"/>
+                                    <constraint firstAttribute="width" constant="100" id="PH1-Be-19V"/>
+                                    <constraint firstAttribute="height" constant="36" id="cMf-DR-xJB"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KRt-3B-En5" firstAttribute="centerX" secondItem="zDV-Mb-L6r" secondAttribute="centerX" id="7eR-Uv-hxM"/>
+                            <constraint firstItem="td1-QL-2ej" firstAttribute="top" secondItem="Sca-TA-WH4" secondAttribute="bottom" constant="8" id="2fI-Av-W6x"/>
+                            <constraint firstItem="gyv-vi-ZnD" firstAttribute="trailing" secondItem="td1-QL-2ej" secondAttribute="trailing" constant="8" id="4Tm-8R-1KM"/>
                             <constraint firstItem="Sca-TA-WH4" firstAttribute="leading" secondItem="zDV-Mb-L6r" secondAttribute="leading" id="Lu0-TX-kJE"/>
-                            <constraint firstItem="KRt-3B-En5" firstAttribute="top" secondItem="Sca-TA-WH4" secondAttribute="bottom" constant="40" id="NR9-qz-GeX"/>
                             <constraint firstAttribute="trailing" secondItem="Sca-TA-WH4" secondAttribute="trailing" id="Syy-jD-bri"/>
                             <constraint firstItem="Sca-TA-WH4" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="ndV-To-xOW"/>
                         </constraints>
@@ -48,6 +48,7 @@
                     <navigationItem key="navigationItem" id="nqC-fR-nAg"/>
                     <connections>
                         <outlet property="blockiesView" destination="Sca-TA-WH4" id="d3L-cC-ws7"/>
+                        <outlet property="reloadBlockiesButton" destination="td1-QL-2ej" id="Qi9-KD-ERo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7r-g5-Ce0" userLabel="First Responder" sceneMemberID="firstResponder"/>

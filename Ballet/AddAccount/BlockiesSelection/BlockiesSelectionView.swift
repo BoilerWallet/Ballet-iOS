@@ -18,6 +18,8 @@ class BlockiesSelectionView: UIView {
 
     @IBOutlet var contentView: UIView!
 
+    @IBOutlet weak var loadingView: LoadingView!
+
     @IBOutlet weak var first: UIImageView!
     @IBOutlet weak var second: UIImageView!
     @IBOutlet weak var third: UIImageView!
@@ -66,15 +68,28 @@ class BlockiesSelectionView: UIView {
 
     // MARK: Setup
 
-    func setAccounts(accounts: [EthereumAddress]) {
+    func setAccounts(accounts: [EthereumAddress], completion: (() -> Void)? = nil) {
         var imageViews: [UIImageView] = [first, second, third, fourth, fifth, sixth]
         self.accounts = accounts
-        for i in 0..<accounts.count {
-            if i > 5 {
-                break
+
+        DispatchQueue(label: "BlockiesSelectionCreateBlockies").async {
+            for i in 0..<accounts.count {
+                if i > 5 {
+                    break
+                }
+                var size: Int!
+                DispatchQueue.main.sync {
+                    size = Int(ceil((imageViews[i].bounds.width * imageViews[i].bounds.height) / 24))
+                }
+
+                let blockie = Blockies(seed: accounts[i].hex(eip55: false), size: 8, scale: 3).createImage(customScale: size)
+                DispatchQueue.main.async {
+                    imageViews[i].image = blockie
+                }
             }
-            let size = Int(ceil((imageViews[i].bounds.width * imageViews[i].bounds.height) / 24))
-            imageViews[i].image = Blockies(seed: accounts[i].hex(eip55: false), size: 8, scale: 3).createImage(customScale: size)
+            DispatchQueue.main.sync {
+                completion?()
+            }
         }
     }
 }

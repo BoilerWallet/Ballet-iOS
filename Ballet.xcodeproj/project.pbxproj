@@ -19,7 +19,8 @@
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */; };
 		0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */; };
-		0ECA6BB7203C6F7D001247F8 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB6203C6F7D001247F8 /* LoadingIndicator.swift */; };
+		0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */; };
+		0ECA6BBE203D1945001247F8 /* material_loading_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBD203D1945001247F8 /* material_loading_jump.json */; };
 		0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */; };
 		0EED236C1FE86E4F007F137F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED236B1FE86E4F007F137F /* Colors.swift */; };
 		0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */; };
@@ -81,7 +82,8 @@
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		0ECA6BB6203C6F7D001247F8 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_wave_loading.json; sourceTree = "<group>"; };
+		0ECA6BBD203D1945001247F8 /* material_loading_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_loading_jump.json; sourceTree = "<group>"; };
 		0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationViewController.swift; sourceTree = "<group>"; };
 		0EED236B1FE86E4F007F137F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNavigationViewController.swift; sourceTree = "<group>"; };
@@ -228,12 +230,13 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
-		0ECA6BB5203C6F66001247F8 /* LoadingIndicator */ = {
+		0ECA6BBC203D04C1001247F8 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
-				0ECA6BB6203C6F7D001247F8 /* LoadingIndicator.swift */,
+				0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */,
+				0ECA6BBD203D1945001247F8 /* material_loading_jump.json */,
 			);
-			path = LoadingIndicator;
+			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
 		0EEB235E1FF19BF7009ED044 /* Resources */ = {
@@ -241,6 +244,7 @@
 			children = (
 				0E672D501FE70A9D00917D05 /* Assets.xcassets */,
 				0E672D551FE70A9D00917D05 /* Info.plist */,
+				0ECA6BBC203D04C1001247F8 /* LottieAnimations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -291,7 +295,6 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
-				0ECA6BB5203C6F66001247F8 /* LoadingIndicator */,
 				0ECA6BB0203C6EB0001247F8 /* LoadingView */,
 				0E7F7681203B7F2600DDD6F0 /* PopUpController */,
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
@@ -472,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EFA5D93203A413900A20781 /* AddAccount.storyboard in Resources */,
+				0ECA6BBE203D1945001247F8 /* material_loading_jump.json in Resources */,
 				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
@@ -483,6 +487,7 @@
 				0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
+				0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +676,7 @@
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/VaporBytes/VaporBytes.framework",
 				"${BUILT_PRODUCTS_DIR}/Web3/Web3.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -689,6 +695,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VaporBytes.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,7 +727,6 @@
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
-				0ECA6BB7203C6F7D001247F8 /* LoadingIndicator.swift in Sources */,
 				0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

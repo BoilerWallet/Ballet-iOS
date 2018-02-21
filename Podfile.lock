@@ -11,6 +11,7 @@ PODS:
   - CryptoSwift (0.8.2)
   - DropDown (2.3.1)
   - Fabric (1.7.2)
+  - lottie-ios (2.5.0)
   - Material (2.13.1):
     - Material/Core (= 2.13.1)
   - Material/Core (2.13.1):
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Crashlytics
   - DropDown (~> 2.3)
   - Fabric
+  - lottie-ios (~> 2.5)
   - Material (~> 2.12)
   - Nimble (~> 7.0)
   - Quick (~> 1.2)
@@ -76,6 +78,7 @@ SPEC CHECKSUMS:
   CryptoSwift: 6b90cb3227de5ad1b034a0156f5c027399aea60c
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Material: 3aea3e3696b0f11bfa76d1a367b44a9a4231c9b8
   Motion: 7256a3337b65fa745a1f4881596f936fbe5c7532
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
@@ -87,6 +90,6 @@ SPEC CHECKSUMS:
   VaporBytes: 628752235bc16d69800b52355de7118762a9009f
   Web3: 48098db322e2be3c72f07471f197d36ba688fdfd
 
-PODFILE CHECKSUM: 61999f7bc360fce9bea9a93847faa7cd8b3e1d88
+PODFILE CHECKSUM: 655f7cd8e11517279cf09b5968ad764aff7fcad2
 
 COCOAPODS: 1.4.0

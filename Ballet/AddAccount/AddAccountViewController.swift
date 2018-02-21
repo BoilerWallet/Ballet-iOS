@@ -19,6 +19,8 @@ class AddAccountViewController: UIViewController {
 
     @IBOutlet weak var blockiesView: BlockiesSelectionView!
 
+    @IBOutlet weak var reloadBlockiesButton: RaisedButton!
+
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -26,7 +28,7 @@ class AddAccountViewController: UIViewController {
 
         setupUI()
 
-        showSelection()
+        generateAccounts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,12 +43,21 @@ class AddAccountViewController: UIViewController {
         view.backgroundColor = UIColor.clear
         view.isOpaque = false
 
+        // Reload button
+        reloadBlockiesButton.backgroundColor = Colors.secondaryColor
+        reloadBlockiesButton.titleColor = Colors.lightPrimaryTextColor
+        reloadBlockiesButton.title = "Reload"
+        reloadBlockiesButton.addTarget(self, action: #selector(reloadBlockiesButtonClicked), for: .touchUpInside)
+
         // Motion
         isMotionEnabled = true
     }
 
-    private func showSelection() {
-        DispatchQueue.global().async { [weak self] in
+    private func generateAccounts() {
+        // Start loading animation
+        blockiesView.loadingView.startLoading()
+
+        DispatchQueue(label: "AddAccountPrivateKeyGeneration").async { [weak self] in
             var accounts = [EthereumPrivateKey]()
             for _ in 0..<6 {
                 try? accounts.append(EthereumPrivateKey())
@@ -56,12 +67,18 @@ class AddAccountViewController: UIViewController {
                 return
             }
             DispatchQueue.main.sync {
-                self?.blockiesView.setAccounts(accounts: accounts.map({ return $0.address }))
+                self?.blockiesView.setAccounts(accounts: accounts.map({ return $0.address })) { [weak self] in
+                    self?.blockiesView.loadingView.stopLoading()
+                }
             }
         }
     }
 
     // MARK: - Actions
+
+    @objc private func reloadBlockiesButtonClicked() {
+        generateAccounts()
+    }
 
     /*
     // MARK: - Navigation
