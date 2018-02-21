@@ -24,7 +24,7 @@ platform :ios do
     )
 
     # CocoaPods
-    cocoapods repo_update: true
+    # cocoapods repo_update: true
 
     # Increment build number
     build_number = ENV['TRAVIS_BUILD_NUMBER']
