@@ -19,6 +19,9 @@ target 'Ballet' do
   # MarqueeLabel
   pod 'MarqueeLabel', '~> 3.1'
 
+  # Keyboard avoiding
+  pod 'TPKeyboardAvoiding', '~> 1.3'
+
   # Cartography
   pod 'Cartography', '~> 3.0'
 

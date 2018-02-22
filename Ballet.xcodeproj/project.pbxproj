@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
 		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
 		0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D491FE70A9D00917D05 /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+MaterialDefault.swift"; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
 		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,6 +307,7 @@
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
 				863449E81FEC231E00738516 /* LabelExtension.swift */,
 				0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */,
+				0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/VaporBytes/VaporBytes.framework",
 				"${BUILT_PRODUCTS_DIR}/Web3/Web3.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
@@ -702,6 +706,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VaporBytes.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
@@ -724,6 +729,7 @@
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
+				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,

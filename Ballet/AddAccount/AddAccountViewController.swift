@@ -62,12 +62,14 @@ class AddAccountViewController: UIViewController {
         accountNameTextField.placeholder = "Your account's new name"
         accountNameTextField.setupProjectDefault()
         accountNameTextField.autocorrectionType = .no
+        accountNameTextField.returnKeyType = .done
+        accountNameTextField.delegate = self
 
         // Motion
         isMotionEnabled = true
     }
 
-    private func generateAccounts() {
+    private func generateAccounts(completion: (() -> Void)? = nil) {
         // Start loading animation
         blockiesView.loadingView.startLoading()
 
@@ -83,6 +85,7 @@ class AddAccountViewController: UIViewController {
             DispatchQueue.main.sync {
                 self?.blockiesView.setAccounts(accounts: accounts.map({ return $0.address })) { [weak self] in
                     self?.blockiesView.loadingView.stopLoading()
+                    completion?()
                 }
             }
         }
@@ -91,7 +94,10 @@ class AddAccountViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func reloadBlockiesButtonClicked() {
-        generateAccounts()
+        reloadBlockiesButton.isEnabled = false
+        generateAccounts { [weak self] in
+            self?.reloadBlockiesButton.isEnabled = true
+        }
     }
 
     /*
@@ -104,4 +110,17 @@ class AddAccountViewController: UIViewController {
     }
     */
 
+}
+
+extension AddAccountViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === accountNameTextField {
+            textField.resignFirstResponder()
+
+            return false
+        }
+
+        return true
+    }
 }
