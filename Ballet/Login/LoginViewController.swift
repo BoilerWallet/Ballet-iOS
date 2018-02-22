@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         self.view.backgroundColor = Colors.background
 
         // Login button
-        loginButton.backgroundColor = Colors.secondaryColor
+        loginButton.backgroundColor = Colors.accentColor
         loginButton.titleColor = Colors.white
 
         // Password field

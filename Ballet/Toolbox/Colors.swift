@@ -11,11 +11,15 @@ import Material
 
 struct Colors {
 
+    static let primary = Color.cyan.self
+
+    static let accent = Color.pink.self
+
     /// The primary color of this application as defined by Material Design
-    static let primaryColor = Color.cyan.base
+    static let primaryColor = primary.base
 
     /// The secondary color of this application as defined by Material Design
-    static let secondaryColor = Color.pink.base
+    static let accentColor = accent.base
 
     /// White
     static let white: UIColor = UIColor.white

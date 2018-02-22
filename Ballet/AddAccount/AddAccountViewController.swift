@@ -23,6 +23,8 @@ class AddAccountViewController: UIViewController {
 
     @IBOutlet weak var reloadBlockiesButton: RaisedButton!
 
+    @IBOutlet weak var accountNameTextField: TextField!
+
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -51,10 +53,15 @@ class AddAccountViewController: UIViewController {
         selectBlockiesLabel.text = "Select your favourite new Account!"
 
         // Reload button
-        reloadBlockiesButton.backgroundColor = Colors.secondaryColor
+        reloadBlockiesButton.backgroundColor = Colors.accentColor
         reloadBlockiesButton.titleColor = Colors.lightPrimaryTextColor
         reloadBlockiesButton.title = "Reload"
         reloadBlockiesButton.addTarget(self, action: #selector(reloadBlockiesButtonClicked), for: .touchUpInside)
+
+        // Account name
+        accountNameTextField.placeholder = "Your account's new name"
+        accountNameTextField.setupProjectDefault()
+        accountNameTextField.autocorrectionType = .no
 
         // Motion
         isMotionEnabled = true

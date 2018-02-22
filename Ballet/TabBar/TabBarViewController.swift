@@ -50,10 +50,10 @@ class TabBarViewController: TabsController {
         super.prepare()
 
         // Colors
-        tabBar.setLineColor(Colors.secondaryColor, for: .selected)
+        tabBar.setLineColor(Colors.accentColor, for: .selected)
         tabBar.setTabItemsColor(Color.grey.base, for: .normal)
-        tabBar.setTabItemsColor(Colors.secondaryColor, for: .selected)
-        tabBar.setTabItemsColor(Colors.secondaryColor, for: .highlighted)
+        tabBar.setTabItemsColor(Colors.accentColor, for: .selected)
+        tabBar.setTabItemsColor(Colors.accentColor, for: .highlighted)
 
         // Animation
         motionTransitionType = .none

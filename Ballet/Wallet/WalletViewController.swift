@@ -53,7 +53,7 @@ class WalletViewController: UIViewController {
     }
 
     private func setupAddAccountButton() {
-        addAccountButton.backgroundColor = Colors.secondaryColor
+        addAccountButton.backgroundColor = Colors.accentColor
 
         let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate)
         addAccountButton.setImage(image, for: .normal)
