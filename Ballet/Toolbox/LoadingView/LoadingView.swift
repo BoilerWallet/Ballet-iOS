@@ -56,10 +56,11 @@ class LoadingView: UIView {
         loadingView.isHidden = false
         blurView?.removeFromSuperview()
 
-        let blur = UIBlurEffect(style: .light)
-        blurView = UIVisualEffectView(effect: blur)
-        blurView?.layer.cornerRadius = 5
-        blurView?.layer.masksToBounds = true
+        // let blur = UIBlurEffect(style: .light)
+        // blurView = UIVisualEffectView(effect: blur)
+        blurView = UIView()
+        blurView?.backgroundColor = Colors.darkSecondaryTextColor.withAlphaComponent(0.56)
+        blurView?.isOpaque = false
 
         guard let bv = blurView else {
             return
@@ -111,5 +112,9 @@ class LoadingView: UIView {
         if loading {
             loadingView.play(completion: playLoadingView)
         }
+    }
+
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return false
     }
 }

@@ -20,7 +20,8 @@
 		0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */; };
 		0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */; };
 		0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */; };
-		0ECA6BBE203D1945001247F8 /* material_loading_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBD203D1945001247F8 /* material_loading_jump.json */; };
+		0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80145203E244B00EDD123 /* material_loading_jump.json */; };
+		0EE80148203E3D1900EDD123 /* material_check_pink.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80147203E3D1900EDD123 /* material_check_pink.json */; };
 		0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */; };
 		0EED236C1FE86E4F007F137F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED236B1FE86E4F007F137F /* Colors.swift */; };
 		0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */; };
@@ -83,7 +84,8 @@
 		0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_wave_loading.json; sourceTree = "<group>"; };
-		0ECA6BBD203D1945001247F8 /* material_loading_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_loading_jump.json; sourceTree = "<group>"; };
+		0EE80145203E244B00EDD123 /* material_loading_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_loading_jump.json; sourceTree = "<group>"; };
+		0EE80147203E3D1900EDD123 /* material_check_pink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_check_pink.json; sourceTree = "<group>"; };
 		0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationViewController.swift; sourceTree = "<group>"; };
 		0EED236B1FE86E4F007F137F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNavigationViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */,
-				0ECA6BBD203D1945001247F8 /* material_loading_jump.json */,
+				0EE80145203E244B00EDD123 /* material_loading_jump.json */,
+				0EE80147203E3D1900EDD123 /* material_check_pink.json */,
 			);
 			path = LottieAnimations;
 			sourceTree = "<group>";
@@ -475,7 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EFA5D93203A413900A20781 /* AddAccount.storyboard in Resources */,
-				0ECA6BBE203D1945001247F8 /* material_loading_jump.json in Resources */,
+				0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */,
 				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
@@ -484,6 +487,7 @@
 				863B23D41FEADEA50061298A /* Send.storyboard in Resources */,
 				86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */,
 				0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */,
+				0EE80148203E3D1900EDD123 /* material_check_pink.json in Resources */,
 				0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
@@ -669,6 +673,7 @@
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -688,6 +693,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",

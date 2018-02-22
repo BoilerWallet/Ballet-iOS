@@ -17,6 +17,8 @@ class AddAccountViewController: UIViewController {
 
     // MARK: - Properties
 
+    @IBOutlet weak var selectBlockiesLabel: UILabel!
+
     @IBOutlet weak var blockiesView: BlockiesSelectionView!
 
     @IBOutlet weak var reloadBlockiesButton: RaisedButton!
@@ -42,6 +44,11 @@ class AddAccountViewController: UIViewController {
         // Transparent background
         view.backgroundColor = UIColor.clear
         view.isOpaque = false
+
+        // Label
+        selectBlockiesLabel.setupSubTitleLabelWithSize(size: 22)
+        selectBlockiesLabel.textAlignment = .center
+        selectBlockiesLabel.text = "Select your favourite new Account!"
 
         // Reload button
         reloadBlockiesButton.backgroundColor = Colors.secondaryColor

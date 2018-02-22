@@ -11,6 +11,7 @@ import Material
 import Cartography
 import Web3
 import BlockiesSwift
+import Lottie
 
 class BlockiesSelectionView: UIView {
 
@@ -20,13 +21,14 @@ class BlockiesSelectionView: UIView {
 
     @IBOutlet weak var loadingView: LoadingView!
 
-    @IBOutlet weak var first: UIImageView!
-    @IBOutlet weak var second: UIImageView!
-    @IBOutlet weak var third: UIImageView!
-    @IBOutlet weak var fourth: UIImageView!
-    @IBOutlet weak var fifth: UIImageView!
-    @IBOutlet weak var sixth: UIImageView!
+    @IBOutlet weak var first: BlockiesSelectionElement!
+    @IBOutlet weak var second: BlockiesSelectionElement!
+    @IBOutlet weak var third: BlockiesSelectionElement!
+    @IBOutlet weak var fourth: BlockiesSelectionElement!
+    @IBOutlet weak var fifth: BlockiesSelectionElement!
+    @IBOutlet weak var sixth: BlockiesSelectionElement!
 
+    private var accountViews: [BlockiesSelectionElement] = []
     private var accounts: [EthereumAddress] = []
 
     // MARK: - Initialization
@@ -63,14 +65,23 @@ class BlockiesSelectionView: UIView {
     // MARK: - UI setup
 
     private func setupUI() {
+        accountViews = [first, second, third, fourth, fifth, sixth]
         setAccounts(accounts: accounts)
+
+        for a in accountViews {
+            a.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(blockieClicked(_:))))
+        }
     }
 
     // MARK: Setup
 
     func setAccounts(accounts: [EthereumAddress], completion: (() -> Void)? = nil) {
-        var imageViews: [UIImageView] = [first, second, third, fourth, fifth, sixth]
+        var blockiesViews: [BlockiesSelectionElement] = accountViews
         self.accounts = accounts
+
+        for a in accountViews {
+            a.setSelected(false)
+        }
 
         DispatchQueue(label: "BlockiesSelectionCreateBlockies").async {
             for i in 0..<accounts.count {
@@ -79,17 +90,121 @@ class BlockiesSelectionView: UIView {
                 }
                 var size: Int!
                 DispatchQueue.main.sync {
-                    size = Int(ceil((imageViews[i].bounds.width * imageViews[i].bounds.height) / 24))
+                    size = Int(ceil((blockiesViews[i].bounds.width * blockiesViews[i].bounds.height) / 24))
                 }
 
                 let blockie = Blockies(seed: accounts[i].hex(eip55: false), size: 8, scale: 3).createImage(customScale: size)
+                let address = accounts[i].hex(eip55: true)
                 DispatchQueue.main.async {
-                    imageViews[i].image = blockie
+                    if let b = blockie {
+                        blockiesViews[i].setBlockie(image: b, address: address)
+                    } else {
+                        blockiesViews[i].clearBlockie()
+                    }
                 }
             }
             DispatchQueue.main.sync {
                 completion?()
             }
         }
+    }
+
+    // MARK: - Actions
+
+    @objc private func blockieClicked(_ gesture: UITapGestureRecognizer) {
+        for a in accountViews {
+            a.setSelected(false)
+        }
+        (gesture.view as? BlockiesSelectionElement)?.setSelected(true)
+    }
+}
+
+class BlockiesSelectionElement: UIView {
+
+    private var imageView: UIImageView!
+    private var addressLabel: UILabel!
+    private var selectionView: UIView!
+    private var selectionCheckView: LOTAnimationView!
+    private var clickView: UIView!
+
+    private(set) var isSelected = false
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        setupUI()
+    }
+
+    private func setupUI() {
+        imageView = UIImageView()
+        addressLabel = UILabel()
+
+        selectionView = UIView()
+        selectionView.backgroundColor = Colors.primaryColor.withAlphaComponent(0.56)
+
+        selectionCheckView = LOTAnimationView(name: "material_check_pink")
+        selectionView.addSubview(selectionCheckView)
+
+        setSelected(false)
+
+        clickView = UIView()
+        clickView.backgroundColor = UIColor.clear
+
+        addressLabel.setupSubTitleLabel()
+        addressLabel.textAlignment = .center
+        addressLabel.lineBreakMode = .byTruncatingMiddle
+
+        addSubview(imageView)
+        addSubview(addressLabel)
+        addSubview(selectionView)
+        addSubview(clickView)
+
+        constrain(self, imageView, addressLabel, selectionView, selectionCheckView, clickView) { container, image, label, selection, check, click in
+            label.left == container.left
+            label.right == container.right
+            label.bottom == container.bottom
+            label.height == 24
+
+            image.bottom == label.top - 8
+            image.top == container.top + 8
+            image.width == image.height
+            image.centerX == container.centerX
+
+            selection.left == container.left
+            selection.right == container.right
+            selection.top == container.top
+            selection.bottom == container.bottom
+
+            check.left == selection.left
+            check.right == selection.right
+            check.top == selection.top
+            check.bottom == selection.bottom
+
+            click.left == container.left
+            click.right == container.right
+            click.top == container.top
+            click.bottom == container.bottom
+        }
+    }
+
+    func setSelected(_ selected: Bool) {
+        if selected {
+            isSelected = true
+            selectionView.isHidden = false
+            selectionCheckView.play()
+        } else {
+            isSelected = false
+            selectionView.isHidden = true
+        }
+    }
+
+    func setBlockie(image: UIImage, address: String) {
+        imageView.image = image
+        addressLabel.text = address
+    }
+
+    func clearBlockie() {
+        imageView.image = nil
+        addressLabel.text = nil
     }
 }

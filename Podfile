@@ -16,6 +16,9 @@ target 'Ballet' do
   # Dropdown
   pod 'DropDown', '~> 2.3'
 
+  # MarqueeLabel
+  pod 'MarqueeLabel', '~> 3.1'
+
   # Cartography
   pod 'Cartography', '~> 3.0'
 
