@@ -53,8 +53,7 @@ class AddAccountViewController: UIViewController {
         selectBlockiesLabel.text = "Select your favourite new Account!"
 
         // Reload button
-        reloadBlockiesButton.backgroundColor = Colors.accentColor
-        reloadBlockiesButton.titleColor = Colors.lightPrimaryTextColor
+        reloadBlockiesButton.setupProjectDefault()
         reloadBlockiesButton.title = "Reload"
         reloadBlockiesButton.addTarget(self, action: #selector(reloadBlockiesButtonClicked), for: .touchUpInside)
 
@@ -95,8 +94,10 @@ class AddAccountViewController: UIViewController {
 
     @objc private func reloadBlockiesButtonClicked() {
         reloadBlockiesButton.isEnabled = false
+        reloadBlockiesButton.setupProjectDefaultDisabled()
         generateAccounts { [weak self] in
             self?.reloadBlockiesButton.isEnabled = true
+            self?.reloadBlockiesButton.setupProjectDefault()
         }
     }
 

@@ -18,6 +18,7 @@ extension RaisedButton {
     }
 
     func setupProjectDefaultDisabled() {
-        backgroundColor =
+        backgroundColor = Color.black.withAlphaComponent(0.12)
+        titleColor = Color.black.withAlphaComponent(0.26)
     }
 }
