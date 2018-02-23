@@ -81,6 +81,7 @@ extension PopUpController {
 
         // Create centered clear view for a nice animation
         let invisible = View()
+        invisible.isUserInteractionEnabled = false
         invisible.backgroundColor = UIColor.clear
         from.view.addSubview(invisible)
         constrain(from.view, invisible) { view, invisible in
