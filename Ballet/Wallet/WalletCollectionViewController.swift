@@ -133,6 +133,7 @@ class WalletCollectionViewController: UICollectionViewController {
         }
         controller.completion = { [weak self] selected, name in
             self?.saveNewAccount(privateKey: selected, name: name)
+            self?.collectionView?.reloadData()
         }
 
         PopUpController.instantiate(from: self, with: controller)
@@ -194,6 +195,12 @@ class WalletCollectionViewController: UICollectionViewController {
         return cell
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let accounts = accounts, accounts.count > indexPath.row {
+            (collectionView.cellForItem(at: indexPath) as! WalletCollectionViewCell).isSelected = false
+        }
+    }
+
     // MARK: UICollectionViewDelegate
 
     /*
@@ -232,7 +239,7 @@ extension WalletCollectionViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = Screen.width
-        let height: CGFloat = 88 + 16
+        let height: CGFloat = 88 + 32
         return CGSize(width: width, height: height)
     }
 

@@ -47,11 +47,14 @@ class WalletCollectionViewCell: MDCCardCollectionCell {
         // End General
 
         // Card setup
-        isSelectable = true
-        selectedImageTintColor = .blue
-        cornerRadius = 8
-        setShadowElevation(.init(6), for: .selected)
+        backgroundColor = .white
+        isSelectable = false
+        // selectedImageTintColor = .blue
+        cornerRadius = 5
+        setShadowElevation(.cardResting, for: .normal)
+        setShadowElevation(.cardPickedUp, for: .selected)
         setShadowColor(.black, for: .highlighted)
+        setShadowColor(.black, for: .normal)
     }
 
     // MARK: - Cell setup
@@ -60,7 +63,7 @@ class WalletCollectionViewCell: MDCCardCollectionCell {
         // Reset
         blockiesImage.image = nil
         nameLabel.text = ""
-        balanceLabel.text = ""
+        balanceLabel.text = "32.000 ETH"
         addressLabel.text = ""
 
         let address: EthereumAddress
