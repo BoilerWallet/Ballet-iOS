@@ -38,7 +38,9 @@ platform :ios do
       increment_build_number build_number: build_number
     end
     # Fabric specific
+    `cd ..`
     bn = `agvtool what-version -terse`
+    `cd -`
     set_info_plist_value(path: './Ballet/Resources/Info.plist', key: 'CFBundleVersion', value: bn)
 
     # Fabric generated this lane for deployment to Crashlytics Beta
