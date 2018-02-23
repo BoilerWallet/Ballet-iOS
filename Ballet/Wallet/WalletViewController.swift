@@ -11,6 +11,7 @@ import Material
 import StoreKit
 import SafariServices
 import Cartography
+import Web3
 
 class WalletViewController: UIViewController {
 
@@ -66,11 +67,20 @@ class WalletViewController: UIViewController {
         addAccountButton.addTarget(self, action: #selector(addAccountButtonClicked), for: .touchUpInside)
     }
 
+    // MARK: - Helper functions
+
+    private func saveNewAccount(privateKey: EthereumPrivateKey, name: String) {
+
+    }
+
     // MARK: - Actions
 
     @objc private func addAccountButtonClicked() {
-        guard let controller = UIStoryboard(name: "AddAccount", bundle: nil).instantiateInitialViewController() else {
+        guard let controller = UIStoryboard(name: "AddAccount", bundle: nil).instantiateInitialViewController() as? AddAccountViewController else {
             return
+        }
+        controller.completion = { [weak self] selected, name in
+            self?.saveNewAccount(privateKey: selected, name: name)
         }
 
         PopUpController.instantiate(from: self, with: controller)

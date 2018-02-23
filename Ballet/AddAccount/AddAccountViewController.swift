@@ -25,6 +25,12 @@ class AddAccountViewController: UIViewController {
 
     @IBOutlet weak var accountNameTextField: TextField!
 
+    @IBOutlet weak var createAccountButton: RaisedButton!
+
+    private var generatedPrivateKeys: [String: EthereumPrivateKey] = [:]
+    private var selectedAddress: EthereumAddress?
+    var completion: ((_ selectedAddress: EthereumPrivateKey, _ name: String) -> Void)?
+
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -52,6 +58,11 @@ class AddAccountViewController: UIViewController {
         selectBlockiesLabel.textAlignment = .center
         selectBlockiesLabel.text = "Select your favourite new Account!"
 
+        // Blockies View
+        blockiesView.completion = { [weak self] address in
+            self?.selectedAddress = address
+        }
+
         // Reload button
         reloadBlockiesButton.setupProjectDefault()
         reloadBlockiesButton.title = "Reload"
@@ -63,6 +74,11 @@ class AddAccountViewController: UIViewController {
         accountNameTextField.autocorrectionType = .no
         accountNameTextField.returnKeyType = .done
         accountNameTextField.delegate = self
+
+        // Create 
+        createAccountButton.setupProjectDefault()
+        createAccountButton.title = "Create"
+        createAccountButton.addTarget(self, action: #selector(createAccountButtonClicked), for: .touchUpInside)
 
         // Motion
         isMotionEnabled = true
@@ -80,6 +96,10 @@ class AddAccountViewController: UIViewController {
             guard accounts.count == 6 else {
                 // TODO: Error handling
                 return
+            }
+            // Save the keys temprarily
+            for p in accounts {
+                self?.generatedPrivateKeys[p.address.hex(eip55: false)] = p
             }
             DispatchQueue.main.sync {
                 self?.blockiesView.setAccounts(accounts: accounts.map({ return $0.address })) { [weak self] in
@@ -99,6 +119,17 @@ class AddAccountViewController: UIViewController {
             self?.reloadBlockiesButton.isEnabled = true
             self?.reloadBlockiesButton.setupProjectDefault()
         }
+    }
+
+    @objc private func createAccountButtonClicked() {
+        guard let selected = selectedAddress, let privateKey = generatedPrivateKeys[selected.hex(eip55: false)], let name = accountNameTextField.text, !name.isEmpty else {
+            Dialog().details("Please select an account and a name").positive("OK", handler: nil).show(self)
+            return
+        }
+
+        dismiss(animated: true, completion: nil)
+
+        completion?(privateKey, name)
     }
 
     /*

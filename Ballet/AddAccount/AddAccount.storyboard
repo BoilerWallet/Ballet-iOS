@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mR-9V-3pn" customClass="TPKeyboardAvoidingScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoA-QV-yPK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
@@ -84,13 +84,23 @@
                                     <constraint firstItem="uoA-QV-yPK" firstAttribute="top" secondItem="9mR-9V-3pn" secondAttribute="top" id="g9J-GJ-GU5"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-6L-2eX" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="259" y="623" width="100" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="D6S-JE-fJ6"/>
+                                    <constraint firstAttribute="height" constant="36" id="gqw-uJ-h3e"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="yqy-6L-2eX" firstAttribute="top" secondItem="9mR-9V-3pn" secondAttribute="bottom" constant="8" id="2Zy-6X-c4y"/>
                             <constraint firstItem="9mR-9V-3pn" firstAttribute="leading" secondItem="gyv-vi-ZnD" secondAttribute="leading" id="6pP-Xf-s3i"/>
-                            <constraint firstItem="gyv-vi-ZnD" firstAttribute="bottom" secondItem="9mR-9V-3pn" secondAttribute="bottom" id="dAi-TS-zCX"/>
+                            <constraint firstItem="gyv-vi-ZnD" firstAttribute="bottom" secondItem="yqy-6L-2eX" secondAttribute="bottom" constant="8" id="N0Q-Cw-xiT"/>
                             <constraint firstItem="9mR-9V-3pn" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="nvE-F7-ePs"/>
                             <constraint firstItem="gyv-vi-ZnD" firstAttribute="trailing" secondItem="9mR-9V-3pn" secondAttribute="trailing" id="rR1-0n-TPN"/>
+                            <constraint firstItem="gyv-vi-ZnD" firstAttribute="trailing" secondItem="yqy-6L-2eX" secondAttribute="trailing" constant="16" id="v3N-Xg-UAA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gyv-vi-ZnD"/>
                     </view>
@@ -98,6 +108,7 @@
                     <connections>
                         <outlet property="accountNameTextField" destination="66X-jP-8fr" id="YX9-7n-XXU"/>
                         <outlet property="blockiesView" destination="Sca-TA-WH4" id="d3L-cC-ws7"/>
+                        <outlet property="createAccountButton" destination="yqy-6L-2eX" id="GLg-ZN-gBQ"/>
                         <outlet property="reloadBlockiesButton" destination="td1-QL-2ej" id="Qi9-KD-ERo"/>
                         <outlet property="selectBlockiesLabel" destination="xud-2h-Vmj" id="7iz-Xx-vwt"/>
                     </connections>

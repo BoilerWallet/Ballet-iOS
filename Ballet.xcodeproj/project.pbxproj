@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */; };
+		0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054448203F907E00603F31 /* DialogBuilder.swift */; };
+		0E05444B203F90AD00603F31 /* DialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444A203F90AD00603F31 /* DialogController.swift */; };
+		0E05444D203F90C400603F31 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444C203F90C400603F31 /* DialogView.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
 		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
 		0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D491FE70A9D00917D05 /* AppDelegate.swift */; };
@@ -68,6 +71,9 @@
 
 /* Begin PBXFileReference section */
 		0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+MaterialDefault.swift"; sourceTree = "<group>"; };
+		0E054448203F907E00603F31 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
+		0E05444A203F90AD00603F31 /* DialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogController.swift; sourceTree = "<group>"; };
+		0E05444C203F90C400603F31 /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
 		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +156,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E054447203F906600603F31 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				0E054448203F907E00603F31 /* DialogBuilder.swift */,
+				0E05444A203F90AD00603F31 /* DialogController.swift */,
+				0E05444C203F90C400603F31 /* DialogView.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
 		0E672D3D1FE70A9D00917D05 = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +318,7 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				0E054447203F906600603F31 /* Dialog */,
 				0ECA6BB0203C6EB0001247F8 /* LoadingView */,
 				0E7F7681203B7F2600DDD6F0 /* PopUpController */,
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
@@ -733,14 +750,17 @@
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
+				0E05444B203F90AD00603F31 /* DialogController.swift in Sources */,
 				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
+				0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */,
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,
+				0E05444D203F90C400603F31 /* DialogView.swift in Sources */,
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
 				0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */,

@@ -31,6 +31,8 @@ class BlockiesSelectionView: UIView {
     private var accountViews: [BlockiesSelectionElement] = []
     private var accounts: [EthereumAddress] = []
 
+    var completion: ((_ selectedAddress: EthereumAddress) -> Void)?
+
     // MARK: - Initialization
 
     override init(frame: CGRect) {
@@ -112,6 +114,16 @@ class BlockiesSelectionView: UIView {
     // MARK: - Actions
 
     @objc private func blockieClicked(_ gesture: UITapGestureRecognizer) {
+        for i in 0..<accountViews.count {
+            if gesture.view === accountViews[i] {
+                accountViews[i].setSelected(true)
+                if accounts.count > i {
+                    completion?(accounts[i])
+                }
+            } else {
+                accountViews[i].setSelected(false)
+            }
+        }
         for a in accountViews {
             a.setSelected(false)
         }
