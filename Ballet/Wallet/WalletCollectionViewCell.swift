@@ -40,6 +40,7 @@ class WalletCollectionViewCell: MDCCardCollectionCell {
     func setupUI() {
         // General
         blockiesImage.layer.cornerRadius = blockiesImage.bounds.width / 2
+        blockiesImage.layer.masksToBounds = true
         nameLabel.setupTitleLabel()
         balanceLabel.setupSubTitleLabel()
         addressLabel.setupBodyLabel()
