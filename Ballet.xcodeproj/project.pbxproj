@@ -11,6 +11,9 @@
 		0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054448203F907E00603F31 /* DialogBuilder.swift */; };
 		0E05444B203F90AD00603F31 /* DialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444A203F90AD00603F31 /* DialogController.swift */; };
 		0E05444D203F90C400603F31 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444C203F90C400603F31 /* DialogView.swift */; };
+		0E054450203F95D700603F31 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444F203F95D700603F31 /* Account.swift */; };
+		0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */; };
+		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
 		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
 		0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D491FE70A9D00917D05 /* AppDelegate.swift */; };
@@ -48,7 +51,6 @@
 		86E819EA1FE717B00086952E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819E91FE717B00086952E /* Login.storyboard */; };
 		86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819EB1FE717B90086952E /* LoginViewController.swift */; };
 		86E819EF1FE71B290086952E /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E819EE1FE71B290086952E /* Wallet.storyboard */; };
-		86E819F11FE71B360086952E /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E819F01FE71B360086952E /* WalletViewController.swift */; };
 		BA747B51C0D3133F0E105F2C /* Pods_Ballet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,9 @@
 		0E054448203F907E00603F31 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
 		0E05444A203F90AD00603F31 /* DialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogController.swift; sourceTree = "<group>"; };
 		0E05444C203F90C400603F31 /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
+		0E05444F203F95D700603F31 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewController.swift; sourceTree = "<group>"; };
+		0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
 		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +125,6 @@
 		86E819E91FE717B00086952E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		86E819EB1FE717B90086952E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86E819EE1FE71B290086952E /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
-		86E819F01FE71B360086952E /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		8E152B01F0B90AEE830F86A6 /* Pods-BalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084A6844A2A32A039A11C9E /* Pods_Ballet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ballet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ballet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ballet/Pods-Ballet.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +168,14 @@
 				0E05444C203F90C400603F31 /* DialogView.swift */,
 			);
 			path = Dialog;
+			sourceTree = "<group>";
+		};
+		0E05444E203F95C900603F31 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0E05444F203F95D700603F31 /* Account.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		0E672D3D1FE70A9D00917D05 = {
@@ -318,6 +330,7 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				0E05444E203F95C900603F31 /* Database */,
 				0E054447203F906600603F31 /* Dialog */,
 				0ECA6BB0203C6EB0001247F8 /* LoadingView */,
 				0E7F7681203B7F2600DDD6F0 /* PopUpController */,
@@ -362,7 +375,8 @@
 			children = (
 				86E819EE1FE71B290086952E /* Wallet.storyboard */,
 				0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */,
-				86E819F01FE71B360086952E /* WalletViewController.swift */,
+				0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */,
+				0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -746,17 +760,19 @@
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
+				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
+				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
 				0E05444B203F90AD00603F31 /* DialogController.swift in Sources */,
-				86E819F11FE71B360086952E /* WalletViewController.swift in Sources */,
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
+				0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */,
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,

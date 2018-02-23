@@ -1,0 +1,242 @@
+//
+//  WalletCollectionViewController.swift
+//  Ballet
+//
+//  Created by Koray Koska on 23.02.18.
+//  Copyright © 2018 Boilertalk. All rights reserved.
+//
+
+import UIKit
+import Material
+import StoreKit
+import SafariServices
+import Cartography
+import Web3
+import RealmSwift
+
+private let reuseIdentifier = "walletCell"
+
+class WalletCollectionViewController: UICollectionViewController {
+
+    // MARK: - Properties
+
+    private let sectionInsets = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+
+    private var addAccountButton: FABButton!
+
+    private var accounts: Results<Account>?
+
+    // MARK: - Initialization
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Register cell classes
+        // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
+        setupUI()
+
+        getAccounts()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - UI setup
+
+    private func setupUI() {
+        view.backgroundColor = Colors.background
+        collectionView?.backgroundColor = Colors.background
+
+        setupToolbar()
+
+        setupAddAccountButton()
+
+        // Motion
+        isMotionEnabled = true
+    }
+
+    private func setupToolbar() {
+        navigationItem.titleLabel.text = "Ballet"
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+
+        let rate = IconButton(image: Icon.favoriteBorder, tintColor: Colors.lightPrimaryTextColor)
+        rate.addTarget(self, action: #selector(rateClicked), for: .touchUpInside)
+
+        navigationItem.rightViews = [rate]
+    }
+
+    private func setupAddAccountButton() {
+        addAccountButton = FABButton()
+        view.addSubview(addAccountButton)
+
+        constrain(view, addAccountButton) { view, button in
+            button.right == view.right - 16
+            button.bottom == view.bottom - 16
+            button.width == 56
+            button.height == 56
+        }
+
+        addAccountButton.backgroundColor = Colors.accentColor
+
+        let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate)
+        addAccountButton.setImage(image, for: .normal)
+        addAccountButton.setImage(image, for: .selected)
+
+        addAccountButton.tintColor = Colors.white
+
+        addAccountButton.pulseColor = .white
+
+        addAccountButton.addTarget(self, action: #selector(addAccountButtonClicked), for: .touchUpInside)
+    }
+
+    // MARK: - Helper functions
+
+    private func getAccounts() {
+        let realm: Realm
+        do {
+            realm = try Realm()
+        } catch {
+            return
+        }
+        accounts = realm.objects(Account.self)
+    }
+
+    private func saveNewAccount(privateKey: EthereumPrivateKey, name: String) {
+        let account = Account()
+        account.name = name
+        account.privateKey = privateKey.hex()
+        account.encrypted = false
+        account.salt = nil
+
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(account)
+            }
+        } catch {
+            let details = "Something went wrong while saving your new account. Please try again or file an issue on Github."
+            Dialog().details(details).positive("OK", handler: nil).show(self)
+        }
+    }
+
+    // MARK: - Actions
+
+    @objc private func addAccountButtonClicked() {
+        guard let controller = UIStoryboard(name: "AddAccount", bundle: nil).instantiateInitialViewController() as? AddAccountViewController else {
+            return
+        }
+        controller.completion = { [weak self] selected, name in
+            self?.saveNewAccount(privateKey: selected, name: name)
+        }
+
+        PopUpController.instantiate(from: self, with: controller)
+    }
+
+    @objc private func rateClicked() {
+        if UserDefaults.standard.bool(forKey: "reviewed") {
+            donate()
+        } else {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+                UserDefaults.standard.set(true, forKey: "reviewed")
+            } else {
+                donate()
+            }
+        }
+    }
+
+    private func donate() {
+        let path = "https://ballet.boilertalk.com/donate"
+        guard let url = NSURL(string: path) else { return }
+
+        if #available(iOS 9.0, *) {
+            let controller: SFSafariViewController = SFSafariViewController(url: url as URL)
+            self.present(controller, animated: true, completion: nil)
+        } else {
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return accounts?.count ?? 0
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WalletCollectionViewCell
+
+        if let accounts = accounts, accounts.count > indexPath.row {
+            cell.setup(with: accounts[indexPath.row])
+        }
+
+        return cell
+    }
+
+    // MARK: UICollectionViewDelegate
+
+    /*
+    // Uncomment this method to specify if the specified item should be highlighted during tracking
+    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    */
+
+    /*
+    // Uncomment this method to specify if the specified item should be selected
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    */
+
+    /*
+    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return false
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    
+    }
+    */
+}
+
+extension WalletCollectionViewController: UICollectionViewDelegateFlowLayout {
+
+    // MARK: - UICollectionViewDelegateFlowLayout
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = Screen.width
+        let height: CGFloat = 88 + 16
+        return CGSize(width: width, height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+}
