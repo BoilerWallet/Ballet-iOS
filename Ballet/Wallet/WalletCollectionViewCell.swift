@@ -13,19 +13,29 @@ import BlockiesSwift
 import Cartography
 import MaterialComponents.MaterialCards
 
-class WalletCollectionViewCell: MDCCardCollectionCell {
+class WalletCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
 
     private let blockiesGenerationQueue = DispatchQueue(label: "BlockiesGeneration")
 
-    @IBOutlet weak var blockiesImage: UIImageView!
+    @IBOutlet weak var content: WalletCollectionViewCellContent!
 
-    @IBOutlet weak var nameLabel: UILabel!
+    var blockiesImage: UIImageView {
+        return content.blockiesImage
+    }
 
-    @IBOutlet weak var balanceLabel: UILabel!
+    var nameLabel: UILabel {
+        return content.nameLabel
+    }
 
-    @IBOutlet weak var addressLabel: UILabel!
+    var balanceLabel: UILabel {
+        return content.balanceLabel
+    }
+
+    var addressLabel: UILabel {
+        return content.addressLabel
+    }
 
     // MARK: - Initialization
 
@@ -47,14 +57,12 @@ class WalletCollectionViewCell: MDCCardCollectionCell {
         // End General
 
         // Card setup
+        /*
         backgroundColor = .white
-        isSelectable = false
-        // selectedImageTintColor = .blue
-        cornerRadius = 5
         setShadowElevation(.cardResting, for: .normal)
-        setShadowElevation(.cardPickedUp, for: .selected)
-        setShadowColor(.black, for: .highlighted)
         setShadowColor(.black, for: .normal)
+        setBorderWidth(0.5, for: .normal)
+        setBorderColor(Colors.darkSecondaryTextColor, for: .normal)*/
     }
 
     // MARK: - Cell setup
@@ -86,5 +94,37 @@ class WalletCollectionViewCell: MDCCardCollectionCell {
                 self?.blockiesImage.image = image
             }
         }
+    }
+}
+
+class WalletCollectionViewCellContent: MDCCard {
+
+    @IBOutlet weak var blockiesImage: UIImageView!
+
+    @IBOutlet weak var nameLabel: UILabel!
+
+    @IBOutlet weak var balanceLabel: UILabel!
+
+    @IBOutlet weak var addressLabel: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        setupUI()
+    }
+
+    private func setupUI() {
+        blockiesImage.layer.cornerRadius = blockiesImage.bounds.width / 2
+        blockiesImage.layer.masksToBounds = true
+        nameLabel.setupTitleLabel()
+        balanceLabel.setupSubTitleLabel()
+        addressLabel.setupBodyLabel()
+
+        // Setup Card
+        backgroundColor = .white
+        cornerRadius = 8
+        setShadowElevation(.cardResting, for: .highlighted)
+        // setBorderWidth(1, for: .normal)
+        setBorderColor(UIColor.brown, for: .normal)
     }
 }

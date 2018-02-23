@@ -31,21 +31,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="330" height="245"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n76-rE-PuK">
-                                            <rect key="frame" x="0.0" y="0.0" width="330" height="245"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n76-rE-PuK" customClass="WalletCollectionViewCellContent" customModule="Ballet" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="8" width="314" height="229"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ovi-nh-cZ4">
-                                                    <rect key="frame" x="16" y="94" width="56" height="56"/>
+                                                    <rect key="frame" x="16" y="86" width="56" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="56" id="0sl-HP-5J8"/>
                                                         <constraint firstAttribute="height" constant="56" id="9f1-pR-pvj"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-O8-Svw">
-                                                    <rect key="frame" x="88" y="78" width="226" height="88"/>
+                                                    <rect key="frame" x="88" y="70" width="210" height="88"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzD-po-kkg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="226" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="210" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="Pn8-xv-rhm"/>
                                                             </constraints>
@@ -54,7 +54,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlo-70-H23">
-                                                            <rect key="frame" x="0.0" y="32" width="226" height="24"/>
+                                                            <rect key="frame" x="0.0" y="32" width="210" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="0zA-Js-fF2"/>
                                                             </constraints>
@@ -63,7 +63,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr3-K8-Uqm">
-                                                            <rect key="frame" x="0.0" y="64" width="226" height="24"/>
+                                                            <rect key="frame" x="0.0" y="64" width="210" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="Wla-Qd-JsK"/>
                                                             </constraints>
@@ -95,20 +95,23 @@
                                                 <constraint firstItem="Ovi-nh-cZ4" firstAttribute="centerY" secondItem="n76-rE-PuK" secondAttribute="centerY" id="oLe-tr-eHo"/>
                                                 <constraint firstItem="Ovi-nh-cZ4" firstAttribute="leading" secondItem="n76-rE-PuK" secondAttribute="leading" constant="16" id="u01-D5-91Y"/>
                                             </constraints>
+                                            <connections>
+                                                <outlet property="addressLabel" destination="Vr3-K8-Uqm" id="PTe-DE-ei5"/>
+                                                <outlet property="balanceLabel" destination="qlo-70-H23" id="w3r-ri-hld"/>
+                                                <outlet property="blockiesImage" destination="Ovi-nh-cZ4" id="71g-dZ-vvo"/>
+                                                <outlet property="nameLabel" destination="qzD-po-kkg" id="zif-gt-Ghk"/>
+                                            </connections>
                                         </view>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="n76-rE-PuK" secondAttribute="bottom" id="kYo-DU-gCE"/>
-                                    <constraint firstItem="n76-rE-PuK" firstAttribute="trailing" secondItem="EjQ-VI-S7A" secondAttribute="trailing" id="kc5-mc-rRi"/>
-                                    <constraint firstItem="n76-rE-PuK" firstAttribute="leading" secondItem="EjQ-VI-S7A" secondAttribute="leading" id="mpY-t0-rPP"/>
-                                    <constraint firstItem="n76-rE-PuK" firstAttribute="top" secondItem="EjQ-VI-S7A" secondAttribute="top" id="thF-b7-RkF"/>
+                                    <constraint firstAttribute="bottom" secondItem="n76-rE-PuK" secondAttribute="bottom" constant="8" id="kYo-DU-gCE"/>
+                                    <constraint firstItem="n76-rE-PuK" firstAttribute="trailing" secondItem="EjQ-VI-S7A" secondAttribute="trailing" constant="-8" id="kc5-mc-rRi"/>
+                                    <constraint firstItem="n76-rE-PuK" firstAttribute="leading" secondItem="EjQ-VI-S7A" secondAttribute="leading" constant="8" id="mpY-t0-rPP"/>
+                                    <constraint firstItem="n76-rE-PuK" firstAttribute="top" secondItem="EjQ-VI-S7A" secondAttribute="top" constant="8" id="thF-b7-RkF"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="addressLabel" destination="Vr3-K8-Uqm" id="fzN-HT-wcN"/>
-                                    <outlet property="balanceLabel" destination="qlo-70-H23" id="ICb-cy-yBk"/>
-                                    <outlet property="blockiesImage" destination="Ovi-nh-cZ4" id="HBS-om-DYa"/>
-                                    <outlet property="nameLabel" destination="qzD-po-kkg" id="NYg-Sr-Mi7"/>
+                                    <outlet property="content" destination="n76-rE-PuK" id="Ad9-60-zJN"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

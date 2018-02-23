@@ -20,7 +20,7 @@ class WalletCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
 
-    private let sectionInsets = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+    private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: -8, right: 0)
 
     private var addAccountButton: FABButton!
 
