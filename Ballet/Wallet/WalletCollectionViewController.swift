@@ -53,6 +53,9 @@ class WalletCollectionViewController: UICollectionViewController {
         view.backgroundColor = Colors.background
         collectionView?.backgroundColor = Colors.background
 
+        // Hide vertical scrolling indicator
+        collectionView?.showsVerticalScrollIndicator = false
+
         setupToolbar()
 
         setupAddAccountButton()
