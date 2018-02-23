@@ -19,6 +19,20 @@ PODS:
     - Material/Core (= 2.13.1)
   - Material/Core (2.13.1):
     - Motion (~> 1.3.0)
+  - MaterialComponents/Cards (45.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Ink (45.0.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Icons/Base (45.0.0)
+  - MaterialComponents/private/Icons/ic_check_circle (45.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Math (45.0.0)
+  - MaterialComponents/ShadowElevations (45.0.0)
+  - MaterialComponents/ShadowLayer (45.0.0):
+    - MaterialComponents/ShadowElevations
   - Motion (1.3.1):
     - Motion/Core (= 1.3.1)
   - Motion/Core (1.3.1)
@@ -58,6 +72,7 @@ DEPENDENCIES:
   - lottie-ios (~> 2.5)
   - MarqueeLabel (~> 3.1)
   - Material (~> 2.12)
+  - MaterialComponents/Cards
   - Nimble (~> 7.0)
   - Quick (~> 1.2)
   - RealmSwift (~> 3.0)
@@ -87,6 +102,7 @@ SPEC CHECKSUMS:
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   Material: 3aea3e3696b0f11bfa76d1a367b44a9a4231c9b8
+  MaterialComponents: 22793fbf99b6ae7e5067fbd794a6d3b7d6ee7d62
   Motion: 7256a3337b65fa745a1f4881596f936fbe5c7532
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
@@ -98,6 +114,6 @@ SPEC CHECKSUMS:
   VaporBytes: 628752235bc16d69800b52355de7118762a9009f
   Web3: 48098db322e2be3c72f07471f197d36ba688fdfd
 
-PODFILE CHECKSUM: a2748f01ad523b21ecb70b6db4bb2a641d7b2116
+PODFILE CHECKSUM: a99668de3e4b81b28b3f031774c52c56a48f9c0d
 
 COCOAPODS: 1.4.0

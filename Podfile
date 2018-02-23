@@ -10,6 +10,9 @@ target 'Ballet' do
   # Material
   pod 'Material', '~> 2.12'
 
+  # Official Material components
+  pod 'MaterialComponents/Cards'
+
   # Lottie animations
   pod 'lottie-ios', '~> 2.5'
 
