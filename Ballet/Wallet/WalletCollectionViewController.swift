@@ -20,7 +20,7 @@ class WalletCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
 
-    private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: -8, right: 0)
+    private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
     private var addAccountButton: FABButton!
 
@@ -40,6 +40,12 @@ class WalletCollectionViewController: UICollectionViewController {
         setupUI()
 
         getAccounts()
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        collectionView?.collectionViewLayout.invalidateLayout()
     }
 
     override func didReceiveMemoryWarning() {
@@ -241,7 +247,12 @@ extension WalletCollectionViewController: UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Screen.width
+        let width: CGFloat
+        if Screen.width < Screen.height {
+            width = Screen.width
+        } else {
+            width = Screen.width / 2
+        }
         let height: CGFloat = 88 + 32
         return CGSize(width: width, height: height)
     }

@@ -122,9 +122,6 @@ class WalletCollectionViewCellContent: MDCCard {
 
         // Setup Card
         backgroundColor = .white
-        cornerRadius = 8
         setShadowElevation(.cardResting, for: .highlighted)
-        // setBorderWidth(1, for: .normal)
-        setBorderColor(UIColor.brown, for: .normal)
     }
 }
