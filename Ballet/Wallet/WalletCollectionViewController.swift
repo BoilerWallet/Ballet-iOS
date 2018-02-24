@@ -24,6 +24,8 @@ class WalletCollectionViewController: UICollectionViewController {
 
     private var addAccountButton: FABButton!
 
+    private var testnetSwitch: Switch!
+
     private var accounts: Results<Account>?
 
     // MARK: - Initialization
@@ -78,6 +80,11 @@ class WalletCollectionViewController: UICollectionViewController {
         rate.addTarget(self, action: #selector(rateClicked), for: .touchUpInside)
 
         navigationItem.rightViews = [rate]
+
+        testnetSwitch = Switch(state: RPC.activeUrl?.isTestnet ?? false ? .on : .off, style: .light, size: .medium)
+        testnetSwitch.delegate = self
+
+        navigationItem.leftViews = [testnetSwitch]
     }
 
     private func setupAddAccountButton() {
@@ -259,5 +266,34 @@ extension WalletCollectionViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
+    }
+}
+
+extension WalletCollectionViewController: SwitchDelegate {
+
+    func switchDidChangeState(control: Switch, state: SwitchState) {
+        if control === testnetSwitch {
+            guard let realm = try? Realm() else {
+                return
+            }
+            try? realm.write {
+                for u in realm.objects(RPCUrl.self) {
+                    u.isActive = false
+                }
+            }
+            if state == .on {
+                let ropsten = realm.objects(RPCUrl.self).filter("chainId == 3").first
+                try? realm.write {
+                    ropsten?.isActive = true
+                }
+            } else {
+                let main = realm.objects(RPCUrl.self).filter("chainId == 1").first
+                try? realm.write {
+                    main?.isActive = true
+                }
+            }
+
+            collectionView?.reloadData()
+        }
     }
 }

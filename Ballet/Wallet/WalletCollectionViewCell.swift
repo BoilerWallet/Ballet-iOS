@@ -12,6 +12,7 @@ import Web3
 import BlockiesSwift
 import Cartography
 import MaterialComponents.MaterialCards
+import BigInt
 
 class WalletCollectionViewCell: UICollectionViewCell {
 
@@ -71,7 +72,7 @@ class WalletCollectionViewCell: UICollectionViewCell {
         // Reset
         blockiesImage.image = nil
         nameLabel.text = ""
-        balanceLabel.text = "32.000 ETH"
+        balanceLabel.text = "0 ETH"
         addressLabel.text = ""
 
         let address: EthereumAddress
@@ -94,6 +95,26 @@ class WalletCollectionViewCell: UICollectionViewCell {
                 self?.blockiesImage.image = image
             }
         }
+
+        RPC.activeWeb3?.eth.getBalance(address: address, block: .latest, response: { [weak self] response in
+            guard let quantity = response.rpcResponse?.result, response.status == .ok else {
+                return
+            }
+
+            let first = quantity.quantity.quotientAndRemainder(dividingBy: BigUInt(10).power(18))
+            var value = String(first.quotient) + "."
+            var remainder = first.remainder
+            for i in (0..<18).reversed() {
+                let current = remainder.quotientAndRemainder(dividingBy: BigUInt(10).power(i))
+
+                value += String(current.quotient)
+                remainder = current.remainder
+            }
+
+            DispatchQueue.main.async {
+                self?.balanceLabel.text = value + " ETH"
+            }
+        })
     }
 }
 

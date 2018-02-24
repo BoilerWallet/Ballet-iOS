@@ -30,6 +30,8 @@
 		0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80145203E244B00EDD123 /* material_loading_jump.json */; };
 		0EE80148203E3D1900EDD123 /* material_check_pink.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80147203E3D1900EDD123 /* material_check_pink.json */; };
 		0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */; };
+		0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8F2982041AAC5009DF772 /* RPC.swift */; };
+		0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8F29A2041B392009DF772 /* RPCUrl.swift */; };
 		0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */; };
 		0EED236C1FE86E4F007F137F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED236B1FE86E4F007F137F /* Colors.swift */; };
 		0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */; };
@@ -101,6 +103,8 @@
 		0EE80145203E244B00EDD123 /* material_loading_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_loading_jump.json; sourceTree = "<group>"; };
 		0EE80147203E3D1900EDD123 /* material_check_pink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_check_pink.json; sourceTree = "<group>"; };
 		0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+MaterialDefault.swift"; sourceTree = "<group>"; };
+		0EE8F2982041AAC5009DF772 /* RPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPC.swift; sourceTree = "<group>"; };
+		0EE8F29A2041B392009DF772 /* RPCUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCUrl.swift; sourceTree = "<group>"; };
 		0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationViewController.swift; sourceTree = "<group>"; };
 		0EED236B1FE86E4F007F137F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNavigationViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0E05444F203F95D700603F31 /* Account.swift */,
+				0EE8F29A2041B392009DF772 /* RPCUrl.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				0EEB235E1FF19BF7009ED044 /* Resources */,
+				0EE8F2972041AA9A009DF772 /* Networking */,
 				86E819E81FE717A30086952E /* Login */,
 				8665F6ED1FE9B1AB008D84F5 /* TabBar */,
 				86E819ED1FE71B200086952E /* Wallet */,
@@ -272,6 +278,14 @@
 				0EE80147203E3D1900EDD123 /* material_check_pink.json */,
 			);
 			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
+		0EE8F2972041AA9A009DF772 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8F2982041AAC5009DF772 /* RPC.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		0EEB235E1FF19BF7009ED044 /* Resources */ = {
@@ -757,6 +771,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
@@ -764,6 +779,7 @@
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
+				0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */,
 				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
