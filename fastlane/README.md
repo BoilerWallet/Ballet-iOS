@@ -18,6 +18,11 @@ xcode-select --install
 
 # Available Actions
 ## iOS
+### ios haha
+```
+fastlane ios haha
+```
+
 ### ios beta
 ```
 fastlane ios beta
