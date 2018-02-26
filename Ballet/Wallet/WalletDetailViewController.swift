@@ -15,6 +15,7 @@ class WalletDetailViewController: UIViewController {
 
     struct WalletDetailMotionIdentifiers {
 
+        let container: String
         let blockies: String
         let name: String
         let balance: String
@@ -26,6 +27,7 @@ class WalletDetailViewController: UIViewController {
     var account: Account!
     var motionIdentifiers: WalletDetailMotionIdentifiers?
 
+    @IBOutlet weak var walletInfoView: UIView!
     @IBOutlet weak var blockiesImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
@@ -61,7 +63,7 @@ class WalletDetailViewController: UIViewController {
         blockiesImageView.layer.cornerRadius = blockiesImageView.bounds.width / 2
         blockiesImageView.layer.masksToBounds = true
 
-        nameLabel.setupTitleLabelWithSize(size: 24)
+        nameLabel.setupTitleLabelWithSize(size: 20)
         nameLabel.textAlignment = .center
 
         balanceLabel.setupBodyLabel()
@@ -74,10 +76,11 @@ class WalletDetailViewController: UIViewController {
         erc20Button.setBackgroundColor(Colors.accentColor)
 
         blockiesImageView.image = nil
-        balanceLabel.text = "0.00000000000000000 ETH"
+        balanceLabel.text = "0.000000000000000000 ETH"
         addressLabel.text = ""
 
         // Motion
+        walletInfoView.motionIdentifier = motionIdentifiers?.container
         blockiesImageView.motionIdentifier = motionIdentifiers?.blockies
         nameLabel.motionIdentifier = motionIdentifiers?.name
         balanceLabel.motionIdentifier = motionIdentifiers?.balance

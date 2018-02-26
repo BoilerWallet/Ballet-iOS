@@ -218,10 +218,14 @@ class WalletCollectionViewController: UICollectionViewController {
                 controller.account = account
 
                 let uuid = UUID().uuidString
+                let containerId = "WalletDetailContainer" + uuid
                 let blockiesId = "WalletDetailBlockies" + uuid
                 let nameId = "WalletDetailsName" + uuid
                 let balanceId = "WalletDetailsBalance" + uuid
                 let addressId = "WalletDetailsAddress" + uuid
+
+                cell.motionIdentifier = containerId
+                cell.shapePreset = .square
 
                 cell.blockiesImage.motionIdentifier = blockiesId
                 cell.blockiesImage.shapePreset = .circle
@@ -235,7 +239,7 @@ class WalletCollectionViewController: UICollectionViewController {
                 cell.addressLabel.motionIdentifier = addressId
                 cell.addressLabel.shapePreset = .square
 
-                controller.motionIdentifiers = .init(blockies: blockiesId, name: nameId, balance: balanceId, address: addressId)
+                controller.motionIdentifiers = .init(container: containerId, blockies: blockiesId, name: nameId, balance: balanceId, address: addressId)
             }
         }
     }

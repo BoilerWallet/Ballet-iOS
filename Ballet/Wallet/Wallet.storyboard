@@ -242,6 +242,7 @@
                         <outlet property="blockiesImageView" destination="9YO-2k-g2Y" id="L5V-4h-Ufd"/>
                         <outlet property="erc20Button" destination="ijf-lg-kkD" id="UlK-cL-Qen"/>
                         <outlet property="nameLabel" destination="a7J-th-U0n" id="6gM-jN-uib"/>
+                        <outlet property="walletInfoView" destination="aWL-Hb-mZy" id="iVI-5U-fgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvi-vU-Bwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
