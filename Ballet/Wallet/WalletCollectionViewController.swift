@@ -204,17 +204,47 @@ class WalletCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WalletCollectionViewCell
 
         if let accounts = accounts, accounts.count > indexPath.row {
-            cell.setup(with: accounts[indexPath.row])
+            cell.setup(with: accounts[indexPath.row]) { [weak self] account in
+                self?.performSegue(withIdentifier: "WalletDetail", sender: cell)
+            }
         }
 
         return cell
     }
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let accounts = accounts, accounts.count > indexPath.row {
-            (collectionView.cellForItem(at: indexPath) as! WalletCollectionViewCell).isSelected = false
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? WalletCollectionViewCell, segue.identifier == "WalletDetail" {
+            if let controller = segue.destination as? WalletDetailViewController, let account = cell.currentAccount {
+                controller.account = account
+
+                let uuid = UUID().uuidString
+                let blockiesId = "WalletDetailBlockies" + uuid
+                let nameId = "WalletDetailsName" + uuid
+                let balanceId = "WalletDetailsBalance" + uuid
+                let addressId = "WalletDetailsAddress" + uuid
+
+                cell.blockiesImage.motionIdentifier = blockiesId
+                cell.blockiesImage.shapePreset = .circle
+
+                // cell.nameLabel.motionIdentifier = nameId
+                // cell.nameLabel.shapePreset = .square
+
+                cell.balanceLabel.motionIdentifier = balanceId
+                cell.balanceLabel.shapePreset = .square
+
+                cell.addressLabel.motionIdentifier = addressId
+                cell.addressLabel.shapePreset = .square
+
+                controller.motionIdentifiers = .init(blockies: blockiesId, name: nameId, balance: balanceId, address: addressId)
+            }
         }
     }
+
+    /*
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let accounts = accounts, accounts.count > indexPath.row {
+        }
+    }*/
 
     // MARK: UICollectionViewDelegate
 

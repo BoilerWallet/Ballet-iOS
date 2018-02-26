@@ -24,6 +24,8 @@
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
 		0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */; };
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
+		0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC89292044676500865634 /* WalletDetailViewController.swift */; };
+		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
 		0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */; };
 		0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */; };
 		0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */; };
@@ -97,6 +99,8 @@
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpController.storyboard; sourceTree = "<group>"; };
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
+		0EAC89292044676500865634 /* WalletDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailViewController.swift; sourceTree = "<group>"; };
+		0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumQuantity+ConvertFromWei.swift"; sourceTree = "<group>"; };
 		0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_wave_loading.json; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 				863449E81FEC231E00738516 /* LabelExtension.swift */,
 				0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */,
 				0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */,
+				0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */,
 				0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */,
 				0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */,
+				0EAC89292044676500865634 /* WalletDetailViewController.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -775,6 +781,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
@@ -783,6 +790,7 @@
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
+				0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */,
 				0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */,
 				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,

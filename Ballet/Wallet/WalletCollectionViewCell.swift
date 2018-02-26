@@ -38,6 +38,10 @@ class WalletCollectionViewCell: UICollectionViewCell {
         return content.addressLabel
     }
 
+    var currentAccount: Account?
+
+    var cellSelected: ((_ account: Account) -> Void)?
+
     // MARK: - Initialization
 
     override func awakeFromNib() {
@@ -57,6 +61,8 @@ class WalletCollectionViewCell: UICollectionViewCell {
         addressLabel.setupBodyLabel()
         // End General
 
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellClicked)))
+
         // Card setup
         /*
         backgroundColor = .white
@@ -68,7 +74,10 @@ class WalletCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Cell setup
 
-    func setup(with account: Account) {
+    func setup(with account: Account, cellSelected: ((_ account: Account) -> Void)? = nil) {
+        self.currentAccount = account
+        self.cellSelected = cellSelected
+
         // Reset
         blockiesImage.image = nil
         nameLabel.text = ""
@@ -101,20 +110,20 @@ class WalletCollectionViewCell: UICollectionViewCell {
                 return
             }
 
-            let first = quantity.quantity.quotientAndRemainder(dividingBy: BigUInt(10).power(18))
-            var value = String(first.quotient) + "."
-            var remainder = first.remainder
-            for i in (0..<18).reversed() {
-                let current = remainder.quotientAndRemainder(dividingBy: BigUInt(10).power(i))
-
-                value += String(current.quotient)
-                remainder = current.remainder
-            }
+            let value = quantity.convertWeiToEthString()
 
             DispatchQueue.main.async {
                 self?.balanceLabel.text = value + " ETH"
             }
         })
+    }
+
+    // MARK: - Actions
+
+    @objc private func cellClicked() {
+        if let account = currentAccount {
+            cellSelected?(account)
+        }
     }
 }
 
