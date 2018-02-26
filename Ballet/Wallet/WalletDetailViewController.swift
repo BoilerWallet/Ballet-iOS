@@ -8,8 +8,11 @@
 
 import UIKit
 import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialSnackbar
 import Web3
 import BlockiesSwift
+import Material
+import MarqueeLabel
 
 class WalletDetailViewController: UIViewController {
 
@@ -31,8 +34,11 @@ class WalletDetailViewController: UIViewController {
     @IBOutlet weak var blockiesImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressLabel: MarqueeLabel!
+    @IBOutlet weak var copyAddressButton: IconButton!
     @IBOutlet weak var erc20Button: MDCRaisedButton!
+
+    private var key: EthereumPrivateKey?
 
     // MARK: - Initialization
 
@@ -71,6 +77,11 @@ class WalletDetailViewController: UIViewController {
         addressLabel.setupSubTitleLabel()
         addressLabel.textAlignment = .center
 
+        let copyImage = UIImage(named: "ic_content_copy")?.withRenderingMode(.alwaysTemplate)
+        copyAddressButton.setImage(copyImage, for: .normal)
+        copyAddressButton.tintColor = Colors.darkSecondaryTextColor
+        copyAddressButton.addTarget(self, action: #selector(copyAddressButtonClicked), for: .touchUpInside)
+
         erc20Button.setTitle("ERC20 Tokens", for: .normal)
         erc20Button.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
         erc20Button.setBackgroundColor(Colors.accentColor)
@@ -95,6 +106,7 @@ class WalletDetailViewController: UIViewController {
         guard let key = try? EthereumPrivateKey(hexPrivateKey: account.privateKey) else {
             return
         }
+        self.key = key
 
         let scale = Int(ceil((blockiesImageView.bounds.width * blockiesImageView.bounds.height) / 24))
         DispatchQueue.global().async { [weak self] in
@@ -116,6 +128,21 @@ class WalletDetailViewController: UIViewController {
         })
 
         addressLabel.text = key.address.hex(eip55: true)
+        let second = DispatchTime.now().uptimeNanoseconds + 1000000000
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: second)) { [weak self] in
+            self?.addressLabel.triggerScrollStart()
+        }
+    }
+
+    // MARK: - Actions
+
+    @objc private func copyAddressButtonClicked() {
+        UIPasteboard.general.string = key?.address.hex(eip55: true)
+
+        let success = MDCSnackbarMessage()
+        success.text = "Successfully copied your address to the clipboard."
+
+        MDCSnackbarManager.show(success)
     }
 
     /*
