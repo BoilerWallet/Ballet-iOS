@@ -13,6 +13,7 @@ import SafariServices
 import Cartography
 import Web3
 import RealmSwift
+import MaterialComponents.MaterialButtons
 
 private let reuseIdentifier = "walletCell"
 
@@ -22,7 +23,7 @@ class WalletCollectionViewController: UICollectionViewController {
 
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
-    private var addAccountButton: FABButton!
+    private var addAccountButton: MDCFloatingButton!
 
     private var testnetSwitch: Switch!
 
@@ -88,7 +89,7 @@ class WalletCollectionViewController: UICollectionViewController {
     }
 
     private func setupAddAccountButton() {
-        addAccountButton = FABButton()
+        addAccountButton = MDCFloatingButton()
         view.addSubview(addAccountButton)
 
         constrain(view, addAccountButton) { view, button in
@@ -98,15 +99,13 @@ class WalletCollectionViewController: UICollectionViewController {
             button.height == 56
         }
 
-        addAccountButton.backgroundColor = Colors.accentColor
+        addAccountButton.setBackgroundColor(Colors.accentColor)
 
         let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate)
         addAccountButton.setImage(image, for: .normal)
         addAccountButton.setImage(image, for: .selected)
 
         addAccountButton.tintColor = Colors.white
-
-        addAccountButton.pulseColor = .white
 
         addAccountButton.addTarget(self, action: #selector(addAccountButtonClicked), for: .touchUpInside)
     }

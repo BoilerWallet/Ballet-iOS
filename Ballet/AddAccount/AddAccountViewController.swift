@@ -12,6 +12,7 @@ import Web3
 import Cartography
 import BlockiesSwift
 import AlamofireImage
+import MaterialComponents.MaterialButtons
 
 class AddAccountViewController: UIViewController {
 
@@ -21,11 +22,11 @@ class AddAccountViewController: UIViewController {
 
     @IBOutlet weak var blockiesView: BlockiesSelectionView!
 
-    @IBOutlet weak var reloadBlockiesButton: RaisedButton!
+    @IBOutlet weak var reloadBlockiesButton: MDCFlatButton!
 
     @IBOutlet weak var accountNameTextField: TextField!
 
-    @IBOutlet weak var createAccountButton: RaisedButton!
+    @IBOutlet weak var createAccountButton: MDCRaisedButton!
 
     private var generatedPrivateKeys: [String: EthereumPrivateKey] = [:]
     private var selectedAddress: EthereumAddress?
@@ -64,8 +65,8 @@ class AddAccountViewController: UIViewController {
         }
 
         // Reload button
-        reloadBlockiesButton.setupProjectDefault()
-        reloadBlockiesButton.title = "Reload"
+        reloadBlockiesButton.setTitleColor(Colors.accentColor, for: .normal)
+        reloadBlockiesButton.setTitle("Reload", for: .normal)
         reloadBlockiesButton.addTarget(self, action: #selector(reloadBlockiesButtonClicked), for: .touchUpInside)
 
         // Account name
@@ -75,9 +76,10 @@ class AddAccountViewController: UIViewController {
         accountNameTextField.returnKeyType = .done
         accountNameTextField.delegate = self
 
-        // Create 
-        createAccountButton.setupProjectDefault()
-        createAccountButton.title = "Create"
+        // Create
+        createAccountButton.setTitle("Create", for: .normal)
+        createAccountButton.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
+        createAccountButton.setBackgroundColor(Colors.accentColor)
         createAccountButton.addTarget(self, action: #selector(createAccountButtonClicked), for: .touchUpInside)
 
         // Motion
@@ -113,11 +115,9 @@ class AddAccountViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func reloadBlockiesButtonClicked() {
-        reloadBlockiesButton.isEnabled = false
-        reloadBlockiesButton.setupProjectDefaultDisabled()
+        reloadBlockiesButton.setEnabled(false, animated: true)
         generateAccounts { [weak self] in
-            self?.reloadBlockiesButton.isEnabled = true
-            self?.reloadBlockiesButton.setupProjectDefault()
+            self?.reloadBlockiesButton.setEnabled(true, animated: true)
         }
     }
 

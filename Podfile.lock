@@ -19,6 +19,23 @@ PODS:
     - Material/Core (= 2.13.1)
   - Material/Core (2.13.1):
     - Motion (~> 1.3.0)
+  - MaterialComponents/Buttons (45.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Buttons+Extensions (45.0.0):
+    - MaterialComponents/Buttons+Extensions/ColorThemer (= 45.0.0)
+    - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 45.0.0)
+  - MaterialComponents/Buttons+Extensions/ColorThemer (45.0.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/Themes
+  - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (45.0.0):
+    - MaterialComponents/Buttons
+    - MDFTextAccessibility
   - MaterialComponents/Cards (45.0.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Icons/ic_check_circle
@@ -26,6 +43,7 @@ PODS:
     - MaterialComponents/ShadowLayer
   - MaterialComponents/Ink (45.0.0):
     - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (45.0.0)
   - MaterialComponents/private/Icons/Base (45.0.0)
   - MaterialComponents/private/Icons/ic_check_circle (45.0.0):
     - MaterialComponents/private/Icons/Base
@@ -33,6 +51,11 @@ PODS:
   - MaterialComponents/ShadowElevations (45.0.0)
   - MaterialComponents/ShadowLayer (45.0.0):
     - MaterialComponents/ShadowElevations
+  - MaterialComponents/Themes (45.0.0)
+  - MaterialComponents/Typography (45.0.0):
+    - MaterialComponents/private/Application
+  - MDFInternationalization (1.0.4)
+  - MDFTextAccessibility (1.2.0)
   - Motion (1.3.1):
     - Motion/Core (= 1.3.1)
   - Motion/Core (1.3.1)
@@ -72,6 +95,7 @@ DEPENDENCIES:
   - lottie-ios (~> 2.5)
   - MarqueeLabel (~> 3.1)
   - Material (~> 2.12)
+  - MaterialComponents/Buttons+Extensions
   - MaterialComponents/Cards
   - Nimble (~> 7.0)
   - Quick (~> 1.2)
@@ -103,6 +127,8 @@ SPEC CHECKSUMS:
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   Material: 3aea3e3696b0f11bfa76d1a367b44a9a4231c9b8
   MaterialComponents: 22793fbf99b6ae7e5067fbd794a6d3b7d6ee7d62
+  MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   Motion: 7256a3337b65fa745a1f4881596f936fbe5c7532
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
@@ -114,6 +140,6 @@ SPEC CHECKSUMS:
   VaporBytes: 628752235bc16d69800b52355de7118762a9009f
   Web3: 48098db322e2be3c72f07471f197d36ba688fdfd
 
-PODFILE CHECKSUM: a99668de3e4b81b28b3f031774c52c56a48f9c0d
+PODFILE CHECKSUM: dfac1cc8bd07af85e11c73861134d41ead3beed2
 
 COCOAPODS: 1.4.0

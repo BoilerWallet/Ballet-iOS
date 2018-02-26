@@ -41,7 +41,7 @@
                                                     <constraint firstAttribute="width" secondItem="Sca-TA-WH4" secondAttribute="height" multiplier="3:2" id="Ppg-XI-OUu"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td1-QL-2ej" customClass="RaisedButton" customModule="Material">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td1-QL-2ej" customClass="MDCFlatButton">
                                                 <rect key="frame" x="259" y="298" width="100" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -84,7 +84,7 @@
                                     <constraint firstItem="uoA-QV-yPK" firstAttribute="top" secondItem="9mR-9V-3pn" secondAttribute="top" id="g9J-GJ-GU5"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-6L-2eX" customClass="RaisedButton" customModule="Material">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-6L-2eX" customClass="MDCRaisedButton">
                                 <rect key="frame" x="259" y="623" width="100" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
