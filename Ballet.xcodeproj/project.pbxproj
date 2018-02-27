@@ -26,6 +26,7 @@
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC89292044676500865634 /* WalletDetailViewController.swift */; };
 		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
+		0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5EC182044D60700AD629E /* Blockies+Cached.swift */; };
 		0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */; };
 		0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */; };
 		0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */; };
@@ -101,6 +102,7 @@
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		0EAC89292044676500865634 /* WalletDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailViewController.swift; sourceTree = "<group>"; };
 		0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumQuantity+ConvertFromWei.swift"; sourceTree = "<group>"; };
+		0EC5EC182044D60700AD629E /* Blockies+Cached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blockies+Cached.swift"; sourceTree = "<group>"; };
 		0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_wave_loading.json; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */,
 				0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */,
 				0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */,
+				0EC5EC182044D60700AD629E /* Blockies+Cached.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
+				0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,

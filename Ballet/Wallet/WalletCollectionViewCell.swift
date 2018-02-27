@@ -98,7 +98,8 @@ class WalletCollectionViewCell: UICollectionViewCell {
 
         let scale = Int(ceil((blockiesImage.bounds.width * blockiesImage.bounds.height) / 24))
         blockiesGenerationQueue.async { [weak self] in
-            let image = Blockies(seed: address.hex(eip55: false), size: 8, scale: 3).createImage(customScale: scale)
+            let images = Blockies(seed: address.hex(eip55: false), size: 8, scale: 3).createImageCached()
+            let image = scale > 1 ? scale > 2 ? images?.high : images?.medium : images?.low
 
             DispatchQueue.main.sync { [weak self] in
                 self?.blockiesImage.image = image

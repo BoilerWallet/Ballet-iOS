@@ -110,7 +110,8 @@ class WalletDetailViewController: UIViewController {
 
         let scale = Int(ceil((blockiesImageView.bounds.width * blockiesImageView.bounds.height) / 24))
         DispatchQueue.global().async { [weak self] in
-            let blockie = Blockies(seed: key.address.hex(eip55: false), size: 8, scale: 3).createImage(customScale: scale)
+            let blockies = Blockies(seed: key.address.hex(eip55: false), size: 8, scale: 3).createImageCached()
+            let blockie = scale > 1 ? scale > 2 ? blockies?.high : blockies?.medium : blockies?.low
 
             DispatchQueue.main.sync { [weak self] in
                 self?.blockiesImageView.image = blockie

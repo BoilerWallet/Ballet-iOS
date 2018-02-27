@@ -90,15 +90,15 @@ class BlockiesSelectionView: UIView {
                 if i > 5 {
                     break
                 }
-                var size: Int!
+                var scale: Int!
                 DispatchQueue.main.sync {
-                    size = Int(ceil((blockiesViews[i].bounds.width * blockiesViews[i].bounds.height) / 24))
+                    scale = Int(ceil((blockiesViews[i].bounds.width * blockiesViews[i].bounds.height) / 24))
                 }
 
-                let blockie = Blockies(seed: accounts[i].hex(eip55: false), size: 8, scale: 3).createImage(customScale: size)
+                let blockies = Blockies(seed: accounts[i].hex(eip55: false), size: 8, scale: 3).createImageCached()
                 let address = accounts[i].hex(eip55: true)
                 DispatchQueue.main.async {
-                    if let b = blockie {
+                    if let b = scale > 1 ? scale > 2 ? blockies?.high : blockies?.medium : blockies?.low {
                         blockiesViews[i].setBlockie(image: b, address: address)
                     } else {
                         blockiesViews[i].clearBlockie()
