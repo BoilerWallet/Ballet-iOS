@@ -8,7 +8,7 @@ PODS:
   - Cartography (3.0.1)
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
-  - CryptoSwift (0.8.2)
+  - CryptoSwift (0.8.3)
   - DropDown (2.3.1)
   - Fabric (1.7.2)
   - lottie-ios (2.5.0)
@@ -125,7 +125,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Web3:
-    :commit: 8438166c3189d76a5e0308908c0cda3ac012e9d4
+    :commit: d2e14961ed944ad14a7f59d49c3f8bd70cf10d73
     :git: https://github.com/Boilertalk/Web3.swift
 
 SPEC CHECKSUMS:
@@ -135,7 +135,7 @@ SPEC CHECKSUMS:
   BlockiesSwift: 22d8d56dd187e6bfd16cb8c8fbd4fd4896c3e65d
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
-  CryptoSwift: 6b90cb3227de5ad1b034a0156f5c027399aea60c
+  CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
