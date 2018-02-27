@@ -10,17 +10,31 @@ import UIKit
 
 class SendViewController: UIViewController {
 
+    // MARK: - Properties
+
+    // MARK: - Initialization
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    // MARK: - UI setup
+
+    private func setupUI() {
+        setupToolbar()
+    }
+
+    private func setupToolbar() {
+        navigationItem.titleLabel.text = "Send"
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+    }
 
     /*
     // MARK: - Navigation
@@ -31,5 +45,4 @@ class SendViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

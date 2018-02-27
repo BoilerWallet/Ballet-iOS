@@ -60,29 +60,10 @@
                     <view key="view" contentMode="scaleToFill" id="OVz-3B-BvY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kcW-Xs-o61">
-                                <rect key="frame" x="64" y="210" width="247" height="247"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="kcW-Xs-o61" secondAttribute="height" multiplier="1:1" id="hgm-UQ-Cjo"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aqo-8L-g8Z" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kcW-Xs-o61" secondAttribute="bottom" constant="64" id="9mz-Oj-7JM"/>
-                            <constraint firstItem="kcW-Xs-o61" firstAttribute="centerX" secondItem="OVz-3B-BvY" secondAttribute="centerX" id="ERa-K1-A1F"/>
-                            <constraint firstItem="kcW-Xs-o61" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aqo-8L-g8Z" secondAttribute="leading" constant="64" id="Enb-nI-nhw"/>
-                            <constraint firstItem="kcW-Xs-o61" firstAttribute="top" secondItem="aqo-8L-g8Z" secondAttribute="top" priority="750" constant="64" id="R3p-8H-pJw"/>
-                            <constraint firstItem="aqo-8L-g8Z" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kcW-Xs-o61" secondAttribute="trailing" constant="64" id="hbe-4y-QLu"/>
-                            <constraint firstItem="kcW-Xs-o61" firstAttribute="centerY" secondItem="OVz-3B-BvY" secondAttribute="centerY" id="nSb-zK-L5e"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aqo-8L-g8Z"/>
                     </view>
                     <navigationItem key="navigationItem" id="vh3-dT-goP"/>
-                    <connections>
-                        <outlet property="qrImageview" destination="kcW-Xs-o61" id="tW3-bi-0UT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1FR-98-b3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

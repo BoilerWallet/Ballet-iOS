@@ -13,10 +13,6 @@ class ReceiveViewController: UIViewController {
 
     // MARK: - Properties
 
-    @IBOutlet weak var qrImageview: UIImageView!
-
-    var qrcodeImage: CIImage = CIImage()
-
     // MARK: - Initialization
 
     override func viewDidLoad() {
