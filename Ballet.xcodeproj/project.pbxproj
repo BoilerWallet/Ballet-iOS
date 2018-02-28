@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E03FA2B20461A6F00A3970E /* SendFromDropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03FA2A20461A6F00A3970E /* SendFromDropDownCell.swift */; };
+		0E03FA2D204621A600A3970E /* SendFromDropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E03FA2C204621A600A3970E /* SendFromDropDownCell.xib */; };
 		0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */; };
 		0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054448203F907E00603F31 /* DialogBuilder.swift */; };
 		0E05444B203F90AD00603F31 /* DialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444A203F90AD00603F31 /* DialogController.swift */; };
@@ -77,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E03FA2A20461A6F00A3970E /* SendFromDropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFromDropDownCell.swift; sourceTree = "<group>"; };
+		0E03FA2C204621A600A3970E /* SendFromDropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendFromDropDownCell.xib; sourceTree = "<group>"; };
 		0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+MaterialDefault.swift"; sourceTree = "<group>"; };
 		0E054448203F907E00603F31 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
 		0E05444A203F90AD00603F31 /* DialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogController.swift; sourceTree = "<group>"; };
@@ -343,6 +347,8 @@
 				863B23D31FEADEA50061298A /* Send.storyboard */,
 				0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */,
 				0EFA5D8F203A409200A20781 /* SendViewController.swift */,
+				0E03FA2C204621A600A3970E /* SendFromDropDownCell.xib */,
+				0E03FA2A20461A6F00A3970E /* SendFromDropDownCell.swift */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */,
 				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
+				0E03FA2D204621A600A3970E /* SendFromDropDownCell.xib in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
 				0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */,
@@ -785,6 +792,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
+				0E03FA2B20461A6F00A3970E /* SendFromDropDownCell.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */,
