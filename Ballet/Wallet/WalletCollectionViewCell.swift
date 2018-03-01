@@ -86,7 +86,7 @@ class WalletCollectionViewCell: UICollectionViewCell {
 
         let address: EthereumAddress
         do {
-            let privateKey = try EthereumPrivateKey(hexPrivateKey: account.privateKey)
+            let privateKey = try account.ethereumPrivateKey()
             address = privateKey.address
         } catch {
             return
@@ -96,15 +96,7 @@ class WalletCollectionViewCell: UICollectionViewCell {
 
         addressLabel.text = address.hex(eip55: true)
 
-        let scale = Int(ceil((blockiesImage.bounds.width * blockiesImage.bounds.height) / 24))
-        blockiesGenerationQueue.async { [weak self] in
-            let images = Blockies(seed: address.hex(eip55: false), size: 8, scale: 3).createImageCached()
-            let image = scale > 1 ? scale > 2 ? images?.high : images?.medium : images?.low
-
-            DispatchQueue.main.sync { [weak self] in
-                self?.blockiesImage.image = image
-            }
-        }
+        blockiesImage.setBlockies(with: address.hex(eip55: false))
 
         RPC.activeWeb3?.eth.getBalance(address: address, block: .latest, response: { [weak self] response in
             guard let quantity = response.rpcResponse?.result, response.status == .ok else {

@@ -85,30 +85,17 @@ class BlockiesSelectionView: UIView {
             a.setSelected(false)
         }
 
-        DispatchQueue(label: "BlockiesSelectionCreateBlockies").async {
-            for i in 0..<accounts.count {
-                if i > 5 {
-                    break
-                }
-                var scale: Int!
-                DispatchQueue.main.sync {
-                    scale = Int(ceil((blockiesViews[i].bounds.width * blockiesViews[i].bounds.height) / 24))
-                }
+        for i in 0..<accounts.count {
+            if i > 5 {
+                break
+            }
 
-                let blockies = Blockies(seed: accounts[i].hex(eip55: false), size: 8, scale: 3).createImageCached()
-                let address = accounts[i].hex(eip55: true)
-                DispatchQueue.main.async {
-                    if let b = scale > 1 ? scale > 2 ? blockies?.high : blockies?.medium : blockies?.low {
-                        blockiesViews[i].setBlockie(image: b, address: address)
-                    } else {
-                        blockiesViews[i].clearBlockie()
-                    }
-                }
-            }
-            DispatchQueue.main.sync {
-                completion?()
-            }
+            let seed = accounts[i].hex(eip55: false)
+            let address = accounts[i].hex(eip55: true)
+            blockiesViews[i].setBlockie(seed: seed, address: address)
         }
+
+        completion?()
     }
 
     // MARK: - Actions
@@ -210,8 +197,8 @@ class BlockiesSelectionElement: UIView {
         }
     }
 
-    func setBlockie(image: UIImage, address: String) {
-        imageView.image = image
+    func setBlockie(seed: String, address: String) {
+        imageView.setBlockies(with: seed)
         addressLabel.text = address
     }
 

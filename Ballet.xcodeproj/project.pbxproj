@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E03FA2B20461A6F00A3970E /* SendFromDropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03FA2A20461A6F00A3970E /* SendFromDropDownCell.swift */; };
-		0E03FA2D204621A600A3970E /* SendFromDropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E03FA2C204621A600A3970E /* SendFromDropDownCell.xib */; };
 		0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */; };
 		0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054448203F907E00603F31 /* DialogBuilder.swift */; };
 		0E05444B203F90AD00603F31 /* DialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444A203F90AD00603F31 /* DialogController.swift */; };
@@ -26,6 +24,11 @@
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
 		0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */; };
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
+		0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */; };
+		0EA476E02047835B003DB1D0 /* SelectAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */; };
+		0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */; };
+		0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476E32047858F003DB1D0 /* SelectAccountCollectionViewCell.swift */; };
+		0EA476E620478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476E520478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift */; };
 		0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC89292044676500865634 /* WalletDetailViewController.swift */; };
 		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
 		0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5EC182044D60700AD629E /* Blockies+Cached.swift */; };
@@ -79,8 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E03FA2A20461A6F00A3970E /* SendFromDropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFromDropDownCell.swift; sourceTree = "<group>"; };
-		0E03FA2C204621A600A3970E /* SendFromDropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendFromDropDownCell.xib; sourceTree = "<group>"; };
 		0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+MaterialDefault.swift"; sourceTree = "<group>"; };
 		0E054448203F907E00603F31 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
 		0E05444A203F90AD00603F31 /* DialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogController.swift; sourceTree = "<group>"; };
@@ -104,6 +105,11 @@
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpController.storyboard; sourceTree = "<group>"; };
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
+		0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderView.swift; sourceTree = "<group>"; };
+		0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectAccount.storyboard; sourceTree = "<group>"; };
+		0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountCollectionViewController.swift; sourceTree = "<group>"; };
+		0EA476E32047858F003DB1D0 /* SelectAccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		0EA476E520478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+BlockiesSetup.swift"; sourceTree = "<group>"; };
 		0EAC89292044676500865634 /* WalletDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailViewController.swift; sourceTree = "<group>"; };
 		0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumQuantity+ConvertFromWei.swift"; sourceTree = "<group>"; };
 		0EC5EC182044D60700AD629E /* Blockies+Cached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blockies+Cached.swift"; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				8665F6ED1FE9B1AB008D84F5 /* TabBar */,
 				86E819ED1FE71B200086952E /* Wallet */,
 				0EFA5D91203A411B00A20781 /* AddAccount */,
+				0EA476DE20478219003DB1D0 /* SelectAccount */,
 				863B23D01FEADE6F0061298A /* Send */,
 				86BED7B61FEB184C00165571 /* Receive */,
 				863449E31FEC189A00738516 /* Settings */,
@@ -269,6 +276,16 @@
 				0E7F7684203B808D00DDD6F0 /* PopUpController.swift */,
 			);
 			path = PopUpController;
+			sourceTree = "<group>";
+		};
+		0EA476DE20478219003DB1D0 /* SelectAccount */ = {
+			isa = PBXGroup;
+			children = (
+				0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */,
+				0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */,
+				0EA476E32047858F003DB1D0 /* SelectAccountCollectionViewCell.swift */,
+			);
+			path = SelectAccount;
 			sourceTree = "<group>";
 		};
 		0ECA6BB0203C6EB0001247F8 /* LoadingView */ = {
@@ -347,8 +364,6 @@
 				863B23D31FEADEA50061298A /* Send.storyboard */,
 				0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */,
 				0EFA5D8F203A409200A20781 /* SendViewController.swift */,
-				0E03FA2C204621A600A3970E /* SendFromDropDownCell.xib */,
-				0E03FA2A20461A6F00A3970E /* SendFromDropDownCell.swift */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -366,6 +381,8 @@
 				0E054445203EFFC700603F31 /* Button+MaterialDefault.swift */,
 				0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */,
 				0EC5EC182044D60700AD629E /* Blockies+Cached.swift */,
+				0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */,
+				0EA476E520478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -547,7 +564,6 @@
 				0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */,
 				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
-				0E03FA2D204621A600A3970E /* SendFromDropDownCell.xib in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
 				0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */,
@@ -556,6 +572,7 @@
 				0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */,
 				0EE80148203E3D1900EDD123 /* material_check_pink.json in Resources */,
 				0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */,
+				0EA476E02047835B003DB1D0 /* SelectAccount.storyboard in Resources */,
 				0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */,
 				0E672D511FE70A9D00917D05 /* Assets.xcassets in Resources */,
 				0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */,
@@ -792,10 +809,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
-				0E03FA2B20461A6F00A3970E /* SendFromDropDownCell.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */,
+				0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
@@ -805,6 +822,8 @@
 				0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */,
 				0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */,
 				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,
+				0EA476E620478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift in Sources */,
+				0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
@@ -821,6 +840,7 @@
 				0E05444D203F90C400603F31 /* DialogView.swift in Sources */,
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
+				0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */,
 				0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

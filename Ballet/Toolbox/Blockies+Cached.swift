@@ -23,9 +23,9 @@ extension Blockies {
             return cached
         }
 
-        guard let imageLow = createImage(customScale: 1),
-            let imageMedium = createImage(customScale: 2),
-            let imageHigh = createImage(customScale: 3) else {
+        guard let imageLow = createImage(customScale: 3),
+            let imageMedium = createImage(customScale: 4),
+            let imageHigh = createImage(customScale: 5) else {
             return nil
         }
 

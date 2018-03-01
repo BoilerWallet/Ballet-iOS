@@ -11,20 +11,29 @@ import DropDown
 import RealmSwift
 import Web3
 import BlockiesSwift
+import MaterialComponents.MaterialButtons
+import Material
 
 class SendViewController: UIViewController {
 
     // MARK: - Properties
 
     @IBOutlet weak var fromLabel: UILabel!
-    @IBOutlet weak var fromDropDownView: UIView!
-    @IBOutlet weak var fromSelectedImage: UIImageView!
+    @IBOutlet weak var fromSelectedView: DashedBorderView!
+    @IBOutlet weak var fromSelectedBlockiesImage: UIImageView!
     @IBOutlet weak var fromSelectedName: UILabel!
     @IBOutlet weak var fromSelectedAddress: UILabel!
 
-    private let dropDown = DropDown()
+    @IBOutlet weak var selectFromAddressButton: MDCFlatButton!
 
-    private var accounts: Results<Account>?
+    @IBOutlet weak var toTextField: TextField!
+
+    @IBOutlet weak var amountTextField: TextField!
+    @IBOutlet weak var amountLabel: UILabel!
+    
+    @IBOutlet weak var sendTransactionButton: MDCRaisedButton!
+
+    private var selectedAccount: Account?
 
     // MARK: - Initialization
 
@@ -45,59 +54,10 @@ class SendViewController: UIViewController {
         setupToolbar()
         view.backgroundColor = Colors.background
 
-        // Get accounts
-        accounts = try? Realm().objects(Account.self)
-        if accounts == nil {
-            // TODO: Error handling
-        }
-        var ids: [String] = []
-        if let accounts = accounts {
-            for i in 0..<accounts.count {
-                ids.append(String(i))
-            }
-        }
-
-        // DropDown
-        dropDown.anchorView = fromDropDownView
-        dropDown.dataSource = ids
-
-        dropDown.cellNib = UINib(nibName: "SendFromDropDownCell", bundle: nil)
-
-        dropDown.customCellConfiguration = { index, item, cell in
-            guard let cell = cell as? SendFromDropDownCell else {
-                return
-            }
-            guard let account = self.accounts?[index] else {
-                return
-            }
-
-            cell.setAccount(account: account)
-        }
-        dropDown.direction = .bottom
-        dropDown.cellHeight = 64
-
-        dropDown.selectionAction = { index, string in
-            guard let account = self.accounts?[index] else {
-                return
-            }
-
-            self.selectAccount(account: account)
-        }
-        // End DropDown
-
-        fromDropDownView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fromDropDownViewClicked)))
-
-        fromLabel.setupTitleLabel()
-        fromLabel.text = "From"
-
-        fromSelectedImage.layer.cornerRadius = fromSelectedImage.bounds.width / 2
-        fromSelectedImage.layer.masksToBounds = true
-
-        fromSelectedName.setupTitleLabel()
-        fromSelectedName.text = "-"
-
-        fromSelectedAddress.setupSubTitleLabel()
-        fromSelectedAddress.text = "Click here to select"
+        setupFrom()
+        setupTo()
+        setupAmount()
+        setupSend()
     }
 
     private func setupToolbar() {
@@ -105,25 +65,82 @@ class SendViewController: UIViewController {
         navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
     }
 
-    // MARK: - Actions
+    private func setupFrom() {
+        fromLabel.setupTitleLabel()
+        fromLabel.text = "From"
 
-    @objc private func fromDropDownViewClicked() {
-        dropDown.show()
+        fromSelectedView.borderColor = Colors.darkSecondaryTextColor
+        fromSelectedView.applyDashBorder()
+        fromSelectedView.layer.cornerRadius = 5
+        fromSelectedView.layer.masksToBounds = true
+
+        fromSelectedBlockiesImage.layer.cornerRadius = fromSelectedBlockiesImage.bounds.width / 2
+        fromSelectedBlockiesImage.layer.masksToBounds = true
+
+        fromSelectedName.setupTitleLabel()
+        fromSelectedName.text = ""
+        fromSelectedAddress.setupSubTitleLabel()
+        fromSelectedAddress.text = ""
+
+        // Select from button
+        selectFromAddressButton.setTitleColor(Colors.accentColor, for: .normal)
+        selectFromAddressButton.setTitle("Select Account", for: .normal)
+        selectFromAddressButton.addTarget(self, action: #selector(selectFromAddressButtonClicked), for: .touchUpInside)
     }
 
+    private func setupTo() {
+        toTextField.placeholder = "Receiver Address"
+        toTextField.setupProjectDefault()
+        toTextField.autocorrectionType = .no
+        toTextField.returnKeyType = .done
+        toTextField.delegate = self
+    }
+
+    private func setupAmount() {
+        amountLabel.setupSubTitleLabel()
+        amountLabel.text = "ETH"
+
+        amountTextField.placeholder = "Amount"
+        amountTextField.setupProjectDefault()
+        amountTextField.autocorrectionType = .no
+        amountTextField.keyboardType = .decimalPad
+        amountTextField.returnKeyType = .done
+        amountTextField.delegate = self
+    }
+
+    private func setupSend() {
+        sendTransactionButton.setTitle("Send", for: .normal)
+        sendTransactionButton.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
+        sendTransactionButton.setBackgroundColor(Colors.accentColor)
+        sendTransactionButton.addTarget(self, action: #selector(sendTransactionButtonClicked), for: .touchUpInside)
+    }
+
+    // MARK: - Helper functions
+
     private func selectAccount(account: Account) {
+        self.selectedAccount = account
+
+        try? fromSelectedBlockiesImage.setBlockies(with: account.ethereumPrivateKey().address.hex(eip55: false))
         fromSelectedName.text = account.name
-        let address = try? EthereumPrivateKey(hexPrivateKey: account.privateKey).address.hex(eip55: true)
-        fromSelectedAddress.text = address
+        try? fromSelectedAddress.text = account.ethereumPrivateKey().address.hex(eip55: true)
+    }
 
-        let scale = Int(ceil((fromSelectedImage.bounds.width * fromSelectedImage.bounds.height) / 24))
-        DispatchQueue.global().async { [weak self] in
-            let blockie = Blockies(seed: address ?? "", size: 8, scale: 3).createImageCached()
+    // MARK: - Actions
 
-            DispatchQueue.main.sync {
-                self?.fromSelectedImage.image = scale > 1 ? scale > 2 ? blockie?.high : blockie?.medium : blockie?.low
-            }
+    @objc private func selectFromAddressButtonClicked() {
+        guard let controller = UIStoryboard(name: "SelectAccount", bundle: nil).instantiateInitialViewController() as? SelectAccountCollectionViewController else {
+            return
         }
+
+        controller.completion = { [weak self] account in
+            self?.selectAccount(account: account)
+        }
+
+        PopUpController.instantiate(from: self, with: controller)
+    }
+
+    @objc private func sendTransactionButtonClicked() {
+
     }
 
     /*
@@ -135,4 +152,21 @@ class SendViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension SendViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === toTextField {
+            textField.resignFirstResponder()
+
+            return false
+        } else if textField === amountTextField {
+            textField.resignFirstResponder()
+
+            return false
+        }
+
+        return true
+    }
 }

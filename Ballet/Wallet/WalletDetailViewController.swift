@@ -103,20 +103,12 @@ class WalletDetailViewController: UIViewController {
 
         nameLabel.text = account.name
 
-        guard let key = try? EthereumPrivateKey(hexPrivateKey: account.privateKey) else {
+        guard let key = try? account.ethereumPrivateKey() else {
             return
         }
         self.key = key
 
-        let scale = Int(ceil((blockiesImageView.bounds.width * blockiesImageView.bounds.height) / 24))
-        DispatchQueue.global().async { [weak self] in
-            let blockies = Blockies(seed: key.address.hex(eip55: false), size: 8, scale: 3).createImageCached()
-            let blockie = scale > 1 ? scale > 2 ? blockies?.high : blockies?.medium : blockies?.low
-
-            DispatchQueue.main.sync { [weak self] in
-                self?.blockiesImageView.image = blockie
-            }
-        }
+        blockiesImageView.setBlockies(with: key.address.hex(eip55: false))
 
         RPC.activeWeb3?.eth.getBalance(address: key.address, block: .latest, response: { response in
             guard let quantity = response.rpcResponse?.result, response.status == .ok else {
