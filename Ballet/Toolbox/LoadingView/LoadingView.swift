@@ -115,6 +115,7 @@ class LoadingView: UIView {
     }
 
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        return false
+        // Pass the click through this view if not loading
+        return loading
     }
 }

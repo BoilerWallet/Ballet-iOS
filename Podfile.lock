@@ -46,6 +46,7 @@ PODS:
     - MaterialComponents/private/Math
   - MaterialComponents/OverlayWindow (45.0.0):
     - MaterialComponents/private/Application
+  - MaterialComponents/Palettes (45.0.0)
   - MaterialComponents/private/Application (45.0.0)
   - MaterialComponents/private/Icons/Base (45.0.0)
   - MaterialComponents/private/Icons/ic_check_circle (45.0.0):
@@ -54,9 +55,26 @@ PODS:
     - MaterialComponents/private/Application
   - MaterialComponents/private/Math (45.0.0)
   - MaterialComponents/private/Overlay (45.0.0)
+  - MaterialComponents/private/ThumbTrack (45.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
   - MaterialComponents/ShadowElevations (45.0.0)
   - MaterialComponents/ShadowLayer (45.0.0):
     - MaterialComponents/ShadowElevations
+  - MaterialComponents/Slider (45.0.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/ThumbTrack
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Slider+Extensions (45.0.0):
+    - MaterialComponents/Slider+Extensions/ColorThemer (= 45.0.0)
+  - MaterialComponents/Slider+Extensions/ColorThemer (45.0.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/Slider
+    - MaterialComponents/Themes
   - MaterialComponents/Snackbar (45.0.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/Buttons
@@ -111,6 +129,7 @@ DEPENDENCIES:
   - Material (~> 2.12)
   - MaterialComponents/Buttons+Extensions
   - MaterialComponents/Cards
+  - MaterialComponents/Slider+Extensions
   - MaterialComponents/Snackbar
   - Nimble (~> 7.0)
   - Quick (~> 1.2)
@@ -155,6 +174,6 @@ SPEC CHECKSUMS:
   VaporBytes: 628752235bc16d69800b52355de7118762a9009f
   Web3: 48098db322e2be3c72f07471f197d36ba688fdfd
 
-PODFILE CHECKSUM: 3a67e40d81e91f3d53ae42a8ef4cc3e5b786d805
+PODFILE CHECKSUM: 2913d4b893206ac16f71377429bd3a9f5a8c3d72
 
 COCOAPODS: 1.4.0

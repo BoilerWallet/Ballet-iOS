@@ -14,6 +14,7 @@ target 'Ballet' do
   pod 'MaterialComponents/Cards'
   pod 'MaterialComponents/Buttons+Extensions'
   pod 'MaterialComponents/Snackbar'
+  pod 'MaterialComponents/Slider+Extensions'
 
   # Lottie animations
   pod 'lottie-ios', '~> 2.5'

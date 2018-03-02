@@ -35,6 +35,8 @@
 		0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */; };
 		0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */; };
 		0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */; };
+		0ED734362048C4A800763618 /* String+ToWeiAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED734352048C4A800763618 /* String+ToWeiAmount.swift */; };
+		0ED734382048D4F800763618 /* ETHGasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED734372048D4F800763618 /* ETHGasStation.swift */; };
 		0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80145203E244B00EDD123 /* material_loading_jump.json */; };
 		0EE80148203E3D1900EDD123 /* material_check_pink.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80147203E3D1900EDD123 /* material_check_pink.json */; };
 		0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */; };
@@ -116,6 +118,8 @@
 		0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_wave_loading.json; sourceTree = "<group>"; };
+		0ED734352048C4A800763618 /* String+ToWeiAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToWeiAmount.swift"; sourceTree = "<group>"; };
+		0ED734372048D4F800763618 /* ETHGasStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETHGasStation.swift; sourceTree = "<group>"; };
 		0EE80145203E244B00EDD123 /* material_loading_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_loading_jump.json; sourceTree = "<group>"; };
 		0EE80147203E3D1900EDD123 /* material_check_pink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_check_pink.json; sourceTree = "<group>"; };
 		0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+MaterialDefault.swift"; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				0EE8F2982041AAC5009DF772 /* RPC.swift */,
+				0ED734372048D4F800763618 /* ETHGasStation.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				0EC5EC182044D60700AD629E /* Blockies+Cached.swift */,
 				0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */,
 				0EA476E520478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift */,
+				0ED734352048C4A800763618 /* String+ToWeiAmount.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -820,6 +826,7 @@
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
 				0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */,
+				0ED734382048D4F800763618 /* ETHGasStation.swift in Sources */,
 				0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */,
 				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,
 				0EA476E620478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift in Sources */,
@@ -841,6 +848,7 @@
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
 				0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */,
+				0ED734362048C4A800763618 /* String+ToWeiAmount.swift in Sources */,
 				0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

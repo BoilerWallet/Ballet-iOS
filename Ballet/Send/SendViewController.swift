@@ -13,6 +13,8 @@ import Web3
 import BlockiesSwift
 import MaterialComponents.MaterialButtons
 import Material
+import BigInt
+import MaterialComponents.MaterialSlider
 
 class SendViewController: UIViewController {
 
@@ -26,12 +28,18 @@ class SendViewController: UIViewController {
 
     @IBOutlet weak var selectFromAddressButton: MDCFlatButton!
 
-    @IBOutlet weak var toTextField: TextField!
+    @IBOutlet weak var toTextField: ErrorTextField!
 
-    @IBOutlet weak var amountTextField: TextField!
+    @IBOutlet weak var amountTextField: ErrorTextField!
     @IBOutlet weak var amountLabel: UILabel!
     
+    @IBOutlet weak var feeLabel: UILabel!
+    @IBOutlet weak var feeSlider: MDCSlider!
+    @IBOutlet weak var feeInfoLabel: UILabel!
+
     @IBOutlet weak var sendTransactionButton: MDCRaisedButton!
+
+    private var currentGasPrice: ETHGasStationGasPrice?
 
     private var selectedAccount: Account?
 
@@ -57,6 +65,7 @@ class SendViewController: UIViewController {
         setupFrom()
         setupTo()
         setupAmount()
+        setupFee()
         setupSend()
     }
 
@@ -67,7 +76,7 @@ class SendViewController: UIViewController {
 
     private func setupFrom() {
         fromLabel.setupTitleLabel()
-        fromLabel.text = "From"
+        fromLabel.text = "FROM"
 
         fromSelectedView.borderColor = Colors.darkSecondaryTextColor
         fromSelectedView.applyDashBorder()
@@ -94,6 +103,8 @@ class SendViewController: UIViewController {
         toTextField.autocorrectionType = .no
         toTextField.returnKeyType = .done
         toTextField.delegate = self
+
+        toTextField.detailColor = Color.red.base
     }
 
     private func setupAmount() {
@@ -106,6 +117,43 @@ class SendViewController: UIViewController {
         amountTextField.keyboardType = .decimalPad
         amountTextField.returnKeyType = .done
         amountTextField.delegate = self
+
+        amountTextField.detailColor = Color.red.base
+    }
+
+    private func setupFee() {
+        feeLabel.setupSubTitleLabel()
+        feeLabel.text = "FEE"
+
+        feeInfoLabel.setupSubTitleLabel()
+        feeInfoLabel.textAlignment = .right
+        feeInfoLabel.text = "N/A - ?"
+
+        feeSlider.color = Colors.accentColor
+
+        feeSlider.isEnabled = false
+
+        ETHGasStation.getGasPrice { [weak self] success, gasPrice in
+            guard let gasPrice = gasPrice, success else {
+                if let s = self {
+                    let details = "Something went wrong. Please restart the app and file an issue on Github if it happens repeatedly."
+                    Dialog().details(details).positive("OK", handler: nil).show(s)
+                }
+                return
+            }
+            self?.currentGasPrice = gasPrice
+
+            self?.feeSlider.minimumValue = CGFloat(gasPrice.safeLow)
+            self?.feeSlider.maximumValue = CGFloat(gasPrice.fastest)
+            self?.feeSlider.isEnabled = true
+
+            self?.feeSlider.setValue(CGFloat(gasPrice.average), animated: true)
+            if let s = self {
+                s.feeSliderChanged(sender: s.feeSlider)
+            }
+        }
+
+        feeSlider.addTarget(self, action: #selector(feeSliderChanged(sender:)), for: .valueChanged)
     }
 
     private func setupSend() {
@@ -139,8 +187,66 @@ class SendViewController: UIViewController {
         PopUpController.instantiate(from: self, with: controller)
     }
 
-    @objc private func sendTransactionButtonClicked() {
+    @objc private func feeSliderChanged(sender: MDCSlider) {
+        guard let gasPrice = currentGasPrice else {
+            return
+        }
 
+        var info: String = ""
+
+        var minutes: Double
+        if sender.value >= CGFloat(gasPrice.fastest) {
+            minutes = gasPrice.fastestWait
+            info += "Fastest, "
+        } else if sender.value >= CGFloat(gasPrice.fast) {
+            minutes = gasPrice.fastWait
+            info += "Fast, "
+        } else if sender.value >= CGFloat(gasPrice.average) {
+            minutes = gasPrice.avgWait
+            info += "Average, "
+        } else {
+            minutes = gasPrice.safeLowWait
+            info += "Slower, "
+        }
+
+        if minutes <= 1 {
+            info += "\(Int((minutes * 60).rounded())) sec"
+        } else {
+            info += "\(Int((minutes + 0.5).rounded())) min"
+        }
+
+        let eth = (sender.value * 21000) / 1_000_000_000
+        info += " - \((eth * 1_000_000).rounded() / 1_000_000) ETH"
+
+        feeInfoLabel.text = info
+    }
+
+    @objc private func sendTransactionButtonClicked() {
+        guard let selectedFrom = selectedAccount else {
+            Dialog().details("Please select a 'from' account").positive("OK", handler: nil).show(self)
+            return
+        }
+
+        guard let to = toTextField.text, let toAddress = try? EthereumAddress(hex: to, eip55: true) else {
+            toTextField.detail = "Checksum didn't match"
+            toTextField.isErrorRevealed = true
+            return
+        }
+        toTextField.isErrorRevealed = false
+
+        guard let amountStr = amountTextField.text, let amount = amountStr.ethToWei() else {
+            amountTextField.detail = "Please type in a value"
+            amountTextField.isErrorRevealed = true
+            return
+        }
+        amountTextField.isErrorRevealed = false
+
+        guard let gasPrice = currentGasPrice, feeSlider.isEnabled else {
+            Dialog().details("Could not estimate a fee. Please restart the app.").positive("OK", handler: nil).show(self)
+            return
+        }
+
+        print(feeSlider.value)
     }
 
     /*
@@ -165,6 +271,29 @@ extension SendViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
 
             return false
+        }
+
+        return true
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Ethereum Amount. e.g.: n digits and up to 18 decimal digits
+        if textField === amountTextField {
+            if string.count == 0 {
+                return true
+            }
+            do {
+                if let newString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
+                    let expression = "^([0-9]+)?(\\.([0-9]{1,18})?)?$"
+                    let regex = try NSRegularExpression(pattern: expression, options: .caseInsensitive)
+                    let numberOfMatches = regex.numberOfMatches(in: newString, options: [], range: NSRange(location: 0, length: newString.count))
+                    if numberOfMatches == 0 {
+                        return false
+                    }
+                }
+            }
+            catch {
+            }
         }
 
         return true
