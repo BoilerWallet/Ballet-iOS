@@ -15,6 +15,7 @@ import MaterialComponents.MaterialButtons
 import Material
 import BigInt
 import MaterialComponents.MaterialSlider
+import MaterialComponents.MaterialSnackbar
 
 class SendViewController: UIViewController {
 
@@ -245,8 +246,9 @@ class SendViewController: UIViewController {
             Dialog().details("Could not detect your selected chain. Please check the settings.").positive("OK", handler: nil).show(self)
             return
         }
+        print("ghgghggg")
 
-        guard let selectedFrom = selectedAccount else {
+        guard let selectedFrom = selectedAccount, let priv = try? selectedFrom.ethereumPrivateKey() else {
             Dialog().details("Please select a 'from' account").positive("OK", handler: nil).show(self)
             return
         }
@@ -272,12 +274,67 @@ class SendViewController: UIViewController {
 
         let wei = BigUInt(integerLiteral: UInt64(feeSlider.value * pow(10, 9)))
 
-        try? Web3(rpcURL: url.url).eth.getTransactionCount(address: selectedFrom.ethereumPrivateKey().address, block: .latest) { response in
-            guard let nonce = response.rpcResponse?.result, response.status == .ok else {
-                return
-            }
+        let web3 = Web3(rpcURL: url.url)
 
-            let tx = EthereumTransaction(nonce: nonce, gasPrice: wei, gasLimit: 21000, to: toAddress, value: amount, chainId: url.chainId)
+        web3.eth.getTransactionCount(address: priv.address, block: .latest) { [weak self] response in
+            DispatchQueue.main.sync {
+                let showError = {
+                    if let s = self {
+                        Dialog().details("An error occured. Please try again later and file an issue on Github.")
+                            .positive("OK", handler: nil)
+                            .show(s)
+                    }
+                }
+                guard let nonce = response.rpcResponse?.result, response.status == .ok else {
+                    showError()
+                    return
+                }
+
+                var tx = EthereumTransaction(
+                    nonce: nonce,
+                    gasPrice: EthereumQuantity(quantity: wei),
+                    gasLimit: 21000,
+                    to: toAddress,
+                    value: EthereumQuantity(quantity: amount),
+                    chainId: EthereumQuantity(integerLiteral: UInt64(url.chainId))
+                )
+                do {
+                    try tx.sign(with: selectedFrom.ethereumPrivateKey())
+                } catch {
+                    showError()
+                    return
+                }
+
+                web3.eth.sendRawTransaction(transaction: tx) { response in
+                    guard let resp = response.rpcResponse?.result, response.status == .ok else {
+                        return
+                    }
+
+                    let snack = MDCSnackbarMessage()
+                    snack.text = "Your transaction was sent successfully."
+                    let action = MDCSnackbarMessageAction()
+                    action.handler = {
+                        // Web
+                        let txUrl: String
+                        if url.isMainnet {
+                            txUrl = "https://etherscan.io/tx/\(resp.hex())"
+                        } else if url.isRopsten {
+                            txUrl = "https://ropsten.etherscan.io/tx/\(resp.hex())"
+                        } else {
+                            txUrl = "https://google.com"
+                        }
+
+                        if let u = URL(string: txUrl) {
+                            UIApplication.shared.openURL(u)
+                        }
+                    }
+                    action.title = "View TX"
+                    snack.action = action
+                    snack.buttonTextColor = Colors.accentColor
+
+                    MDCSnackbarManager.show(snack)
+                }
+            }
         }
     }
 

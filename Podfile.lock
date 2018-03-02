@@ -144,7 +144,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Web3:
-    :commit: d2e14961ed944ad14a7f59d49c3f8bd70cf10d73
+    :commit: a4f404bbb0a619deaa2ca316e7c6baf1d1e17f5b
     :git: https://github.com/Boilertalk/Web3.swift
 
 SPEC CHECKSUMS:

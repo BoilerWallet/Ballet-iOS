@@ -20,6 +20,10 @@ class RPCUrl: Object {
         return chainId == 1
     }
 
+    var isRopsten: Bool {
+        return chainId == 3
+    }
+
     var isTestnet: Bool {
         return chainId == 2 || chainId == 3 || chainId == 4 || chainId == 42
     }
