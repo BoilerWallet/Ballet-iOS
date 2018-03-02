@@ -29,6 +29,8 @@ class WalletCollectionViewController: UICollectionViewController {
 
     private var accounts: Results<Account>?
 
+    private var refreshControl: UIRefreshControl!
+
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -64,6 +66,11 @@ class WalletCollectionViewController: UICollectionViewController {
 
         // Hide vertical scrolling indicator
         collectionView?.showsVerticalScrollIndicator = false
+
+        // Setup reload button
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(reloadCollection), for: .valueChanged)
+        self.collectionView?.addSubview(refreshControl)
 
         setupToolbar()
 
@@ -141,6 +148,12 @@ class WalletCollectionViewController: UICollectionViewController {
     }
 
     // MARK: - Actions
+
+    @objc private func reloadCollection() {
+        getAccounts()
+        collectionView?.reloadData()
+        refreshControl.endRefreshing()
+    }
 
     @objc private func addAccountButtonClicked() {
         guard let controller = UIStoryboard(name: "AddAccount", bundle: nil).instantiateInitialViewController() as? AddAccountViewController else {

@@ -184,12 +184,56 @@ class SendViewController: UIViewController {
 
     // MARK: - Helper functions
 
+    private func showGeneralError() {
+        Dialog().details("An error occured. Please try again later and file an issue on Github.")
+            .positive("OK", handler: nil)
+            .show(self)
+    }
+
+    private func resetInput() {
+        fromSelectedName.text = ""
+        fromSelectedAddress.text = ""
+        fromSelectedBlockiesImage.image = nil
+        selectedAccount = nil
+
+        toTextField.text = ""
+
+        amountTextField.text = ""
+    }
+
     private func selectAccount(account: Account) {
         self.selectedAccount = account
 
         try? fromSelectedBlockiesImage.setBlockies(with: account.ethereumPrivateKey().address.hex(eip55: false))
         fromSelectedName.text = account.name
         try? fromSelectedAddress.text = account.ethereumPrivateKey().address.hex(eip55: true)
+    }
+
+    private func sendTransaction(from: RPCUrl, transaction: EthereumTransaction) {
+        Web3(rpcURL: from.url).eth.sendRawTransaction(transaction: transaction) { [weak self] response in
+            DispatchQueue.main.sync {
+                guard let resp = response.rpcResponse?.result, response.status == .ok else {
+                    self?.showGeneralError()
+                    return
+                }
+
+                let snack = MDCSnackbarMessage()
+                snack.text = "Your transaction was sent successfully."
+                let action = MDCSnackbarMessageAction()
+                action.handler = {
+                    if let e = from.etherscanBaseUrl, let u = URL(string: "\(e)/tx/\(resp.hex())") {
+                        UIApplication.shared.openURL(u)
+                    }
+                }
+                action.title = "View TX"
+                snack.action = action
+                snack.buttonTextColor = Colors.accentColor
+
+                MDCSnackbarManager.show(snack)
+
+                self?.resetInput()
+            }
+        }
     }
 
     // MARK: - Actions
@@ -242,11 +286,17 @@ class SendViewController: UIViewController {
     }
 
     @objc private func sendTransactionButtonClicked() {
+        sendTransactionButton.isEnabled = false
+        defer {
+            sendTransactionButton.isEnabled = true
+        }
+
         guard let u = try? Realm().objects(RPCUrl.self).filter("isActive == true").first, let url = u else {
-            Dialog().details("Could not detect your selected chain. Please check the settings.").positive("OK", handler: nil).show(self)
+            Dialog().details("Could not detect your selected chain. Please check the settings.")
+                .positive("OK", handler: nil)
+                .show(self)
             return
         }
-        print("ghgghggg")
 
         guard let selectedFrom = selectedAccount, let priv = try? selectedFrom.ethereumPrivateKey() else {
             Dialog().details("Please select a 'from' account").positive("OK", handler: nil).show(self)
@@ -272,27 +322,18 @@ class SendViewController: UIViewController {
             return
         }
 
-        let wei = BigUInt(integerLiteral: UInt64(feeSlider.value * pow(10, 9)))
+        let gasPrice = BigUInt(integerLiteral: UInt64(feeSlider.value * pow(10, 9)))
 
-        let web3 = Web3(rpcURL: url.url)
-
-        web3.eth.getTransactionCount(address: priv.address, block: .latest) { [weak self] response in
+        Web3(rpcURL: url.url).eth.getTransactionCount(address: priv.address, block: .latest) { [weak self] response in
             DispatchQueue.main.sync {
-                let showError = {
-                    if let s = self {
-                        Dialog().details("An error occured. Please try again later and file an issue on Github.")
-                            .positive("OK", handler: nil)
-                            .show(s)
-                    }
-                }
                 guard let nonce = response.rpcResponse?.result, response.status == .ok else {
-                    showError()
+                    self?.showGeneralError()
                     return
                 }
 
                 var tx = EthereumTransaction(
                     nonce: nonce,
-                    gasPrice: EthereumQuantity(quantity: wei),
+                    gasPrice: EthereumQuantity(quantity: gasPrice),
                     gasLimit: 21000,
                     to: toAddress,
                     value: EthereumQuantity(quantity: amount),
@@ -301,39 +342,11 @@ class SendViewController: UIViewController {
                 do {
                     try tx.sign(with: selectedFrom.ethereumPrivateKey())
                 } catch {
-                    showError()
+                    self?.showGeneralError()
                     return
                 }
 
-                web3.eth.sendRawTransaction(transaction: tx) { response in
-                    guard let resp = response.rpcResponse?.result, response.status == .ok else {
-                        return
-                    }
-
-                    let snack = MDCSnackbarMessage()
-                    snack.text = "Your transaction was sent successfully."
-                    let action = MDCSnackbarMessageAction()
-                    action.handler = {
-                        // Web
-                        let txUrl: String
-                        if url.isMainnet {
-                            txUrl = "https://etherscan.io/tx/\(resp.hex())"
-                        } else if url.isRopsten {
-                            txUrl = "https://ropsten.etherscan.io/tx/\(resp.hex())"
-                        } else {
-                            txUrl = "https://google.com"
-                        }
-
-                        if let u = URL(string: txUrl) {
-                            UIApplication.shared.openURL(u)
-                        }
-                    }
-                    action.title = "View TX"
-                    snack.action = action
-                    snack.buttonTextColor = Colors.accentColor
-
-                    MDCSnackbarManager.show(snack)
-                }
+                self?.sendTransaction(from: url, transaction: tx)
             }
         }
     }
