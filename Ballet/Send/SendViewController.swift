@@ -51,6 +51,12 @@ class SendViewController: UIViewController {
         setupUI()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        setupFee()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,7 +71,6 @@ class SendViewController: UIViewController {
         setupFrom()
         setupTo()
         setupAmount()
-        setupFee()
         setupSend()
     }
 
@@ -122,6 +127,8 @@ class SendViewController: UIViewController {
     }
 
     private func setupFee() {
+        currentGasPrice = nil
+
         feeLabel.setupSubTitleLabel()
         feeLabel.text = "FEE"
 
@@ -133,27 +140,41 @@ class SendViewController: UIViewController {
 
         feeSlider.isEnabled = false
 
-        ETHGasStation.getGasPrice { [weak self] success, gasPrice in
-            guard let gasPrice = gasPrice, success else {
-                if let s = self {
-                    let details = "Something went wrong. Please restart the app and file an issue on Github if it happens repeatedly."
-                    Dialog().details(details).positive("OK", handler: nil).show(s)
+        feeSlider.addTarget(self, action: #selector(feeSliderChanged(sender:)), for: .valueChanged)
+
+        print("haha")
+        if let u = try? Realm().objects(RPCUrl.self).filter("isActive == true").first, let url = u {
+            print("realm")
+            print("\(url.chainId)")
+            if url.isMainnet {
+                ETHGasStation.getGasPrice { [weak self] success, gasPrice in
+                    guard let gasPrice = gasPrice, success else {
+                        if let s = self {
+                            let details = "Something went wrong. Please restart the app and file an issue on Github if it happens repeatedly."
+                            Dialog().details(details).positive("OK", handler: nil).show(s)
+                        }
+                        return
+                    }
+                    self?.currentGasPrice = gasPrice
+
+                    self?.feeSlider.minimumValue = CGFloat(gasPrice.safeLow)
+                    self?.feeSlider.maximumValue = CGFloat(gasPrice.fastest)
+                    self?.feeSlider.isEnabled = true
+
+                    self?.feeSlider.setValue(CGFloat(gasPrice.average), animated: true)
+                    if let s = self {
+                        s.feeSliderChanged(sender: s.feeSlider)
+                    }
                 }
-                return
-            }
-            self?.currentGasPrice = gasPrice
+            } else {
+                feeSlider.minimumValue = 0
+                feeSlider.maximumValue = 200
+                feeSlider.isEnabled = true
 
-            self?.feeSlider.minimumValue = CGFloat(gasPrice.safeLow)
-            self?.feeSlider.maximumValue = CGFloat(gasPrice.fastest)
-            self?.feeSlider.isEnabled = true
-
-            self?.feeSlider.setValue(CGFloat(gasPrice.average), animated: true)
-            if let s = self {
-                s.feeSliderChanged(sender: s.feeSlider)
+                feeSlider.setValue(20, animated: true)
+                feeSliderChanged(sender: feeSlider)
             }
         }
-
-        feeSlider.addTarget(self, action: #selector(feeSliderChanged(sender:)), for: .valueChanged)
     }
 
     private func setupSend() {
@@ -189,6 +210,7 @@ class SendViewController: UIViewController {
 
     @objc private func feeSliderChanged(sender: MDCSlider) {
         guard let gasPrice = currentGasPrice else {
+            feeInfoLabel.text = "\(Int(sender.value.rounded())) gwei"
             return
         }
 
@@ -241,7 +263,7 @@ class SendViewController: UIViewController {
         }
         amountTextField.isErrorRevealed = false
 
-        guard let gasPrice = currentGasPrice, feeSlider.isEnabled else {
+        guard feeSlider.isEnabled else {
             Dialog().details("Could not estimate a fee. Please restart the app.").positive("OK", handler: nil).show(self)
             return
         }
