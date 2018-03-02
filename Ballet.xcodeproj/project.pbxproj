@@ -22,6 +22,8 @@
 		0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */; };
 		0E672D5F1FE70A9E00917D05 /* BalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D5E1FE70A9E00917D05 /* BalletTests.swift */; };
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
+		0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */; };
+		0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */; };
 		0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */; };
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */; };
@@ -105,6 +107,8 @@
 		0E672D651FE70A9E00917D05 /* BalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E672D691FE70A9E00917D05 /* BalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalletUITests.swift; sourceTree = "<group>"; };
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionConfirmation.storyboard; sourceTree = "<group>"; };
+		0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewController.swift; sourceTree = "<group>"; };
 		0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpController.storyboard; sourceTree = "<group>"; };
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderView.swift; sourceTree = "<group>"; };
@@ -264,6 +268,15 @@
 			path = BalletUITests;
 			sourceTree = "<group>";
 		};
+		0E6EB3382049F1730053F88B /* TransactionConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */,
+				0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */,
+			);
+			path = TransactionConfirmation;
+			sourceTree = "<group>";
+		};
 		0E7F7680203B7ED600DDD6F0 /* BlockiesSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +379,7 @@
 		863B23D01FEADE6F0061298A /* Send */ = {
 			isa = PBXGroup;
 			children = (
+				0E6EB3382049F1730053F88B /* TransactionConfirmation */,
 				863B23D31FEADEA50061298A /* Send.storyboard */,
 				0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */,
 				0EFA5D8F203A409200A20781 /* SendViewController.swift */,
@@ -570,6 +584,7 @@
 				0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */,
 				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
+				0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
 				0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */,
@@ -844,6 +859,7 @@
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */,
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,
+				0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */,
 				0E05444D203F90C400603F31 /* DialogView.swift in Sources */,
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
