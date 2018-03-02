@@ -11,7 +11,7 @@ import BigInt
 
 extension String {
 
-    func ethToWei() -> BigInt? {
+    func ethToWei() -> BigUInt? {
         var weiAmount = ""
 
         let splitted = self.split(separator: ".")
@@ -41,6 +41,6 @@ extension String {
             weiAmount += decimal
         }
 
-        return BigInt(weiAmount, radix: 10)
+        return BigUInt(weiAmount, radix: 10)
     }
 }

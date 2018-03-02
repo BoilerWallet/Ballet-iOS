@@ -142,10 +142,7 @@ class SendViewController: UIViewController {
 
         feeSlider.addTarget(self, action: #selector(feeSliderChanged(sender:)), for: .valueChanged)
 
-        print("haha")
         if let u = try? Realm().objects(RPCUrl.self).filter("isActive == true").first, let url = u {
-            print("realm")
-            print("\(url.chainId)")
             if url.isMainnet {
                 ETHGasStation.getGasPrice { [weak self] success, gasPrice in
                     guard let gasPrice = gasPrice, success else {
@@ -171,7 +168,7 @@ class SendViewController: UIViewController {
                 feeSlider.maximumValue = 200
                 feeSlider.isEnabled = true
 
-                feeSlider.setValue(20, animated: true)
+                feeSlider.setValue(21, animated: true)
                 feeSliderChanged(sender: feeSlider)
             }
         }
@@ -244,6 +241,11 @@ class SendViewController: UIViewController {
     }
 
     @objc private func sendTransactionButtonClicked() {
+        guard let u = try? Realm().objects(RPCUrl.self).filter("isActive == true").first, let url = u else {
+            Dialog().details("Could not detect your selected chain. Please check the settings.").positive("OK", handler: nil).show(self)
+            return
+        }
+
         guard let selectedFrom = selectedAccount else {
             Dialog().details("Please select a 'from' account").positive("OK", handler: nil).show(self)
             return
@@ -268,7 +270,15 @@ class SendViewController: UIViewController {
             return
         }
 
-        print(feeSlider.value)
+        let wei = BigUInt(integerLiteral: UInt64(feeSlider.value * pow(10, 9)))
+
+        try? Web3(rpcURL: url.url).eth.getTransactionCount(address: selectedFrom.ethereumPrivateKey().address, block: .latest) { response in
+            guard let nonce = response.rpcResponse?.result, response.status == .ok else {
+                return
+            }
+
+            let tx = EthereumTransaction(nonce: nonce, gasPrice: wei, gasLimit: 21000, to: toAddress, value: amount, chainId: url.chainId)
+        }
     }
 
     /*
