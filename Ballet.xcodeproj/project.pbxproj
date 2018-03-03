@@ -15,6 +15,7 @@
 		0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */; };
 		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
 		0E302197204ACEAE003BA886 /* Web3+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302196204ACEAE003BA886 /* Web3+Promise.swift */; };
+		0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
 		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
 		0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D491FE70A9D00917D05 /* AppDelegate.swift */; };
@@ -96,6 +97,7 @@
 		0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewController.swift; sourceTree = "<group>"; };
 		0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E302196204ACEAE003BA886 /* Web3+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Web3+Promise.swift"; sourceTree = "<group>"; };
+		0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationResultViewController.swift; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
 		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +280,7 @@
 			children = (
 				0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */,
 				0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */,
+				0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */,
 			);
 			path = TransactionConfirmation;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */,
 				0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */,
+				0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
