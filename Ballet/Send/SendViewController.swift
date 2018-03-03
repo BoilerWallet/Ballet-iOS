@@ -298,7 +298,7 @@ class SendViewController: UIViewController {
             return
         }
 
-        guard let selectedFrom = selectedAccount, let priv = try? selectedFrom.ethereumPrivateKey() else {
+        guard let selectedFrom = selectedAccount else {
             Dialog().details("Please select a 'from' account").positive("OK", handler: nil).show(self)
             return
         }
@@ -324,31 +324,20 @@ class SendViewController: UIViewController {
 
         let gasPrice = BigUInt(integerLiteral: UInt64(feeSlider.value * pow(10, 9)))
 
-        Web3(rpcURL: url.url).eth.getTransactionCount(address: priv.address, block: .latest) { [weak self] response in
-            DispatchQueue.main.sync {
-                guard let nonce = response.rpcResponse?.result, response.status == .ok else {
-                    self?.showGeneralError()
-                    return
-                }
+        let tx = PreparedTransaction(
+            from: selectedFrom,
+            to: toAddress,
+            amount: EthereumQuantity(quantity: amount),
+            gasPrice: EthereumQuantity(quantity: gasPrice),
+            rpcUrl: url
+        )
 
-                var tx = EthereumTransaction(
-                    nonce: nonce,
-                    gasPrice: EthereumQuantity(quantity: gasPrice),
-                    gasLimit: 21000,
-                    to: toAddress,
-                    value: EthereumQuantity(quantity: amount),
-                    chainId: EthereumQuantity(integerLiteral: UInt64(url.chainId))
-                )
-                do {
-                    try tx.sign(with: selectedFrom.ethereumPrivateKey())
-                } catch {
-                    self?.showGeneralError()
-                    return
-                }
-
-                self?.sendTransaction(from: url, transaction: tx)
-            }
+        guard let controller = UIStoryboard(name: "TransactionConfirmation", bundle: nil).instantiateInitialViewController() as? TransactionConfirmationViewController else {
+            return
         }
+        controller.transaction = tx
+
+        PopUpController.instantiate(from: self, with: controller)
     }
 
     /*
