@@ -9,12 +9,20 @@
 import UIKit
 import Web3
 import BigInt
+import PromiseKit
+import MaterialComponents.MaterialButtons
 
 class TransactionConfirmationViewController: UIViewController {
 
     // MARK: - Properties
 
     var transaction: PreparedTransaction!
+    private var nonceQuantity: EthereumQuantity!
+
+    @IBOutlet weak var loadingView: LoadingView!
+
+    @IBOutlet weak var sendButton: MDCRaisedButton!
+    @IBOutlet weak var cancelButton: MDCRaisedButton!
 
     @IBOutlet weak var infoLabel: UILabel!
 
@@ -81,6 +89,8 @@ class TransactionConfirmationViewController: UIViewController {
     private func setupUI() {
         setupInfo()
         setupBlockies()
+        setupTransactionLabels()
+        setupButtons()
     }
 
     private func setupInfo() {
@@ -111,11 +121,44 @@ class TransactionConfirmationViewController: UIViewController {
         blockiesArrowDetail.textColor = Colors.accentColor
     }
 
+    private func setupTransactionLabels() {
+        let labels: [UILabel] = [
+            toAddressInfo, toAddress,
+            fromAddressInfo, fromAddress,
+            amountInfo, amount,
+            balanceInfo, balance,
+            coinInfo, coin,
+            networkInfo, network,
+            gasLimitInfo, gasLimit,
+            gasPriceInfo, gasPrice,
+            txFeeInfo, txFee,
+            nonceInfo, nonce
+        ]
+
+        for l in labels {
+            l.setupSubTitleLabel()
+        }
+    }
+
+    func setupButtons() {
+        sendButton.setTitle("Send", for: .normal)
+        sendButton.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
+        sendButton.setBackgroundColor(Colors.accentColor)
+        sendButton.addTarget(self, action: #selector(sendButtonClicked), for: .touchUpInside)
+
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
+        cancelButton.setBackgroundColor(Colors.darkSecondaryTextColor)
+        cancelButton.addTarget(self, action: #selector(cancelButtonClicked), for: .touchUpInside)
+    }
+
     // MARK: - UI filling
 
     private func fillUI() {
         fillInfo()
         fillBlockies()
+        fillTransactionLabels()
+        fillAsyncInfo()
     }
 
     private func fillInfo() {
@@ -133,6 +176,91 @@ class TransactionConfirmationViewController: UIViewController {
         toBlockiesAddress.text = to
 
         blockiesArrowDetail.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
+    }
+
+    private func fillTransactionLabels() {
+        toAddressInfo.text = "To Address:"
+        toAddress.text = transaction.to.hex(eip55: true)
+
+        fromAddressInfo.text = "From Address:"
+        fromAddress.text = try? transaction.from.ethereumPrivateKey().address.hex(eip55: true)
+
+        amountInfo.text = "Amount to Send:"
+        amount.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
+
+        balanceInfo.text = "Account Balance:"
+        balance.text = "??? ETH"
+
+        coinInfo.text = "Coin:"
+        coin.text = "ETH"
+
+        networkInfo.text = "Network:"
+        network.text = "ETH (chain \(transaction.rpcUrl.chainId)) via \(transaction.rpcUrl.url)"
+
+        gasLimitInfo.text = "Gas Limit:"
+        gasLimit.text = "21000"
+
+        gasPriceInfo.text = "Gas Price:"
+        gasPrice.text = "\(String(transaction.gasPrice.quantity, radix: 10).weiToGweiStr()) gwei"
+
+        txFeeInfo.text = "Max TX Fee:"
+        txFee.text = "\(String(transaction.gasPrice.quantity * 21000, radix: 10).weiToEthStr()) ETH"
+
+        nonceInfo.text = "Nonce:"
+        nonce.text = "???"
+    }
+
+    private func fillAsyncInfo() {
+        loadingView.startLoading()
+
+        guard let from = try? transaction.from.ethereumPrivateKey().address else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+
+        let web3 = Web3(rpcURL: transaction.rpcUrl.url)
+
+        firstly {
+            when(fulfilled: web3.eth.getBalance(address: from, block: .latest), web3.eth.getTransactionCount(address: from, block: .latest))
+        }.done { balance, nonce in
+            self.balance.text = "\(String(balance.quantity, radix: 10).weiToEthStr()) ETH"
+            self.nonce.text = String(nonce.quantity, radix: 10)
+
+            // Set nonce quantity for transaction
+            self.nonceQuantity = nonce
+        }.catch { error in
+            self.dismiss(animated: true, completion: nil)
+        }.finally {
+            self.loadingView.stopLoading()
+        }
+    }
+
+    // MARK: - Actions
+
+    @objc private func sendButtonClicked() {
+        let tx = EthereumTransaction(
+            nonce: nonceQuantity,
+            gasPrice: transaction.gasPrice,
+            gasLimit: 21000,
+            to: transaction.to,
+            value: transaction.amount,
+            chainId: EthereumQuantity(integerLiteral: UInt64(transaction.rpcUrl.chainId))
+        )
+        let web3 = Web3(rpcURL: transaction.rpcUrl.url)
+
+        firstly {
+            self.transaction.from.signTransaction(tx)
+        }.then { tx in
+            web3.eth.sendRawTransaction(transaction: tx)
+        }.done { txHash in
+            print(txHash)
+        }.catch { error in
+            print(error)
+        }
+    }
+
+    @objc private func cancelButtonClicked() {
+        dismiss(animated: true, completion: nil)
     }
 
     /*

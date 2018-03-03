@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import Web3
+import PromiseKit
 
 class Account: Object {
 
@@ -29,5 +30,18 @@ class Account: Object {
         self.key = k
 
         return k
+    }
+
+    func signTransaction(_ tx: EthereumTransaction) -> Promise<EthereumTransaction> {
+        return Promise { seal in
+            do {
+                var tx = tx
+                try tx.sign(with: ethereumPrivateKey())
+
+                seal.fulfill(tx)
+            } catch {
+                seal.reject(error)
+            }
+        }
     }
 }

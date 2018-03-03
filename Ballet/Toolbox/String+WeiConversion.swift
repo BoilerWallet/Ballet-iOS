@@ -80,4 +80,37 @@ extension String {
     func weiToEth() -> Double? {
         return Double(weiToEthStr())
     }
+
+    func weiToGweiStr() -> String {
+        var gwei = ""
+
+        var copy = self
+
+        if copy.count <= 9 {
+            for _ in 0..<(10 - copy.count) {
+                copy.insert("0", at: copy.startIndex)
+            }
+        }
+
+        let chars: [Character] = copy.reversed()
+        for i in 0..<chars.count {
+            gwei.insert(chars[i], at: gwei.startIndex)
+            if i == 8 {
+                gwei.insert(".", at: gwei.startIndex)
+            }
+        }
+
+        // Remove trailing zeros
+        var trailingZeros = 0
+        for i in (0..<gwei.count).reversed() {
+            if gwei[gwei.index(gwei.startIndex, offsetBy: i)] != "0" {
+                break
+            }
+            trailingZeros += 1
+        }
+        let endIndex = gwei.index(gwei.startIndex, offsetBy: gwei.count - trailingZeros)
+        gwei = String(gwei[gwei.startIndex..<endIndex])
+
+        return gwei
+    }
 }

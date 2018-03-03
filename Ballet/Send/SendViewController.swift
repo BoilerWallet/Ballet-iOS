@@ -209,33 +209,6 @@ class SendViewController: UIViewController {
         try? fromSelectedAddress.text = account.ethereumPrivateKey().address.hex(eip55: true)
     }
 
-    private func sendTransaction(from: RPCUrl, transaction: EthereumTransaction) {
-        Web3(rpcURL: from.url).eth.sendRawTransaction(transaction: transaction) { [weak self] response in
-            DispatchQueue.main.sync {
-                guard let resp = response.rpcResponse?.result, response.status == .ok else {
-                    self?.showGeneralError()
-                    return
-                }
-
-                let snack = MDCSnackbarMessage()
-                snack.text = "Your transaction was sent successfully."
-                let action = MDCSnackbarMessageAction()
-                action.handler = {
-                    if let e = from.etherscanBaseUrl, let u = URL(string: "\(e)/tx/\(resp.hex())") {
-                        UIApplication.shared.openURL(u)
-                    }
-                }
-                action.title = "View TX"
-                snack.action = action
-                snack.buttonTextColor = Colors.accentColor
-
-                MDCSnackbarManager.show(snack)
-
-                self?.resetInput()
-            }
-        }
-    }
-
     // MARK: - Actions
 
     @objc private func selectFromAddressButtonClicked() {

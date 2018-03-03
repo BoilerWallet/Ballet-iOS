@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-lb-Cou">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSQ-bQ-b7B">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="496"/>
@@ -441,13 +441,41 @@
                                     <constraint firstItem="wSQ-bQ-b7B" firstAttribute="width" secondItem="CX1-lb-Cou" secondAttribute="width" id="vJR-Go-KH5"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYr-DJ-Hha" customClass="MDCRaisedButton">
+                                <rect key="frame" x="259" y="623" width="100" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ABW-Gk-G2D"/>
+                                    <constraint firstAttribute="height" constant="36" id="m20-Gc-szZ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLe-ix-LiE" customClass="MDCRaisedButton">
+                                <rect key="frame" x="143" y="623" width="100" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="oEJ-Ne-AHL"/>
+                                    <constraint firstAttribute="width" constant="100" id="zZq-AR-opV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpF-Bo-60x" customClass="LoadingView" customModule="Ballet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CX1-lb-Cou" firstAttribute="top" secondItem="MpE-tF-4oV" secondAttribute="top" id="5lq-EI-B66"/>
+                            <constraint firstItem="qpF-Bo-60x" firstAttribute="leading" secondItem="MpE-tF-4oV" secondAttribute="leading" id="Ecl-rV-V0C"/>
+                            <constraint firstItem="qpF-Bo-60x" firstAttribute="top" secondItem="MpE-tF-4oV" secondAttribute="top" id="Fpr-Ma-S6a"/>
+                            <constraint firstAttribute="bottom" secondItem="qpF-Bo-60x" secondAttribute="bottom" id="GHI-SQ-BQW"/>
+                            <constraint firstItem="vfs-CG-V4f" firstAttribute="bottom" secondItem="XYr-DJ-Hha" secondAttribute="bottom" constant="8" id="L4r-b9-5P0"/>
+                            <constraint firstItem="XYr-DJ-Hha" firstAttribute="leading" secondItem="wLe-ix-LiE" secondAttribute="trailing" constant="16" id="Too-aa-kng"/>
+                            <constraint firstItem="vfs-CG-V4f" firstAttribute="trailing" secondItem="XYr-DJ-Hha" secondAttribute="trailing" constant="16" id="WJB-Xt-qR9"/>
                             <constraint firstAttribute="trailing" secondItem="CX1-lb-Cou" secondAttribute="trailing" id="bMD-aJ-I3S"/>
+                            <constraint firstItem="XYr-DJ-Hha" firstAttribute="top" secondItem="CX1-lb-Cou" secondAttribute="bottom" constant="8" id="cxb-LO-nC4"/>
+                            <constraint firstItem="vfs-CG-V4f" firstAttribute="bottom" secondItem="wLe-ix-LiE" secondAttribute="bottom" constant="8" id="d7U-na-zCT"/>
                             <constraint firstItem="CX1-lb-Cou" firstAttribute="leading" secondItem="MpE-tF-4oV" secondAttribute="leading" id="f0Q-6u-s6L"/>
-                            <constraint firstAttribute="bottom" secondItem="CX1-lb-Cou" secondAttribute="bottom" id="jTN-c2-6Uh"/>
+                            <constraint firstAttribute="trailing" secondItem="qpF-Bo-60x" secondAttribute="trailing" id="r60-pU-4qF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vfs-CG-V4f"/>
                     </view>
@@ -458,6 +486,7 @@
                         <outlet property="balanceInfo" destination="ZDR-ap-tTL" id="7rB-pJ-JKZ"/>
                         <outlet property="blockiesArrow" destination="Yl8-L0-qer" id="Fr0-pI-5qc"/>
                         <outlet property="blockiesArrowDetail" destination="NXz-xy-8vH" id="fB4-4K-pp6"/>
+                        <outlet property="cancelButton" destination="wLe-ix-LiE" id="Irh-RT-LjK"/>
                         <outlet property="coin" destination="5hG-Fu-hBb" id="zox-6s-aNN"/>
                         <outlet property="coinInfo" destination="eNc-4Z-rme" id="2Nq-kY-vAW"/>
                         <outlet property="fromAddress" destination="nVU-5v-sDq" id="paT-fq-Ibd"/>
@@ -469,10 +498,12 @@
                         <outlet property="gasPrice" destination="Hhb-MI-dtj" id="MZ7-he-fzx"/>
                         <outlet property="gasPriceInfo" destination="apS-kT-o5v" id="tOP-67-ckT"/>
                         <outlet property="infoLabel" destination="ulL-1u-OMz" id="XXW-aa-WBX"/>
+                        <outlet property="loadingView" destination="qpF-Bo-60x" id="ufw-VH-d4J"/>
                         <outlet property="network" destination="tKf-La-Pkp" id="Dop-p2-cOf"/>
                         <outlet property="networkInfo" destination="uWP-RG-zp1" id="ze9-Uk-uNj"/>
                         <outlet property="nonce" destination="fu0-sO-S10" id="rzE-Wv-2mq"/>
                         <outlet property="nonceInfo" destination="rqH-So-nG9" id="HMJ-Qt-upi"/>
+                        <outlet property="sendButton" destination="XYr-DJ-Hha" id="iLd-13-vUc"/>
                         <outlet property="toAddress" destination="c2h-Yo-Q7X" id="skX-F2-kpJ"/>
                         <outlet property="toAddressInfo" destination="FWC-61-hIF" id="QM0-Wt-A5M"/>
                         <outlet property="toBlockies" destination="Pbd-gK-Ybh" id="g4a-gT-sb9"/>
