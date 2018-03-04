@@ -7,6 +7,9 @@ target 'Ballet' do
 
   # Pods for Ballet
 
+  # Hot functional shit
+  pod 'Runes', '~> 4.1'
+
   # Material
   pod 'Material', '~> 2.12'
 
