@@ -9,6 +9,7 @@ PODS:
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - CryptoSwift (0.8.3)
+  - Curry (4.0.0)
   - DropDown (2.3.1)
   - Fabric (1.7.2)
   - lottie-ios (2.5.0)
@@ -132,6 +133,7 @@ DEPENDENCIES:
   - BlockiesSwift (~> 0.1)
   - Cartography (~> 3.0)
   - Crashlytics
+  - Curry (~> 4.0)
   - DropDown (~> 2.3)
   - Fabric
   - lottie-ios (~> 2.5)
@@ -167,6 +169,7 @@ SPEC CHECKSUMS:
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
+  Curry: 887c0b9de9a9947820a59557459c7895e76d7b90
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
@@ -188,6 +191,6 @@ SPEC CHECKSUMS:
   VaporBytes: 628752235bc16d69800b52355de7118762a9009f
   Web3: 48098db322e2be3c72f07471f197d36ba688fdfd
 
-PODFILE CHECKSUM: 3bb9dd0e2ca5eb0ba481996c11807e5ae921cbd4
+PODFILE CHECKSUM: 8daadf6e867ec2878ed04943c0638e3eb4662f5c
 
 COCOAPODS: 1.4.0

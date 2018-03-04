@@ -29,6 +29,7 @@
 		0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */; };
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0E87F94E204A289100742C0A /* String+WeiConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */; };
+		0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88F745204CB2E500D14511 /* Etherscan.swift */; };
 		0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */; };
 		0EA476E02047835B003DB1D0 /* SelectAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */; };
 		0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */; };
@@ -118,6 +119,7 @@
 		0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpController.storyboard; sourceTree = "<group>"; };
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeiConversionTests.swift"; sourceTree = "<group>"; };
+		0E88F745204CB2E500D14511 /* Etherscan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Etherscan.swift; sourceTree = "<group>"; };
 		0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderView.swift; sourceTree = "<group>"; };
 		0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectAccount.storyboard; sourceTree = "<group>"; };
 		0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountCollectionViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			children = (
 				0EE8F2982041AAC5009DF772 /* RPC.swift */,
 				0ED734372048D4F800763618 /* ETHGasStation.swift */,
+				0E88F745204CB2E500D14511 /* Etherscan.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				"${BUILT_PRODUCTS_DIR}/BlockiesSwift/BlockiesSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
@@ -823,6 +827,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlockiesSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
@@ -879,6 +884,7 @@
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
+				0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
 				0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */,
 				0EECA44E204B715900AEDF9C /* Promise+UnwrapOptional.swift in Sources */,

@@ -12,6 +12,8 @@ import BigInt
 import PromiseKit
 import MaterialComponents.MaterialButtons
 import Cartography
+import Runes
+import Curry
 
 class TransactionConfirmationViewController: UIViewController {
 
@@ -278,7 +280,9 @@ class TransactionConfirmationViewController: UIViewController {
             let c = UIStoryboard(name: "TransactionConfirmation", bundle: nil)
                 .instantiateViewController(withIdentifier: "TransactionConfirmationResult")
                 as? TransactionConfirmationResultViewController
-            c.map({ self.showResult(for: txHash, on: $0) })
+
+            c >>- curry(self.showResult)(txHash)
+
             self.completion?()
         }.catch { error in
             let text: String

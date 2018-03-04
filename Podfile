@@ -9,6 +9,7 @@ target 'Ballet' do
 
   # Hot functional shit
   pod 'Runes', '~> 4.1'
+  pod 'Curry', '~> 4.0'
 
   # Material
   pod 'Material', '~> 2.12'
