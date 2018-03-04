@@ -48,6 +48,7 @@
 		0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8F2982041AAC5009DF772 /* RPC.swift */; };
 		0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8F29A2041B392009DF772 /* RPCUrl.swift */; };
 		0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */; };
+		0EECA44E204B715900AEDF9C /* Promise+UnwrapOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA44D204B715900AEDF9C /* Promise+UnwrapOptional.swift */; };
 		0EED236C1FE86E4F007F137F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED236B1FE86E4F007F137F /* Colors.swift */; };
 		0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */; };
 		0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA5D8F203A409200A20781 /* SendViewController.swift */; };
@@ -136,6 +137,7 @@
 		0EE8F2982041AAC5009DF772 /* RPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPC.swift; sourceTree = "<group>"; };
 		0EE8F29A2041B392009DF772 /* RPCUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCUrl.swift; sourceTree = "<group>"; };
 		0EEB235F1FF1A8CB009ED044 /* WalletNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationViewController.swift; sourceTree = "<group>"; };
+		0EECA44D204B715900AEDF9C /* Promise+UnwrapOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+UnwrapOptional.swift"; sourceTree = "<group>"; };
 		0EED236B1FE86E4F007F137F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0EFA5D8D203A408400A20781 /* SendNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNavigationViewController.swift; sourceTree = "<group>"; };
 		0EFA5D8F203A409200A20781 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				0EA476E520478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift */,
 				0ED734352048C4A800763618 /* String+WeiConversion.swift */,
 				0E302196204ACEAE003BA886 /* Web3+Promise.swift */,
+				0EECA44D204B715900AEDF9C /* Promise+UnwrapOptional.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
 				0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */,
+				0EECA44E204B715900AEDF9C /* Promise+UnwrapOptional.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */,
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,

@@ -16,6 +16,7 @@ import Material
 import BigInt
 import MaterialComponents.MaterialSlider
 import MaterialComponents.MaterialSnackbar
+import PromiseKit
 
 class SendViewController: UIViewController {
 
@@ -143,35 +144,24 @@ class SendViewController: UIViewController {
 
         feeSlider.addTarget(self, action: #selector(feeSliderChanged(sender:)), for: .valueChanged)
 
-        if let u = try? Realm().objects(RPCUrl.self).filter("isActive == true").first, let url = u {
-            if url.isMainnet {
-                ETHGasStation.getGasPrice { [weak self] success, gasPrice in
-                    guard let gasPrice = gasPrice, success else {
-                        if let s = self {
-                            let details = "Something went wrong. Please restart the app and file an issue on Github if it happens repeatedly."
-                            Dialog().details(details).positive("OK", handler: nil).show(s)
-                        }
-                        return
-                    }
-                    self?.currentGasPrice = gasPrice
+        let realm = try? Realm()
+        firstly {
+            unwrap(realm?.objects(RPCUrl.self).filter("isActive == true").first)
+        }.then { url in
+            ETHGasStation.getGasPrice(for: url)
+        }.done { gasPrice in
+            self.currentGasPrice = gasPrice
 
-                    self?.feeSlider.minimumValue = CGFloat(gasPrice.safeLow)
-                    self?.feeSlider.maximumValue = CGFloat(gasPrice.fastest)
-                    self?.feeSlider.isEnabled = true
+            self.feeSlider.minimumValue = CGFloat(gasPrice.safeLow)
+            self.feeSlider.maximumValue = CGFloat(gasPrice.fastest)
+            self.feeSlider.isEnabled = true
 
-                    self?.feeSlider.setValue(CGFloat(gasPrice.average), animated: true)
-                    if let s = self {
-                        s.feeSliderChanged(sender: s.feeSlider)
-                    }
-                }
-            } else {
-                feeSlider.minimumValue = 0
-                feeSlider.maximumValue = 200
-                feeSlider.isEnabled = true
-
-                feeSlider.setValue(21, animated: true)
-                feeSliderChanged(sender: feeSlider)
-            }
+            self.feeSlider.setValue(CGFloat(gasPrice.average), animated: true)
+            self.feeSliderChanged(sender: self.feeSlider)
+        }.catch { error in
+            print(error)
+            let details = "Something went wrong. Please restart the app and file an issue on Github if it happens repeatedly."
+            Dialog().details(details).positive("OK", handler: nil).show(self)
         }
     }
 

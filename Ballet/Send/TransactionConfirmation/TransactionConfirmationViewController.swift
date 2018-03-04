@@ -11,6 +11,7 @@ import Web3
 import BigInt
 import PromiseKit
 import MaterialComponents.MaterialButtons
+import Cartography
 
 class TransactionConfirmationViewController: UIViewController {
 
@@ -235,6 +236,24 @@ class TransactionConfirmationViewController: UIViewController {
         }
     }
 
+    // MARK: - Helpers
+
+    private func showResult(for txHash: EthereumData, on vc: TransactionConfirmationResultViewController) {
+        vc.txHashData = txHash
+        vc.rpcUrl = transaction.rpcUrl
+
+        // Embed controller
+        addChildViewController(vc)
+        view.addSubview(vc.view)
+        constrain(view, vc.view) { container, embedded in
+            embedded.top == container.top
+            embedded.bottom == container.bottom
+            embedded.left == container.left
+            embedded.right == container.right
+        }
+        vc.didMove(toParentViewController: self)
+    }
+
     // MARK: - Actions
 
     @objc private func sendButtonClicked() {
@@ -253,7 +272,10 @@ class TransactionConfirmationViewController: UIViewController {
         }.then { tx in
             web3.eth.sendRawTransaction(transaction: tx)
         }.done { txHash in
-            print(txHash)
+            let c = UIStoryboard(name: "TransactionConfirmation", bundle: nil)
+                .instantiateViewController(withIdentifier: "TransactionConfirmationResult")
+                as? TransactionConfirmationResultViewController
+            c.map({ self.showResult(for: txHash, on: $0) })
         }.catch { error in
             print(error)
         }

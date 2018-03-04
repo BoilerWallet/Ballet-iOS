@@ -7,18 +7,47 @@
 //
 
 import UIKit
+import Web3
 
 class TransactionConfirmationResultViewController: UIViewController {
+
+    // MARK: - Properties
+
+    var rpcUrl: RPCUrl?
+    var txHashData: EthereumData?
+
+    @IBOutlet weak var txInfo: UILabel!
+    @IBOutlet weak var txHashInfo: UILabel!
+    @IBOutlet weak var txHash: UILabel!
+
+    // MARK: - Initialization
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard txHashData != nil && rpcUrl != nil else {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - UI setup
+
+    private func setupUI() {
+        txInfo.setupSubTitleLabelWithSize(size: 22)
+        txHashInfo.setupSubTitleLabel()
+        txHash.setupSubTitleLabel()
+
+        txInfo.text = "Your transaction was sent successfully. It should get included into the blockchain soon."
+        txHashInfo.text = "Your transaction hash is the following"
+        txHash.text = txHashData?.hex()
     }
     
 

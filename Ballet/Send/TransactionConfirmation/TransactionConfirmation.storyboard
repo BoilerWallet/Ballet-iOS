@@ -158,6 +158,14 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                                        <real key="value" value="16"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                                        <real key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -186,6 +194,14 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                                        <real key="value" value="16"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                                        <real key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -294,6 +310,14 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                                        <real key="value" value="16"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                                        <real key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -510,7 +534,6 @@
                         <outlet property="toBlockiesAddress" destination="Ydp-Io-qyQ" id="zrq-SM-6Ul"/>
                         <outlet property="txFee" destination="8QR-aC-SxJ" id="YgO-ta-EjV"/>
                         <outlet property="txFeeInfo" destination="WPF-bK-czf" id="XIg-4d-qBU"/>
-                        <segue destination="Roj-iF-ZCY" kind="show" identifier="showResultSegue" id="RJC-Jr-gUI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPs-Kn-Oxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -520,7 +543,7 @@
         <!--Transaction Confirmation Result View Controller-->
         <scene sceneID="dmV-Wp-0kv">
             <objects>
-                <viewController id="Roj-iF-ZCY" customClass="TransactionConfirmationResultViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransactionConfirmationResult" id="Roj-iF-ZCY" customClass="TransactionConfirmationResultViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="42u-xM-UiZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -599,6 +622,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Et-79-iDZ"/>
                     </view>
+                    <connections>
+                        <outlet property="txHash" destination="gHh-5a-UjH" id="quz-Pr-ixj"/>
+                        <outlet property="txHashInfo" destination="dDD-JZ-ZRE" id="AGa-3h-N6W"/>
+                        <outlet property="txInfo" destination="Miz-pk-lSk" id="4EM-C1-Pem"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyq-qI-um0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

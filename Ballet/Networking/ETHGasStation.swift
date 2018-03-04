@@ -8,21 +8,62 @@
 
 import Foundation
 import Alamofire
+import PromiseKit
 
 struct ETHGasStation {
 
-    static func getGasPrice(completion: @escaping ((_ success: Bool, _ gasPrice: ETHGasStationGasPrice?) -> Void)) {
+    static func getGasPrice(completion: @escaping ((_ gasPrice: ETHGasStationGasPrice?, _ error: Error?) -> Void)) {
         Alamofire.request(
             "https://ethgasstation.info/json/ethgasAPI.json",
             method: .get,
             headers: ["Accept": "application/json"]
         ).responseData { response in
-            guard let data = response.result.value, let json = try? JSONDecoder().decode(ETHGasStationGasPrice.self, from: data) else {
-                completion(false, nil)
+            guard let data = response.result.value else {
+                completion(nil, response.error)
                 return
             }
 
-            completion(true, json)
+            do {
+                let json = try JSONDecoder().decode(ETHGasStationGasPrice.self, from: data)
+                completion(json, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+    }
+
+    static func getGasPrice() -> Promise<ETHGasStationGasPrice> {
+        return Promise { seal in
+            ETHGasStation.getGasPrice(completion: { (gasPrice, error) in
+                seal.resolve(gasPrice, error)
+            })
+        }
+    }
+
+    static func getGasPrice(for rpcUrl: RPCUrl) -> Promise<ETHGasStationGasPrice> {
+        if rpcUrl.isMainnet {
+            return ETHGasStation.getGasPrice()
+        }
+
+        return Promise { seal in
+            let gasPrice = ETHGasStationGasPrice(
+                fastWait: 0,
+                speed: 0,
+                averageCalc: 0,
+                fast: 50,
+                avgWait: 0,
+                averageTxpool: 0,
+                safelowCalc: 0,
+                safeLowWait: 0,
+                blockNum: 0,
+                fastestWait: 0,
+                safelowTxpool: 0,
+                fastest: 200,
+                average: 21,
+                safeLow: 0,
+                blockTime: 0
+            )
+            seal.fulfill(gasPrice)
         }
     }
 }
