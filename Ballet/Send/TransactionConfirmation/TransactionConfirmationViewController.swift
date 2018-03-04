@@ -17,6 +17,8 @@ class TransactionConfirmationViewController: UIViewController {
 
     // MARK: - Properties
 
+    var completion: (() -> Void)?
+
     var transaction: PreparedTransaction!
     private var nonceQuantity: EthereumQuantity!
 
@@ -167,14 +169,13 @@ class TransactionConfirmationViewController: UIViewController {
     }
 
     private func fillBlockies() {
-        if let from = try? transaction.from.ethereumPrivateKey().address.hex(eip55: true) {
-            fromBlockies.setBlockies(with: from)
-            fromBlockiesAddress.text = from
+        if let privateKey = try? transaction.from.ethereumPrivateKey() {
+            fromBlockies.setBlockies(with: privateKey.address.hex(eip55: false))
+            fromBlockiesAddress.text = privateKey.address.hex(eip55: true)
         }
 
-        let to = transaction.to.hex(eip55: true)
-        toBlockies.setBlockies(with: to)
-        toBlockiesAddress.text = to
+        toBlockies.setBlockies(with: transaction.to.hex(eip55: false))
+        toBlockiesAddress.text = transaction.to.hex(eip55: true)
 
         blockiesArrowDetail.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
     }
@@ -257,6 +258,8 @@ class TransactionConfirmationViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func sendButtonClicked() {
+        loadingView.startLoading()
+
         let tx = EthereumTransaction(
             nonce: nonceQuantity,
             gasPrice: transaction.gasPrice,
@@ -276,8 +279,17 @@ class TransactionConfirmationViewController: UIViewController {
                 .instantiateViewController(withIdentifier: "TransactionConfirmationResult")
                 as? TransactionConfirmationResultViewController
             c.map({ self.showResult(for: txHash, on: $0) })
+            self.completion?()
         }.catch { error in
-            print(error)
+            let text: String
+            if let _ = error as? RPCResponse<EthereumData>.Error {
+                text = "Your transaction was rejected. Please recheck your inputs and try again."
+            } else {
+                text = "Something unexpected went wrong. Please try again later."
+            }
+            Dialog().details(text).positive("OK", handler: nil).show(self)
+        }.finally {
+            self.loadingView.stopLoading()
         }
     }
 

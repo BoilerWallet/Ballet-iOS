@@ -299,6 +299,15 @@ class SendViewController: UIViewController {
             return
         }
         controller.transaction = tx
+        controller.completion = {
+            self.fromSelectedBlockiesImage.image = nil
+            self.fromSelectedName.text = ""
+            self.fromSelectedAddress.text = ""
+            self.selectedAccount = nil
+
+            self.toTextField.text = ""
+            self.amountTextField.text = ""
+        }
 
         PopUpController.instantiate(from: self, with: controller)
     }

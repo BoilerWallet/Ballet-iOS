@@ -602,11 +602,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-ta-6Ov" customClass="MDCFlatButton">
-                                <rect key="frame" x="137" y="112" width="100" height="36"/>
+                                <rect key="frame" x="73" y="112" width="228" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="NED-kL-p0m"/>
-                                    <constraint firstAttribute="width" constant="100" id="pux-10-nA2"/>
+                                    <constraint firstAttribute="width" constant="228" id="pux-10-nA2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -623,6 +623,8 @@
                         <viewLayoutGuide key="safeArea" id="6Et-79-iDZ"/>
                     </view>
                     <connections>
+                        <outlet property="done" destination="IhJ-WR-hen" id="ccJ-LA-7hq"/>
+                        <outlet property="showOnEtherscan" destination="Gi9-ta-6Ov" id="hau-4d-n1D"/>
                         <outlet property="txHash" destination="gHh-5a-UjH" id="quz-Pr-ixj"/>
                         <outlet property="txHashInfo" destination="dDD-JZ-ZRE" id="AGa-3h-N6W"/>
                         <outlet property="txInfo" destination="Miz-pk-lSk" id="4EM-C1-Pem"/>
