@@ -38,6 +38,8 @@ class WalletDetailViewController: UIViewController {
     @IBOutlet weak var copyAddressButton: IconButton!
     @IBOutlet weak var erc20Button: MDCRaisedButton!
 
+    @IBOutlet weak var historyInfoLabel: UILabel!
+
     private var key: EthereumPrivateKey?
 
     // MARK: - Initialization
@@ -89,6 +91,9 @@ class WalletDetailViewController: UIViewController {
         blockiesImageView.image = nil
         balanceLabel.text = "0.000000000000000000 ETH"
         addressLabel.text = ""
+
+        historyInfoLabel.setupSubTitleLabel()
+        historyInfoLabel.text = "History (Transactions)"
 
         // Motion
         walletInfoView.motionIdentifier = motionIdentifiers?.container
