@@ -49,6 +49,7 @@ target 'Ballet' do
 
   # Web3
   pod 'Web3', :git => 'https://github.com/Boilertalk/Web3.swift', :branch => 'master'
+  pod 'Web3/PromiseKit', :git => 'https://github.com/Boilertalk/Web3.swift', :branch => 'master'
 
   # PromiseKit
   pod 'PromiseKit', '~> 6.0'
