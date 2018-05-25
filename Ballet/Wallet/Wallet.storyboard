@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -259,13 +260,100 @@
                                 <rect key="frame" x="0.0" y="372" width="375" height="295"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Zld-Ha-i1f">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="walletDetailDefaultCell" rowHeight="64" id="Zld-Ha-i1f" customClass="WalletDetailDefaultTableViewCell" customModule="Ballet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zld-Ha-i1f" id="gdV-lR-tdD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9vO-T2-eX2">
+                                                    <rect key="frame" x="8" y="20" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="KCc-hf-0Be"/>
+                                                        <constraint firstAttribute="width" constant="24" id="S5t-5P-vEn"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oym-gj-L1K" customClass="MarqueeLabel">
+                                                    <rect key="frame" x="40" y="20" width="147.5" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="w7q-vM-TIM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                            <real key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlJ-D9-NuU">
+                                                    <rect key="frame" x="195.5" y="20" width="171.5" height="24"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTz-Kj-9DP" customClass="MarqueeLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="83" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                                    <real key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dG-xq-vCz" customClass="MarqueeLabel">
+                                                            <rect key="frame" x="82" y="0.0" width="89.5" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                                    <real key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="7dG-xq-vCz" firstAttribute="top" secondItem="YlJ-D9-NuU" secondAttribute="top" id="Dnm-Yv-xTj"/>
+                                                        <constraint firstAttribute="height" constant="24" id="Dvn-hj-ZZG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="7dG-xq-vCz" secondAttribute="bottom" id="Goh-2y-4K7"/>
+                                                        <constraint firstItem="VTz-Kj-9DP" firstAttribute="top" secondItem="YlJ-D9-NuU" secondAttribute="top" id="awy-nQ-3Rp"/>
+                                                        <constraint firstItem="7dG-xq-vCz" firstAttribute="leading" secondItem="VTz-Kj-9DP" secondAttribute="trailing" constant="4" id="cdW-7M-zFB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7dG-xq-vCz" secondAttribute="trailing" id="iKI-6x-OUP"/>
+                                                        <constraint firstItem="VTz-Kj-9DP" firstAttribute="width" secondItem="YlJ-D9-NuU" secondAttribute="width" multiplier="1/2" constant="-4" id="nji-34-Vmj"/>
+                                                        <constraint firstItem="VTz-Kj-9DP" firstAttribute="leading" secondItem="YlJ-D9-NuU" secondAttribute="leading" id="qw4-XT-lAr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="VTz-Kj-9DP" secondAttribute="bottom" id="rYB-Jc-uK6"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9vO-T2-eX2" firstAttribute="leading" secondItem="gdV-lR-tdD" secondAttribute="leading" constant="8" id="EXu-HX-Y5R"/>
+                                                <constraint firstItem="Oym-gj-L1K" firstAttribute="leading" secondItem="9vO-T2-eX2" secondAttribute="trailing" constant="8" id="GPR-PD-Yd9"/>
+                                                <constraint firstItem="YlJ-D9-NuU" firstAttribute="leading" secondItem="Oym-gj-L1K" secondAttribute="trailing" constant="8" id="LKY-1b-fs4"/>
+                                                <constraint firstItem="Oym-gj-L1K" firstAttribute="centerY" secondItem="gdV-lR-tdD" secondAttribute="centerY" id="Opz-Xg-bk1"/>
+                                                <constraint firstAttribute="trailing" secondItem="YlJ-D9-NuU" secondAttribute="trailing" constant="8" id="Yz4-yE-CLq"/>
+                                                <constraint firstItem="9vO-T2-eX2" firstAttribute="centerY" secondItem="gdV-lR-tdD" secondAttribute="centerY" id="dHS-eX-CPd"/>
+                                                <constraint firstItem="YlJ-D9-NuU" firstAttribute="centerY" secondItem="gdV-lR-tdD" secondAttribute="centerY" id="gqb-AW-qJK"/>
+                                                <constraint firstItem="Oym-gj-L1K" firstAttribute="width" secondItem="gdV-lR-tdD" secondAttribute="width" multiplier="1/2" constant="-40" id="trF-CB-dgd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="age" destination="7dG-xq-vCz" id="4rm-HW-AI4"/>
+                                            <outlet property="fromToAddress" destination="Oym-gj-L1K" id="1Kl-Lo-vN7"/>
+                                            <outlet property="inOutArrow" destination="9vO-T2-eX2" id="dnu-kJ-fZE"/>
+                                            <outlet property="value" destination="VTz-Kj-9DP" id="zbd-td-o3t"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -293,6 +381,7 @@
                         <outlet property="erc20Button" destination="ijf-lg-kkD" id="UlK-cL-Qen"/>
                         <outlet property="historyInfoLabel" destination="56r-eY-a0V" id="LNg-NF-L9c"/>
                         <outlet property="nameLabel" destination="a7J-th-U0n" id="6gM-jN-uib"/>
+                        <outlet property="txTableView" destination="qQZ-yi-Bpp" id="pNo-2K-GCd"/>
                         <outlet property="walletInfoView" destination="aWL-Hb-mZy" id="iVI-5U-fgF"/>
                     </connections>
                 </viewController>

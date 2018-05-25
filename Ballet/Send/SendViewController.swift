@@ -273,7 +273,7 @@ class SendViewController: UIViewController {
         }
         toTextField.isErrorRevealed = false
 
-        guard let amountStr = amountTextField.text, let amount = amountStr.ethToWei() else {
+        guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), let amount = amountStr.ethToWei() else {
             amountTextField.detail = "Please type in a value"
             amountTextField.isErrorRevealed = true
             return
@@ -347,7 +347,7 @@ extension SendViewController: UITextFieldDelegate {
             }
             do {
                 if let newString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
-                    let expression = "^([0-9]+)?(\\.([0-9]{1,18})?)?$"
+                    let expression = "^([0-9]+)([,\\.]([0-9]{1,18})?)?$"
                     let regex = try NSRegularExpression(pattern: expression, options: .caseInsensitive)
                     let numberOfMatches = regex.numberOfMatches(in: newString, options: [], range: NSRange(location: 0, length: newString.count))
                     if numberOfMatches == 0 {

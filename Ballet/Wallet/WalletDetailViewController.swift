@@ -13,6 +13,8 @@ import Web3
 import BlockiesSwift
 import Material
 import MarqueeLabel
+import PromiseKit
+import Cartography
 
 class WalletDetailViewController: UIViewController {
 
@@ -27,6 +29,8 @@ class WalletDetailViewController: UIViewController {
 
     // MARK: - Properties
 
+    private static let defaultTxCellIdentifier = "walletDetailDefaultCell"
+
     var account: Account!
     var motionIdentifiers: WalletDetailMotionIdentifiers?
 
@@ -39,6 +43,10 @@ class WalletDetailViewController: UIViewController {
     @IBOutlet weak var erc20Button: MDCRaisedButton!
 
     @IBOutlet weak var historyInfoLabel: UILabel!
+
+    @IBOutlet weak var txTableView: UITableView!
+
+    private var walletTxs: [EtherscanTransaction] = []
 
     private var key: EthereumPrivateKey?
 
@@ -95,6 +103,10 @@ class WalletDetailViewController: UIViewController {
         historyInfoLabel.setupSubTitleLabel()
         historyInfoLabel.text = "History (Transactions)"
 
+        // tx tableView
+        txTableView.dataSource = self
+        txTableView.delegate = self
+
         // Motion
         walletInfoView.motionIdentifier = motionIdentifiers?.container
         blockiesImageView.motionIdentifier = motionIdentifiers?.blockies
@@ -130,6 +142,23 @@ class WalletDetailViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: second)) { [weak self] in
             self?.addressLabel.triggerScrollStart()
         }
+
+        // txs
+        firstly {
+            unwrap(RPC.activeUrl)
+        }.then { url in
+            return Promise { seal in
+                seal.fulfill(Etherscan(rpcUrl: url))
+            }
+        }.then { scan in
+            scan.getTransactions(for: key.address, order: .descending)
+        }.done { [weak self] txs in
+            self?.walletTxs = txs
+            self?.txTableView.reloadData()
+        }.catch { error in
+            // TODO: Handle error
+            print(error)
+        }
     }
 
     // MARK: - Actions
@@ -152,4 +181,74 @@ class WalletDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+// MARK: - TableView extensions
+
+extension WalletDetailViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return walletTxs.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: WalletDetailViewController.defaultTxCellIdentifier) as! WalletDetailDefaultTableViewCell
+
+        if let address = key?.address {
+            cell.setup(for: address, with: walletTxs[indexPath.row])
+        }
+
+        return cell
+    }
+}
+
+extension WalletDetailViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .white
+
+        let fromToLabel = UILabel()
+        let valueLabel = UILabel()
+        let ageLabel = UILabel()
+
+        view.addSubview(fromToLabel)
+        view.addSubview(valueLabel)
+        view.addSubview(ageLabel)
+
+        constrain(view, fromToLabel, valueLabel, ageLabel) { view, fromTo, value, age in
+            fromTo.left == view.left + 40
+            fromTo.top == view.top
+            fromTo.bottom == view.bottom
+            fromTo.width == view.width / 2 - 40
+
+            value.top == view.top
+            value.bottom == view.bottom
+            value.left == fromTo.right + 8
+            value.width == view.width / 4 - 4 - 4
+
+            age.left == value.right + 4
+            age.right == view.right - 8
+            age.top == view.top
+            age.bottom == view.bottom
+        }
+
+        fromToLabel.setupTitleLabel()
+        fromToLabel.textAlignment = .center
+        fromToLabel.text = "From -> To"
+
+        valueLabel.setupTitleLabel()
+        valueLabel.textAlignment = .center
+        valueLabel.text = "Value"
+
+        ageLabel.setupTitleLabel()
+        ageLabel.textAlignment = .center
+        ageLabel.text = "When"
+
+        return view
+    }
 }

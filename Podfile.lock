@@ -9,6 +9,7 @@ PODS:
     - Fabric (~> 1.7.2)
   - CryptoSwift (0.9.0)
   - Curry (4.0.0)
+  - DateToolsSwift (4.0.0)
   - DropDown (2.3.1)
   - Fabric (1.7.2)
   - lottie-ios (2.5.0)
@@ -130,6 +131,7 @@ DEPENDENCIES:
   - Cartography (~> 3.0)
   - Crashlytics
   - Curry (~> 4.0)
+  - DateToolsSwift (~> 4.0)
   - DropDown (~> 2.3)
   - Fabric
   - lottie-ios (~> 2.5)
@@ -157,6 +159,7 @@ SPEC CHECKSUMS:
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   Curry: 887c0b9de9a9947820a59557459c7895e76d7b90
+  DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
@@ -176,6 +179,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
 
-PODFILE CHECKSUM: 4a8187b7f0ea42a943e6ec53982ceb514892ec79
+PODFILE CHECKSUM: 54b271523533d1d82e4709ffb1f12c137f2622f0
 
 COCOAPODS: 1.4.0

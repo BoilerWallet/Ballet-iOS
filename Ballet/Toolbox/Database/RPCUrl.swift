@@ -42,4 +42,19 @@ class RPCUrl: Object {
             return nil
         }
     }
+
+    var etherscanApiUrl: String? {
+        switch chainId {
+        case 1:
+            return "https://api.etherscan.io"
+        case 3:
+            return "https://api-ropsten.etherscan.io"
+        case 4:
+            return "https://api-rinkeby.etherscan.io"
+        case 42:
+            return "https://api-kovan.etherscan.io"
+        default:
+            return nil
+        }
+    }
 }

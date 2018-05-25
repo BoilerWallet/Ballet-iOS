@@ -44,6 +44,9 @@ target 'Ballet' do
   # Database
   pod 'RealmSwift', '~> 3.0'
 
+  # DateTools
+  pod 'DateToolsSwift', '~> 4.0'
+
   # BlockiesSwift
   pod 'BlockiesSwift', '~> 0.1'
 

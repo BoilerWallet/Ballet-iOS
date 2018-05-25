@@ -14,6 +14,11 @@ import BigInt
 
 struct Etherscan {
 
+    enum Error: Swift.Error {
+
+        case etherscanUrlNotAvailable
+    }
+
     let rpcUrl: RPCUrl
 
     init(rpcUrl: RPCUrl) {
@@ -25,8 +30,13 @@ struct Etherscan {
         page: Int = 1,
         size: Int = 10,
         order: OrderType = .ascending,
-        completion: @escaping ((_ txs: [EtherscanTransaction]?, _ error: Error?) -> Void)
+        completion: @escaping ((_ txs: [EtherscanTransaction]?, _ error: Swift.Error?) -> Void)
     ) {
+        guard let etherscanUrl = rpcUrl.etherscanApiUrl else {
+            completion(nil, Error.etherscanUrlNotAvailable)
+            return
+        }
+
         let parameters: Parameters = [
             "module": "account",
             "action": "txlist",
@@ -37,7 +47,7 @@ struct Etherscan {
             "apikey": "PRH62S7HN4XPSUXBIXF9HZATS3UVSC6BFY"
         ]
         Alamofire.request(
-            "https://api.etherscan.io/api",
+            "\(etherscanUrl)/api",
             method: .get,
             parameters: parameters,
             headers: ["Accept": "application/json"]
