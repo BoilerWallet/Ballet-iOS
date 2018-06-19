@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ybB-10-sjh">
-    <device id="retina4_7" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ybB-10-sjh">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,7 +16,7 @@
             <objects>
                 <collectionViewController id="YJM-rg-6yw" customClass="WalletCollectionViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="63O-Jb-QEb">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lRE-C2-5YR">
@@ -27,7 +27,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="walletCell" id="EjQ-VI-S7A" customClass="WalletCollectionViewCell" customModule="Ballet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="330" height="245"/>
+                                <rect key="frame" x="22.5" y="0.0" width="330" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="330" height="245"/>
@@ -418,12 +418,12 @@
                                 <exclude reference="7Yz-Qg-oq1"/>
                                 <exclude reference="XT6-OC-Hx8"/>
                                 <exclude reference="gbz-pS-GAs"/>
-                                <exclude reference="zjm-AI-2bH"/>
                                 <exclude reference="IbK-Rb-KvI"/>
                                 <exclude reference="ozX-I5-ysf"/>
-                                <exclude reference="zqF-Bg-0PT"/>
                                 <exclude reference="fKH-iM-gin"/>
                                 <exclude reference="hvZ-01-0pg"/>
+                                <exclude reference="zjm-AI-2bH"/>
+                                <exclude reference="zqF-Bg-0PT"/>
                                 <exclude reference="LAM-TQ-Va7"/>
                                 <exclude reference="bQy-Kd-FJD"/>
                                 <exclude reference="yeR-AX-TRi"/>
@@ -442,15 +442,15 @@
                                 <include reference="XT6-OC-Hx8"/>
                                 <include reference="gbz-pS-GAs"/>
                                 <exclude reference="olT-g7-LHk"/>
-                                <include reference="zjm-AI-2bH"/>
                                 <include reference="IbK-Rb-KvI"/>
                                 <exclude reference="Xbn-Dj-MdE"/>
                                 <include reference="ozX-I5-ysf"/>
+                                <include reference="fKH-iM-gin"/>
+                                <include reference="hvZ-01-0pg"/>
+                                <include reference="zjm-AI-2bH"/>
                                 <exclude reference="pFs-YU-Eld"/>
                                 <exclude reference="yYE-d5-zPg"/>
                                 <include reference="zqF-Bg-0PT"/>
-                                <include reference="fKH-iM-gin"/>
-                                <include reference="hvZ-01-0pg"/>
                                 <exclude reference="0II-mu-8Cv"/>
                                 <include reference="LAM-TQ-Va7"/>
                                 <include reference="bQy-Kd-FJD"/>
@@ -485,7 +485,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ybB-10-sjh" customClass="WalletNavigationViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qv8-xv-F9O" customClass="NavigationBar" customModule="Material">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

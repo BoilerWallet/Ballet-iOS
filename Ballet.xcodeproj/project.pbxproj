@@ -14,6 +14,8 @@
 		0E054450203F95D700603F31 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444F203F95D700603F31 /* Account.swift */; };
 		0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */; };
 		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
+		0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */; };
+		0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */; };
 		0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
 		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
@@ -98,6 +100,8 @@
 		0E05444F203F95D700603F31 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewController.swift; sourceTree = "<group>"; };
 		0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionCell.swift; sourceTree = "<group>"; };
+		0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionTableViewController.swift; sourceTree = "<group>"; };
 		0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationResultViewController.swift; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
 		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
@@ -393,6 +397,8 @@
 				863449E41FEC18B800738516 /* Settings.storyboard */,
 				8634D6991FF3D8F900377AB6 /* SettingsNavigationViewController.swift */,
 				863449EA1FEC335100738516 /* SettingsTableViewController.swift */,
+				0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */,
+				0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -857,6 +863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
+				0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
@@ -892,6 +899,7 @@
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,
 				0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */,
 				0E05444D203F90C400603F31 /* DialogView.swift in Sources */,
+				0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */,
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
 				0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */,
