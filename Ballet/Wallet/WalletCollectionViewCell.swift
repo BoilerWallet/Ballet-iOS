@@ -98,7 +98,7 @@ class WalletCollectionViewCell: UICollectionViewCell {
 
         blockiesImage.setBlockies(with: address.hex(eip55: false))
 
-        RPC.activeWeb3?.eth.getBalance(address: address, block: .latest, response: { [weak self] response in
+        RPC.activeWeb3.eth.getBalance(address: address, block: .latest, response: { [weak self] response in
             guard let quantity = response.rpcResponse?.result, response.status == .ok else {
                 return
             }

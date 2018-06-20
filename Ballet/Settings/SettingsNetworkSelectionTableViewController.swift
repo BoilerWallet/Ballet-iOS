@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
+import PromiseKit
+import MaterialComponents.MaterialDialogs
 
 class SettingsNetworkSelectionTableViewController: UITableViewController {
+
+    // MARK: - Properties
+
+    private static let defaultNetworkCellIdentifier = "networkSelectionCell"
+
+    private var rows: Results<RPCUrl>?
+
+    // MARK: - Initialization
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +29,11 @@ class SettingsNetworkSelectionTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
+        tableView.rowHeight = 88
+
+        setupUI()
+        fillUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,27 +41,63 @@ class SettingsNetworkSelectionTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - UI setup
+
+    private func setupUI() {
+        view.backgroundColor = Colors.background
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+        navigationItem.backButton.tintColor = Colors.lightPrimaryTextColor
+    }
+
+    private func fillUI() {
+        navigationItem.titleLabel.text = "Select Network"
+
+        firstly {
+            unwrap(try? Realm())
+        }.done { realm in
+            self.rows = realm.objects(RPCUrl.self)
+            self.tableView.reloadData()
+        }.catch { error in
+            // TODO: Handle error
+            print(error)
+        }
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return rows?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).defaultNetworkCellIdentifier, for: indexPath) as! SettingsNetworkSelectionCell
 
-        // Configure the cell...
+        if let rows = rows {
+            cell.setup(for: rows[indexPath.row])
+        }
 
         return cell
     }
-    */
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        firstly {
+            unwrap(try? Realm())
+        }.done { realm in
+            try realm.write {
+                for u in realm.objects(RPCUrl.self) {
+                    u.isActive = false
+                }
+                self.rows?[indexPath.row].isActive = true
+            }
+            self.tableView.reloadData()
+        }.catch { error in
+            Dialog().title("Something went wrong").details(error.localizedDescription).positive("OK", handler: nil).show(self)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

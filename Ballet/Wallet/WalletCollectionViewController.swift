@@ -14,6 +14,7 @@ import Cartography
 import Web3
 import RealmSwift
 import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialDialogs
 
 private let reuseIdentifier = "walletCell"
 
@@ -25,11 +26,11 @@ class WalletCollectionViewController: UICollectionViewController {
 
     private var addAccountButton: MDCFloatingButton!
 
-    private var testnetSwitch: Switch!
-
     private var accounts: Results<Account>?
 
     private var refreshControl: UIRefreshControl!
+
+    private var lastKnownRPCUrl: RPCUrl?
 
     // MARK: - Initialization
 
@@ -56,6 +57,14 @@ class WalletCollectionViewController: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let lastKnown = lastKnownRPCUrl, !RPCUrl.rawEquals(lastKnown, RPC.activeUrl) {
+            reloadCollection()
+        }
     }
 
     // MARK: - UI setup
@@ -89,10 +98,7 @@ class WalletCollectionViewController: UICollectionViewController {
 
         navigationItem.rightViews = [rate]
 
-        testnetSwitch = Switch(state: RPC.activeUrl?.isTestnet ?? false ? .on : .off, style: .light, size: .medium)
-        testnetSwitch.delegate = self
-
-        navigationItem.leftViews = [testnetSwitch]
+        navigationItem.leftViews = [createNetworkColorButton()]
     }
 
     private func setupAddAccountButton() {
@@ -120,6 +126,8 @@ class WalletCollectionViewController: UICollectionViewController {
     // MARK: - Helper functions
 
     private func getAccounts() {
+        lastKnownRPCUrl = RPC.activeUrl
+
         let realm: Realm
         do {
             realm = try Realm()
@@ -150,6 +158,7 @@ class WalletCollectionViewController: UICollectionViewController {
     // MARK: - Actions
 
     @objc private func reloadCollection() {
+        navigationItem.leftViews = [createNetworkColorButton()]
         getAccounts()
         collectionView?.reloadData()
         refreshControl.endRefreshing()
@@ -180,6 +189,15 @@ class WalletCollectionViewController: UICollectionViewController {
         }
     }
 
+    @objc private func networkColorClicked() {
+        let active = RPC.activeUrl
+
+        let title = active.name
+        let text = "You are currently in the network \"\(active.name)\". To switch visit the Settings menu."
+
+        Dialog().title(title).details(text).positive("OK", handler: nil).show(self)
+    }
+
     private func donate() {
         let path = "https://ballet.boilertalk.com/donate"
         guard let url = NSURL(string: path) else { return }
@@ -190,6 +208,18 @@ class WalletCollectionViewController: UICollectionViewController {
         } else {
             UIApplication.shared.openURL(url as URL)
         }
+    }
+
+    // MARK: - Helpers
+
+    func createNetworkColorButton() -> IconButton {
+        let networkColor = IconButton()
+        let image = UIImage.from(color: RPC.activeUrl.networkColor, width: 24, height: 24)?.af_imageRoundedIntoCircle()
+        networkColor.setImage(image, for: .normal)
+        networkColor.setImage(image, for: .highlighted)
+        networkColor.addTarget(self, action: #selector(networkColorClicked), for: .touchUpInside)
+
+        return networkColor
     }
 
     /*
@@ -312,34 +342,5 @@ extension WalletCollectionViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
-    }
-}
-
-extension WalletCollectionViewController: SwitchDelegate {
-
-    func switchDidChangeState(control: Switch, state: SwitchState) {
-        if control === testnetSwitch {
-            guard let realm = try? Realm() else {
-                return
-            }
-            try? realm.write {
-                for u in realm.objects(RPCUrl.self) {
-                    u.isActive = false
-                }
-            }
-            if state == .on {
-                let ropsten = realm.objects(RPCUrl.self).filter("chainId == 3").first
-                try? realm.write {
-                    ropsten?.isActive = true
-                }
-            } else {
-                let main = realm.objects(RPCUrl.self).filter("chainId == 1").first
-                try? realm.write {
-                    main?.isActive = true
-                }
-            }
-
-            collectionView?.reloadData()
-        }
     }
 }

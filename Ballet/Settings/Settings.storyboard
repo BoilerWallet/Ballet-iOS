@@ -218,6 +218,9 @@
                                                 <constraint firstItem="Asy-eq-mZ5" firstAttribute="centerY" secondItem="m3A-M9-5Sp" secondAttribute="centerY" id="jl0-lq-O39"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="zbg-H8-zmz" kind="show" id="oEi-Wf-znV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

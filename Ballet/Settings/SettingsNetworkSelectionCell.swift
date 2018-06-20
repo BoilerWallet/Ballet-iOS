@@ -37,10 +37,25 @@ class SettingsNetworkSelectionCell: TableViewCell {
     // MARK: - UI setup
 
     private func setupUI() {
+        networkColor.layer.cornerRadius = networkColor.bounds.width / 2
+        networkColor.layer.masksToBounds = true
+
+        networkNameLabel.setupTitleLabel()
+        networkUrlLabel.setupSubTitleLabel()
     }
 
     // MARK: - Cell setup
 
     func setup(for url: RPCUrl) {
+        networkNameLabel.text = url.name
+        networkUrlLabel.text = url.url
+
+        networkColor.backgroundColor = url.networkColor
+
+        if url.isActive {
+            backgroundColor = Colors.accent.lighten5
+        } else {
+            backgroundColor = Color.clear
+        }
     }
 }

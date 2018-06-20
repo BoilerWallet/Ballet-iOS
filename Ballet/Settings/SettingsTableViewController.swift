@@ -87,6 +87,9 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard urls.count > indexPath.row else {
+            return
+        }
         let path = urls[indexPath.row]
         guard let url = NSURL(string: path) else { return }
 

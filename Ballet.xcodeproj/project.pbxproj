@@ -16,6 +16,7 @@
 		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
 		0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */; };
 		0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */; };
+		0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */; };
 		0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
 		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
@@ -102,6 +103,7 @@
 		0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionCell.swift; sourceTree = "<group>"; };
 		0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionTableViewController.swift; sourceTree = "<group>"; };
+		0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FromColor.swift"; sourceTree = "<group>"; };
 		0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationResultViewController.swift; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
 		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				0EA476E520478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift */,
 				0ED734352048C4A800763618 /* String+WeiConversion.swift */,
 				0EECA44D204B715900AEDF9C /* Promise+UnwrapOptional.swift */,
+				0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -499,7 +502,6 @@
 				0E672D431FE70A9D00917D05 /* Frameworks */,
 				0E672D441FE70A9D00917D05 /* Resources */,
 				F6CB821FED7114C5DFB719E8 /* [CP] Embed Pods Frameworks */,
-				1BACFDF244BA69C73260BA05 /* [CP] Copy Pods Resources */,
 				86357F3E1FEF008600DB2D20 /* ShellScript */,
 			);
 			buildRules = (
@@ -520,7 +522,6 @@
 				0E672D571FE70A9E00917D05 /* Frameworks */,
 				0E672D581FE70A9E00917D05 /* Resources */,
 				E7FF8680A37416CF96362105 /* [CP] Embed Pods Frameworks */,
-				EBFC4F1868CDCF1CB6CD2B82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -540,8 +541,6 @@
 				0E672D611FE70A9E00917D05 /* Sources */,
 				0E672D621FE70A9E00917D05 /* Frameworks */,
 				0E672D631FE70A9E00917D05 /* Resources */,
-				0687D0AC71B2AC2F568346E2 /* [CP] Embed Pods Frameworks */,
-				476ABA6CFEB5FF0BEB1FCE0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -646,36 +645,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0687D0AC71B2AC2F568346E2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1BACFDF244BA69C73260BA05 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ballet/Pods-Ballet-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1C3AFC7551E74A15D1DF4436 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -692,21 +661,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		476ABA6CFEB5FF0BEB1FCE0B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletUITests/Pods-BalletUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		847CA4D67B051F11EE029B93 /* [CP] Check Pods Manifest.lock */ = {
@@ -776,21 +730,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletTests/Pods-BalletTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EBFC4F1868CDCF1CB6CD2B82 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BalletTests/Pods-BalletTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6CB821FED7114C5DFB719E8 /* [CP] Embed Pods Frameworks */ = {
@@ -877,6 +816,7 @@
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
 				0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */,
+				0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */,
 				0ED734382048D4F800763618 /* ETHGasStation.swift in Sources */,
 				0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */,
 				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,

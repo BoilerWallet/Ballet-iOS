@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Material
 
 class RPCUrl: Object {
 
@@ -56,5 +57,22 @@ class RPCUrl: Object {
         default:
             return nil
         }
+    }
+
+    var networkColor: UIColor {
+        if isMainnet {
+            return Color.green.base
+        } else if isTestnet {
+            return Color.amber.base
+        } else {
+            return Color.blue.base
+        }
+    }
+}
+
+extension RPCUrl {
+
+    public static func rawEquals (_ lhs: RPCUrl, _ rhs: RPCUrl) -> Bool {
+        return lhs.name == rhs.name && lhs.url == rhs.url && lhs.chainId == rhs.chainId && lhs.isActive == rhs.isActive
     }
 }

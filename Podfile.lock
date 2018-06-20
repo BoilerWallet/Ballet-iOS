@@ -29,13 +29,13 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Buttons+Extensions (45.0.0):
-    - MaterialComponents/Buttons+Extensions/ColorThemer (= 45.0.0)
-    - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 45.0.0)
-  - MaterialComponents/Buttons+Extensions/ColorThemer (45.0.0):
+  - "MaterialComponents/Buttons+Extensions (45.0.0)":
+    - "MaterialComponents/Buttons+Extensions/ColorThemer (= 45.0.0)"
+    - "MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 45.0.0)"
+  - "MaterialComponents/Buttons+Extensions/ColorThemer (45.0.0)":
     - MaterialComponents/Buttons
     - MaterialComponents/Themes
-  - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (45.0.0):
+  - "MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (45.0.0)":
     - MaterialComponents/Buttons
     - MDFTextAccessibility
   - MaterialComponents/Cards (45.0.0):
@@ -43,6 +43,12 @@ PODS:
     - MaterialComponents/private/Icons/ic_check_circle
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
+  - MaterialComponents/Dialogs (45.0.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MDFInternationalization
   - MaterialComponents/Ink (45.0.0):
     - MaterialComponents/private/Math
   - MaterialComponents/OverlayWindow (45.0.0):
@@ -70,9 +76,9 @@ PODS:
     - MaterialComponents/Palettes
     - MaterialComponents/private/ThumbTrack
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/Slider+Extensions (45.0.0):
-    - MaterialComponents/Slider+Extensions/ColorThemer (= 45.0.0)
-  - MaterialComponents/Slider+Extensions/ColorThemer (45.0.0):
+  - "MaterialComponents/Slider+Extensions (45.0.0)":
+    - "MaterialComponents/Slider+Extensions/ColorThemer (= 45.0.0)"
+  - "MaterialComponents/Slider+Extensions/ColorThemer (45.0.0)":
     - MaterialComponents/Palettes
     - MaterialComponents/Slider
     - MaterialComponents/Themes
@@ -137,9 +143,10 @@ DEPENDENCIES:
   - lottie-ios (~> 2.5)
   - MarqueeLabel (~> 3.1)
   - Material (~> 2.12)
-  - MaterialComponents/Buttons+Extensions
+  - "MaterialComponents/Buttons+Extensions"
   - MaterialComponents/Cards
-  - MaterialComponents/Slider+Extensions
+  - MaterialComponents/Dialogs
+  - "MaterialComponents/Slider+Extensions"
   - MaterialComponents/Snackbar
   - Nimble (~> 7.0)
   - PromiseKit (~> 6.0)
@@ -149,6 +156,36 @@ DEPENDENCIES:
   - TPKeyboardAvoiding (~> 1.3)
   - Web3 (~> 0.1)
   - Web3/PromiseKit (~> 0.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - BigInt.swift
+    - BlockiesSwift
+    - Cartography
+    - Crashlytics
+    - CryptoSwift
+    - Curry
+    - DateToolsSwift
+    - DropDown
+    - Fabric
+    - lottie-ios
+    - MarqueeLabel
+    - Material
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - Motion
+    - Nimble
+    - PromiseKit
+    - Quick
+    - Realm
+    - RealmSwift
+    - Runes
+    - secp256k1.swift
+    - TPKeyboardAvoiding
+    - Web3
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -179,6 +216,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
 
-PODFILE CHECKSUM: 54b271523533d1d82e4709ffb1f12c137f2622f0
+PODFILE CHECKSUM: 816a4b642e968b585c63b367797c106c93450cbf
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

@@ -12,12 +12,18 @@ import Web3
 
 struct RPC {
 
-    private static var defaultRPCUrls: [RPCUrl] {
+    private static var defaultMainnetRPCUrl: RPCUrl {
         let mainnet = RPCUrl()
         mainnet.name = "Infura Mainnet"
         mainnet.url = "https://mainnet.infura.io/m6d0dZdIbdR5d6bvHDQj"
         mainnet.chainId = 1
         mainnet.isActive = true
+
+        return mainnet
+    }
+
+    private static var defaultRPCUrls: [RPCUrl] {
+        let mainnet = defaultMainnetRPCUrl
 
         let ropsten = RPCUrl()
         ropsten.name = "Infura Ropsten"
@@ -37,9 +43,10 @@ struct RPC {
         return [mainnet, ropsten, rinkeby, kovan]
     }
 
-    static var activeUrl: RPCUrl? {
+    static var activeUrl: RPCUrl {
         guard let realm = try? Realm() else {
-            return nil
+            // Default is currently the mainnet.
+            return defaultMainnetRPCUrl
         }
         let urls = realm.objects(RPCUrl.self)
         if urls.count == 0 {
@@ -50,18 +57,20 @@ struct RPC {
                 }
             }
             if urls.count < newUrls.count {
-                return nil
+                // Default is currently the mainnet.
+                return defaultMainnetRPCUrl
             }
         }
 
-        return urls.filter("isActive == true").first
-    }
-
-    static var activeWeb3: Web3? {
-        guard let url = RPC.activeUrl else {
-            return nil
+        guard let activeUrl = urls.filter("isActive == true").first else {
+            // Default is currently the mainnet.
+            return defaultMainnetRPCUrl
         }
 
-        return Web3(rpcURL: url.url)
+        return activeUrl
+    }
+
+    static var activeWeb3: Web3 {
+        return Web3(rpcURL: activeUrl.url)
     }
 }
