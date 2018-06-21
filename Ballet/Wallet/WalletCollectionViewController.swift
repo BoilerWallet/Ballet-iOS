@@ -76,6 +76,9 @@ class WalletCollectionViewController: UICollectionViewController {
         // Hide vertical scrolling indicator
         collectionView?.showsVerticalScrollIndicator = false
 
+        // Always allow reloading/scrolling
+        collectionView?.alwaysBounceVertical = true
+
         // Setup reload button
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(reloadCollection), for: .valueChanged)
