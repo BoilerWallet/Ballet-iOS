@@ -11,6 +11,8 @@ import Web3
 import Material
 import BigInt
 import MarqueeLabel
+import Lottie
+import Cartography
 
 class SettingsNetworkSelectionCell: TableViewCell {
 
@@ -21,6 +23,8 @@ class SettingsNetworkSelectionCell: TableViewCell {
     @IBOutlet weak var networkNameLabel: UILabel!
 
     @IBOutlet weak var networkUrlLabel: UILabel!
+
+    private var checkbox: LOTAnimationView!
 
     // MARK: - Initialization
 
@@ -42,6 +46,17 @@ class SettingsNetworkSelectionCell: TableViewCell {
 
         networkNameLabel.setupTitleLabel()
         networkUrlLabel.setupSubTitleLabel()
+
+        checkbox = LOTAnimationView(name: "material_checkbox")
+        checkbox.animationSpeed = 2.5
+        addSubview(checkbox)
+
+        constrain(self, checkbox) { container, checkbox in
+            checkbox.width == 24
+            checkbox.height == 24
+            checkbox.right == container.right - 16
+            checkbox.centerY == container.centerY
+        }
     }
 
     // MARK: - Cell setup
@@ -53,9 +68,9 @@ class SettingsNetworkSelectionCell: TableViewCell {
         networkColor.backgroundColor = url.networkColor
 
         if url.isActive {
-            backgroundColor = Colors.accent.lighten5
+            checkbox.play()
         } else {
-            backgroundColor = Color.clear
+            checkbox.animationProgress = 0
         }
     }
 }

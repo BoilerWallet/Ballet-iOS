@@ -16,6 +16,7 @@
 		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
 		0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */; };
 		0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */; };
+		0E27364F20DBFCF8001820F4 /* material_checkbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E27364E20DBFCF8001820F4 /* material_checkbox.json */; };
 		0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */; };
 		0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
@@ -103,6 +104,7 @@
 		0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionCell.swift; sourceTree = "<group>"; };
 		0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionTableViewController.swift; sourceTree = "<group>"; };
+		0E27364E20DBFCF8001820F4 /* material_checkbox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_checkbox.json; sourceTree = "<group>"; };
 		0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FromColor.swift"; sourceTree = "<group>"; };
 		0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationResultViewController.swift; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 		0ECA6BBC203D04C1001247F8 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				0E27364E20DBFCF8001820F4 /* material_checkbox.json */,
 				0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */,
 				0EE80145203E244B00EDD123 /* material_loading_jump.json */,
 				0EE80147203E3D1900EDD123 /* material_check_pink.json */,
@@ -612,6 +615,7 @@
 				0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */,
 				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
+				0E27364F20DBFCF8001820F4 /* material_checkbox.json in Resources */,
 				0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,

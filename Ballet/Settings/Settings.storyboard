@@ -265,7 +265,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz0-yy-hR4">
-                                            <rect key="frame" x="56" y="16" width="303" height="24"/>
+                                            <rect key="frame" x="56" y="16" width="263" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="TDL-42-OcJ"/>
                                             </constraints>
@@ -274,7 +274,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJM-Vp-vZ9">
-                                            <rect key="frame" x="56" y="48" width="303" height="24"/>
+                                            <rect key="frame" x="56" y="48" width="263" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="S4R-4C-gmq"/>
                                             </constraints>
@@ -286,11 +286,11 @@
                                     <constraints>
                                         <constraint firstItem="RJM-Vp-vZ9" firstAttribute="top" secondItem="xz0-yy-hR4" secondAttribute="bottom" constant="8" id="5yc-U1-cLA"/>
                                         <constraint firstItem="ptU-0A-Dhf" firstAttribute="centerY" secondItem="e4j-RL-hJN" secondAttribute="centerY" id="6dD-uw-oiV"/>
-                                        <constraint firstAttribute="trailing" secondItem="RJM-Vp-vZ9" secondAttribute="trailing" constant="16" id="9lU-qc-9wD"/>
+                                        <constraint firstAttribute="trailing" secondItem="RJM-Vp-vZ9" secondAttribute="trailing" constant="56" id="9lU-qc-9wD"/>
                                         <constraint firstItem="ptU-0A-Dhf" firstAttribute="leading" secondItem="e4j-RL-hJN" secondAttribute="leading" constant="16" id="A4A-i3-801"/>
                                         <constraint firstItem="RJM-Vp-vZ9" firstAttribute="leading" secondItem="ptU-0A-Dhf" secondAttribute="trailing" constant="16" id="Hly-BS-CBg"/>
                                         <constraint firstItem="xz0-yy-hR4" firstAttribute="leading" secondItem="ptU-0A-Dhf" secondAttribute="trailing" constant="16" id="MkK-z4-9av"/>
-                                        <constraint firstAttribute="trailing" secondItem="xz0-yy-hR4" secondAttribute="trailing" constant="16" id="Vpt-Id-dn9"/>
+                                        <constraint firstAttribute="trailing" secondItem="xz0-yy-hR4" secondAttribute="trailing" constant="56" id="Vpt-Id-dn9"/>
                                         <constraint firstItem="xz0-yy-hR4" firstAttribute="top" secondItem="e4j-RL-hJN" secondAttribute="top" constant="16" id="tcV-bt-PEF"/>
                                     </constraints>
                                 </tableViewCellContentView>
