@@ -56,9 +56,9 @@ class SettingsTokenTrackerTableViewController: UITableViewController {
 
     private func setupTrackButton() {
         trackButton = MDCFloatingButton()
-        view.addSubview(trackButton)
+        navigationController?.view.addSubview(trackButton)
 
-        constrain(view, trackButton) { view, button in
+        constrain(navigationController!.view, trackButton) { view, button in
             button.right == view.right - 16
             button.bottom == view.bottom - 16
             button.width == 56
@@ -113,13 +113,13 @@ class SettingsTokenTrackerTableViewController: UITableViewController {
     // MARK: - Actions
 
     @objc private func trackButtonClicked() {
-        guard let controller = UIStoryboard(name: "AddAccount", bundle: nil).instantiateInitialViewController() as? AddAccountViewController else {
+        guard let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "TrackNewTokenController") as? SettingsTrackNewTokenViewController else {
             return
         }
-        controller.completion = { [weak self] selected, name in
-            self?.saveNewAccount(privateKey: selected, name: name)
-            self?.collectionView?.reloadData()
-        }
+//        controller.completion = { [weak self] selected, name in
+//            self?.saveNewAccount(privateKey: selected, name: name)
+//            self?.collectionView?.reloadData()
+//        }
 
         PopUpController.instantiate(from: self, with: controller)
     }
