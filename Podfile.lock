@@ -122,6 +122,8 @@ PODS:
   - Web3 (0.3.0):
     - Web3/Core (= 0.3.0)
     - Web3/HTTPExtension (= 0.3.0)
+  - Web3/ContractABI (0.3.0):
+    - Web3/Core
   - Web3/Core (0.3.0):
     - BigInt (~> 3.1)
     - CryptoSwift (~> 0.8)
@@ -157,6 +159,7 @@ DEPENDENCIES:
   - Runes (~> 4.1)
   - TPKeyboardAvoiding (~> 1.3)
   - Web3 (~> 0.3)
+  - Web3/ContractABI (~> 0.3)
   - Web3/PromiseKit (~> 0.3)
 
 SPEC REPOS:
@@ -220,6 +223,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   Web3: 94f87f301a94cfb064d90baf25e2d3603c332551
 
-PODFILE CHECKSUM: a2a2ef2ab53ff1cd2715dbc26a42099215790968
+PODFILE CHECKSUM: ba684c5eb031d75e9116f821cee8f7044ecd84c3
 
 COCOAPODS: 1.5.3

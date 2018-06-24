@@ -54,6 +54,7 @@ target 'Ballet' do
   # Web3
   pod 'Web3', '~> 0.3'
   pod 'Web3/PromiseKit', '~> 0.3'
+  pod 'Web3/ContractABI', '~> 0.3'
 
   # PromiseKit
   pod 'PromiseKit', '~> 6.0'

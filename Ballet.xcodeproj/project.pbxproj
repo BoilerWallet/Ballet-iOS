@@ -41,6 +41,10 @@
 		0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC89292044676500865634 /* WalletDetailViewController.swift */; };
 		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
 		0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */; };
+		0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift */; };
+		0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */; };
+		0EC5244C20DFFFCC009FAFEB /* ERC20TrackedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244B20DFFFCC009FAFEB /* ERC20TrackedToken.swift */; };
+		0EC5244E20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */; };
 		0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5EC182044D60700AD629E /* Blockies+Cached.swift */; };
 		0ECA6BB2203C6ECC001247F8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */; };
 		0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */; };
@@ -135,6 +139,10 @@
 		0EAC89292044676500865634 /* WalletDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailViewController.swift; sourceTree = "<group>"; };
 		0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumQuantity+ConvertFromWei.swift"; sourceTree = "<group>"; };
 		0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailDefaultTableViewCell.swift; sourceTree = "<group>"; };
+		0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableViewController.swift; sourceTree = "<group>"; };
+		0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableViewCell.swift; sourceTree = "<group>"; };
+		0EC5244B20DFFFCC009FAFEB /* ERC20TrackedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERC20TrackedToken.swift; sourceTree = "<group>"; };
+		0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTrackNewTokenViewController.swift; sourceTree = "<group>"; };
 		0EC5EC182044D60700AD629E /* Blockies+Cached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blockies+Cached.swift"; sourceTree = "<group>"; };
 		0ECA6BB1203C6ECC001247F8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		0ECA6BB3203C6EDB001247F8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 			children = (
 				0E05444F203F95D700603F31 /* Account.swift */,
 				0EE8F29A2041B392009DF772 /* RPCUrl.swift */,
+				0EC5244B20DFFFCC009FAFEB /* ERC20TrackedToken.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -404,6 +413,9 @@
 				863449EA1FEC335100738516 /* SettingsTableViewController.swift */,
 				0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */,
 				0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */,
+				0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift */,
+				0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */,
+				0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -812,11 +824,15 @@
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
+				0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift in Sources */,
 				0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */,
+				0EC5244E20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift in Sources */,
 				0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */,
 				0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
+				0EC5244C20DFFFCC009FAFEB /* ERC20TrackedToken.swift in Sources */,
+				0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0E054450203F95D700603F31 /* Account.swift in Sources */,

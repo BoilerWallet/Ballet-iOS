@@ -12,10 +12,15 @@ import Material
 
 class RPCUrl: Object {
 
+    @objc dynamic var rpcUrlID = UUID().uuidString
     @objc dynamic var name: String = "<No Name>"
     @objc dynamic var url: String = ""
     @objc dynamic var chainId: Int = 1
     @objc dynamic var isActive: Bool = false
+
+    override static func primaryKey() -> String? {
+        return "rpcUrlID"
+    }
 
     var isMainnet: Bool {
         return chainId == 1

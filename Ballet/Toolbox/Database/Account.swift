@@ -13,10 +13,15 @@ import PromiseKit
 
 class Account: Object {
 
+    @objc dynamic var accountID = UUID().uuidString
     @objc dynamic var name: String = ""
     @objc dynamic var privateKey: String = "0x"
     @objc dynamic var encrypted: Bool = false
     @objc dynamic var salt: String? = nil
+
+    override static func primaryKey() -> String? {
+        return "accountID"
+    }
 
     // Cache generated EthereumPrivateKey
     private var key: EthereumPrivateKey?
