@@ -265,15 +265,14 @@ class TransactionConfirmationViewController: UIViewController {
         let tx = EthereumTransaction(
             nonce: nonceQuantity,
             gasPrice: transaction.gasPrice,
-            gasLimit: 21000,
+            gas: 21000,
             to: transaction.to,
-            value: transaction.amount,
-            chainId: EthereumQuantity(integerLiteral: UInt64(transaction.rpcUrl.chainId))
+            value: transaction.amount
         )
         let web3 = Web3(rpcURL: transaction.rpcUrl.url)
 
         firstly {
-            self.transaction.from.signTransaction(tx)
+            try self.transaction.from.signTransaction(tx, chainId: EthereumQuantity(integerLiteral: UInt64(transaction.rpcUrl.chainId))).promise
         }.then { tx in
             web3.eth.sendRawTransaction(transaction: tx)
         }.done { txHash in

@@ -32,16 +32,7 @@ class Account: Object {
         return k
     }
 
-    func signTransaction(_ tx: EthereumTransaction) -> Promise<EthereumTransaction> {
-        return Promise { seal in
-            do {
-                var tx = tx
-                try tx.sign(with: ethereumPrivateKey())
-
-                seal.fulfill(tx)
-            } catch {
-                seal.reject(error)
-            }
-        }
+    func signTransaction(_ tx: EthereumTransaction, chainId: EthereumQuantity) throws -> EthereumSignedTransaction {
+        return try tx.sign(with: ethereumPrivateKey(), chainId: chainId)
     }
 }

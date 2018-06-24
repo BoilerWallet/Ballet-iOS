@@ -52,8 +52,8 @@ target 'Ballet' do
   pod 'BlockiesSwift', '~> 0.1'
 
   # Web3
-  pod 'Web3', '~> 0.1'
-  pod 'Web3/PromiseKit', '~> 0.1'
+  pod 'Web3', '~> 0.3'
+  pod 'Web3/PromiseKit', '~> 0.3'
 
   # PromiseKit
   pod 'PromiseKit', '~> 6.0'

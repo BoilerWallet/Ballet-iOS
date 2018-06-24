@@ -98,17 +98,14 @@ class WalletCollectionViewCell: UICollectionViewCell {
 
         blockiesImage.setBlockies(with: address.hex(eip55: false))
 
-        RPC.activeWeb3.eth.getBalance(address: address, block: .latest, response: { [weak self] response in
-            guard let quantity = response.rpcResponse?.result, response.status == .ok else {
-                return
-            }
-
-            let value = quantity.convertWeiToEthString()
-
-            DispatchQueue.main.async {
-                self?.balanceLabel.text = value + " ETH"
-            }
-        })
+        firstly {
+            RPC.activeWeb3.eth.getBalance(address: address, block: .latest)
+        }.done { [weak self] balance in
+            let value = balance.convertWeiToEthString()
+            self?.balanceLabel.text = value + " ETH"
+        }.catch { error in
+            // TODO: - Handle error case
+        }
     }
 
     // MARK: - Actions

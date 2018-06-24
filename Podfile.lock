@@ -2,12 +2,13 @@ PODS:
   - Alamofire (4.6.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
-  - BigInt.swift (1.0.0)
+  - BigInt (3.1.0):
+    - SipHash (~> 1.2)
   - BlockiesSwift (0.1.2)
   - Cartography (3.0.1)
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
-  - CryptoSwift (0.9.0)
+  - CryptoSwift (0.10.0)
   - Curry (4.0.0)
   - DateToolsSwift (4.0.0)
   - DropDown (2.3.1)
@@ -116,17 +117,18 @@ PODS:
     - Realm (= 3.0.2)
   - Runes (4.1.0)
   - secp256k1.swift (0.1.4)
+  - SipHash (1.2.2)
   - TPKeyboardAvoiding (1.3.2)
-  - Web3 (0.1.1):
-    - Web3/Core (= 0.1.1)
-    - Web3/HTTPExtension (= 0.1.1)
-  - Web3/Core (0.1.1):
-    - BigInt.swift (~> 1.0)
+  - Web3 (0.3.0):
+    - Web3/Core (= 0.3.0)
+    - Web3/HTTPExtension (= 0.3.0)
+  - Web3/Core (0.3.0):
+    - BigInt (~> 3.1)
     - CryptoSwift (~> 0.8)
     - secp256k1.swift (~> 0.1)
-  - Web3/HTTPExtension (0.1.1):
+  - Web3/HTTPExtension (0.3.0):
     - Web3/Core
-  - Web3/PromiseKit (0.1.1):
+  - Web3/PromiseKit (0.3.0):
     - PromiseKit/CorePromise (~> 6.0)
     - Web3/Core
 
@@ -154,14 +156,14 @@ DEPENDENCIES:
   - RealmSwift (~> 3.0)
   - Runes (~> 4.1)
   - TPKeyboardAvoiding (~> 1.3)
-  - Web3 (~> 0.1)
-  - Web3/PromiseKit (~> 0.1)
+  - Web3 (~> 0.3)
+  - Web3/PromiseKit (~> 0.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
-    - BigInt.swift
+    - BigInt
     - BlockiesSwift
     - Cartography
     - Crashlytics
@@ -184,17 +186,18 @@ SPEC REPOS:
     - RealmSwift
     - Runes
     - secp256k1.swift
+    - SipHash
     - TPKeyboardAvoiding
     - Web3
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  BigInt.swift: 1e0ddf08d82166e72dfb0fa8d40301d273081afc
+  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   BlockiesSwift: 22d8d56dd187e6bfd16cb8c8fbd4fd4896c3e65d
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
-  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
+  CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
   Curry: 887c0b9de9a9947820a59557459c7895e76d7b90
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
@@ -213,9 +216,10 @@ SPEC CHECKSUMS:
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
+  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
-  Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
+  Web3: 94f87f301a94cfb064d90baf25e2d3603c332551
 
-PODFILE CHECKSUM: 816a4b642e968b585c63b367797c106c93450cbf
+PODFILE CHECKSUM: a2a2ef2ab53ff1cd2715dbc26a42099215790968
 
 COCOAPODS: 1.5.3

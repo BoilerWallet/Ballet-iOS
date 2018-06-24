@@ -127,15 +127,14 @@ class WalletDetailViewController: UIViewController {
 
         blockiesImageView.setBlockies(with: key.address.hex(eip55: false))
 
-        RPC.activeWeb3.eth.getBalance(address: key.address, block: .latest, response: { response in
-            guard let quantity = response.rpcResponse?.result, response.status == .ok else {
-                return
-            }
-
-            DispatchQueue.main.sync { [weak self] in
-                self?.balanceLabel.text = quantity.convertWeiToEthString() + " ETH"
-            }
-        })
+        firstly {
+            RPC.activeWeb3.eth.getBalance(address: key.address, block: .latest)
+        }.done { [weak self] balance in
+            let value = balance.convertWeiToEthString()
+            self?.balanceLabel.text = value + " ETH"
+        }.catch { error in
+            // TODO: - Handle error case
+        }
 
         addressLabel.text = key.address.hex(eip55: true)
         let second = DispatchTime.now().uptimeNanoseconds + 1000000000
