@@ -33,6 +33,8 @@
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0E87F94E204A289100742C0A /* String+WeiConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */; };
 		0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88F745204CB2E500D14511 /* Etherscan.swift */; };
+		0E94A41520E127A500335710 /* SettingsTokenTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */; };
+		0E94A41720E138EE00335710 /* Dialog+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94A41620E138EE00335710 /* Dialog+Defaults.swift */; };
 		0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */; };
 		0EA476E02047835B003DB1D0 /* SelectAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */; };
 		0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */; };
@@ -41,7 +43,7 @@
 		0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC89292044676500865634 /* WalletDetailViewController.swift */; };
 		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
 		0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */; };
-		0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift */; };
+		0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */; };
 		0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */; };
 		0EC5244C20DFFFCC009FAFEB /* ERC20TrackedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244B20DFFFCC009FAFEB /* ERC20TrackedToken.swift */; };
 		0EC5244E20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */; };
@@ -131,6 +133,8 @@
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeiConversionTests.swift"; sourceTree = "<group>"; };
 		0E88F745204CB2E500D14511 /* Etherscan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Etherscan.swift; sourceTree = "<group>"; };
+		0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerViewController.swift; sourceTree = "<group>"; };
+		0E94A41620E138EE00335710 /* Dialog+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dialog+Defaults.swift"; sourceTree = "<group>"; };
 		0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderView.swift; sourceTree = "<group>"; };
 		0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectAccount.storyboard; sourceTree = "<group>"; };
 		0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountCollectionViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +143,7 @@
 		0EAC89292044676500865634 /* WalletDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailViewController.swift; sourceTree = "<group>"; };
 		0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumQuantity+ConvertFromWei.swift"; sourceTree = "<group>"; };
 		0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailDefaultTableViewCell.swift; sourceTree = "<group>"; };
-		0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableViewController.swift; sourceTree = "<group>"; };
+		0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableView.swift; sourceTree = "<group>"; };
 		0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableViewCell.swift; sourceTree = "<group>"; };
 		0EC5244B20DFFFCC009FAFEB /* ERC20TrackedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERC20TrackedToken.swift; sourceTree = "<group>"; };
 		0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTrackNewTokenViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				0E054448203F907E00603F31 /* DialogBuilder.swift */,
 				0E05444A203F90AD00603F31 /* DialogController.swift */,
 				0E05444C203F90C400603F31 /* DialogView.swift */,
+				0E94A41620E138EE00335710 /* Dialog+Defaults.swift */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
@@ -413,7 +418,8 @@
 				863449EA1FEC335100738516 /* SettingsTableViewController.swift */,
 				0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */,
 				0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */,
-				0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift */,
+				0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */,
+				0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */,
 				0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */,
 				0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */,
 			);
@@ -824,10 +830,11 @@
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
-				0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableViewController.swift in Sources */,
+				0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift in Sources */,
 				0EC5EC192044D60700AD629E /* Blockies+Cached.swift in Sources */,
 				0EC5244E20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift in Sources */,
 				0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */,
+				0E94A41520E127A500335710 /* SettingsTokenTrackerViewController.swift in Sources */,
 				0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
@@ -837,6 +844,7 @@
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
+				0E94A41720E138EE00335710 /* Dialog+Defaults.swift in Sources */,
 				0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */,
 				0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */,
 				0ED734382048D4F800763618 /* ETHGasStation.swift in Sources */,

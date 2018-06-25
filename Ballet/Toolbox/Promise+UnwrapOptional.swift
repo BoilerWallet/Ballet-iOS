@@ -19,6 +19,12 @@ func unwrap<T>(_ optional: Optional<T>, throwable: Error = OptionalUnwrapError.o
     }
 }
 
+func optionalUnwrap<T>(_ optional: Optional<T>) -> Guarantee<Optional<T>> {
+    return Guarantee { seal in
+        seal(optional)
+    }
+}
+
 enum OptionalUnwrapError: Error {
 
     case optionalNil

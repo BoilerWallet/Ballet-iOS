@@ -195,10 +195,7 @@ class WalletCollectionViewController: UICollectionViewController {
     @objc private func networkColorClicked() {
         let active = RPC.activeUrl
 
-        let title = active.name
-        let text = "You are currently in the network \"\(active.name)\". To switch visit the Settings menu."
-
-        Dialog().title(title).details(text).positive("OK", handler: nil).show(self)
+        Dialog.selectedNetwork(for: active).show(self)
     }
 
     private func donate() {

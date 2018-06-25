@@ -15,6 +15,8 @@ class SettingsTrackNewTokenViewController: UIViewController {
 
     // MARK: - Properties
 
+    var completion: ((_ trackedToken: ERC20TrackedToken) -> Void)?
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addressInputTextField: ErrorTextField!
     @IBOutlet weak var nameInputTextField: ErrorTextField!
@@ -25,6 +27,8 @@ class SettingsTrackNewTokenViewController: UIViewController {
     @IBOutlet weak var extraInfoLabel: UILabel!
 
     @IBOutlet weak var saveButton: MDCRaisedButton!
+
+    private var resultAddress: EthereumAddress?
 
     // MARK: - Initialization
 
@@ -54,6 +58,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
         addressInputTextField.returnKeyType = .done
         addressInputTextField.delegate = self
         addressInputTextField.detailColor = Color.red.base
+        addressInputTextField.detail = "Checksum didn't match"
 
         nameInputTextField.placeholder = "ERC20 contract name"
         nameInputTextField.setupProjectDefault()
@@ -61,6 +66,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
         nameInputTextField.returnKeyType = .done
         nameInputTextField.delegate = self
         nameInputTextField.detailColor = Color.red.base
+        nameInputTextField.detail = "Enter a name"
 
         // Test button
         testButton.setTitleColor(Colors.accentColor, for: .normal)
@@ -80,73 +86,97 @@ class SettingsTrackNewTokenViewController: UIViewController {
         saveButton.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
         saveButton.setBackgroundColor(Colors.accentColor)
         saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
+        saveButton.isEnabled = false
+        saveButton.setBackgroundColor(Color.gray, for: .disabled)
     }
 
     // MARK: - Actions
 
     @objc private func testButtonClicked() {
-        blockiesImageView.image = nil
-        nameLabel.text = ""
-        extraInfoLabel.text = ""
+        testInput().done { [weak self] result in
+            self?.addressInputTextField.isErrorRevealed = false
+            self?.nameInputTextField.isErrorRevealed = false
 
-        guard let text = addressInputTextField.text, let address = try? EthereumAddress(hex: text, eip55: true) else {
-            addressInputTextField.detail = "Checksum didn't match"
-            addressInputTextField.isErrorRevealed = true
+            let nameText = "\(result.name ?? "*No name*") (\(result.symbol ?? "*No symbol*"))"
+            self?.nameInputTextField.text = nameText
+            self?.nameLabel.text = nameText
+
+            self?.blockiesImageView.setBlockies(with: result.address.hex(eip55: false))
+
+            self?.extraInfoLabel.text = "Total supply: \(result.totalSupply)"
+
+            self?.saveButton.isEnabled = true
+            self?.resultAddress = result.address
+        }.catch { [weak self] error in
+            if let e = error as? EthereumAddress.Error, e == .checksumWrong {
+                self?.addressInputTextField.isErrorRevealed = true
+            } else if let e = self?.nameInputTextField.text?.isEmpty, !e {
+                self?.nameInputTextField.isErrorRevealed = true
+            } else if self?.nameInputTextField.text == nil {
+                self?.nameInputTextField.isErrorRevealed = true
+            } else {
+                if let s = self {
+                    Dialog().details("Can't fetch token information. Are you sure your given address is an ERC20 contract address?").positive("OK", handler: nil).show(s)
+                }
+            }
+        }
+    }
+
+    @objc private func saveButtonClicked() {
+        guard let address = resultAddress else {
             return
         }
-        addressInputTextField.isErrorRevealed = false
+        guard let name = nameInputTextField.text, !name.isEmpty else {
+            nameInputTextField.isErrorRevealed = true
+            return
+        }
+        nameInputTextField.isErrorRevealed = false
+
+        let trackedToken = ERC20TrackedToken()
+        trackedToken.addressString = address.hex(eip55: true)
+        trackedToken.name = name
+        trackedToken.rpcUrlID = RPC.activeUrl.rpcUrlID
+
+        dismiss(animated: true, completion: nil)
+
+        completion?(trackedToken)
+    }
+
+    // MARK: - Helpers
+
+    private struct TestInputResult {
+
+        let address: EthereumAddress
+        let name: String?
+        let symbol: String?
+        let totalSupply: BigUInt
+    }
+
+    private func testInput() -> Promise<TestInputResult> {
+        guard let text = addressInputTextField.text, let address = try? EthereumAddress(hex: text, eip55: true) else {
+            return Promise { seal in
+                seal.reject(EthereumAddress.Error.checksumWrong)
+            }
+        }
 
         let web3 = RPC.activeWeb3
 
         let contract = web3.eth.Contract(type: GenericERC20Contract.self, address: address)
 
+        let addressGuarantee = Guarantee { seal in
+            seal(address)
+        }
+
         // Get info for contract
-        firstly {
-            contract.name().call()
-        }.then { name in
-            unwrap(name["_name"] as? String)
-        }.done { [weak self] name in
-            self?.nameLabel.text = name
-            self?.nameInputTextField.text = name
-        }.catch { [weak self] error in
-            self?.nameLabel.text = "*No name*"
-        }.finally {
-            /*
-            firstly {
-                contract.symbol().call()
-            }.then { symbol in
-                unwrap(symbol["_symbol"] as? String)
-            }.done { [weak self] symbol in
-                self?.nameLabel.text = "\(self?.nameLabel.text ?? "") (\(symbol))"
-                self?.nameInputTextField.text = "\(self?.nameInputTextField.text ?? "") (\(symbol))"
-            }.catch { [weak self] error in
-                self?.nameLabel.text = "\(self?.nameLabel.text ?? "") (*No symbol*)"
-                self?.nameInputTextField.text = "\(self?.nameInputTextField.text ?? "") (*No symbol*)"
-            }*/
+        return firstly {
+            when(fulfilled: contract.name().call(), contract.symbol().call(), contract.totalSupply().call())
+        }.then { name, symbol, totalSupply in
+            return when(fulfilled: addressGuarantee, optionalUnwrap(name["_name"] as? String), optionalUnwrap(symbol["_symbol"] as? String), unwrap(totalSupply["_totalSupply"] as? BigUInt))
+        }.then { address, name, symbol, totalSupply in
+            return Promise { seal in
+                seal.fulfill(TestInputResult(address: address, name: name, symbol: symbol, totalSupply: totalSupply))
+            }
         }
-
-        firstly {
-            contract.totalSupply().call()
-        }.then { totalSupply in
-            unwrap(totalSupply["_totalSupply"] as? BigUInt)
-        }.done { [weak self] totalSupply in
-            self?.blockiesImageView.setBlockies(with: address.hex(eip55: false))
-            self?.extraInfoLabel.text = "Total supply: \(totalSupply)"
-        }.catch { [weak self] error in
-            // TODO: Handle error case
-            print(error)
-        }
-
-        guard let t = nameInputTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, !t else {
-            nameInputTextField.detail = "Please enter a name"
-            nameInputTextField.isErrorRevealed = true
-            return
-        }
-        nameInputTextField.isErrorRevealed = false
-    }
-
-    @objc private func saveButtonClicked() {
-
     }
 
     /*

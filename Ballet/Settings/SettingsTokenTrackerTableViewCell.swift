@@ -44,10 +44,10 @@ class SettingsTokenTrackerTableViewCell: TableViewCell {
 
     // MARK: - Cell setup
 
-    func setup(name: String, symbol: String, address: EthereumAddress) {
+    func setup(name: String, address: EthereumAddress) {
         blockiesImageView.setBlockies(with: address.hex(eip55: false))
 
-        nameLabel.text = "\(name) (\(symbol))"
+        nameLabel.text = name
         addressLabel.text = address.hex(eip55: true)
     }
 }
