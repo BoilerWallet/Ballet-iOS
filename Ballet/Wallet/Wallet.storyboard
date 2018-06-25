@@ -230,7 +230,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7J-th-U0n">
-                                        <rect key="frame" x="167.5" y="32" width="42" height="24"/>
+                                        <rect key="frame" x="166.5" y="32" width="42" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="3hw-md-YC0"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="w8B-Pq-SJB"/>
@@ -291,7 +291,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oym-gj-L1K" customClass="MarqueeLabel">
-                                                    <rect key="frame" x="40" y="20" width="127" height="24"/>
+                                                    <rect key="frame" x="40" y="20" width="147.5" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="w7q-vM-TIM"/>
                                                     </constraints>
@@ -308,10 +308,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlJ-D9-NuU">
-                                                    <rect key="frame" x="175" y="20" width="150.5" height="24"/>
+                                                    <rect key="frame" x="195.5" y="20" width="171.5" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTz-Kj-9DP" customClass="MarqueeLabel">
-                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -325,7 +325,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dG-xq-vCz" customClass="MarqueeLabel">
-                                                            <rect key="frame" x="76" y="0.0" width="74.5" height="23.5"/>
+                                                            <rect key="frame" x="86.5" y="0.0" width="85" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -415,20 +415,20 @@
                                 <exclude reference="fPu-2m-wV3"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="fKH-iM-gin"/>
+                                <exclude reference="hvZ-01-0pg"/>
                                 <exclude reference="7Yz-Qg-oq1"/>
                                 <exclude reference="XT6-OC-Hx8"/>
                                 <exclude reference="gbz-pS-GAs"/>
+                                <exclude reference="zjm-AI-2bH"/>
                                 <exclude reference="IbK-Rb-KvI"/>
                                 <exclude reference="ozX-I5-ysf"/>
-                                <exclude reference="fKH-iM-gin"/>
-                                <exclude reference="hvZ-01-0pg"/>
-                                <exclude reference="zjm-AI-2bH"/>
                                 <exclude reference="zqF-Bg-0PT"/>
+                                <exclude reference="NVB-jR-hI0"/>
+                                <exclude reference="UcJ-yU-LvU"/>
                                 <exclude reference="LAM-TQ-Va7"/>
                                 <exclude reference="bQy-Kd-FJD"/>
                                 <exclude reference="yeR-AX-TRi"/>
-                                <exclude reference="NVB-jR-hI0"/>
-                                <exclude reference="UcJ-yU-LvU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -436,30 +436,30 @@
                                 <include reference="fPu-2m-wV3"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="fKH-iM-gin"/>
+                                <include reference="hvZ-01-0pg"/>
                                 <include reference="7Yz-Qg-oq1"/>
                                 <exclude reference="HRY-Vc-aau"/>
                                 <exclude reference="MR9-xR-Wur"/>
                                 <include reference="XT6-OC-Hx8"/>
                                 <include reference="gbz-pS-GAs"/>
                                 <exclude reference="olT-g7-LHk"/>
+                                <include reference="zjm-AI-2bH"/>
                                 <include reference="IbK-Rb-KvI"/>
                                 <exclude reference="Xbn-Dj-MdE"/>
                                 <include reference="ozX-I5-ysf"/>
-                                <include reference="fKH-iM-gin"/>
-                                <include reference="hvZ-01-0pg"/>
-                                <include reference="zjm-AI-2bH"/>
                                 <exclude reference="pFs-YU-Eld"/>
                                 <exclude reference="yYE-d5-zPg"/>
                                 <include reference="zqF-Bg-0PT"/>
+                                <exclude reference="Bbf-pK-guJ"/>
+                                <exclude reference="EN7-4P-TEl"/>
+                                <include reference="NVB-jR-hI0"/>
+                                <include reference="UcJ-yU-LvU"/>
                                 <exclude reference="0II-mu-8Cv"/>
                                 <include reference="LAM-TQ-Va7"/>
                                 <include reference="bQy-Kd-FJD"/>
                                 <exclude reference="jTq-gq-sUp"/>
                                 <include reference="yeR-AX-TRi"/>
-                                <exclude reference="Bbf-pK-guJ"/>
-                                <exclude reference="EN7-4P-TEl"/>
-                                <include reference="NVB-jR-hI0"/>
-                                <include reference="UcJ-yU-LvU"/>
                             </mask>
                         </variation>
                     </view>
@@ -473,17 +473,17 @@
                         <outlet property="nameLabel" destination="a7J-th-U0n" id="6gM-jN-uib"/>
                         <outlet property="txTableView" destination="qQZ-yi-Bpp" id="pNo-2K-GCd"/>
                         <outlet property="walletInfoView" destination="aWL-Hb-mZy" id="iVI-5U-fgF"/>
-                        <segue destination="G2U-HJ-wf2" kind="show" id="3x8-Rq-Jny"/>
+                        <segue destination="G2U-HJ-wf2" kind="show" identifier="erc20TokenListSegue" id="3x8-Rq-Jny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvi-vU-Bwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1731.1844077961021" y="98.400000000000006"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--WalletERC20 Token List Collection View Controller-->
         <scene sceneID="JhW-wj-INh">
             <objects>
-                <collectionViewController id="G2U-HJ-wf2" sceneMemberID="viewController">
+                <collectionViewController id="G2U-HJ-wf2" customClass="WalletERC20TokenListCollectionViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Hg6-4g-ynF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,14 +495,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3EJ-Zk-ns4">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="erc20TokenListCell" id="3EJ-Zk-ns4" customClass="WalletERC20TokenListCollectionViewCell" customModule="Ballet" customModuleProvider="target">
                                 <rect key="frame" x="22.5" y="0.0" width="330" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="330" height="245"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-Gl-JQG">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-Gl-JQG" customClass="MDCCard">
                                             <rect key="frame" x="8" y="8" width="314" height="229"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pp3-vC-7KS">
@@ -575,6 +575,12 @@
                                     <constraint firstItem="oDm-Gl-JQG" firstAttribute="leading" secondItem="3EJ-Zk-ns4" secondAttribute="leading" constant="8" id="SUH-r7-QuE"/>
                                     <constraint firstAttribute="trailing" secondItem="oDm-Gl-JQG" secondAttribute="trailing" constant="8" id="Y6o-Z6-BIH"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="blockiesImage" destination="Pp3-vC-7KS" id="V1b-bI-5he"/>
+                                    <outlet property="tokenAddressLabel" destination="MNg-JN-F0e" id="aiI-qB-FqD"/>
+                                    <outlet property="tokenBalanceLabel" destination="suJ-ZA-Y21" id="axl-5O-0WZ"/>
+                                    <outlet property="tokenNameLabel" destination="XuH-wN-TuW" id="4eR-da-tiK"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

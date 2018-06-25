@@ -14,6 +14,8 @@ class ERC20TrackedToken: Object {
     @objc dynamic var erc20TrackedTokenID = UUID().uuidString
     @objc dynamic var addressString: String = ""
     @objc dynamic var name: String = ""
+    @objc dynamic var symbol: String = ""
+    @objc dynamic var decimals: Int = 0
     @objc dynamic var rpcUrlID: String = ""
 
     override static func primaryKey() -> String? {

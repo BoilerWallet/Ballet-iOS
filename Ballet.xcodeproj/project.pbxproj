@@ -29,6 +29,8 @@
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
 		0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */; };
 		0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */; };
+		0E75EF7020E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */; };
+		0E75EF7220E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75EF7120E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift */; };
 		0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */; };
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0E87F94E204A289100742C0A /* String+WeiConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */; };
@@ -129,6 +131,8 @@
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionConfirmation.storyboard; sourceTree = "<group>"; };
 		0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewController.swift; sourceTree = "<group>"; };
+		0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletERC20TokenListCollectionViewController.swift; sourceTree = "<group>"; };
+		0E75EF7120E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletERC20TokenListCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpController.storyboard; sourceTree = "<group>"; };
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeiConversionTests.swift"; sourceTree = "<group>"; };
@@ -496,6 +500,8 @@
 				0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */,
 				0EAC89292044676500865634 /* WalletDetailViewController.swift */,
 				0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */,
+				0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */,
+				0E75EF7120E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -845,8 +851,10 @@
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
 				0E94A41720E138EE00335710 /* Dialog+Defaults.swift in Sources */,
+				0E75EF7220E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift in Sources */,
 				0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */,
 				0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */,
+				0E75EF7020E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift in Sources */,
 				0ED734382048D4F800763618 /* ETHGasStation.swift in Sources */,
 				0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */,
 				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,

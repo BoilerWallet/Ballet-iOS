@@ -28,7 +28,12 @@ class SettingsTrackNewTokenViewController: UIViewController {
 
     @IBOutlet weak var saveButton: MDCRaisedButton!
 
-    private var resultAddress: EthereumAddress?
+    private struct TrackResult {
+
+        let address: EthereumAddress
+        let symbol: String
+    }
+    private var result: TrackResult?
 
     // MARK: - Initialization
 
@@ -106,7 +111,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
             self?.extraInfoLabel.text = "Total supply: \(result.totalSupply)"
 
             self?.saveButton.isEnabled = true
-            self?.resultAddress = result.address
+            self?.result = TrackResult(address: result.address, symbol: result.symbol ?? "")
         }.catch { [weak self] error in
             if let e = error as? EthereumAddress.Error, e == .checksumWrong {
                 self?.addressInputTextField.isErrorRevealed = true
@@ -123,7 +128,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
     }
 
     @objc private func saveButtonClicked() {
-        guard let address = resultAddress else {
+        guard let result = result else {
             return
         }
         guard let name = nameInputTextField.text, !name.isEmpty else {
@@ -133,8 +138,9 @@ class SettingsTrackNewTokenViewController: UIViewController {
         nameInputTextField.isErrorRevealed = false
 
         let trackedToken = ERC20TrackedToken()
-        trackedToken.addressString = address.hex(eip55: true)
+        trackedToken.addressString = result.address.hex(eip55: true)
         trackedToken.name = name
+        trackedToken.symbol = result.symbol
         trackedToken.rpcUrlID = RPC.activeUrl.rpcUrlID
 
         dismiss(animated: true, completion: nil)
@@ -149,6 +155,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
         let address: EthereumAddress
         let name: String?
         let symbol: String?
+        let decimals: UInt8
         let totalSupply: BigUInt
     }
 
@@ -169,12 +176,12 @@ class SettingsTrackNewTokenViewController: UIViewController {
 
         // Get info for contract
         return firstly {
-            when(fulfilled: contract.name().call(), contract.symbol().call(), contract.totalSupply().call())
-        }.then { name, symbol, totalSupply in
-            return when(fulfilled: addressGuarantee, optionalUnwrap(name["_name"] as? String), optionalUnwrap(symbol["_symbol"] as? String), unwrap(totalSupply["_totalSupply"] as? BigUInt))
-        }.then { address, name, symbol, totalSupply in
+            when(fulfilled: contract.name().call(), contract.symbol().call(), contract.decimals().call(), contract.totalSupply().call())
+        }.then { name, symbol, decimals, totalSupply in
+            return when(fulfilled: addressGuarantee, optionalUnwrap(name["_name"] as? String), optionalUnwrap(symbol["_symbol"] as? String), optionalUnwrap(decimals["_decimals"] as? UInt8), unwrap(totalSupply["_totalSupply"] as? BigUInt))
+        }.then { address, name, symbol, decimals, totalSupply in
             return Promise { seal in
-                seal.fulfill(TestInputResult(address: address, name: name, symbol: symbol, totalSupply: totalSupply))
+                seal.fulfill(TestInputResult(address: address, name: name, symbol: symbol, decimals: decimals ?? 0, totalSupply: totalSupply))
             }
         }
     }
