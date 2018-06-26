@@ -202,13 +202,13 @@ class TransactionConfirmationViewController: UIViewController {
         network.text = "ETH (chain \(transaction.rpcUrl.chainId)) via \(transaction.rpcUrl.url)"
 
         gasLimitInfo.text = "Gas Limit:"
-        gasLimit.text = "21000"
+        gasLimit.text = "\(String(transaction.gas.quantity, radix: 10))"
 
         gasPriceInfo.text = "Gas Price:"
         gasPrice.text = "\(String(transaction.gasPrice.quantity, radix: 10).weiToGweiStr()) gwei"
 
         txFeeInfo.text = "Max TX Fee:"
-        txFee.text = "\(String(transaction.gasPrice.quantity * 21000, radix: 10).weiToEthStr()) ETH"
+        txFee.text = "\(String(transaction.gasPrice.quantity * transaction.gas.quantity, radix: 10).weiToEthStr()) ETH"
 
         nonceInfo.text = "Nonce:"
         nonce.text = "???"
@@ -265,7 +265,7 @@ class TransactionConfirmationViewController: UIViewController {
         let tx = EthereumTransaction(
             nonce: nonceQuantity,
             gasPrice: transaction.gasPrice,
-            gas: 21000,
+            gas: transaction.gas,
             to: transaction.to,
             value: transaction.amount
         )
@@ -316,6 +316,7 @@ struct PreparedTransaction {
     let from: Account
     let to: EthereumAddress
     let amount: EthereumQuantity
+    let gas: EthereumQuantity
     let gasPrice: EthereumQuantity
 
     let rpcUrl: RPCUrl

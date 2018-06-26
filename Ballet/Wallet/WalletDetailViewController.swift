@@ -95,6 +95,7 @@ class WalletDetailViewController: UIViewController {
         erc20Button.setTitle("ERC20 Tokens", for: .normal)
         erc20Button.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
         erc20Button.setBackgroundColor(Colors.accentColor)
+        erc20Button.addTarget(self, action: #selector(erc20ButtonClicked), for: .touchUpInside)
 
         blockiesImageView.image = nil
         balanceLabel.text = "0.000000000000000000 ETH"
@@ -171,15 +172,20 @@ class WalletDetailViewController: UIViewController {
         MDCSnackbarManager.show(success)
     }
 
-    /*
+    @objc private func erc20ButtonClicked() {
+        performSegue(withIdentifier: "erc20TokenListSegue", sender: erc20Button)
+    }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "erc20TokenListSegue", let controller = segue.destination as? WalletERC20TokenListCollectionViewController {
+            controller.account = account
+        }
     }
-    */
 }
 
 // MARK: - TableView extensions

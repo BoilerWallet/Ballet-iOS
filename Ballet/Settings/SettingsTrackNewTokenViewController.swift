@@ -31,6 +31,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
     private struct TrackResult {
 
         let address: EthereumAddress
+        let decimals: UInt8
         let symbol: String
     }
     private var result: TrackResult?
@@ -111,7 +112,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
             self?.extraInfoLabel.text = "Total supply: \(result.totalSupply)"
 
             self?.saveButton.isEnabled = true
-            self?.result = TrackResult(address: result.address, symbol: result.symbol ?? "")
+            self?.result = TrackResult(address: result.address, decimals: result.decimals, symbol: result.symbol ?? "")
         }.catch { [weak self] error in
             if let e = error as? EthereumAddress.Error, e == .checksumWrong {
                 self?.addressInputTextField.isErrorRevealed = true
@@ -140,6 +141,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
         let trackedToken = ERC20TrackedToken()
         trackedToken.addressString = result.address.hex(eip55: true)
         trackedToken.name = name
+        trackedToken.decimals = Int(result.decimals)
         trackedToken.symbol = result.symbol
         trackedToken.rpcUrlID = RPC.activeUrl.rpcUrlID
 

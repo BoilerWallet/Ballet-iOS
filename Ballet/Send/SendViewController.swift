@@ -17,6 +17,7 @@ import BigInt
 import MaterialComponents.MaterialSlider
 import MaterialComponents.MaterialSnackbar
 import PromiseKit
+import Runes
 
 class SendViewController: UIViewController {
 
@@ -35,6 +36,7 @@ class SendViewController: UIViewController {
     @IBOutlet weak var amountTextField: ErrorTextField!
     @IBOutlet weak var amountLabel: UILabel!
     
+    @IBOutlet weak var gasTextField: ErrorTextField!
     @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var feeSlider: MDCSlider!
     @IBOutlet weak var feeInfoLabel: UILabel!
@@ -130,6 +132,14 @@ class SendViewController: UIViewController {
 
     private func setupFee() {
         currentGasPrice = nil
+
+        gasTextField.placeholder = "Gas Limit"
+        gasTextField.setupProjectDefault()
+        gasTextField.autocorrectionType = .no
+        gasTextField.keyboardType = .numberPad
+        gasTextField.returnKeyType = .done
+        gasTextField.delegate = self
+        gasTextField.text = "21000"
 
         feeLabel.setupSubTitleLabel()
         feeLabel.text = "FEE"
@@ -242,7 +252,8 @@ class SendViewController: UIViewController {
             info += "\(Int((minutes + 0.5).rounded())) min"
         }
 
-        let eth = (sender.value * 21000) / 1_000_000_000
+        let gas = (gasTextField.text >>- UInt.init) ?? 21000
+        let eth = (sender.value * CGFloat(gas)) / 1_000_000_000
         info += " - \((eth * 1_000_000).rounded() / 1_000_000) ETH"
 
         feeInfoLabel.text = info
@@ -280,6 +291,13 @@ class SendViewController: UIViewController {
         }
         amountTextField.isErrorRevealed = false
 
+        guard let gasLimitStr = gasTextField.text, let gasLimit = UInt(gasLimitStr) else {
+            gasTextField.detail = "Please type in a value"
+            gasTextField.isErrorRevealed = true
+            return
+        }
+        gasTextField.isErrorRevealed = false
+
         guard feeSlider.isEnabled else {
             Dialog().details("Could not estimate a fee. Please restart the app.").positive("OK", handler: nil).show(self)
             return
@@ -291,6 +309,7 @@ class SendViewController: UIViewController {
             from: selectedFrom,
             to: toAddress,
             amount: EthereumQuantity(quantity: amount),
+            gas: EthereumQuantity(quantity: BigUInt(gasLimit)),
             gasPrice: EthereumQuantity(quantity: gasPrice),
             rpcUrl: url
         )
@@ -341,13 +360,20 @@ extension SendViewController: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Ethereum Amount. e.g.: n digits and up to 18 decimal digits
-        if textField === amountTextField {
+        if textField === amountTextField || textField === gasTextField {
             if string.count == 0 {
                 return true
             }
             do {
                 if let newString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
-                    let expression = "^([0-9]+)([,\\.]([0-9]{1,18})?)?$"
+                    let expression: String
+                    if textField === amountTextField {
+                        expression = "^([0-9]+)([,\\.]([0-9]{1,18})?)?$"
+                    } else if textField === gasTextField {
+                        expression = "^[1-9][0-9]*$"
+                    } else {
+                        expression = ""
+                    }
                     let regex = try NSRegularExpression(pattern: expression, options: .caseInsensitive)
                     let numberOfMatches = regex.numberOfMatches(in: newString, options: [], range: NSRange(location: 0, length: newString.count))
                     if numberOfMatches == 0 {

@@ -172,7 +172,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jn-og-b2A">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="Bm5-u4-wci"/>
                                                         </constraints>
@@ -181,7 +181,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VT-sW-Zus">
-                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="24"/>
+                                                        <rect key="frame" x="42" y="0.0" width="301" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="biV-5D-bJH"/>
                                                         </constraints>
@@ -204,10 +204,20 @@
                                                     <constraint firstItem="xJh-Ev-aYK" firstAttribute="leading" secondItem="C5D-ae-BAp" secondAttribute="leading" id="zgl-Bw-m1G"/>
                                                 </constraints>
                                             </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrZ-vf-a1z" customClass="ErrorTextField" customModule="Material">
+                                                <rect key="frame" x="139" y="305" width="97" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="PrO-8Q-6rW"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="C5D-ae-BAp" secondAttribute="trailing" constant="16" id="4bG-PI-Mnk"/>
+                                            <constraint firstAttribute="trailing" secondItem="wrZ-vf-a1z" secondAttribute="trailing" constant="16" id="4xg-cF-NvW"/>
                                             <constraint firstItem="4Rh-9H-M64" firstAttribute="leading" secondItem="IKB-V5-WlU" secondAttribute="leading" constant="16" id="6Vd-1I-1GX"/>
                                             <constraint firstItem="AwB-ND-vQF" firstAttribute="centerX" secondItem="IKB-V5-WlU" secondAttribute="centerX" id="9Hb-7N-L8x"/>
                                             <constraint firstAttribute="trailing" secondItem="aOy-k4-eoU" secondAttribute="trailing" constant="16" id="Aj5-Gv-gQQ"/>
@@ -219,9 +229,11 @@
                                             <constraint firstAttribute="bottom" secondItem="C5D-ae-BAp" secondAttribute="bottom" constant="16" id="UUY-6l-TWv"/>
                                             <constraint firstItem="C5D-ae-BAp" firstAttribute="leading" secondItem="IKB-V5-WlU" secondAttribute="leading" constant="16" id="adB-rB-1sr"/>
                                             <constraint firstItem="4Rh-9H-M64" firstAttribute="top" secondItem="c3P-Ah-bPT" secondAttribute="bottom" constant="48" id="byj-SZ-9GD"/>
-                                            <constraint firstItem="C5D-ae-BAp" firstAttribute="top" secondItem="4Rh-9H-M64" secondAttribute="bottom" constant="32" id="dQE-Mj-0Jp"/>
+                                            <constraint firstItem="wrZ-vf-a1z" firstAttribute="leading" secondItem="IKB-V5-WlU" secondAttribute="leading" constant="16" id="hiZ-rb-1Rk"/>
                                             <constraint firstItem="c3P-Ah-bPT" firstAttribute="leading" secondItem="IKB-V5-WlU" secondAttribute="leading" constant="16" id="j43-6t-VCu"/>
                                             <constraint firstAttribute="trailing" secondItem="4Rh-9H-M64" secondAttribute="trailing" constant="16" id="jML-Wh-jGt"/>
+                                            <constraint firstItem="wrZ-vf-a1z" firstAttribute="top" secondItem="4Rh-9H-M64" secondAttribute="bottom" constant="48" id="lvh-L5-yYR"/>
+                                            <constraint firstItem="C5D-ae-BAp" firstAttribute="top" secondItem="wrZ-vf-a1z" secondAttribute="bottom" constant="32" id="quP-Or-axK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -257,6 +269,7 @@
                         <outlet property="fromSelectedBlockiesImage" destination="kwm-rB-tyi" id="a1J-mv-lrY"/>
                         <outlet property="fromSelectedName" destination="0lV-ca-ipt" id="I5b-Tu-Upl"/>
                         <outlet property="fromSelectedView" destination="Uk2-Dy-ct6" id="9aG-xi-BS6"/>
+                        <outlet property="gasTextField" destination="wrZ-vf-a1z" id="m7K-l9-qOi"/>
                         <outlet property="selectFromAddressButton" destination="AwB-ND-vQF" id="ayr-DZ-ty2"/>
                         <outlet property="sendTransactionButton" destination="Lzh-Sz-ULc" id="6au-3s-b3M"/>
                         <outlet property="toTextField" destination="OVd-jF-Q2c" id="pZ8-gi-h9W"/>

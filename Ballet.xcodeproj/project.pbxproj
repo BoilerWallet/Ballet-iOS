@@ -19,6 +19,8 @@
 		0E27364F20DBFCF8001820F4 /* material_checkbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E27364E20DBFCF8001820F4 /* material_checkbox.json */; };
 		0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */; };
 		0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */; };
+		0E40E58C20E268F100BA9C4B /* BigDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E40E58B20E268F100BA9C4B /* BigDecimal.swift */; };
+		0E40E58E20E2690700BA9C4B /* BigUDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E40E58D20E2690700BA9C4B /* BigUDecimal.swift */; };
 		0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */; };
 		0E505F8E203AFEE50037ACE3 /* BlockiesSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */; };
 		0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D491FE70A9D00917D05 /* AppDelegate.swift */; };
@@ -115,6 +117,8 @@
 		0E27364E20DBFCF8001820F4 /* material_checkbox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_checkbox.json; sourceTree = "<group>"; };
 		0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FromColor.swift"; sourceTree = "<group>"; };
 		0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationResultViewController.swift; sourceTree = "<group>"; };
+		0E40E58B20E268F100BA9C4B /* BigDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigDecimal.swift; sourceTree = "<group>"; };
+		0E40E58D20E2690700BA9C4B /* BigUDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigUDecimal.swift; sourceTree = "<group>"; };
 		0E505F8B203AF3530037ACE3 /* BlockiesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockiesSelectionView.swift; sourceTree = "<group>"; };
 		0E505F8D203AFEE50037ACE3 /* BlockiesSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockiesSelectionView.xib; sourceTree = "<group>"; };
 		0E672D461FE70A9D00917D05 /* Ballet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +245,15 @@
 				0EC5244B20DFFFCC009FAFEB /* ERC20TrackedToken.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		0E40E58A20E268DF00BA9C4B /* BigDecimal */ = {
+			isa = PBXGroup;
+			children = (
+				0E40E58B20E268F100BA9C4B /* BigDecimal.swift */,
+				0E40E58D20E2690700BA9C4B /* BigUDecimal.swift */,
+			);
+			path = BigDecimal;
 			sourceTree = "<group>";
 		};
 		0E672D3D1FE70A9D00917D05 = {
@@ -444,6 +457,7 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				0E40E58A20E268DF00BA9C4B /* BigDecimal */,
 				0E05444E203F95C900603F31 /* Database */,
 				0E054447203F906600603F31 /* Dialog */,
 				0ECA6BB0203C6EB0001247F8 /* LoadingView */,
@@ -841,10 +855,12 @@
 				0EC5244E20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift in Sources */,
 				0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */,
 				0E94A41520E127A500335710 /* SettingsTokenTrackerViewController.swift in Sources */,
+				0E40E58E20E2690700BA9C4B /* BigUDecimal.swift in Sources */,
 				0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
 				0EC5244C20DFFFCC009FAFEB /* ERC20TrackedToken.swift in Sources */,
+				0E40E58C20E268F100BA9C4B /* BigDecimal.swift in Sources */,
 				0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
