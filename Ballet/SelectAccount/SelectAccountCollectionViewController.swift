@@ -19,9 +19,7 @@ class SelectAccountCollectionViewController: UICollectionViewController {
 
     private var selectLabel: UILabel!
 
-    private var accounts: Results<Account>?
-
-    var completion: ((_ selectedAccount: Account) -> Void)?
+    var completion: ((_ selectedAccount: DecryptedAccount) -> Void)?
 
     // MARK: - Initialization
 
@@ -35,8 +33,6 @@ class SelectAccountCollectionViewController: UICollectionViewController {
         // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         setupUI()
-
-        getAccounts()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -72,18 +68,6 @@ class SelectAccountCollectionViewController: UICollectionViewController {
         isMotionEnabled = true
     }
 
-    // MARK: - Helper functions
-
-    private func getAccounts() {
-        let realm: Realm
-        do {
-            realm = try Realm()
-        } catch {
-            return
-        }
-        accounts = realm.objects(Account.self)
-    }
-
     /*
     // MARK: - Navigation
 
@@ -102,13 +86,14 @@ class SelectAccountCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return accounts?.count ?? 0
+        return LoggedInUser.shared.decryptedAccounts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SelectAccountCollectionViewCell
 
-        if let accounts = accounts, accounts.count > indexPath.row {
+        let accounts = LoggedInUser.shared.decryptedAccounts
+        if accounts.count > indexPath.row {
             let account = accounts[indexPath.row]
 
             cell.onClick = { [weak self] in

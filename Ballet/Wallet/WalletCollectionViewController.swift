@@ -15,6 +15,7 @@ import Web3
 import RealmSwift
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialDialogs
+import Keystore
 
 private let reuseIdentifier = "walletCell"
 
@@ -25,8 +26,6 @@ class WalletCollectionViewController: UICollectionViewController {
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
     private var addAccountButton: MDCFloatingButton!
-
-    private var accounts: Results<Account>?
 
     private var refreshControl: UIRefreshControl!
 
@@ -45,7 +44,7 @@ class WalletCollectionViewController: UICollectionViewController {
 
         setupUI()
 
-        getAccounts()
+        lastKnownRPCUrl = RPC.activeUrl
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -128,30 +127,23 @@ class WalletCollectionViewController: UICollectionViewController {
 
     // MARK: - Helper functions
 
-    private func getAccounts() {
-        lastKnownRPCUrl = RPC.activeUrl
-
-        let realm: Realm
-        do {
-            realm = try Realm()
-        } catch {
-            return
-        }
-        accounts = realm.objects(Account.self)
-    }
-
     private func saveNewAccount(privateKey: EthereumPrivateKey, name: String) {
         let account = Account()
         account.name = name
-        account.privateKey = privateKey.hex()
-        account.encrypted = false
-        account.salt = nil
 
         do {
+            let keystore = try Keystore(privateKey: privateKey.rawPrivateKey, password: LoggedInUser.shared.password)
+            guard let keystoreString = try String(data: JSONEncoder().encode(keystore), encoding: .utf8) else {
+                throw OptionalUnwrapError.optionalNil
+            }
+            account.keystore = keystoreString
+
             let realm = try Realm()
             try realm.write {
                 realm.add(account)
             }
+            let decrypted = DecryptedAccount(privateKey: privateKey, account: account)
+            LoggedInUser.shared.decryptedAccounts.append(decrypted)
         } catch {
             let details = "Something went wrong while saving your new account. Please try again or file an issue on Github."
             Dialog().details(details).positive("OK", handler: nil).show(self)
@@ -162,7 +154,7 @@ class WalletCollectionViewController: UICollectionViewController {
 
     @objc private func reloadCollection() {
         navigationItem.leftViews = [createNetworkColorButton()]
-        getAccounts()
+        lastKnownRPCUrl = RPC.activeUrl
         collectionView?.reloadData()
         refreshControl.endRefreshing()
     }
@@ -240,13 +232,14 @@ class WalletCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return accounts?.count ?? 0
+        return LoggedInUser.shared.decryptedAccounts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WalletCollectionViewCell
 
-        if let accounts = accounts, accounts.count > indexPath.row {
+        let accounts = LoggedInUser.shared.decryptedAccounts
+        if accounts.count > indexPath.row {
             cell.setup(with: accounts[indexPath.row]) { [weak self] account in
                 self?.performSegue(withIdentifier: "WalletDetail", sender: cell)
             }

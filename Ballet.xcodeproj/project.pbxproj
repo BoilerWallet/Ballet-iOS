@@ -37,6 +37,11 @@
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0E87F94E204A289100742C0A /* String+WeiConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */; };
 		0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88F745204CB2E500D14511 /* Etherscan.swift */; };
+		0E8FE99A20E53D2F0077B107 /* LoggedInUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE99920E53D2F0077B107 /* LoggedInUser.swift */; };
+		0E8FE99C20E5445F0077B107 /* Bytes+SecureRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE99B20E5445F0077B107 /* Bytes+SecureRandom.swift */; };
+		0E8FE99E20E545BE0077B107 /* Data+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE99D20E545BE0077B107 /* Data+HexString.swift */; };
+		0E8FE9A020E546840077B107 /* ConstantHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE99F20E546840077B107 /* ConstantHolder.swift */; };
+		0E8FE9A220E54A0A0077B107 /* DecryptedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE9A120E54A0A0077B107 /* DecryptedAccount.swift */; };
 		0E94A41520E127A500335710 /* SettingsTokenTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */; };
 		0E94A41720E138EE00335710 /* Dialog+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94A41620E138EE00335710 /* Dialog+Defaults.swift */; };
 		0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */; };
@@ -141,6 +146,11 @@
 		0E7F7684203B808D00DDD6F0 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeiConversionTests.swift"; sourceTree = "<group>"; };
 		0E88F745204CB2E500D14511 /* Etherscan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Etherscan.swift; sourceTree = "<group>"; };
+		0E8FE99920E53D2F0077B107 /* LoggedInUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInUser.swift; sourceTree = "<group>"; };
+		0E8FE99B20E5445F0077B107 /* Bytes+SecureRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+SecureRandom.swift"; sourceTree = "<group>"; };
+		0E8FE99D20E545BE0077B107 /* Data+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+HexString.swift"; sourceTree = "<group>"; };
+		0E8FE99F20E546840077B107 /* ConstantHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantHolder.swift; sourceTree = "<group>"; };
+		0E8FE9A120E54A0A0077B107 /* DecryptedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecryptedAccount.swift; sourceTree = "<group>"; };
 		0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerViewController.swift; sourceTree = "<group>"; };
 		0E94A41620E138EE00335710 /* Dialog+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dialog+Defaults.swift"; sourceTree = "<group>"; };
 		0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderView.swift; sourceTree = "<group>"; };
@@ -473,6 +483,9 @@
 				0ED734352048C4A800763618 /* String+WeiConversion.swift */,
 				0EECA44D204B715900AEDF9C /* Promise+UnwrapOptional.swift */,
 				0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */,
+				0E8FE99B20E5445F0077B107 /* Bytes+SecureRandom.swift */,
+				0E8FE99D20E545BE0077B107 /* Data+HexString.swift */,
+				0E8FE99F20E546840077B107 /* ConstantHolder.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -501,6 +514,8 @@
 			children = (
 				86E819E91FE717B00086952E /* Login.storyboard */,
 				86E819EB1FE717B90086952E /* LoginViewController.swift */,
+				0E8FE99920E53D2F0077B107 /* LoggedInUser.swift */,
+				0E8FE9A120E54A0A0077B107 /* DecryptedAccount.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -790,6 +805,7 @@
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/Keystore/Keystore.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
@@ -817,6 +833,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keystore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
@@ -848,6 +865,7 @@
 				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
 				0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
+				0E8FE99E20E545BE0077B107 /* Data+HexString.swift in Sources */,
 				0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift in Sources */,
@@ -855,6 +873,7 @@
 				0EC5244E20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift in Sources */,
 				0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */,
 				0E94A41520E127A500335710 /* SettingsTokenTrackerViewController.swift in Sources */,
+				0E8FE9A220E54A0A0077B107 /* DecryptedAccount.swift in Sources */,
 				0E40E58E20E2690700BA9C4B /* BigUDecimal.swift in Sources */,
 				0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
@@ -866,6 +885,7 @@
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
+				0E8FE99C20E5445F0077B107 /* Bytes+SecureRandom.swift in Sources */,
 				0E94A41720E138EE00335710 /* Dialog+Defaults.swift in Sources */,
 				0E75EF7220E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift in Sources */,
 				0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */,
@@ -884,10 +904,12 @@
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
+				0E8FE9A020E546840077B107 /* ConstantHolder.swift in Sources */,
 				0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
 				0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */,
 				0EECA44E204B715900AEDF9C /* Promise+UnwrapOptional.swift in Sources */,
+				0E8FE99A20E53D2F0077B107 /* LoggedInUser.swift in Sources */,
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */,
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,

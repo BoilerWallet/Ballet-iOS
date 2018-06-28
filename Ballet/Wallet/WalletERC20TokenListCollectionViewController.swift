@@ -17,9 +17,7 @@ class WalletERC20TokenListCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
 
-    var account: Account!
-
-    private var key: EthereumPrivateKey!
+    var account: DecryptedAccount!
 
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
@@ -38,11 +36,10 @@ class WalletERC20TokenListCollectionViewController: UICollectionViewController {
         // Register cell classes
         // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        guard account != nil, let key = try? account.ethereumPrivateKey() else {
+        guard account != nil else {
             dismiss(animated: true, completion: nil)
             return
         }
-        self.key = key
 
         setupUI()
         fillUI()
@@ -81,7 +78,7 @@ class WalletERC20TokenListCollectionViewController: UICollectionViewController {
     }
 
     private func fillUI() {
-        navigationItem.titleLabel.text = "\(account.name)"
+        navigationItem.titleLabel.text = "\(account.account.name)"
 
         firstly {
             unwrap(try? Realm())
@@ -126,7 +123,7 @@ class WalletERC20TokenListCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WalletERC20TokenListCollectionViewCell
 
         if let element = rows?[indexPath.row] {
-            cell.setup(with: element, for: key.address)
+            cell.setup(with: element, for: account.privateKey.address)
         }
 
         return cell

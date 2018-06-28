@@ -18,7 +18,7 @@ class SelectAccountCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
 
-    private(set) var currentAccount: Account?
+    private(set) var currentAccount: DecryptedAccount?
 
     var onClick: (() -> Void)?
 
@@ -55,7 +55,7 @@ class SelectAccountCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Cell setup
 
-    func setup(with account: Account) {
+    func setup(with account: DecryptedAccount) {
         currentAccount = account
 
         // Reset
@@ -63,11 +63,11 @@ class SelectAccountCollectionViewCell: UICollectionViewCell {
         addressLabel.text = ""
         blockiesImage.image = nil
 
-        let address = try? account.ethereumPrivateKey().address
+        let address = account.privateKey.address
 
-        nameLabel.text = account.name
-        addressLabel.text = address?.hex(eip55: true)
-        blockiesImage.setBlockies(with: address?.hex(eip55: false) ?? "")
+        nameLabel.text = account.account.name
+        addressLabel.text = address.hex(eip55: true)
+        blockiesImage.setBlockies(with: address.hex(eip55: false) ?? "")
     }
 
     // MARK: - Actions

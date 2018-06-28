@@ -31,7 +31,7 @@ class WalletDetailViewController: UIViewController {
 
     private static let defaultTxCellIdentifier = "walletDetailDefaultCell"
 
-    var account: Account!
+    var account: DecryptedAccount!
     var motionIdentifiers: WalletDetailMotionIdentifiers?
 
     @IBOutlet weak var walletInfoView: UIView!
@@ -47,8 +47,6 @@ class WalletDetailViewController: UIViewController {
     @IBOutlet weak var txTableView: UITableView!
 
     private var walletTxs: [EtherscanTransaction] = []
-
-    private var key: EthereumPrivateKey?
 
     // MARK: - Initialization
 
@@ -119,17 +117,12 @@ class WalletDetailViewController: UIViewController {
     private func fillUI() {
         navigationItem.titleLabel.text = "Details"
 
-        nameLabel.text = account.name
+        nameLabel.text = account.account.name
 
-        guard let key = try? account.ethereumPrivateKey() else {
-            return
-        }
-        self.key = key
-
-        blockiesImageView.setBlockies(with: key.address.hex(eip55: false))
+        blockiesImageView.setBlockies(with: account.privateKey.address.hex(eip55: false))
 
         firstly {
-            RPC.activeWeb3.eth.getBalance(address: key.address, block: .latest)
+            RPC.activeWeb3.eth.getBalance(address: account.privateKey.address, block: .latest)
         }.done { [weak self] balance in
             let value = balance.convertWeiToEthString()
             self?.balanceLabel.text = value + " ETH"
@@ -137,7 +130,7 @@ class WalletDetailViewController: UIViewController {
             // TODO: - Handle error case
         }
 
-        addressLabel.text = key.address.hex(eip55: true)
+        addressLabel.text = account.privateKey.address.hex(eip55: true)
         let second = DispatchTime.now().uptimeNanoseconds + 1000000000
         DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: second)) { [weak self] in
             self?.addressLabel.triggerScrollStart()
@@ -151,7 +144,7 @@ class WalletDetailViewController: UIViewController {
                 seal.fulfill(Etherscan(rpcUrl: url))
             }
         }.then { scan in
-            scan.getTransactions(for: key.address, order: .descending)
+            scan.getTransactions(for: self.account.privateKey.address, order: .descending)
         }.done { [weak self] txs in
             self?.walletTxs = txs
             self?.txTableView.reloadData()
@@ -164,7 +157,7 @@ class WalletDetailViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func copyAddressButtonClicked() {
-        UIPasteboard.general.string = key?.address.hex(eip55: true)
+        UIPasteboard.general.string = account.privateKey.address.hex(eip55: true)
 
         let success = MDCSnackbarMessage()
         success.text = "Successfully copied your address to the clipboard."
@@ -203,9 +196,7 @@ extension WalletDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WalletDetailViewController.defaultTxCellIdentifier) as! WalletDetailDefaultTableViewCell
 
-        if let address = key?.address {
-            cell.setup(for: address, with: walletTxs[indexPath.row])
-        }
+        cell.setup(for: account.privateKey.address, with: walletTxs[indexPath.row])
 
         return cell
     }

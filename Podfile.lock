@@ -13,6 +13,9 @@ PODS:
   - DateToolsSwift (4.0.0)
   - DropDown (2.3.1)
   - Fabric (1.7.2)
+  - Keystore (0.1.0):
+    - CryptoSwift (~> 0.8)
+    - secp256k1.swift (~> 0.1)
   - lottie-ios (2.5.0)
   - MarqueeLabel (3.1.4):
     - MarqueeLabel/ObjC (= 3.1.4)
@@ -144,6 +147,7 @@ DEPENDENCIES:
   - DateToolsSwift (~> 4.0)
   - DropDown (~> 2.3)
   - Fabric
+  - Keystore (~> 0.1)
   - lottie-ios (~> 2.5)
   - MarqueeLabel (~> 3.1)
   - Material (~> 2.12)
@@ -175,6 +179,7 @@ SPEC REPOS:
     - DateToolsSwift
     - DropDown
     - Fabric
+    - Keystore
     - lottie-ios
     - MarqueeLabel
     - Material
@@ -205,6 +210,7 @@ SPEC CHECKSUMS:
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Keystore: 32ce430d78978ea72fb0bc39df79a8900e1af932
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   Material: 3aea3e3696b0f11bfa76d1a367b44a9a4231c9b8
@@ -223,6 +229,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   Web3: 94f87f301a94cfb064d90baf25e2d3603c332551
 
-PODFILE CHECKSUM: ba684c5eb031d75e9116f821cee8f7044ecd84c3
+PODFILE CHECKSUM: d7a0a7c4b0cae3e432b2729a557a0a07bdc18d5b
 
 COCOAPODS: 1.5.3

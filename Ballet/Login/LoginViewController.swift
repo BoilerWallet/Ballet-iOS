@@ -10,6 +10,9 @@ import UIKit
 import Material
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialCards
+import CryptoSwift
+import RealmSwift
+import PromiseKit
 
 class LoginViewController: UIViewController {
 
@@ -17,17 +20,41 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var balletLabel: UILabel!
 
+    @IBOutlet weak var loadingOverlay: LoadingView!
+
     @IBOutlet weak var loginCard: MDCCard!
     @IBOutlet weak var passwordTextfield: ErrorTextField!
     @IBOutlet weak var passwordConfirmationTextfield: ErrorTextField!
     @IBOutlet weak var loginButton: MDCRaisedButton!
 
     @IBOutlet weak var loginCardBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordTextFieldConnectionConstraint: NSLayoutConstraint!
+    @IBOutlet weak var confirmationButtonConstraint: NSLayoutConstraint!
+    
+    private var isRegister = true
+    private var passwordHash: [UInt8]?
+    private var salt: [UInt8]?
 
     // MARK: - Initialization
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let hash = (try? ConstantHolder.passwordHash?.dataWithHexString()) ?? nil, let s = (try? ConstantHolder.passwordSalt?.dataWithHexString()) ?? nil {
+            isRegister = false
+            passwordHash = [UInt8](hash)
+            salt = [UInt8](s)
+            // Remove confirmation
+            passwordConfirmationTextfield.isHidden = true
+            passwordTextFieldConnectionConstraint.constant = 0
+            confirmationButtonConstraint.constant = 0
+
+
+        } else {
+            isRegister = true
+            passwordHash = nil
+            salt = nil
+        }
 
         setupUI()
     }
@@ -65,7 +92,7 @@ class LoginViewController: UIViewController {
         passwordConfirmationTextfield.returnKeyType = .done
         passwordConfirmationTextfield.delegate = self
         passwordConfirmationTextfield.detailColor = Color.red.base
-        passwordConfirmationTextfield.detail = "Password is too weak. At least 8 characters."
+        passwordConfirmationTextfield.detail = "Your passwords didn't match"
         passwordConfirmationTextfield.addTarget(self, action: #selector(passwordTextfieldChanged), for: .editingChanged)
 
         loginButton.setTitle("Login", for: .normal)
@@ -82,7 +109,7 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func passwordTextfieldChanged() {
-        if let t1 = passwordTextfield.text?.isEmpty, !t1, let t2 = passwordConfirmationTextfield.text?.isEmpty, !t2 {
+        if let t1 = passwordTextfield.text?.isEmpty, !t1, let t2 = passwordConfirmationTextfield.text?.isEmpty, (!t2 || !isRegister) {
             loginButton.isEnabled = true
         } else {
             loginButton.isEnabled = false
@@ -90,6 +117,55 @@ class LoginViewController: UIViewController {
     }
 
     @objc private func loginButtonClicked() {
+        loginButton.isEnabled = false
+        loadingOverlay.startLoading()
+
+        guard let tabController = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController() else {
+            return
+        }
+
+        let promise: Promise<()>
+        if isRegister {
+            guard let password = passwordTextfield.text, let confirmation = passwordConfirmationTextfield.text else {
+                return
+            }
+            if password.count < 8 {
+                passwordTextfield.isErrorRevealed = true
+                return
+            }
+            passwordTextfield.isErrorRevealed = false
+
+            if password != confirmation {
+                passwordConfirmationTextfield.isErrorRevealed = true
+                return
+            }
+            passwordConfirmationTextfield.isErrorRevealed = false
+
+            promise = registerUser(password: password)
+        } else {
+            guard let hash = passwordHash, let salt = salt, let password = passwordTextfield.text, let passwordData = password.data(using: .utf8) else {
+                return
+            }
+
+            promise = loginUser(password: password, passwordData: passwordData, hash: hash, salt: salt)
+        }
+
+        promise.done(on: DispatchQueue.main) {
+            // Login / Register finished. Redirect
+            self.present(tabController, animated: false, completion: nil)
+        }.catch(on: DispatchQueue.main) { error in
+            if let e = error as? LoginError, e == .passwordWrong {
+                self.passwordTextfield.detail = "Your password is wrong. Please try again."
+                self.passwordTextfield.isErrorRevealed = true
+            } else {
+                Dialog().details("Something went wrong. Please try again later.").positive("OK", handler: nil).show(self)
+            }
+        }.finally {
+            DispatchQueue.main.async { [weak self] in
+                self?.loginButton.isEnabled = true
+                self?.loadingOverlay.stopLoading()
+            }
+        }
     }
 
     @objc private func keyboardWillShow(_ notification: Notification) {
@@ -109,6 +185,81 @@ class LoginViewController: UIViewController {
         UIView.animate(withDuration: 0.55, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+
+    // MARK: - Helpers
+
+    enum LoginError: Error {
+
+        case internalError
+        case passwordWrong
+    }
+
+    private func registerUser(password: String) -> Promise<()> {
+        return Promise { seal in
+            DispatchQueue.global().async {
+                // Login
+                guard let passwordData = password.data(using: .utf8), let salt = [UInt8].secureRandom(count: 32) else {
+                    // PROMISE
+                    seal.reject(LoginError.internalError)
+                    return
+                }
+                guard let hash = try? LoggedInUser.hashPassword([UInt8](passwordData), salt: salt) else {
+                    // PROMISE
+                    seal.reject(LoginError.internalError)
+                    return
+                }
+
+                // Save password hash
+                ConstantHolder.passwordHash = Data(hash).hexString
+                ConstantHolder.passwordSalt = Data(salt).hexString
+
+                // Register successful
+                LoggedInUser.shared.password = password
+
+                // PROMISE
+                seal.fulfill(())
+            }
+        }
+    }
+
+    private func loginUser(password: String, passwordData: Data, hash: [UInt8], salt: [UInt8]) -> Promise<Void> {
+        return Promise { seal in
+            DispatchQueue.global().async {
+                guard let pHash = try? LoggedInUser.hashPassword([UInt8](passwordData), salt: salt) else {
+                    // PROMISE
+                    seal.reject(LoginError.internalError)
+                    return
+                }
+
+                if pHash != hash {
+                    // PROMISE
+                    seal.reject(LoginError.passwordWrong)
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    // Login successful
+                    LoggedInUser.shared.password = password
+                    // Decrypt accounts
+                    guard let accounts: [Account] = try? Realm().objects(Account.self).map({ $0 }) else {
+                        // TODO: Handle error
+                        seal.reject(LoginError.internalError)
+                        return
+                    }
+
+                    DispatchQueue.global().async {
+                        LoggedInUser.decryptAndSetAccounts(password: password, accounts: accounts).done {
+                            // PROMISE
+                            seal.fulfill(())
+                        }.catch { error in
+                            // PROMISE
+                            seal.reject(LoginError.internalError)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
