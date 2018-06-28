@@ -202,7 +202,7 @@ class SettingsTrackNewTokenViewController: UIViewController {
 extension SettingsTrackNewTokenViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField === addressInputTextField {
+        if textField === addressInputTextField || textField === nameInputTextField {
             textField.resignFirstResponder()
 
             return false

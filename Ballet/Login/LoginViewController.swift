@@ -7,18 +7,22 @@
 //
 
 import UIKit
-import LocalAuthentication
 import Material
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialCards
 
 class LoginViewController: UIViewController {
 
     // MARK: - Properties
 
-    @IBOutlet weak var biometryButton: IconButton!
+    @IBOutlet weak var balletLabel: UILabel!
 
-    @IBOutlet weak var passwordField: TextField!
+    @IBOutlet weak var loginCard: MDCCard!
+    @IBOutlet weak var passwordTextfield: ErrorTextField!
+    @IBOutlet weak var passwordConfirmationTextfield: ErrorTextField!
+    @IBOutlet weak var loginButton: MDCRaisedButton!
 
-    @IBOutlet weak var loginButton: FlatButton!
+    @IBOutlet weak var loginCardBottomConstraint: NSLayoutConstraint!
 
     // MARK: - Initialization
 
@@ -36,59 +40,87 @@ class LoginViewController: UIViewController {
     // MARK: - UI setup
 
     private func setupUI() {
-        self.view.backgroundColor = Colors.background
+        view.backgroundColor = Colors.primaryColor
 
-        // Login button
-        loginButton.backgroundColor = Colors.accentColor
-        loginButton.titleColor = Colors.white
+        balletLabel.setupTitleLabelWithSize(size: 64)
+        balletLabel.textColor = Colors.lightPrimaryTextColor
+        balletLabel.textAlignment = .center
 
-        // Password field
-        passwordField.returnKeyType = .done
-    }
+        loginCard.inkView.inkColor = UIColor.clear
 
-    // MARK: - Biometry
+        passwordTextfield.placeholder = "Password"
+        passwordTextfield.setupProjectDefault()
+        passwordTextfield.isSecureTextEntry = true
+        passwordTextfield.autocorrectionType = .no
+        passwordTextfield.returnKeyType = .done
+        passwordTextfield.delegate = self
+        passwordTextfield.detailColor = Color.red.base
+        passwordTextfield.detail = "Password is too weak. At least 8 characters."
+        passwordTextfield.addTarget(self, action: #selector(passwordTextfieldChanged), for: .editingChanged)
 
-    private func checkBiometry(context: LAContext) {
-        var error: NSError?
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself!"
+        passwordConfirmationTextfield.placeholder = "Confirm Password"
+        passwordConfirmationTextfield.setupProjectDefault()
+        passwordConfirmationTextfield.isSecureTextEntry = true
+        passwordConfirmationTextfield.autocorrectionType = .no
+        passwordConfirmationTextfield.returnKeyType = .done
+        passwordConfirmationTextfield.delegate = self
+        passwordConfirmationTextfield.detailColor = Color.red.base
+        passwordConfirmationTextfield.detail = "Password is too weak. At least 8 characters."
+        passwordConfirmationTextfield.addTarget(self, action: #selector(passwordTextfieldChanged), for: .editingChanged)
 
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] (success, authenticationError) in
-                DispatchQueue.main.async {
-                    if success {
-                        // unlock wallet
-                        let story = UIStoryboard(name: "Wallet", bundle: nil)
-                        let viewcontroller = story.instantiateInitialViewController()
-                        self?.present(viewcontroller!, animated: true, completion: nil)
-                    } else {
-                        let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified! Please enter use password authentication.", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .default))
-                        self?.present(ac, animated: true)
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
+        loginButton.setBackgroundColor(Colors.accentColor)
+        loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+        loginButton.isEnabled = false
+        loginButton.setBackgroundColor(Color.gray, for: .disabled)
 
-                        self?.biometryButton.isEnabled = true
-                        self?.biometryButton.imageView?.image = UIImage(named: "ic_fingerprint")?.withRenderingMode(.alwaysTemplate)
-                        self?.biometryButton.imageView?.tintColor = Color.white
-                    }
-                }
-            }
-        } else {
-            // no biometry option availible (not compatible with Touch ID and/or Face ID)
-            // password authentication
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     // MARK: - Actions
 
-    @IBAction func biometryButtonClicked(_ sender: Any) {
-        let context = LAContext()
-        checkBiometry(context: context)
+    @objc private func passwordTextfieldChanged() {
+        if let t1 = passwordTextfield.text?.isEmpty, !t1, let t2 = passwordConfirmationTextfield.text?.isEmpty, !t2 {
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+        }
     }
 
-    @IBAction func loginButtonClicked(_ sender: Any) {
-        if passwordField.text == "123" {
-            let story = UIStoryboard(name: "Wallet", bundle: nil)
-            let viewcontroller = story.instantiateInitialViewController()
-            self.present(viewcontroller!, animated: true, completion: nil)
+    @objc private func loginButtonClicked() {
+    }
+
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRect = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRect.height
+
+            self.loginCardBottomConstraint.constant = keyboardHeight + 32
+            UIView.animate(withDuration: 0.55, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
         }
+    }
+
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        self.loginCardBottomConstraint.constant = 32
+        UIView.animate(withDuration: 0.55, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === passwordTextfield || textField === passwordConfirmationTextfield {
+            textField.resignFirstResponder()
+
+            return false
+        }
+
+        return true
     }
 }
