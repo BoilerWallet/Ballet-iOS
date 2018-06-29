@@ -120,23 +120,32 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = false
         loadingOverlay.startLoading()
 
+        let finishLoading: () -> Void = {
+            self.loginButton.isEnabled = true
+            self.loadingOverlay.stopLoading()
+        }
+
         guard let tabController = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController() else {
+            finishLoading()
             return
         }
 
         let promise: Promise<()>
         if isRegister {
             guard let password = passwordTextfield.text, let confirmation = passwordConfirmationTextfield.text else {
+                finishLoading()
                 return
             }
             if password.count < 8 {
                 passwordTextfield.isErrorRevealed = true
+                finishLoading()
                 return
             }
             passwordTextfield.isErrorRevealed = false
 
             if password != confirmation {
                 passwordConfirmationTextfield.isErrorRevealed = true
+                finishLoading()
                 return
             }
             passwordConfirmationTextfield.isErrorRevealed = false
@@ -144,6 +153,7 @@ class LoginViewController: UIViewController {
             promise = registerUser(password: password)
         } else {
             guard let hash = passwordHash, let salt = salt, let password = passwordTextfield.text, let passwordData = password.data(using: .utf8) else {
+                finishLoading()
                 return
             }
 
@@ -158,6 +168,7 @@ class LoginViewController: UIViewController {
                 self.passwordTextfield.detail = "Your password is wrong. Please try again."
                 self.passwordTextfield.isErrorRevealed = true
             } else {
+                print(error)
                 Dialog().details("Something went wrong. Please try again later.").positive("OK", handler: nil).show(self)
             }
         }.finally {
