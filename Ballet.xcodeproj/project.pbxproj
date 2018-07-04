@@ -1080,17 +1080,18 @@
 			baseConfigurationReference = 4E24AB74DF6D0942C7504711 /* Pods-Ballet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 836ZS26RJG;
+				DEVELOPMENT_TEAM = 674H4J83CA;
 				INFOPLIST_FILE = "$(SRCROOT)/Ballet/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c539c1d6-1fdc-4dc2-a822-5527b361f791";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.screamgood.ballet";
+				PROVISIONING_PROFILE = "c4205d3f-4d16-404c-bef4-d3a817feabfc";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.boilertalk.ballet";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1102,17 +1103,18 @@
 			baseConfigurationReference = A439B085ABD3EEAE6469856E /* Pods-Ballet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 836ZS26RJG;
+				DEVELOPMENT_TEAM = 674H4J83CA;
 				INFOPLIST_FILE = "$(SRCROOT)/Ballet/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "da7cb552-ead4-4338-865c-41e4f3126470";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.screamgood.ballet";
+				PROVISIONING_PROFILE = "68b3f2ed-a640-4e45-9ab8-3aaec4ccc06b";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.boilertalk.ballet";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
