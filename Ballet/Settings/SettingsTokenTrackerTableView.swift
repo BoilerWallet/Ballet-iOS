@@ -16,6 +16,8 @@ class SettingsTokenTrackerTableView: UITableView {
 
     var deleteRequested: ((_ token: ERC20TrackedToken) -> Void)?
 
+    var tokenSelected: ((_ token: ERC20TrackedToken) -> Void)?
+
     private static let defaultTokenCellIdentifier = "tokenTrackerCell"
 
     private var rows: Results<ERC20TrackedToken>?
@@ -93,6 +95,11 @@ class SettingsTokenTrackerTableView: UITableView {
 
 extension SettingsTokenTrackerTableView: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let _ = tokenSelected, let rows = rows {
+            tokenSelected?(rows[indexPath.row])
+        }
+    }
 }
 
 // MARK: - Table view data source
@@ -119,7 +126,7 @@ extension SettingsTokenTrackerTableView: UITableViewDataSource {
 
     // Override to support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if let _ = deleteRequested, editingStyle == .delete {
             if let rows = rows {
                 deleteRequested?(rows[indexPath.row])
             }
