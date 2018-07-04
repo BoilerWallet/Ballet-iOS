@@ -2,7 +2,7 @@ git_url "git@github.com:Boilertalk/certificates-Ballet.git"
 
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier ["com.screamgood.ballet"]
+app_identifier ["com.boilertalk.ballet"]
 username "ballet@boilertalk.com" # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`
