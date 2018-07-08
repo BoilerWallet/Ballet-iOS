@@ -21,6 +21,7 @@ import Runes
 class SendViewController: UIViewController {
 
     // MARK: - Properties
+
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var fromSelectedView: DashedBorderView!
     @IBOutlet weak var fromSelectedBlockiesImage: UIImageView!
@@ -32,8 +33,8 @@ class SendViewController: UIViewController {
     @IBOutlet weak var toTextField: ErrorTextField!
 
     @IBOutlet weak var amountTextField: ErrorTextField!
-    @IBOutlet weak var amountLabel: UILabel!
-    
+    @IBOutlet weak var currencyButton: MDCFlatButton!
+
     @IBOutlet weak var gasTextField: ErrorTextField!
     @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var feeSlider: MDCSlider!
@@ -46,6 +47,7 @@ class SendViewController: UIViewController {
     private var selectedAccount: DecryptedAccount?
 
     // MARK: - Initialization
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -113,8 +115,9 @@ class SendViewController: UIViewController {
     }
 
     private func setupAmount() {
-        amountLabel.setupSubTitleLabel()
-        amountLabel.text = "ETH"
+        currencyButton.setTitleColor(Colors.accentColor, for: .normal)
+        currencyButton.setTitle("ETH", for: .normal)
+        currencyButton.addTarget(self, action: #selector(currencyButtonClicked), for: .touchUpInside)
 
         amountTextField.placeholder = "Amount"
         amountTextField.setupProjectDefault()
@@ -179,6 +182,7 @@ class SendViewController: UIViewController {
     }
 
     // MARK: - Helper functions
+
     private func showGeneralError() {
         Dialog().details("An error occured. Please try again later and file an issue on Github.")
             .positive("OK", handler: nil)
@@ -205,6 +209,10 @@ class SendViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @objc func currencyButtonClicked() {
+    }
+
     @objc private func selectFromAddressButtonClicked() {
         guard let controller = UIStoryboard(name: "SelectAccount", bundle: nil).instantiateInitialViewController() as? SelectAccountCollectionViewController else {
             return

@@ -132,7 +132,7 @@
                                                 <rect key="frame" x="16" y="274" width="343" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-19-Aq8" customClass="ErrorTextField" customModule="Material">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="K9B-k3-07I"/>
                                                         </constraints>
@@ -141,7 +141,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6k-Ky-9PK" customClass="MDCFlatButton">
-                                                        <rect key="frame" x="33" y="0.0" width="310" height="30"/>
+                                                        <rect key="frame" x="243" y="0.0" width="100" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="Jym-Wp-sBe"/>
@@ -258,7 +258,7 @@
                     <navigationItem key="navigationItem" id="sz3-iP-AAp"/>
                     <connections>
                         <outlet property="amountTextField" destination="hfg-19-Aq8" id="jWm-Ix-QNa"/>
-                        <outlet property="currencyButton" destination="J6k-Ky-9PK" id="nYj-sK-ATc"/>
+                        <outlet property="currencyButton" destination="J6k-Ky-9PK" id="ThQ-eK-MIV"/>
                         <outlet property="feeInfoLabel" destination="4VT-sW-Zus" id="NXa-vL-gGX"/>
                         <outlet property="feeLabel" destination="7jn-og-b2A" id="5Ok-u3-C1F"/>
                         <outlet property="feeSlider" destination="xJh-Ev-aYK" id="TIb-1p-Cpl"/>
