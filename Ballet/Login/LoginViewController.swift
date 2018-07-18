@@ -259,15 +259,10 @@ class LoginViewController: UIViewController {
                         return
                     }
 
-                    DispatchQueue.global().async {
-                        LoggedInUser.decryptAndSetAccounts(password: password, accounts: accounts).done {
-                            // PROMISE
-                            seal.fulfill(())
-                        }.catch { error in
-                            // PROMISE
-                            seal.reject(LoginError.internalError)
-                        }
-                    }
+                    LoggedInUser.shared.setAccounts(accounts: accounts)
+
+                    // PROMISE
+                    seal.fulfill(())
                 }
             }
         }

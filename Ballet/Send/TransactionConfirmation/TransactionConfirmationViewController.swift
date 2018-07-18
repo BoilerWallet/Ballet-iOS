@@ -171,9 +171,9 @@ class TransactionConfirmationViewController: UIViewController {
     }
 
     private func fillBlockies() {
-        let privateKey = transaction.from.privateKey
-        fromBlockies.setBlockies(with: privateKey.address.hex(eip55: false))
-        fromBlockiesAddress.text = privateKey.address.hex(eip55: true)
+        let encryptedAccount = transaction.from
+        fromBlockies.setBlockies(with: encryptedAccount.address.hex(eip55: false))
+        fromBlockiesAddress.text = encryptedAccount.address.hex(eip55: true)
 
         toBlockies.setBlockies(with: transaction.to.hex(eip55: false))
         toBlockiesAddress.text = transaction.to.hex(eip55: true)
@@ -186,7 +186,7 @@ class TransactionConfirmationViewController: UIViewController {
         toAddress.text = transaction.to.hex(eip55: true)
 
         fromAddressInfo.text = "From Address:"
-        fromAddress.text = transaction.from.privateKey.address.hex(eip55: true)
+        fromAddress.text = transaction.from.address.hex(eip55: true)
 
         amountInfo.text = "Amount to Send:"
         amount.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
@@ -216,7 +216,7 @@ class TransactionConfirmationViewController: UIViewController {
     private func fillAsyncInfo() {
         loadingView.startLoading()
 
-        let from = transaction.from.privateKey.address
+        let from = transaction.from.address
 
         let web3 = Web3(rpcURL: transaction.rpcUrl.url)
 
@@ -309,7 +309,7 @@ class TransactionConfirmationViewController: UIViewController {
 
 struct PreparedTransaction {
 
-    let from: DecryptedAccount
+    let from: EncryptedAccount
     let to: EthereumAddress
     let amount: EthereumQuantity
     let gas: EthereumQuantity

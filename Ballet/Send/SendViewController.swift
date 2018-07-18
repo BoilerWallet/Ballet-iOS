@@ -44,7 +44,7 @@ class SendViewController: UIViewController {
 
     private var currentGasPrice: ETHGasStationGasPrice?
 
-    private var selectedAccount: DecryptedAccount?
+    private var selectedAccount: EncryptedAccount?
 
     // MARK: - Initialization
 
@@ -200,12 +200,12 @@ class SendViewController: UIViewController {
         amountTextField.text = ""
     }
 
-    private func selectAccount(account: DecryptedAccount) {
+    private func selectAccount(account: EncryptedAccount) {
         self.selectedAccount = account
 
-        fromSelectedBlockiesImage.setBlockies(with: account.privateKey.address.hex(eip55: false))
+        fromSelectedBlockiesImage.setBlockies(with: account.address.hex(eip55: false))
         fromSelectedName.text = account.account.name
-        fromSelectedAddress.text = account.privateKey.address.hex(eip55: true)
+        fromSelectedAddress.text = account.address.hex(eip55: true)
     }
 
     // MARK: - Actions

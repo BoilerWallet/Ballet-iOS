@@ -38,9 +38,9 @@ class WalletCollectionViewCell: UICollectionViewCell {
         return content.addressLabel
     }
 
-    var currentAccount: DecryptedAccount?
+    var currentAccount: EncryptedAccount?
 
-    var cellSelected: ((_ account: DecryptedAccount) -> Void)?
+    var cellSelected: ((_ account: EncryptedAccount) -> Void)?
 
     // MARK: - Initialization
 
@@ -74,7 +74,7 @@ class WalletCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Cell setup
 
-    func setup(with account: DecryptedAccount, cellSelected: ((_ account: DecryptedAccount) -> Void)? = nil) {
+    func setup(with account: EncryptedAccount, cellSelected: ((_ account: EncryptedAccount) -> Void)? = nil) {
         self.currentAccount = account
         self.cellSelected = cellSelected
 
@@ -84,13 +84,7 @@ class WalletCollectionViewCell: UICollectionViewCell {
         balanceLabel.text = "0 ETH"
         addressLabel.text = ""
 
-        let address: EthereumAddress
-        do {
-            let privateKey = try account.privateKey
-            address = privateKey.address
-        } catch {
-            return
-        }
+        let address = account.address
 
         nameLabel.text = account.account.name
 
