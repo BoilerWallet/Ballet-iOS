@@ -119,6 +119,8 @@ class WalletCollectionViewController: UICollectionViewController {
         let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate)
         addAccountButton.setImage(image, for: .normal)
         addAccountButton.setImage(image, for: .selected)
+        // For UI tests
+        addAccountButton.accessibilityIdentifier = "ic_add"
 
         addAccountButton.tintColor = Colors.white
 

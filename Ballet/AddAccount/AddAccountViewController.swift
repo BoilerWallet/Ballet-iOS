@@ -79,6 +79,8 @@ class AddAccountViewController: UIViewController {
         accountNameTextField.autocorrectionType = .no
         accountNameTextField.returnKeyType = .done
         accountNameTextField.delegate = self
+        // UI test specific
+        accountNameTextField.accessibilityIdentifier = "account_name"
 
         // Create
         createAccountButton.setTitle("Create", for: .normal)

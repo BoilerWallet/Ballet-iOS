@@ -30,6 +30,7 @@
 		0E672D541FE70A9D00917D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */; };
 		0E672D5F1FE70A9E00917D05 /* BalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D5E1FE70A9E00917D05 /* BalletTests.swift */; };
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
+		0E6E84EF2100D09C00F2A601 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84EE2100D09C00F2A601 /* main.swift */; };
 		0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */; };
 		0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */; };
 		0E75EF7020E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */; };
@@ -141,6 +142,7 @@
 		0E672D651FE70A9E00917D05 /* BalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E672D691FE70A9E00917D05 /* BalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalletUITests.swift; sourceTree = "<group>"; };
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E6E84EE2100D09C00F2A601 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionConfirmation.storyboard; sourceTree = "<group>"; };
 		0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewController.swift; sourceTree = "<group>"; };
 		0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletERC20TokenListCollectionViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				863449E31FEC189A00738516 /* Settings */,
 				86439AB31FE7C8CC00060944 /* Toolbox */,
 				0E672D491FE70A9D00917D05 /* AppDelegate.swift */,
+				0E6E84EE2100D09C00F2A601 /* main.swift */,
 				0E672D4B1FE70A9D00917D05 /* ViewController.swift */,
 				0E672D521FE70A9D00917D05 /* LaunchScreen.storyboard */,
 			);
@@ -880,6 +883,7 @@
 				0EC5244E20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift in Sources */,
 				0EA476E42047858F003DB1D0 /* SelectAccountCollectionViewCell.swift in Sources */,
 				0E94A41520E127A500335710 /* SettingsTokenTrackerViewController.swift in Sources */,
+				0E6E84EF2100D09C00F2A601 /* main.swift in Sources */,
 				0E8FE9A220E54A0A0077B107 /* DecryptedAccount.swift in Sources */,
 				0E40E58E20E2690700BA9C4B /* BigUDecimal.swift in Sources */,
 				0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */,
