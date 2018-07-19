@@ -92,9 +92,9 @@ platform :ios do
     # cocoapods repo_update: true
 
     # Increment build number
-    increment_build_number({
+    increment_build_number(
       build_number: latest_testflight_build_number + 1
-    })
+    )
 
     bn = get_build_number
     set_info_plist_value(path: './Ballet/Resources/Info.plist', key: 'CFBundleVersion', value: bn)
