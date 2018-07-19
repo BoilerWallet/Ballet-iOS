@@ -51,3 +51,42 @@ class SettingsTokenTrackerTableViewCell: TableViewCell {
         addressLabel.text = address.hex(eip55: true)
     }
 }
+
+class SettingsTokenTrackerETHTableViewCell: TableViewCell {
+
+    // MARK: - Properties
+
+    @IBOutlet weak var ethLogoImageView: UIImageView!
+    @IBOutlet weak var ethLabel: UILabel!
+
+    // MARK: - Initialization
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        setupUI()
+        fillUI()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+    // MARK: - UI setup
+
+    private func setupUI() {
+        ethLogoImageView.layer.cornerRadius = ethLogoImageView.bounds.width / 2
+        ethLogoImageView.layer.masksToBounds = true
+
+        ethLabel.setupTitleLabel()
+    }
+
+    private func fillUI() {
+        let logo = UIImage(named: "ETHLogo")
+        ethLogoImageView.image = logo
+
+        ethLabel.text = "ETH"
+    }
+}

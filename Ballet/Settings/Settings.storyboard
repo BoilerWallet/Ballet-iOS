@@ -435,7 +435,7 @@
         <!--Settings Token Tracker View Controller-->
         <scene sceneID="ikC-Ud-OuK">
             <objects>
-                <viewController id="ddH-hO-fvg" customClass="SettingsTokenTrackerViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TokenTrackerTableViewController" id="ddH-hO-fvg" customClass="SettingsTokenTrackerViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wl4-Zn-QzI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -504,6 +504,43 @@
                                             <outlet property="addressLabel" destination="Gm6-Of-Jap" id="YCC-d3-3y9"/>
                                             <outlet property="blockiesImageView" destination="y2L-nC-Bp9" id="E5F-u1-PQ2"/>
                                             <outlet property="nameLabel" destination="TIp-sN-7gN" id="zkB-lo-CPR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tokenTrackerETHCell" rowHeight="88" id="NCF-7g-gfz" customClass="SettingsTokenTrackerETHTableViewCell" customModule="Ballet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NCF-7g-gfz" id="YNr-wu-kkG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="noB-Ot-Uuc">
+                                                    <rect key="frame" x="16" y="16" width="56" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="naP-lI-61g"/>
+                                                        <constraint firstAttribute="width" constant="56" id="vbA-3e-vqi"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svb-fh-geo">
+                                                    <rect key="frame" x="88" y="32.5" width="271" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="iuq-ON-Si4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Svb-fh-geo" firstAttribute="centerY" secondItem="YNr-wu-kkG" secondAttribute="centerY" id="53b-Xe-Z8g"/>
+                                                <constraint firstItem="Svb-fh-geo" firstAttribute="leading" secondItem="noB-Ot-Uuc" secondAttribute="trailing" constant="16" id="HYT-Cs-9e3"/>
+                                                <constraint firstItem="noB-Ot-Uuc" firstAttribute="centerY" secondItem="YNr-wu-kkG" secondAttribute="centerY" id="MrZ-Gp-OKU"/>
+                                                <constraint firstAttribute="trailing" secondItem="Svb-fh-geo" secondAttribute="trailing" constant="16" id="Xve-AM-QQ9"/>
+                                                <constraint firstItem="noB-Ot-Uuc" firstAttribute="leading" secondItem="YNr-wu-kkG" secondAttribute="leading" constant="16" id="l6F-UG-sUV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ethLabel" destination="Svb-fh-geo" id="mVf-Ut-GcH"/>
+                                            <outlet property="ethLogoImageView" destination="noB-Ot-Uuc" id="pxm-Eb-cTS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

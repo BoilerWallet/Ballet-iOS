@@ -16,6 +16,15 @@ class SettingsTokenTrackerViewController: UIViewController {
 
     // MARK: - Properties
 
+    /// If set to true, the table is marked to be a selector table
+    var forSelecting = false
+
+    /// Set to true if you want to show ETH as the first cell
+    var showEth = false
+
+    /// Set to get a callback if a cell was selected
+    var tokenSelected: ((_ token: ERC20TrackedToken?) -> Void)?
+
     @IBOutlet weak var networkCard: MDCCard!
     @IBOutlet weak var networkColor: UIView!
     @IBOutlet weak var networkLabel: UILabel!
@@ -52,9 +61,13 @@ class SettingsTokenTrackerViewController: UIViewController {
         networkColor.isUserInteractionEnabled = false
         networkLabel.setupSubTitleLabel()
 
-        tokenTrackerTableView.deleteRequested = { [weak self] token in
-            self?.deleteTrackedToken(token: token)
+        if !forSelecting {
+            tokenTrackerTableView.deleteRequested = { [weak self] token in
+                self?.deleteTrackedToken(token: token)
+            }
         }
+        tokenTrackerTableView.tokenSelected = tokenSelected
+        tokenTrackerTableView.showEth = showEth
 
         setupTrackButton()
     }

@@ -11,7 +11,7 @@ import BigInt
 
 extension String {
 
-    func ethToWei() -> BigUInt? {
+    func ethToWei(decimals: Int = 18) -> BigUInt? {
         var weiAmount = ""
 
         let splitted = self.split(separator: ".")
@@ -22,11 +22,11 @@ extension String {
         weiAmount += String(splitted[0])
         if splitted.count > 1 {
             var decimal = String(splitted[1])
-            if decimal.count > 18 {
+            if decimal.count > decimals {
                 return nil
             }
-            if decimal.count < 18 {
-                for _ in 0..<(18 - decimal.count) {
+            if decimal.count < decimals {
+                for _ in 0..<(decimals - decimal.count) {
                     decimal += "0"
                 }
             }
@@ -34,7 +34,7 @@ extension String {
             weiAmount += decimal
         } else {
             var decimal = ""
-            for _ in 0..<18 {
+            for _ in 0..<decimals {
                 decimal += "0"
             }
 

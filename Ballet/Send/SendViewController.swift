@@ -34,6 +34,7 @@ class SendViewController: UIViewController {
 
     @IBOutlet weak var amountTextField: ErrorTextField!
     @IBOutlet weak var currencyButton: MDCFlatButton!
+    @IBOutlet weak var currencyButtonLabel: UILabel!
 
     @IBOutlet weak var gasTextField: ErrorTextField!
     @IBOutlet weak var feeLabel: UILabel!
@@ -45,6 +46,8 @@ class SendViewController: UIViewController {
     private var currentGasPrice: ETHGasStationGasPrice?
 
     private var selectedAccount: EncryptedAccount?
+
+    private var selectedCurrency: ERC20TrackedToken?
 
     // MARK: - Initialization
 
@@ -116,8 +119,10 @@ class SendViewController: UIViewController {
 
     private func setupAmount() {
         currencyButton.setTitleColor(Colors.accentColor, for: .normal)
-        currencyButton.setTitle("ETH", for: .normal)
         currencyButton.addTarget(self, action: #selector(currencyButtonClicked), for: .touchUpInside)
+        currencyButtonLabel.setupTitleLabel()
+        currencyButtonLabel.textColor = Colors.accentColor
+        currencyButtonLabel.text = "ETH"
 
         amountTextField.placeholder = "Amount"
         amountTextField.setupProjectDefault()
@@ -208,9 +213,29 @@ class SendViewController: UIViewController {
         fromSelectedAddress.text = account.address.hex(eip55: true)
     }
 
+    private func selectCurrency(trackedToken: ERC20TrackedToken?) {
+        selectedCurrency = trackedToken
+        if let t = trackedToken {
+            currencyButtonLabel.text = t.symbol
+        } else {
+            currencyButtonLabel.text = "ETH"
+        }
+    }
+
     // MARK: - Actions
 
     @objc func currencyButtonClicked() {
+        guard let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "TokenTrackerTableViewController") as? SettingsTokenTrackerViewController else {
+            return
+        }
+        controller.forSelecting = true
+        controller.showEth = true
+        controller.tokenSelected = { [weak self] token in
+            controller.dismiss(animated: true, completion: nil)
+            self?.selectCurrency(trackedToken: token)
+        }
+
+        PopUpController.instantiate(from: self, with: controller)
     }
 
     @objc private func selectFromAddressButtonClicked() {
@@ -286,7 +311,7 @@ class SendViewController: UIViewController {
         }
         toTextField.isErrorRevealed = false
 
-        guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), let amount = amountStr.ethToWei() else {
+        guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), let amount = amountStr.ethToWei(decimals: selectedCurrency?.decimals ?? 18) else {
             amountTextField.detail = "Please type in a value"
             amountTextField.isErrorRevealed = true
             return
@@ -313,6 +338,7 @@ class SendViewController: UIViewController {
             amount: EthereumQuantity(quantity: amount),
             gas: EthereumQuantity(quantity: BigUInt(gasLimit)),
             gasPrice: EthereumQuantity(quantity: gasPrice),
+            currency: selectedCurrency,
             rpcUrl: url
         )
 

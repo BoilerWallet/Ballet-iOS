@@ -178,10 +178,12 @@ class TransactionConfirmationViewController: UIViewController {
         toBlockies.setBlockies(with: transaction.to.hex(eip55: false))
         toBlockiesAddress.text = transaction.to.hex(eip55: true)
 
-        blockiesArrowDetail.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
+        blockiesArrowDetail.text = getBalanceText(balance: transaction.amount.quantity)
     }
 
     private func fillTransactionLabels() {
+        let currencySymbol = transaction.currency?.symbol ?? "ETH"
+
         toAddressInfo.text = "To Address:"
         toAddress.text = transaction.to.hex(eip55: true)
 
@@ -189,13 +191,13 @@ class TransactionConfirmationViewController: UIViewController {
         fromAddress.text = transaction.from.address.hex(eip55: true)
 
         amountInfo.text = "Amount to Send:"
-        amount.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
+        amount.text = getBalanceText(balance: transaction.amount.quantity)
 
         balanceInfo.text = "Account Balance:"
-        balance.text = "??? ETH"
+        balance.text = "??? \(currencySymbol)"
 
         coinInfo.text = "Coin:"
-        coin.text = "ETH"
+        coin.text = "\(transaction.currency?.name ?? "ETH")"
 
         networkInfo.text = "Network:"
         network.text = "ETH (chain \(transaction.rpcUrl.chainId)) via \(transaction.rpcUrl.url)"
@@ -220,10 +222,31 @@ class TransactionConfirmationViewController: UIViewController {
 
         let web3 = Web3(rpcURL: transaction.rpcUrl.url)
 
+        let balancePromise: Promise<BigUInt>
+        if let token = transaction.currency {
+            let contract = web3.eth.Contract(type: GenericERC20Contract.self, address: try? EthereumAddress(hex: token.addressString, eip55: false))
+
+            // Get the balance for this token
+            balancePromise = firstly {
+                contract.balanceOf(address: from).call()
+            }.then { balance in
+                unwrap(balance["_balance"] as? BigUInt)
+            }
+        } else {
+            // Get ETH balance
+            balancePromise = firstly {
+                web3.eth.getBalance(address: from, block: .latest)
+            }.then { balance in
+                return Promise { seal in
+                    seal.fulfill(balance.quantity)
+                }
+            }
+        }
+
         firstly {
-            when(fulfilled: web3.eth.getBalance(address: from, block: .latest), web3.eth.getTransactionCount(address: from, block: .latest))
+            when(fulfilled: balancePromise, web3.eth.getTransactionCount(address: from, block: .latest))
         }.done { balance, nonce in
-            self.balance.text = "\(String(balance.quantity, radix: 10).weiToEthStr()) ETH"
+            self.balance.text = self.getBalanceText(balance: balance)
             self.nonce.text = String(nonce.quantity, radix: 10)
 
             // Set nonce quantity for transaction
@@ -251,6 +274,15 @@ class TransactionConfirmationViewController: UIViewController {
             embedded.right == container.right
         }
         vc.didMove(toParentViewController: self)
+    }
+
+    private func getBalanceText(balance: BigUInt) -> String {
+        let currencySymbol = transaction.currency?.symbol ?? "ETH"
+
+        let amountDecimal = BigUDecimal(balance)
+        let decimals = transaction.currency?.decimals ?? 18
+
+        return "\((amountDecimal / BigUDecimal(BigUInt(10).power(decimals))).description) \(currencySymbol)"
     }
 
     // MARK: - Actions
@@ -314,6 +346,7 @@ struct PreparedTransaction {
     let amount: EthereumQuantity
     let gas: EthereumQuantity
     let gasPrice: EthereumQuantity
+    let currency: ERC20TrackedToken?
 
     let rpcUrl: RPCUrl
 }
