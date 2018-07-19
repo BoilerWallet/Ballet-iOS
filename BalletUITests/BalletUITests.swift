@@ -60,10 +60,7 @@ class BalletUITests: XCTestCase {
 
         // Wait until login is done
         let icAddButton = app.buttons["ic_add"]
-        let exists = NSPredicate(format: "exists == true")
-        expectation(for: exists, evaluatedWith: icAddButton, handler: nil)
-
-        waitForExpectations(timeout: 5, handler: nil)
+        icAddButton.waitToAppear(on: self)
         XCTAssert(icAddButton.exists)
     }
 
@@ -96,10 +93,7 @@ class BalletUITests: XCTestCase {
 
         // Wait until account is created
         let accountCell = app.collectionViews.cells.firstMatch
-        let exists = NSPredicate(format: "exists == true")
-        expectation(for: exists, evaluatedWith: accountCell, handler: nil)
-
-        waitForExpectations(timeout: 10, handler: nil)
+        accountCell.waitToAppear(on: self, timeout: 10)
         XCTAssert(accountCell.exists)
     }
 
