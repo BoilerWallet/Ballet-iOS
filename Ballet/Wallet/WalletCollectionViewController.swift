@@ -119,6 +119,8 @@ class WalletCollectionViewController: UICollectionViewController {
         let image = UIImage(named: "ic_add")?.withRenderingMode(.alwaysTemplate)
         addAccountButton.setImage(image, for: .normal)
         addAccountButton.setImage(image, for: .selected)
+        // For UI tests
+        addAccountButton.accessibilityIdentifier = "ic_add"
 
         addAccountButton.tintColor = Colors.white
 
@@ -138,12 +140,14 @@ class WalletCollectionViewController: UICollectionViewController {
             }
             account.keystore = keystoreString
 
-            let realm = try Realm()
-            try realm.write {
-                realm.add(account)
+            try DispatchQueue.main.sync {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(account)
+                }
             }
-            let decrypted = DecryptedAccount(privateKey: privateKey, account: account)
-            LoggedInUser.shared.decryptedAccounts.append(decrypted)
+            // let decrypted = DecryptedAccount(privateKey: privateKey, account: account)
+            try LoggedInUser.shared.encryptedAccounts.append(EncryptedAccount(address: EthereumAddress(hex: keystore.address, eip55: false), keystore: keystore, account: account))
         } catch {
             let details = "Something went wrong while saving your new account. Please try again or file an issue on Github."
             Dialog().details(details).positive("OK", handler: nil).show(self)
@@ -165,7 +169,9 @@ class WalletCollectionViewController: UICollectionViewController {
         }
         controller.completion = { [weak self] selected, name in
             self?.saveNewAccount(privateKey: selected, name: name)
-            self?.collectionView?.reloadData()
+            DispatchQueue.main.sync {
+                self?.collectionView?.reloadData()
+            }
         }
 
         PopUpController.instantiate(from: self, with: controller)
@@ -232,13 +238,13 @@ class WalletCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return LoggedInUser.shared.decryptedAccounts.count
+        return LoggedInUser.shared.encryptedAccounts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WalletCollectionViewCell
 
-        let accounts = LoggedInUser.shared.decryptedAccounts
+        let accounts = LoggedInUser.shared.encryptedAccounts
         if accounts.count > indexPath.row {
             cell.setup(with: accounts[indexPath.row]) { [weak self] account in
                 self?.performSegue(withIdentifier: "WalletDetail", sender: cell)

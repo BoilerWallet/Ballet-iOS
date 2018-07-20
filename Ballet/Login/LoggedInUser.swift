@@ -22,6 +22,7 @@ class LoggedInUser {
         return SHA3(variant: .keccak256).calculate(for: key)
     }
 
+    /*
     static func decryptAndSetAccounts(password: String, accounts: [Account]) -> Promise<()> {
         return Promise { seal in
             DispatchQueue.main.async {
@@ -54,13 +55,45 @@ class LoggedInUser {
                 }
             }
         }
+    }*/
+
+    func setAccounts(accounts: [Account]) {
+        let decoder = JSONDecoder()
+
+        for a in accounts {
+            guard let aData = a.keystore.data(using: .utf8),
+                let keystore = try? decoder.decode(Keystore.self, from: aData),
+                let address = try? EthereumAddress(hex: keystore.address, eip55: false) else {
+                    // TODO: ???
+                    continue
+            }
+
+            encryptedAccounts.append(EncryptedAccount(address: address, keystore: keystore, account: a))
+        }
+    }
+
+    func decryptedAccount(for encrypted: EncryptedAccount) throws -> DecryptedAccount {
+        let address = encrypted.address
+
+        if let a = decryptedAccounts[address] {
+            return a
+        }
+
+        let decrypted = try DecryptedAccount(privateKey: EthereumPrivateKey(bytes: encrypted.keystore.privateKey(password: password)), account: encrypted.account)
+
+        // Cache decrypted accounts
+        decryptedAccounts[address] = decrypted
+
+        return decrypted
     }
 
     // MARK: - Properties
 
     var password: String = ""
 
-    var decryptedAccounts: [DecryptedAccount] = []
+    var encryptedAccounts: [EncryptedAccount] = []
+
+    private var decryptedAccounts: [EthereumAddress: DecryptedAccount] = [:]
 
     // MARK: - Initialization
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQa-Ge-sjd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQa-Ge-sjd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,12 +92,20 @@
                                     <constraint firstAttribute="height" constant="36" id="gqw-uJ-h3e"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQz-IJ-zw9" customClass="LoadingView" customModule="Ballet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yqy-6L-2eX" firstAttribute="top" secondItem="9mR-9V-3pn" secondAttribute="bottom" constant="8" id="2Zy-6X-c4y"/>
+                            <constraint firstItem="RQz-IJ-zw9" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="4SX-Vg-SEh"/>
                             <constraint firstItem="9mR-9V-3pn" firstAttribute="leading" secondItem="gyv-vi-ZnD" secondAttribute="leading" id="6pP-Xf-s3i"/>
+                            <constraint firstItem="gyv-vi-ZnD" firstAttribute="bottom" secondItem="RQz-IJ-zw9" secondAttribute="bottom" id="Da6-MR-bxS"/>
+                            <constraint firstItem="RQz-IJ-zw9" firstAttribute="trailing" secondItem="gyv-vi-ZnD" secondAttribute="trailing" id="KcN-ki-Fql"/>
                             <constraint firstItem="gyv-vi-ZnD" firstAttribute="bottom" secondItem="yqy-6L-2eX" secondAttribute="bottom" constant="8" id="N0Q-Cw-xiT"/>
+                            <constraint firstItem="RQz-IJ-zw9" firstAttribute="leading" secondItem="gyv-vi-ZnD" secondAttribute="leading" id="N6P-ON-gJe"/>
                             <constraint firstItem="9mR-9V-3pn" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="nvE-F7-ePs"/>
                             <constraint firstItem="gyv-vi-ZnD" firstAttribute="trailing" secondItem="9mR-9V-3pn" secondAttribute="trailing" id="rR1-0n-TPN"/>
                             <constraint firstItem="gyv-vi-ZnD" firstAttribute="trailing" secondItem="yqy-6L-2eX" secondAttribute="trailing" constant="16" id="v3N-Xg-UAA"/>
@@ -109,6 +117,7 @@
                         <outlet property="accountNameTextField" destination="66X-jP-8fr" id="YX9-7n-XXU"/>
                         <outlet property="blockiesView" destination="Sca-TA-WH4" id="d3L-cC-ws7"/>
                         <outlet property="createAccountButton" destination="yqy-6L-2eX" id="GLg-ZN-gBQ"/>
+                        <outlet property="loadingView" destination="RQz-IJ-zw9" id="1vC-WQ-M5e"/>
                         <outlet property="reloadBlockiesButton" destination="td1-QL-2ej" id="Qi9-KD-ERo"/>
                         <outlet property="selectBlockiesLabel" destination="xud-2h-Vmj" id="7iz-Xx-vwt"/>
                     </connections>

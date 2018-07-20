@@ -21,6 +21,7 @@ import Runes
 class SendViewController: UIViewController {
 
     // MARK: - Properties
+
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var fromSelectedView: DashedBorderView!
     @IBOutlet weak var fromSelectedBlockiesImage: UIImageView!
@@ -32,8 +33,9 @@ class SendViewController: UIViewController {
     @IBOutlet weak var toTextField: ErrorTextField!
 
     @IBOutlet weak var amountTextField: ErrorTextField!
-    @IBOutlet weak var amountLabel: UILabel!
-    
+    @IBOutlet weak var currencyButton: MDCFlatButton!
+    @IBOutlet weak var currencyButtonLabel: UILabel!
+
     @IBOutlet weak var gasTextField: ErrorTextField!
     @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var feeSlider: MDCSlider!
@@ -43,9 +45,12 @@ class SendViewController: UIViewController {
 
     private var currentGasPrice: ETHGasStationGasPrice?
 
-    private var selectedAccount: DecryptedAccount?
+    private var selectedAccount: EncryptedAccount?
+
+    private var selectedCurrency: ERC20TrackedToken?
 
     // MARK: - Initialization
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -113,8 +118,12 @@ class SendViewController: UIViewController {
     }
 
     private func setupAmount() {
-        amountLabel.setupSubTitleLabel()
-        amountLabel.text = "ETH"
+        currencyButton.setTitleColor(Colors.accentColor, for: .normal)
+        currencyButton.addTarget(self, action: #selector(currencyButtonClicked), for: .touchUpInside)
+        currencyButtonLabel.setupTitleLabel()
+        currencyButtonLabel.textAlignment = .center
+        currencyButtonLabel.textColor = Colors.accentColor
+        currencyButtonLabel.text = "ETH"
 
         amountTextField.placeholder = "Amount"
         amountTextField.setupProjectDefault()
@@ -135,7 +144,7 @@ class SendViewController: UIViewController {
         gasTextField.keyboardType = .numberPad
         gasTextField.returnKeyType = .done
         gasTextField.delegate = self
-        gasTextField.text = "21000"
+        gasTextField.text = selectedCurrency == nil ? "21000" : "200000"
 
         feeLabel.setupSubTitleLabel()
         feeLabel.text = "FEE"
@@ -179,6 +188,7 @@ class SendViewController: UIViewController {
     }
 
     // MARK: - Helper functions
+
     private func showGeneralError() {
         Dialog().details("An error occured. Please try again later and file an issue on Github.")
             .positive("OK", handler: nil)
@@ -196,15 +206,39 @@ class SendViewController: UIViewController {
         amountTextField.text = ""
     }
 
-    private func selectAccount(account: DecryptedAccount) {
+    private func selectAccount(account: EncryptedAccount) {
         self.selectedAccount = account
 
-        fromSelectedBlockiesImage.setBlockies(with: account.privateKey.address.hex(eip55: false))
+        fromSelectedBlockiesImage.setBlockies(with: account.address.hex(eip55: false))
         fromSelectedName.text = account.account.name
-        fromSelectedAddress.text = account.privateKey.address.hex(eip55: true)
+        fromSelectedAddress.text = account.address.hex(eip55: true)
+    }
+
+    private func selectCurrency(trackedToken: ERC20TrackedToken?) {
+        selectedCurrency = trackedToken
+        if let t = trackedToken {
+            currencyButtonLabel.text = t.symbol
+        } else {
+            currencyButtonLabel.text = "ETH"
+        }
     }
 
     // MARK: - Actions
+
+    @objc func currencyButtonClicked() {
+        guard let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "TokenTrackerTableViewController") as? SettingsTokenTrackerViewController else {
+            return
+        }
+        controller.forSelecting = true
+        controller.showEth = true
+        controller.tokenSelected = { [weak self] token in
+            controller.dismiss(animated: true, completion: nil)
+            self?.selectCurrency(trackedToken: token)
+        }
+
+        PopUpController.instantiate(from: self, with: controller)
+    }
+
     @objc private func selectFromAddressButtonClicked() {
         guard let controller = UIStoryboard(name: "SelectAccount", bundle: nil).instantiateInitialViewController() as? SelectAccountCollectionViewController else {
             return
@@ -246,7 +280,8 @@ class SendViewController: UIViewController {
             info += "\(Int((minutes + 0.5).rounded())) min"
         }
 
-        let gas = (gasTextField.text >>- UInt.init) ?? 21000
+        let defaultGas: UInt = selectedCurrency == nil ? 21000 : 200000
+        let gas = (gasTextField.text >>- UInt.init) ?? defaultGas
         let eth = (sender.value * CGFloat(gas)) / 1_000_000_000
         info += " - \((eth * 1_000_000).rounded() / 1_000_000) ETH"
 
@@ -278,12 +313,28 @@ class SendViewController: UIViewController {
         }
         toTextField.isErrorRevealed = false
 
-        guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), let amount = amountStr.ethToWei() else {
+        guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), var amount = BigUDecimal(string: amountStr) else {
             amountTextField.detail = "Please type in a value"
             amountTextField.isErrorRevealed = true
             return
         }
         amountTextField.isErrorRevealed = false
+
+        // Convert amount to smallest unit
+        amount = amount * BigUDecimal(BigUInt(10).power(selectedCurrency?.decimals ?? 18))
+        amount = amount.normalizeZeros()
+
+        // Make sure we don't have decimal places
+        // Make sure we don't have more decimals than allowed. This would cause problems later
+        guard amount.exponent >= 0 else {
+            amountTextField.detail = "Too many decimals. Max: \(selectedCurrency?.decimals ?? 18)"
+            amountTextField.isErrorRevealed = true
+            return
+        }
+        amountTextField.isErrorRevealed = false
+
+        // Create BigUInt from the BigUDecimal
+        let amountBigUInt = amount.significand * BigUInt(10).power(amount.exponent)
 
         guard let gasLimitStr = gasTextField.text, let gasLimit = UInt(gasLimitStr) else {
             gasTextField.detail = "Please type in a value"
@@ -302,9 +353,10 @@ class SendViewController: UIViewController {
         let tx = PreparedTransaction(
             from: selectedFrom,
             to: toAddress,
-            amount: EthereumQuantity(quantity: amount),
+            amount: EthereumQuantity(quantity: amountBigUInt),
             gas: EthereumQuantity(quantity: BigUInt(gasLimit)),
             gasPrice: EthereumQuantity(quantity: gasPrice),
+            currency: selectedCurrency,
             rpcUrl: url
         )
 
@@ -352,7 +404,7 @@ extension SendViewController: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // Ethereum Amount. e.g.: n digits and up to 18 decimal digits
+        // Ethereum Amount. e.g.: n digits and up to 18 decimal digits for ETH and "decimals" digits for ERC20 tokens
         if textField === amountTextField || textField === gasTextField {
             if string.count == 0 {
                 return true
@@ -361,7 +413,7 @@ extension SendViewController: UITextFieldDelegate {
                 if let newString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
                     let expression: String
                     if textField === amountTextField {
-                        expression = "^([0-9]+)([,\\.]([0-9]{1,18})?)?$"
+                        expression = "^([0-9]+)([,\\.]([0-9]{1,\(selectedCurrency?.decimals ?? 18)})?)?$"
                     } else if textField === gasTextField {
                         expression = "^[1-9][0-9]*$"
                     } else {

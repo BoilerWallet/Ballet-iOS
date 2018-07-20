@@ -171,31 +171,33 @@ class TransactionConfirmationViewController: UIViewController {
     }
 
     private func fillBlockies() {
-        let privateKey = transaction.from.privateKey
-        fromBlockies.setBlockies(with: privateKey.address.hex(eip55: false))
-        fromBlockiesAddress.text = privateKey.address.hex(eip55: true)
+        let encryptedAccount = transaction.from
+        fromBlockies.setBlockies(with: encryptedAccount.address.hex(eip55: false))
+        fromBlockiesAddress.text = encryptedAccount.address.hex(eip55: true)
 
         toBlockies.setBlockies(with: transaction.to.hex(eip55: false))
         toBlockiesAddress.text = transaction.to.hex(eip55: true)
 
-        blockiesArrowDetail.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
+        blockiesArrowDetail.text = getBalanceText(balance: transaction.amount.quantity)
     }
 
     private func fillTransactionLabels() {
+        let currencySymbol = transaction.currency?.symbol ?? "ETH"
+
         toAddressInfo.text = "To Address:"
         toAddress.text = transaction.to.hex(eip55: true)
 
         fromAddressInfo.text = "From Address:"
-        fromAddress.text = transaction.from.privateKey.address.hex(eip55: true)
+        fromAddress.text = transaction.from.address.hex(eip55: true)
 
         amountInfo.text = "Amount to Send:"
-        amount.text = "\(String(transaction.amount.quantity, radix: 10).weiToEthStr()) ETH"
+        amount.text = getBalanceText(balance: transaction.amount.quantity)
 
         balanceInfo.text = "Account Balance:"
-        balance.text = "??? ETH"
+        balance.text = "??? \(currencySymbol)"
 
         coinInfo.text = "Coin:"
-        coin.text = "ETH"
+        coin.text = "\(transaction.currency?.name ?? "ETH")"
 
         networkInfo.text = "Network:"
         network.text = "ETH (chain \(transaction.rpcUrl.chainId)) via \(transaction.rpcUrl.url)"
@@ -216,14 +218,35 @@ class TransactionConfirmationViewController: UIViewController {
     private func fillAsyncInfo() {
         loadingView.startLoading()
 
-        let from = transaction.from.privateKey.address
+        let from = transaction.from.address
 
         let web3 = Web3(rpcURL: transaction.rpcUrl.url)
 
+        let balancePromise: Promise<BigUInt>
+        if let token = transaction.currency {
+            let contract = web3.eth.Contract(type: GenericERC20Contract.self, address: try? EthereumAddress(hex: token.addressString, eip55: false))
+
+            // Get the balance for this token
+            balancePromise = firstly {
+                contract.balanceOf(address: from).call()
+            }.then { balance in
+                unwrap(balance["_balance"] as? BigUInt)
+            }
+        } else {
+            // Get ETH balance
+            balancePromise = firstly {
+                web3.eth.getBalance(address: from, block: .latest)
+            }.then { balance in
+                return Promise { seal in
+                    seal.fulfill(balance.quantity)
+                }
+            }
+        }
+
         firstly {
-            when(fulfilled: web3.eth.getBalance(address: from, block: .latest), web3.eth.getTransactionCount(address: from, block: .latest))
+            when(fulfilled: balancePromise, web3.eth.getTransactionCount(address: from, block: .latest))
         }.done { balance, nonce in
-            self.balance.text = "\(String(balance.quantity, radix: 10).weiToEthStr()) ETH"
+            self.balance.text = self.getBalanceText(balance: balance)
             self.nonce.text = String(nonce.quantity, radix: 10)
 
             // Set nonce quantity for transaction
@@ -253,22 +276,48 @@ class TransactionConfirmationViewController: UIViewController {
         vc.didMove(toParentViewController: self)
     }
 
+    private func getBalanceText(balance: BigUInt) -> String {
+        let currencySymbol = transaction.currency?.symbol ?? "ETH"
+
+        let amountDecimal = BigUDecimal(balance)
+        let decimals = transaction.currency?.decimals ?? 18
+
+        return "\((amountDecimal / BigUDecimal(BigUInt(10).power(decimals))).description) \(currencySymbol)"
+    }
+
     // MARK: - Actions
 
     @objc private func sendButtonClicked() {
         loadingView.startLoading()
+        sendButton.isEnabled = false
 
-        let tx = EthereumTransaction(
-            nonce: nonceQuantity,
-            gasPrice: transaction.gasPrice,
-            gas: transaction.gas,
-            to: transaction.to,
-            value: transaction.amount
-        )
         let web3 = Web3(rpcURL: transaction.rpcUrl.url)
 
+        let txPromise: Promise<EthereumTransaction>
+        if let token = transaction.currency {
+            let contract = web3.eth.Contract(type: GenericERC20Contract.self, address: try? EthereumAddress(hex: token.addressString, eip55: false))
+            let createdTx = contract.transfer(to: transaction.to, value: transaction.amount.quantity).createTransactionAsync(
+                nonce: nonceQuantity,
+                from: transaction.from.address,
+                value: 0,
+                gas: transaction.gas,
+                gasPrice: transaction.gasPrice
+            )
+            txPromise = createdTx
+        } else {
+            txPromise = EthereumTransaction(
+                nonce: nonceQuantity,
+                gasPrice: transaction.gasPrice,
+                gas: transaction.gas,
+                to: transaction.to,
+                value: transaction.amount
+            ).promise
+        }
+
         firstly {
-            try self.transaction.from.signTransaction(tx, chainId: EthereumQuantity(integerLiteral: UInt64(transaction.rpcUrl.chainId))).promise
+            txPromise
+        }.then { tx in
+            self.transaction.from.signTransactionAsync(tx, chainId: EthereumQuantity(integerLiteral: UInt64(self.transaction.rpcUrl.chainId)))
         }.then { tx in
             web3.eth.sendRawTransaction(transaction: tx)
         }.done { txHash in
@@ -289,6 +338,7 @@ class TransactionConfirmationViewController: UIViewController {
             Dialog().details(text).positive("OK", handler: nil).show(self)
         }.finally {
             self.loadingView.stopLoading()
+            self.sendButton.isEnabled = true
         }
     }
 
@@ -309,11 +359,12 @@ class TransactionConfirmationViewController: UIViewController {
 
 struct PreparedTransaction {
 
-    let from: DecryptedAccount
+    let from: EncryptedAccount
     let to: EthereumAddress
     let amount: EthereumQuantity
     let gas: EthereumQuantity
     let gasPrice: EthereumQuantity
+    let currency: ERC20TrackedToken?
 
     let rpcUrl: RPCUrl
 }

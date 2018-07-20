@@ -17,7 +17,7 @@ class WalletERC20TokenListCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
 
-    var account: DecryptedAccount!
+    var account: EncryptedAccount!
 
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
@@ -123,7 +123,7 @@ class WalletERC20TokenListCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WalletERC20TokenListCollectionViewCell
 
         if let element = rows?[indexPath.row] {
-            cell.setup(with: element, for: account.privateKey.address)
+            try cell.setup(with: element, for: account.address)
         }
 
         return cell

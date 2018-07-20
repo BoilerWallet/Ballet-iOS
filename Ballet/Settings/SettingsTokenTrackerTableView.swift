@@ -9,16 +9,24 @@
 import UIKit
 import Web3
 import RealmSwift
+import Curry
+import Runes
 
 class SettingsTokenTrackerTableView: UITableView {
 
     // MARK: - Properties
 
+    /// Set to get a callback if a deletion for a token was requested.
     var deleteRequested: ((_ token: ERC20TrackedToken) -> Void)?
 
-    var tokenSelected: ((_ token: ERC20TrackedToken) -> Void)?
+    /// Set to get a callback if a token was selected. nil always means ETH was selected.
+    var tokenSelected: ((_ token: ERC20TrackedToken?) -> Void)?
+
+    /// Set to true to show ETH as the first "tracked token"
+    var showEth = false
 
     private static let defaultTokenCellIdentifier = "tokenTrackerCell"
+    private static let defaultETHTokenCellIdentifier = "tokenTrackerETHCell"
 
     private var rows: Results<ERC20TrackedToken>?
 
@@ -97,7 +105,12 @@ extension SettingsTokenTrackerTableView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let _ = tokenSelected, let rows = rows {
-            tokenSelected?(rows[indexPath.row])
+            let cellIndex = showEth ? indexPath.row - 1 : indexPath.row
+            if cellIndex >= 0 {
+                tokenSelected?(rows[cellIndex])
+            } else {
+                tokenSelected?(nil)
+            }
         }
     }
 }
@@ -111,13 +124,24 @@ extension SettingsTokenTrackerTableView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rows?.count ?? 0
+        if showEth {
+            // To prevent insta brain cancer just believe me that the following line returns
+            // either rows.count + 1 if rows is not nil or 1 otherwise.
+            return (curry(+) <^> rows?.count <*> 1) ?? 1
+        } else {
+            return rows?.count ?? 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if showEth && indexPath.row == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: type(of: self).defaultETHTokenCellIdentifier, for: indexPath) as! SettingsTokenTrackerETHTableViewCell
+        }
+
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).defaultTokenCellIdentifier, for: indexPath) as! SettingsTokenTrackerTableViewCell
 
-        if let row = rows?[indexPath.row], let address = try? EthereumAddress(hex: row.addressString, eip55: false) {
+        let cellIndex = showEth ? indexPath.row - 1 : indexPath.row
+        if let row = rows?[cellIndex], let address = try? EthereumAddress(hex: row.addressString, eip55: false) {
             cell.setup(name: row.name, address: address)
         }
 
@@ -128,7 +152,10 @@ extension SettingsTokenTrackerTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if let _ = deleteRequested, editingStyle == .delete {
             if let rows = rows {
-                deleteRequested?(rows[indexPath.row])
+                let cellIndex = showEth ? indexPath.row - 1 : indexPath.row
+                if cellIndex >= 0 {
+                    deleteRequested?(rows[cellIndex])
+                }
             }
         }
     }

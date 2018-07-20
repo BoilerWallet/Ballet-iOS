@@ -84,6 +84,8 @@ class LoginViewController: UIViewController {
         passwordTextfield.detailColor = Color.red.base
         passwordTextfield.detail = "Password is too weak. At least 8 characters."
         passwordTextfield.addTarget(self, action: #selector(passwordTextfieldChanged), for: .editingChanged)
+        // UI test specific
+        passwordTextfield.accessibilityIdentifier = "password_text"
 
         passwordConfirmationTextfield.placeholder = "Confirm Password"
         passwordConfirmationTextfield.setupProjectDefault()
@@ -94,6 +96,8 @@ class LoginViewController: UIViewController {
         passwordConfirmationTextfield.detailColor = Color.red.base
         passwordConfirmationTextfield.detail = "Your passwords didn't match"
         passwordConfirmationTextfield.addTarget(self, action: #selector(passwordTextfieldChanged), for: .editingChanged)
+        // UI test specific
+        passwordConfirmationTextfield.accessibilityIdentifier = "confirm_password_text"
 
         loginButton.setTitle("Login", for: .normal)
         loginButton.setTitleColor(Colors.lightPrimaryTextColor, for: .normal)
@@ -259,15 +263,10 @@ class LoginViewController: UIViewController {
                         return
                     }
 
-                    DispatchQueue.global().async {
-                        LoggedInUser.decryptAndSetAccounts(password: password, accounts: accounts).done {
-                            // PROMISE
-                            seal.fulfill(())
-                        }.catch { error in
-                            // PROMISE
-                            seal.reject(LoginError.internalError)
-                        }
-                    }
+                    LoggedInUser.shared.setAccounts(accounts: accounts)
+
+                    // PROMISE
+                    seal.fulfill(())
                 }
             }
         }

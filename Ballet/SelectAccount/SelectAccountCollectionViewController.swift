@@ -19,7 +19,7 @@ class SelectAccountCollectionViewController: UICollectionViewController {
 
     private var selectLabel: UILabel!
 
-    var completion: ((_ selectedAccount: DecryptedAccount) -> Void)?
+    var completion: ((_ selectedAccount: EncryptedAccount) -> Void)?
 
     // MARK: - Initialization
 
@@ -86,13 +86,13 @@ class SelectAccountCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return LoggedInUser.shared.decryptedAccounts.count
+        return LoggedInUser.shared.encryptedAccounts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SelectAccountCollectionViewCell
 
-        let accounts = LoggedInUser.shared.decryptedAccounts
+        let accounts = LoggedInUser.shared.encryptedAccounts
         if accounts.count > indexPath.row {
             let account = accounts[indexPath.row]
 

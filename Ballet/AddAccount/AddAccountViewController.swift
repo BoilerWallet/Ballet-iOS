@@ -18,6 +18,8 @@ class AddAccountViewController: UIViewController {
 
     // MARK: - Properties
 
+    @IBOutlet weak var loadingView: LoadingView!
+
     @IBOutlet weak var selectBlockiesLabel: UILabel!
 
     @IBOutlet weak var blockiesView: BlockiesSelectionView!
@@ -30,6 +32,8 @@ class AddAccountViewController: UIViewController {
 
     private var generatedPrivateKeys: [String: EthereumPrivateKey] = [:]
     private var selectedAddress: EthereumAddress?
+
+    /// May be called in a background thread. Be careful.
     var completion: ((_ selectedAddress: EthereumPrivateKey, _ name: String) -> Void)?
 
     // MARK: - Initialization
@@ -75,6 +79,8 @@ class AddAccountViewController: UIViewController {
         accountNameTextField.autocorrectionType = .no
         accountNameTextField.returnKeyType = .done
         accountNameTextField.delegate = self
+        // UI test specific
+        accountNameTextField.accessibilityIdentifier = "account_name"
 
         // Create
         createAccountButton.setTitle("Create", for: .normal)
@@ -122,14 +128,29 @@ class AddAccountViewController: UIViewController {
     }
 
     @objc private func createAccountButtonClicked() {
+        loadingView.startLoading()
+        createAccountButton.isEnabled = false
+
         guard let selected = selectedAddress, let privateKey = generatedPrivateKeys[selected.hex(eip55: false)], let name = accountNameTextField.text, !name.isEmpty else {
             Dialog().details("Please select an account and a name").positive("OK", handler: nil).show(self)
+
+            loadingView.stopLoading()
+            createAccountButton.isEnabled = true
+
             return
         }
 
-        dismiss(animated: true, completion: nil)
+        let comp = DispatchWorkItem {
+            self.completion?(privateKey, name)
+        }
 
-        completion?(privateKey, name)
+        DispatchQueue.global().async {
+            comp.perform()
+        }
+
+        comp.notify(queue: DispatchQueue.main) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     /*
