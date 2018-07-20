@@ -32,6 +32,9 @@
 		0E672D6A1FE70A9E00917D05 /* BalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E672D691FE70A9E00917D05 /* BalletUITests.swift */; };
 		0E6E84EF2100D09C00F2A601 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84EE2100D09C00F2A601 /* main.swift */; };
 		0E6E84F22100F4B100F2A601 /* XCUIElement+WaitToAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84F12100F4B100F2A601 /* XCUIElement+WaitToAppear.swift */; };
+		0E6E84F421014D3100F2A601 /* BigDecimal+StringInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84F321014D3100F2A601 /* BigDecimal+StringInit.swift */; };
+		0E6E84F62101594E00F2A601 /* BigDecimal+Normalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84F52101594E00F2A601 /* BigDecimal+Normalize.swift */; };
+		0E6E84F82101643E00F2A601 /* BigDecimal+StringInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84F72101643E00F2A601 /* BigDecimal+StringInitTests.swift */; };
 		0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */; };
 		0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */; };
 		0E75EF7020E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */; };
@@ -145,6 +148,9 @@
 		0E672D6B1FE70A9E00917D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6E84EE2100D09C00F2A601 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0E6E84F12100F4B100F2A601 /* XCUIElement+WaitToAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+WaitToAppear.swift"; sourceTree = "<group>"; };
+		0E6E84F321014D3100F2A601 /* BigDecimal+StringInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigDecimal+StringInit.swift"; sourceTree = "<group>"; };
+		0E6E84F52101594E00F2A601 /* BigDecimal+Normalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigDecimal+Normalize.swift"; sourceTree = "<group>"; };
+		0E6E84F72101643E00F2A601 /* BigDecimal+StringInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigDecimal+StringInitTests.swift"; sourceTree = "<group>"; };
 		0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionConfirmation.storyboard; sourceTree = "<group>"; };
 		0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewController.swift; sourceTree = "<group>"; };
 		0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletERC20TokenListCollectionViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 			children = (
 				0E40E58B20E268F100BA9C4B /* BigDecimal.swift */,
 				0E40E58D20E2690700BA9C4B /* BigUDecimal.swift */,
+				0E6E84F321014D3100F2A601 /* BigDecimal+StringInit.swift */,
+				0E6E84F52101594E00F2A601 /* BigDecimal+Normalize.swift */,
 			);
 			path = BigDecimal;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */,
+				0E6E84F72101643E00F2A601 /* BigDecimal+StringInitTests.swift */,
 			);
 			path = ToolboxTests;
 			sourceTree = "<group>";
@@ -900,6 +909,7 @@
 				0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */,
 				0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */,
 				86BED7BA1FEB187300165571 /* ReceiveViewController.swift in Sources */,
+				0E6E84F62101594E00F2A601 /* BigDecimal+Normalize.swift in Sources */,
 				0EC5244C20DFFFCC009FAFEB /* ERC20TrackedToken.swift in Sources */,
 				0E40E58C20E268F100BA9C4B /* BigDecimal.swift in Sources */,
 				0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */,
@@ -917,6 +927,7 @@
 				0EE8F2992041AAC5009DF772 /* RPC.swift in Sources */,
 				0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */,
 				0EA476E620478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift in Sources */,
+				0E6E84F421014D3100F2A601 /* BigDecimal+StringInit.swift in Sources */,
 				0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
@@ -953,6 +964,7 @@
 			files = (
 				0E672D5F1FE70A9E00917D05 /* BalletTests.swift in Sources */,
 				0E87F94E204A289100742C0A /* String+WeiConversionTests.swift in Sources */,
+				0E6E84F82101643E00F2A601 /* BigDecimal+StringInitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

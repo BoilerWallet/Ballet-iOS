@@ -311,12 +311,28 @@ class SendViewController: UIViewController {
         }
         toTextField.isErrorRevealed = false
 
-        guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), let amount = amountStr.ethToWei(decimals: selectedCurrency?.decimals ?? 18) else {
+        guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), var amount = BigUDecimal(string: amountStr) else {
             amountTextField.detail = "Please type in a value"
             amountTextField.isErrorRevealed = true
             return
         }
         amountTextField.isErrorRevealed = false
+
+        // Convert amount to smallest unit
+        amount = amount * BigUDecimal(BigUInt(10).power(selectedCurrency?.decimals ?? 18))
+        amount = amount.normalizeZeros()
+
+        // Make sure we don't have decimal places
+        // Make sure we don't have more decimals than allowed. This would cause problems later
+        guard amount.exponent >= 0 else {
+            amountTextField.detail = "Too many decimals. Max: \(selectedCurrency?.decimals ?? 18)"
+            amountTextField.isErrorRevealed = true
+            return
+        }
+        amountTextField.isErrorRevealed = false
+
+        // Create BigUInt from the BigUDecimal
+        let amountBigUInt = amount.significand * BigUInt(amount.exponent)
 
         guard let gasLimitStr = gasTextField.text, let gasLimit = UInt(gasLimitStr) else {
             gasTextField.detail = "Please type in a value"
@@ -335,7 +351,7 @@ class SendViewController: UIViewController {
         let tx = PreparedTransaction(
             from: selectedFrom,
             to: toAddress,
-            amount: EthereumQuantity(quantity: amount),
+            amount: EthereumQuantity(quantity: amountBigUInt),
             gas: EthereumQuantity(quantity: BigUInt(gasLimit)),
             gasPrice: EthereumQuantity(quantity: gasPrice),
             currency: selectedCurrency,
@@ -386,7 +402,7 @@ extension SendViewController: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // Ethereum Amount. e.g.: n digits and up to 18 decimal digits
+        // Ethereum Amount. e.g.: n digits and up to 18 decimal digits for ETH and "decimals" digits for ERC20 tokens
         if textField === amountTextField || textField === gasTextField {
             if string.count == 0 {
                 return true
@@ -395,7 +411,7 @@ extension SendViewController: UITextFieldDelegate {
                 if let newString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
                     let expression: String
                     if textField === amountTextField {
-                        expression = "^([0-9]+)([,\\.]([0-9]{1,18})?)?$"
+                        expression = "^([0-9]+)([,\\.]([0-9]{1,\(selectedCurrency?.decimals ?? 18)})?)?$"
                     } else if textField === gasTextField {
                         expression = "^[1-9][0-9]*$"
                     } else {
