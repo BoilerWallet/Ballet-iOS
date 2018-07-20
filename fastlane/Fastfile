@@ -106,6 +106,9 @@ platform :ios do
     build_app(scheme: 'Ballet', export_method: 'app-store')
 
     # Testflight
-    upload_to_testflight
+    upload_to_testflight(
+      username: 'ballet@boilertalk.com',
+      app_identifier: 'com.boilertalk.ballet'
+    )
   end
 end
