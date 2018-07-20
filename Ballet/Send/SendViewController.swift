@@ -332,7 +332,7 @@ class SendViewController: UIViewController {
         amountTextField.isErrorRevealed = false
 
         // Create BigUInt from the BigUDecimal
-        let amountBigUInt = amount.significand * BigUInt(amount.exponent)
+        let amountBigUInt = amount.significand * BigUInt(10).power(amount.exponent)
 
         guard let gasLimitStr = gasTextField.text, let gasLimit = UInt(gasLimitStr) else {
             gasTextField.detail = "Please type in a value"

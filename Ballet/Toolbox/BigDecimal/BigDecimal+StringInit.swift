@@ -43,9 +43,17 @@ extension BigDecimal {
             sign = .plus
         }
 
-        let splitted = string.split(separator: ".")
+        var splitted = string.split(separator: ".")
         guard splitted.count <= 2 else {
             return nil
+        }
+
+        // If string starts with a dot, we have to manipulate the splitted array
+        if string.hasPrefix(".") && splitted.count == 1 {
+            splitted = [
+                Substring(),
+                splitted[0]
+            ]
         }
 
         let exponent = -1 * (splitted.count > 1 ? splitted[1].count : 0)
