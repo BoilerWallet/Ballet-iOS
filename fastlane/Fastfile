@@ -108,7 +108,8 @@ platform :ios do
     # Testflight
     upload_to_testflight(
       username: 'ballet@boilertalk.com',
-      app_identifier: 'com.boilertalk.ballet'
+      app_identifier: 'com.boilertalk.ballet',
+      skip_waiting_for_build_processing: true
     )
   end
 end
