@@ -92,7 +92,7 @@ platform :ios do
     # cocoapods repo_update: true
 
     # Increment build number
-    latest_bn = puts latest_testflight_build_number(
+    latest_bn = latest_testflight_build_number(
       username: 'ballet@boilertalk.com',
       app_identifier: 'com.boilertalk.ballet'
     )
