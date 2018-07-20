@@ -143,7 +143,7 @@ class SendViewController: UIViewController {
         gasTextField.keyboardType = .numberPad
         gasTextField.returnKeyType = .done
         gasTextField.delegate = self
-        gasTextField.text = "21000"
+        gasTextField.text = selectedCurrency == nil ? "21000" : "200000"
 
         feeLabel.setupSubTitleLabel()
         feeLabel.text = "FEE"
@@ -279,7 +279,8 @@ class SendViewController: UIViewController {
             info += "\(Int((minutes + 0.5).rounded())) min"
         }
 
-        let gas = (gasTextField.text >>- UInt.init) ?? 21000
+        let defaultGas: UInt = selectedCurrency == nil ? 21000 : 200000
+        let gas = (gasTextField.text >>- UInt.init) ?? defaultGas
         let eth = (sender.value * CGFloat(gas)) / 1_000_000_000
         info += " - \((eth * 1_000_000).rounded() / 1_000_000) ETH"
 
