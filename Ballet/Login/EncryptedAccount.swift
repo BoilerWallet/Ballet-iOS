@@ -22,6 +22,19 @@ struct EncryptedAccount {
     func signTransaction(_ tx: EthereumTransaction, chainId: EthereumQuantity) throws -> EthereumSignedTransaction {
         return try tx.sign(with: privateKey(), chainId: chainId)
     }
+
+    func signTransactionAsync(_ tx: EthereumTransaction, chainId: EthereumQuantity) -> Promise<EthereumSignedTransaction> {
+        return Promise { seal in
+            DispatchQueue.global().async {
+                do {
+                    let signed = try self.signTransaction(tx, chainId: chainId)
+                    seal.fulfill(signed)
+                } catch {
+                    seal.reject(error)
+                }
+            }
+        }
+    }
 }
 
 extension Array where Element == EncryptedAccount {

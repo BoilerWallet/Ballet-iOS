@@ -121,6 +121,7 @@ class SendViewController: UIViewController {
         currencyButton.setTitleColor(Colors.accentColor, for: .normal)
         currencyButton.addTarget(self, action: #selector(currencyButtonClicked), for: .touchUpInside)
         currencyButtonLabel.setupTitleLabel()
+        currencyButtonLabel.textAlignment = .center
         currencyButtonLabel.textColor = Colors.accentColor
         currencyButtonLabel.text = "ETH"
 

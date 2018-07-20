@@ -70,6 +70,7 @@
 		0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */; };
 		0ED734362048C4A800763618 /* String+WeiConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED734352048C4A800763618 /* String+WeiConversion.swift */; };
 		0ED734382048D4F800763618 /* ETHGasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED734372048D4F800763618 /* ETHGasStation.swift */; };
+		0EE1DA622102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE1DA612102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift */; };
 		0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80145203E244B00EDD123 /* material_loading_jump.json */; };
 		0EE80148203E3D1900EDD123 /* material_check_pink.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80147203E3D1900EDD123 /* material_check_pink.json */; };
 		0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */; };
@@ -187,6 +188,7 @@
 		0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_wave_loading.json; sourceTree = "<group>"; };
 		0ED734352048C4A800763618 /* String+WeiConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeiConversion.swift"; sourceTree = "<group>"; };
 		0ED734372048D4F800763618 /* ETHGasStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETHGasStation.swift; sourceTree = "<group>"; };
+		0EE1DA612102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidityInvocation+CreateTransactionAsync.swift"; sourceTree = "<group>"; };
 		0EE80145203E244B00EDD123 /* material_loading_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_loading_jump.json; sourceTree = "<group>"; };
 		0EE80147203E3D1900EDD123 /* material_check_pink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_check_pink.json; sourceTree = "<group>"; };
 		0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+MaterialDefault.swift"; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				0E8FE99B20E5445F0077B107 /* Bytes+SecureRandom.swift */,
 				0E8FE99D20E545BE0077B107 /* Data+HexString.swift */,
 				0E8FE99F20E546840077B107 /* ConstantHolder.swift */,
+				0EE1DA612102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -956,6 +959,7 @@
 				0EFA5D97203A41B700A20781 /* AddAccountViewController.swift in Sources */,
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
 				0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */,
+				0EE1DA622102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift in Sources */,
 				0ED734362048C4A800763618 /* String+WeiConversion.swift in Sources */,
 				0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */,
 			);
