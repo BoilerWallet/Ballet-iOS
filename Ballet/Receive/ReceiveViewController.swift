@@ -36,6 +36,16 @@ class ReceiveViewController: UIViewController {
         setupUI()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        coordinator.animate(alongsideTransition: nil, completion: { _ in
+            if let selectedAccount = self.selectedAccount {
+                self.selectAccount(account: selectedAccount)
+            }
+        })
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -109,8 +119,8 @@ class ReceiveViewController: UIViewController {
 
         var image = filter?.outputImage
 
-        let scaleX = max(Screen.width, Screen.height) / (image?.extent.size.width ?? 1)
-        let scaleY = max(Screen.width, Screen.height) / (image?.extent.size.height ?? 1)
+        let scaleX = qrCodeImage.frame.size.width / (image?.extent.size.width ?? 1)
+        let scaleY = qrCodeImage.frame.size.height / (image?.extent.size.height ?? 1)
 
         // Scale image
         image = image?.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
