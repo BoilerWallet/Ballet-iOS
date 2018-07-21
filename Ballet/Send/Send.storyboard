@@ -132,7 +132,7 @@
                                                 <rect key="frame" x="16" y="274" width="343" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-19-Aq8" customClass="ErrorTextField" customModule="Material">
-                                                        <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="K9B-k3-07I"/>
                                                         </constraints>
@@ -141,16 +141,19 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdj-jk-Xkb">
-                                                        <rect key="frame" x="249" y="-49" width="86" height="128"/>
+                                                        <rect key="frame" x="301" y="0.0" width="42" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-yq-ax7">
-                                                                <rect key="frame" x="22" y="53" width="42" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-yq-ax7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Ci6-f9-Czv"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6k-Ky-9PK" customClass="MDCFlatButton">
-                                                                <rect key="frame" x="15" y="52" width="57" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
