@@ -106,7 +106,7 @@ class SettingsChangePasswordViewController: UIViewController {
 
     // MARK: - Helpers
 
-    private enum CheckPasswordError: Error {
+    private enum ChangePasswordError: Error {
 
         case internalError
         case passwordWrong
@@ -117,13 +117,13 @@ class SettingsChangePasswordViewController: UIViewController {
             DispatchQueue.global().async {
                 guard let pHash = try? LoggedInUser.hashPassword([UInt8](passwordData), salt: salt) else {
                     // PROMISE
-                    seal.reject(CheckPasswordError.internalError)
+                    seal.reject(ChangePasswordError.internalError)
                     return
                 }
 
                 if pHash != hash {
                     // PROMISE
-                    seal.reject(CheckPasswordError.passwordWrong)
+                    seal.reject(ChangePasswordError.passwordWrong)
                     return
                 }
 
@@ -167,6 +167,55 @@ class SettingsChangePasswordViewController: UIViewController {
         }
     }
 
+    private func saveNewPassword(password: String) -> Promise<()> {
+        return Promise { seal in
+            DispatchQueue.global().async {
+                guard let passwordData = password.data(using: .utf8), let salt = [UInt8].secureRandom(count: 32) else {
+                    // PROMISE
+                    seal.reject(ChangePasswordError.internalError)
+                    return
+                }
+                guard let hash = try? LoggedInUser.hashPassword([UInt8](passwordData), salt: salt) else {
+                    // PROMISE
+                    seal.reject(ChangePasswordError.internalError)
+                    return
+                }
+
+                // Save password hash
+                ConstantHolder.passwordHash = Data(hash).hexString
+                ConstantHolder.passwordSalt = Data(salt).hexString
+
+                // Register successful
+                LoggedInUser.shared.password = password
+
+                // PROMISE
+                seal.fulfill(())
+            }
+        }
+    }
+
+    private func simulateNewLogin(password: String) -> Promise<()> {
+        return Promise { seal in
+            DispatchQueue.main.async {
+                // Reset accounts first
+                LoggedInUser.shared.resetAccounts()
+
+                // Login successful
+                LoggedInUser.shared.password = password
+                // Decrypt accounts
+                guard let accounts: [Account] = try? Realm().objects(Account.self).map({ $0 }) else {
+                    seal.reject(ChangePasswordError.internalError)
+                    return
+                }
+
+                LoggedInUser.shared.setAccounts(accounts: accounts)
+
+                // PROMISE
+                seal.fulfill(())
+            }
+        }
+    }
+
     // MARK: - Actions
 
     @objc private func passwordTextfieldChanged() {
@@ -195,12 +244,14 @@ class SettingsChangePasswordViewController: UIViewController {
 
         guard newPassword.count >= 8 else {
             newPasswordTextField.isErrorRevealed = true
+            finishLoading()
             return
         }
         newPasswordTextField.isErrorRevealed = false
 
         guard newPassword == newPasswordConfirmation else {
             newPasswordConfirmationTextField.isErrorRevealed = true
+            finishLoading()
             return
         }
         newPasswordConfirmationTextField.isErrorRevealed = false
@@ -219,14 +270,29 @@ class SettingsChangePasswordViewController: UIViewController {
             checkPassword(passwordData: oldPasswordData, hash: [UInt8](oldHash), salt: [UInt8](oldSalt))
         }.then {
             self.changePassword(newPassword: newPassword)
-        }.done {
+        }.then {
+            self.saveNewPassword(password: newPassword)
+        }.then {
             // New Login must be simulated as the accounts changed.
+            self.simulateNewLogin(password: newPassword)
+        }.done {
+            // Finish loading
+            finishLoading()
+
+            // Show success
+            Dialog().title("Success").details("Your password was changed.").positive("OK", handler: nil).show(self)
+
+            // Reset textFields
+            self.oldPasswordTextField.text = ""
+            self.newPasswordTextField.text = ""
+            self.newPasswordConfirmationTextField.text = ""
         }.catch { error in
-            if (error as? CheckPasswordError) == .passwordWrong {
+            if (error as? ChangePasswordError) == .passwordWrong {
                 self.oldPasswordTextField.isErrorRevealed = true
                 finishLoading()
             } else {
-                // TODO: SOmething went wrong
+                // TODO: Something went wrong
+                Dialog().details("Something went wrong. Please try again later and file an issue on Github.").positive("OK", handler: nil).show(self)
                 finishLoading()
             }
         }

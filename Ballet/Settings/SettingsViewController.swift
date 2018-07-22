@@ -82,7 +82,9 @@ class SettingsViewController: UIViewController {
 
     private func fillGeneral() {
         selectNetworkElement.subtitleText = RPC.activeUrl.name
-        trackedTokensElement.subtitleText = String.init <^> (try? Realm().objects(ERC20TrackedToken.self).count)
+
+        let rpcUrlId = RPC.activeUrl.rpcUrlID
+        trackedTokensElement.subtitleText = String.init <^> (try? Realm().objects(ERC20TrackedToken.self).filter("rpcUrlID == '\(rpcUrlId)'").count)
     }
 
     private func fillAccount() {

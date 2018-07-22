@@ -72,6 +72,11 @@ class LoggedInUser {
         }
     }
 
+    func resetAccounts() {
+        encryptedAccounts = []
+        decryptedAccounts = [:]
+    }
+
     func decryptedAccount(for encrypted: EncryptedAccount) throws -> DecryptedAccount {
         let address = encrypted.address
 
