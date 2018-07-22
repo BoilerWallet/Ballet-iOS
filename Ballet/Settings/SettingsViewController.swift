@@ -24,6 +24,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var accountTitle: UILabel!
     @IBOutlet weak var changePasswordElement: SettingsElement!
 
+    @IBOutlet weak var aboutTitle: UILabel!
+    @IBOutlet weak var termsAndConditionsElement: SettingsElement!
+    @IBOutlet weak var privacyPolicyElement: SettingsElement!
+    @IBOutlet weak var openSourceLibrariesElement: SettingsElement!
+
+    @IBOutlet weak var moreTitle: UILabel!
+    @IBOutlet weak var donateElement: SettingsElement!
+
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -53,6 +61,8 @@ class SettingsViewController: UIViewController {
 
         setupGeneral()
         setupAccount()
+        setupAbout()
+        setupMore()
     }
 
     private func setupToolbar() {
@@ -75,9 +85,21 @@ class SettingsViewController: UIViewController {
         changePasswordElement.onClick = changePasswordClicked
     }
 
+    private func setupAbout() {
+        aboutTitle.setupTitleLabel()
+        aboutTitle.textColor = Colors.primaryColor
+    }
+
+    private func setupMore() {
+        moreTitle.setupTitleLabel()
+        moreTitle.textColor = Colors.primaryColor
+    }
+
     private func fillUI() {
         fillGeneral()
         fillAccount()
+        fillAbout()
+        fillMore()
     }
 
     private func fillGeneral() {
@@ -88,6 +110,12 @@ class SettingsViewController: UIViewController {
     }
 
     private func fillAccount() {
+    }
+
+    private func fillAbout() {
+    }
+
+    private func fillMore() {
     }
 
     // MARK: - Actions

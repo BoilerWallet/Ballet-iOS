@@ -539,7 +539,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHF-kh-Ou5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="346"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJO-Lv-hhx">
                                                 <rect key="frame" x="16" y="16" width="343" height="24"/>
@@ -601,21 +601,105 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smb-85-pKr">
+                                                <rect key="frame" x="16" y="346" width="343" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="v9a-bv-FzD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-6U-gq1">
+                                                <rect key="frame" x="0.0" y="386" width="375" height="168"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWT-TF-ZwS" customClass="SettingsElement" customModule="Ballet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="NWf-JP-rfw"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="subtitleText" value=" "/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Terms and Conditions"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-I9-qQY" customClass="SettingsElement" customModule="Ballet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="56" width="375" height="56"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="iqT-C4-7GA"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="subtitleText" value=" "/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Privacy Policy"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCG-RO-Oh5" customClass="SettingsElement" customModule="Ballet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="112" width="375" height="56"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="S2m-N9-Jqv"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="subtitleText" value=" "/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Open Source Libraries"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBV-Lm-QkX">
+                                                <rect key="frame" x="16" y="570" width="343" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="RRh-Xo-QAt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="au3-qO-t6j">
+                                                <rect key="frame" x="0.0" y="610" width="375" height="56"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9OA-PY-BSo" customClass="SettingsElement" customModule="Ballet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="9uk-s0-S4y"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="subtitleText" value=" "/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Donate ⚗️"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="X88-3s-gBH" secondAttribute="bottom" constant="16" id="2CV-3N-BtK"/>
+                                            <constraint firstAttribute="bottom" secondItem="au3-qO-t6j" secondAttribute="bottom" constant="16" id="2nC-Ib-L6i"/>
                                             <constraint firstItem="VXd-SZ-0R5" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" id="8dA-QQ-ej7"/>
+                                            <constraint firstItem="au3-qO-t6j" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" id="DNq-Na-r7h"/>
                                             <constraint firstItem="X88-3s-gBH" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" id="H6Z-kS-m7s"/>
                                             <constraint firstAttribute="trailing" secondItem="bJO-Lv-hhx" secondAttribute="trailing" constant="16" id="HcA-4a-H0s"/>
                                             <constraint firstItem="X88-3s-gBH" firstAttribute="top" secondItem="lKg-FB-f7f" secondAttribute="bottom" constant="16" id="HfM-9M-LYv"/>
                                             <constraint firstItem="bJO-Lv-hhx" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" constant="16" id="Hvf-73-H7V"/>
+                                            <constraint firstAttribute="trailing" secondItem="au3-qO-t6j" secondAttribute="trailing" id="KiW-fB-CdY"/>
+                                            <constraint firstItem="PHZ-6U-gq1" firstAttribute="top" secondItem="Smb-85-pKr" secondAttribute="bottom" constant="16" id="KtS-E4-JjV"/>
+                                            <constraint firstItem="EBV-Lm-QkX" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" constant="16" id="RUM-IU-HRN"/>
+                                            <constraint firstItem="EBV-Lm-QkX" firstAttribute="top" secondItem="PHZ-6U-gq1" secondAttribute="bottom" constant="16" id="U4Y-Sp-gcb"/>
                                             <constraint firstAttribute="trailing" secondItem="lKg-FB-f7f" secondAttribute="trailing" constant="16" id="UqZ-hc-PMl"/>
+                                            <constraint firstItem="au3-qO-t6j" firstAttribute="top" secondItem="EBV-Lm-QkX" secondAttribute="bottom" constant="16" id="YCQ-hb-cPA"/>
                                             <constraint firstItem="lKg-FB-f7f" firstAttribute="top" secondItem="VXd-SZ-0R5" secondAttribute="bottom" constant="16" id="YHv-lc-dV7"/>
                                             <constraint firstItem="VXd-SZ-0R5" firstAttribute="top" secondItem="bJO-Lv-hhx" secondAttribute="bottom" constant="16" id="cUS-bo-Sy0"/>
+                                            <constraint firstAttribute="trailing" secondItem="PHZ-6U-gq1" secondAttribute="trailing" id="eum-0R-ZaM"/>
                                             <constraint firstAttribute="trailing" secondItem="VXd-SZ-0R5" secondAttribute="trailing" id="f0E-0D-NjG"/>
+                                            <constraint firstItem="Smb-85-pKr" firstAttribute="top" secondItem="X88-3s-gBH" secondAttribute="bottom" constant="16" id="gcw-n7-l4j"/>
+                                            <constraint firstAttribute="trailing" secondItem="Smb-85-pKr" secondAttribute="trailing" constant="16" id="jRc-3D-ar6"/>
+                                            <constraint firstItem="PHZ-6U-gq1" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" id="pKg-Xo-dhQ"/>
+                                            <constraint firstItem="Smb-85-pKr" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" constant="16" id="pld-Kb-Td7"/>
                                             <constraint firstItem="bJO-Lv-hhx" firstAttribute="top" secondItem="GHF-kh-Ou5" secondAttribute="top" constant="16" id="rEi-Ju-6e9"/>
                                             <constraint firstItem="lKg-FB-f7f" firstAttribute="leading" secondItem="GHF-kh-Ou5" secondAttribute="leading" constant="16" id="sQs-re-gzF"/>
+                                            <constraint firstAttribute="trailing" secondItem="EBV-Lm-QkX" secondAttribute="trailing" constant="16" id="t20-rX-jRH"/>
                                             <constraint firstAttribute="trailing" secondItem="X88-3s-gBH" secondAttribute="trailing" id="tZX-SP-DrH"/>
                                         </constraints>
                                     </view>
@@ -640,10 +724,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="MIW-Z4-PpA"/>
                     <connections>
+                        <outlet property="aboutTitle" destination="Smb-85-pKr" id="qKP-J9-Qbq"/>
                         <outlet property="accountTitle" destination="lKg-FB-f7f" id="8CD-f4-1Bs"/>
                         <outlet property="changePasswordElement" destination="ShA-d7-lJy" id="pPC-6c-tXF"/>
+                        <outlet property="donateElement" destination="9OA-PY-BSo" id="Vdu-xr-nsC"/>
                         <outlet property="generalTitle" destination="bJO-Lv-hhx" id="Te7-3J-Y4K"/>
+                        <outlet property="moreTitle" destination="EBV-Lm-QkX" id="UfH-SY-XO7"/>
+                        <outlet property="openSourceLibrariesElement" destination="RCG-RO-Oh5" id="RBH-qm-1UG"/>
+                        <outlet property="privacyPolicyElement" destination="ngV-I9-qQY" id="QmM-dD-T3w"/>
                         <outlet property="selectNetworkElement" destination="tjg-hR-pni" id="KuS-pD-bl4"/>
+                        <outlet property="termsAndConditionsElement" destination="TWT-TF-ZwS" id="jGq-bU-9Wv"/>
                         <outlet property="trackedTokensElement" destination="Hln-m6-aMp" id="8ZK-su-vZQ"/>
                         <segue destination="zbg-H8-zmz" kind="show" identifier="selectNetworkSegue" id="E0i-Z2-amA"/>
                         <segue destination="ddH-hO-fvg" kind="show" identifier="tokenTrackerSegue" id="zAl-aO-ybI"/>
@@ -652,7 +742,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uF-yB-j1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397.5999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1400.8" y="122.33883058470765"/>
         </scene>
     </scenes>
 </document>
