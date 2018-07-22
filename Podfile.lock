@@ -55,6 +55,11 @@ PODS:
     - MDFInternationalization
   - MaterialComponents/Ink (45.0.0):
     - MaterialComponents/private/Math
+  - "MaterialComponents/Ink+Extensions (45.0.0)":
+    - "MaterialComponents/Ink+Extensions/ColorThemer (= 45.0.0)"
+  - "MaterialComponents/Ink+Extensions/ColorThemer (45.0.0)":
+    - MaterialComponents/Ink
+    - MaterialComponents/Themes
   - MaterialComponents/OverlayWindow (45.0.0):
     - MaterialComponents/private/Application
   - MaterialComponents/Palettes (45.0.0)
@@ -154,6 +159,7 @@ DEPENDENCIES:
   - "MaterialComponents/Buttons+Extensions"
   - MaterialComponents/Cards
   - MaterialComponents/Dialogs
+  - "MaterialComponents/Ink+Extensions"
   - "MaterialComponents/Slider+Extensions"
   - MaterialComponents/Snackbar
   - Nimble (~> 7.0)
@@ -229,6 +235,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   Web3: 94f87f301a94cfb064d90baf25e2d3603c332551
 
-PODFILE CHECKSUM: d7a0a7c4b0cae3e432b2729a557a0a07bdc18d5b
+PODFILE CHECKSUM: f194270eddef86f0536daeed7bffa079515b5af3
 
 COCOAPODS: 1.5.3

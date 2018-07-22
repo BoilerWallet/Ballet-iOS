@@ -51,6 +51,7 @@ class SettingsTokenTrackerViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = Colors.background
+        tokenTrackerTableView.backgroundColor = Colors.background
         navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
         navigationItem.backButton.tintColor = Colors.lightPrimaryTextColor
 

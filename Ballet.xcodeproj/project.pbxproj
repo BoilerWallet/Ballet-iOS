@@ -16,6 +16,8 @@
 		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
 		0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */; };
 		0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */; };
+		0E1A91FE2104BBDF00A27FAA /* SettingsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A91FD2104BBDF00A27FAA /* SettingsElement.swift */; };
+		0E1A92002104E3A500A27FAA /* SettingsChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A91FF2104E3A500A27FAA /* SettingsChangePasswordViewController.swift */; };
 		0E27364F20DBFCF8001820F4 /* material_checkbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E27364E20DBFCF8001820F4 /* material_checkbox.json */; };
 		0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */; };
 		0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */; };
@@ -87,7 +89,7 @@
 		53E88866738F8DF3F6924866 /* Pods_BalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A01DB54311AC256D6068B4 /* Pods_BalletTests.framework */; };
 		863449E51FEC18B800738516 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863449E41FEC18B800738516 /* Settings.storyboard */; };
 		863449E91FEC231E00738516 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449E81FEC231E00738516 /* LabelExtension.swift */; };
-		863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449EA1FEC335100738516 /* SettingsTableViewController.swift */; };
+		863449EB1FEC335100738516 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863449EA1FEC335100738516 /* SettingsViewController.swift */; };
 		8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634D6991FF3D8F900377AB6 /* SettingsNavigationViewController.swift */; };
 		863B23D41FEADEA50061298A /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B23D31FEADEA50061298A /* Send.storyboard */; };
 		863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C8FD91FF2BB66007D5573 /* ReceiveNavigationViewController.swift */; };
@@ -128,6 +130,8 @@
 		0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionCell.swift; sourceTree = "<group>"; };
 		0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionTableViewController.swift; sourceTree = "<group>"; };
+		0E1A91FD2104BBDF00A27FAA /* SettingsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsElement.swift; sourceTree = "<group>"; };
+		0E1A91FF2104E3A500A27FAA /* SettingsChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangePasswordViewController.swift; sourceTree = "<group>"; };
 		0E27364E20DBFCF8001820F4 /* material_checkbox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_checkbox.json; sourceTree = "<group>"; };
 		0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FromColor.swift"; sourceTree = "<group>"; };
 		0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationResultViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +211,7 @@
 		5A199EDA7D8FDEDCFE43DC4C /* Pods_BalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		863449E41FEC18B800738516 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		863449E81FEC231E00738516 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
-		863449EA1FEC335100738516 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		863449EA1FEC335100738516 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		863449FB1FEC643800738516 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8634D6991FF3D8F900377AB6 /* SettingsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationViewController.swift; sourceTree = "<group>"; };
 		863B23D31FEADEA50061298A /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
@@ -273,6 +277,14 @@
 				0EC5244B20DFFFCC009FAFEB /* ERC20TrackedToken.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		0E1A91FA2104BBAC00A27FAA /* SettingsElement */ = {
+			isa = PBXGroup;
+			children = (
+				0E1A91FD2104BBDF00A27FAA /* SettingsElement.swift */,
+			);
+			path = SettingsElement;
 			sourceTree = "<group>";
 		};
 		0E40E58A20E268DF00BA9C4B /* BigDecimal */ = {
@@ -472,15 +484,17 @@
 		863449E31FEC189A00738516 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0E1A91FA2104BBAC00A27FAA /* SettingsElement */,
 				863449E41FEC18B800738516 /* Settings.storyboard */,
 				8634D6991FF3D8F900377AB6 /* SettingsNavigationViewController.swift */,
-				863449EA1FEC335100738516 /* SettingsTableViewController.swift */,
+				863449EA1FEC335100738516 /* SettingsViewController.swift */,
 				0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */,
 				0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */,
 				0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */,
 				0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */,
 				0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */,
 				0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */,
+				0E1A91FF2104E3A500A27FAA /* SettingsChangePasswordViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -898,6 +912,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
+				0E1A91FE2104BBDF00A27FAA /* SettingsElement.swift in Sources */,
 				0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				0E8FE99E20E545BE0077B107 /* Data+HexString.swift in Sources */,
@@ -919,7 +934,7 @@
 				0EC5244C20DFFFCC009FAFEB /* ERC20TrackedToken.swift in Sources */,
 				0E40E58C20E268F100BA9C4B /* BigDecimal.swift in Sources */,
 				0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */,
-				863449EB1FEC335100738516 /* SettingsTableViewController.swift in Sources */,
+				863449EB1FEC335100738516 /* SettingsViewController.swift in Sources */,
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
 				0E054446203EFFC800603F31 /* Button+MaterialDefault.swift in Sources */,
@@ -936,6 +951,7 @@
 				0E6E84F421014D3100F2A601 /* BigDecimal+StringInit.swift in Sources */,
 				0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
+				0E1A92002104E3A500A27FAA /* SettingsChangePasswordViewController.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
 				0E5B363820F388A50060F6C6 /* SendSelectCurrencyViewController.swift in Sources */,

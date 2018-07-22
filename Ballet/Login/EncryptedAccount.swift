@@ -15,22 +15,42 @@ struct EncryptedAccount {
     let keystore: Keystore
     let account: Account
 
-    func privateKey() throws -> EthereumPrivateKey {
-        return try LoggedInUser.shared.decryptedAccount(for: self).privateKey
-    }
-
-    func signTransaction(_ tx: EthereumTransaction, chainId: EthereumQuantity) throws -> EthereumSignedTransaction {
-        return try tx.sign(with: privateKey(), chainId: chainId)
-    }
-
-    func signTransactionAsync(_ tx: EthereumTransaction, chainId: EthereumQuantity) -> Promise<EthereumSignedTransaction> {
+    func decryptedAccount() -> Promise<DecryptedAccount> {
         return Promise { seal in
             DispatchQueue.global().async {
                 do {
-                    let signed = try self.signTransaction(tx, chainId: chainId)
-                    seal.fulfill(signed)
+                    let dec = try LoggedInUser.shared.decryptedAccount(for: self)
+                    seal.fulfill(dec)
                 } catch {
                     seal.reject(error)
+                }
+            }
+        }
+    }
+
+    func privateKey() -> Promise<EthereumPrivateKey> {
+        return decryptedAccount().then { decryptedAccount in
+            decryptedAccount.privateKey.promise
+        }
+    }
+
+    /// Too slow. Use signTransactionAsync
+    /// private func signTransaction(_ tx: EthereumTransaction, chainId: EthereumQuantity) throws -> EthereumSignedTransaction {
+    ///     return try tx.sign(with: privateKey(), chainId: chainId)
+    /// }
+
+    func signTransactionAsync(_ tx: EthereumTransaction, chainId: EthereumQuantity) -> Promise<EthereumSignedTransaction> {
+        return firstly {
+            privateKey()
+        }.then { privateKey in
+            return Promise { seal in
+                DispatchQueue.global().async {
+                    do {
+                        let signed = try tx.sign(with: privateKey, chainId: chainId)
+                        seal.fulfill(signed)
+                    } catch {
+                        seal.reject(error)
+                    }
                 }
             }
         }
