@@ -59,7 +59,18 @@ struct Etherscan {
 
             do {
                 let json = try JSONDecoder().decode(EtherscanTransactionResponse.self, from: data)
-                completion(json.result, nil)
+
+                var hashes: [String: Bool] = [:]
+                let array = json.result.filter { obj in
+                    let hex = obj.hash.hex()
+                    if let b = hashes[hex], b {
+                        return false
+                    } else {
+                        hashes[hex] = true
+                        return true
+                    }
+                }
+                completion(array, nil)
             } catch {
                 completion(nil, error)
             }
