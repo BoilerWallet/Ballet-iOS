@@ -43,8 +43,7 @@ struct Etherscan {
             "address": address.hex(eip55: false),
             "page": "\(page)",
             "offset": "\(size)",
-            "sort": "\(order.rawValue)",
-            "apikey": "PRH62S7HN4XPSUXBIXF9HZATS3UVSC6BFY"
+            "sort": "\(order.rawValue)"
         ]
         Alamofire.request(
             "\(etherscanUrl)/api",
