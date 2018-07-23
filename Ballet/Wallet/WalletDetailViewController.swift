@@ -71,8 +71,8 @@ class WalletDetailViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = Colors.background
-        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
-        navigationItem.backButton.tintColor = Colors.lightPrimaryTextColor
+
+        setupToolbar()
 
         blockiesImageView.layer.cornerRadius = blockiesImageView.bounds.width / 2
         blockiesImageView.layer.masksToBounds = true
@@ -112,6 +112,18 @@ class WalletDetailViewController: UIViewController {
         nameLabel.motionIdentifier = motionIdentifiers?.name
         balanceLabel.motionIdentifier = motionIdentifiers?.balance
         addressLabel.motionIdentifier = motionIdentifiers?.address
+    }
+
+    private func setupToolbar() {
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+        navigationItem.backButton.tintColor = Colors.lightPrimaryTextColor
+
+        let moreImage = UIImage(named: "baseline_more_vert_black_24dp")?.withRenderingMode(.alwaysTemplate)
+        let moreButton = IconButton(image: moreImage)
+        moreButton.tintColor = Colors.lightPrimaryTextColor
+        moreButton.addTarget(self, action: #selector(moreButtonClicked(_:)), for: .touchUpInside)
+
+        navigationItem.rightViews = [moreButton]
     }
 
     private func fillUI() {
@@ -155,6 +167,24 @@ class WalletDetailViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @objc private func moreButtonClicked(_ sender: AnyObject) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { alert in
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        actionSheet.addAction(deleteAction)
+        actionSheet.addAction(cancelAction)
+
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = sender as? UIView
+        }
+
+        present(actionSheet, animated: true, completion: nil)
+    }
 
     @objc private func copyAddressButtonClicked() {
         UIPasteboard.general.string = account.address.hex(eip55: true)
