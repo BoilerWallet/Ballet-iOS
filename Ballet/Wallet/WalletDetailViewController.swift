@@ -15,6 +15,7 @@ import Material
 import MarqueeLabel
 import PromiseKit
 import Cartography
+import MaterialComponents.MaterialBottomSheet
 
 class WalletDetailViewController: UIViewController {
 
@@ -169,21 +170,12 @@ class WalletDetailViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func moreButtonClicked(_ sender: AnyObject) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { alert in
-        }
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-
-        actionSheet.addAction(deleteAction)
-        actionSheet.addAction(cancelAction)
-
-        if let popoverController = actionSheet.popoverPresentationController {
-            popoverController.sourceView = sender as? UIView
-        }
-
-        present(actionSheet, animated: true, completion: nil)
+        // View controller the bottom sheet will hold
+        let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: "WalletDetailMoreBottomSheet")
+        // Initialize the bottom sheet with the view controller just created
+        let bottomSheet = MDCBottomSheetController(contentViewController: controller)
+        // Present the bottom sheet
+        present(bottomSheet, animated: true, completion: nil)
     }
 
     @objc private func copyAddressButtonClicked() {

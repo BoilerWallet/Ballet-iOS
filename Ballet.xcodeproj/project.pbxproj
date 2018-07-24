@@ -72,6 +72,8 @@
 		0ECA6BBB203D01C3001247F8 /* material_wave_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */; };
 		0ED734362048C4A800763618 /* String+WeiConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED734352048C4A800763618 /* String+WeiConversion.swift */; };
 		0ED734382048D4F800763618 /* ETHGasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED734372048D4F800763618 /* ETHGasStation.swift */; };
+		0EDC27742107A7130004AC59 /* WalletDetailMoreBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC27732107A7130004AC59 /* WalletDetailMoreBottomSheetViewController.swift */; };
+		0EDC27772107B8030004AC59 /* BottomSheetElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC27762107B8030004AC59 /* BottomSheetElement.swift */; };
 		0EE1DA622102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE1DA612102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift */; };
 		0EE80146203E244B00EDD123 /* material_loading_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80145203E244B00EDD123 /* material_loading_jump.json */; };
 		0EE80148203E3D1900EDD123 /* material_check_pink.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE80147203E3D1900EDD123 /* material_check_pink.json */; };
@@ -192,6 +194,8 @@
 		0ECA6BBA203D01C3001247F8 /* material_wave_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_wave_loading.json; sourceTree = "<group>"; };
 		0ED734352048C4A800763618 /* String+WeiConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WeiConversion.swift"; sourceTree = "<group>"; };
 		0ED734372048D4F800763618 /* ETHGasStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETHGasStation.swift; sourceTree = "<group>"; };
+		0EDC27732107A7130004AC59 /* WalletDetailMoreBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailMoreBottomSheetViewController.swift; sourceTree = "<group>"; };
+		0EDC27762107B8030004AC59 /* BottomSheetElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetElement.swift; sourceTree = "<group>"; };
 		0EE1DA612102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidityInvocation+CreateTransactionAsync.swift"; sourceTree = "<group>"; };
 		0EE80145203E244B00EDD123 /* material_loading_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_loading_jump.json; sourceTree = "<group>"; };
 		0EE80147203E3D1900EDD123 /* material_check_pink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_check_pink.json; sourceTree = "<group>"; };
@@ -438,6 +442,14 @@
 			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
+		0EDC27752107B7EE0004AC59 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				0EDC27762107B8030004AC59 /* BottomSheetElement.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		0EE8F2972041AA9A009DF772 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +526,7 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				0EDC27752107B7EE0004AC59 /* BottomSheet */,
 				0E40E58A20E268DF00BA9C4B /* BigDecimal */,
 				0E05444E203F95C900603F31 /* Database */,
 				0E054447203F906600603F31 /* Dialog */,
@@ -577,6 +590,7 @@
 				0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */,
 				0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */,
 				0EAC89292044676500865634 /* WalletDetailViewController.swift */,
+				0EDC27732107A7130004AC59 /* WalletDetailMoreBottomSheetViewController.swift */,
 				0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */,
 				0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */,
 				0E75EF7120E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift */,
@@ -975,6 +989,7 @@
 				0E672D4A1FE70A9D00917D05 /* AppDelegate.swift in Sources */,
 				8634D69A1FF3D8F900377AB6 /* SettingsNavigationViewController.swift in Sources */,
 				0EFA5D90203A409200A20781 /* SendViewController.swift in Sources */,
+				0EDC27742107A7130004AC59 /* WalletDetailMoreBottomSheetViewController.swift in Sources */,
 				0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */,
 				0E05444D203F90C400603F31 /* DialogView.swift in Sources */,
 				0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */,
@@ -982,6 +997,7 @@
 				0EFA5D8E203A408400A20781 /* SendNavigationViewController.swift in Sources */,
 				0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */,
 				0EE1DA622102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift in Sources */,
+				0EDC27772107B8030004AC59 /* BottomSheetElement.swift in Sources */,
 				0ED734362048C4A800763618 /* String+WeiConversion.swift in Sources */,
 				0ECA6BB4203C6EDB001247F8 /* LoadingView.swift in Sources */,
 			);

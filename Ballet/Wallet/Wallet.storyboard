@@ -593,6 +593,68 @@
             </objects>
             <point key="canvasLocation" x="2624.8000000000002" y="98.50074962518741"/>
         </scene>
+        <!--Wallet Detail More Bottom Sheet View Controller-->
+        <scene sceneID="iSs-PD-v4B">
+            <objects>
+                <viewController storyboardIdentifier="WalletDetailMoreBottomSheet" id="DFq-jw-H6a" customClass="WalletDetailMoreBottomSheetViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p6L-aQ-S16">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2f6-IO-OOb" customClass="BottomSheetElement" customModule="Ballet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="0aw-UR-WYv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconName" value="ic_add"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Delete"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="baseline_delete_black_24dp"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W51-ox-oJF" customClass="BottomSheetElement" customModule="Ballet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="555" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="oqT-MU-p48"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="baseline_edit_black_24dp"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Edit name"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvA-lU-wOD" customClass="BottomSheetElement" customModule="Ballet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="499" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="BxQ-Yh-3QS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="baseline_share_black_24dp"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Share"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kvA-lU-wOD" firstAttribute="leading" secondItem="1JW-Mx-zv5" secondAttribute="leading" id="0VR-oS-k7X"/>
+                            <constraint firstItem="2f6-IO-OOb" firstAttribute="top" secondItem="W51-ox-oJF" secondAttribute="bottom" id="Acs-31-ij1"/>
+                            <constraint firstItem="1JW-Mx-zv5" firstAttribute="trailing" secondItem="W51-ox-oJF" secondAttribute="trailing" id="Ayc-mE-iFu"/>
+                            <constraint firstItem="2f6-IO-OOb" firstAttribute="leading" secondItem="1JW-Mx-zv5" secondAttribute="leading" id="CGp-Wz-YNg"/>
+                            <constraint firstItem="1JW-Mx-zv5" firstAttribute="trailing" secondItem="2f6-IO-OOb" secondAttribute="trailing" id="MNm-G6-HxO"/>
+                            <constraint firstItem="1JW-Mx-zv5" firstAttribute="trailing" secondItem="kvA-lU-wOD" secondAttribute="trailing" id="Sv7-Hq-BPm"/>
+                            <constraint firstItem="1JW-Mx-zv5" firstAttribute="bottom" secondItem="2f6-IO-OOb" secondAttribute="bottom" id="dcz-08-4H9"/>
+                            <constraint firstItem="W51-ox-oJF" firstAttribute="top" secondItem="kvA-lU-wOD" secondAttribute="bottom" id="gV0-hr-xPa"/>
+                            <constraint firstItem="W51-ox-oJF" firstAttribute="leading" secondItem="1JW-Mx-zv5" secondAttribute="leading" id="soa-Ny-5vV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1JW-Mx-zv5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9J-le-X6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3468" y="99"/>
+        </scene>
         <!--Wallet Navigation View Controller-->
         <scene sceneID="fdR-LP-gOo">
             <objects>
@@ -612,4 +674,9 @@
             <point key="canvasLocation" x="-10" y="99"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_delete_black_24dp" width="24" height="24"/>
+        <image name="baseline_edit_black_24dp" width="24" height="24"/>
+        <image name="baseline_share_black_24dp" width="24" height="24"/>
+    </resources>
 </document>
