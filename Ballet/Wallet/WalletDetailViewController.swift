@@ -16,6 +16,7 @@ import MarqueeLabel
 import PromiseKit
 import Cartography
 import MaterialComponents.MaterialBottomSheet
+import RealmSwift
 
 class WalletDetailViewController: UIViewController {
 
@@ -171,7 +172,30 @@ class WalletDetailViewController: UIViewController {
 
     @objc private func moreButtonClicked(_ sender: AnyObject) {
         // View controller the bottom sheet will hold
-        let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: "WalletDetailMoreBottomSheet")
+        guard let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: "WalletDetailMoreBottomSheet") as? WalletDetailMoreBottomSheetViewController else {
+            return
+        }
+        controller.shareClicked = {
+            controller.dismiss(animated: true, completion: nil)
+
+            let textToShare = "My Ethereum account address: \(self.account.address.hex(eip55: true))\n\nI am using Ballet as my Ethereum and ERC20 Wallet"
+            let controller = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+            controller.popoverPresentationController?.sourceView = self.addressLabel
+            controller.excludedActivityTypes = [UIActivityType.airDrop]
+
+            self.present(controller, animated: true, completion: nil)
+        }
+        controller.editNameClicked = {
+            controller.dismiss(animated: true, completion: nil)
+
+            Dialog().details("TODO").positive("OK", handler: nil).show(self)
+        }
+        controller.deleteClicked = {
+            controller.dismiss(animated: true, completion: nil)
+
+            Dialog().details("TODO").positive("OK", handler: nil).show(self)
+        }
+
         // Initialize the bottom sheet with the view controller just created
         let bottomSheet = MDCBottomSheetController(contentViewController: controller)
         // Present the bottom sheet

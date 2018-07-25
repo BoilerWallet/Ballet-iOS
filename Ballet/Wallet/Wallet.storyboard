@@ -650,6 +650,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1JW-Mx-zv5"/>
                     </view>
+                    <connections>
+                        <outlet property="deleteElement" destination="2f6-IO-OOb" id="S8P-Ig-Xzf"/>
+                        <outlet property="editNameElement" destination="W51-ox-oJF" id="oE7-1t-3h1"/>
+                        <outlet property="shareElement" destination="kvA-lU-wOD" id="Q4e-Lv-tL1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9J-le-X6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

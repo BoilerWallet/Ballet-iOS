@@ -10,6 +10,16 @@ import UIKit
 
 class WalletDetailMoreBottomSheetViewController: UIViewController {
 
+    // MARK: - Properties
+
+    var deleteClicked: (() -> Void)?
+    var editNameClicked: (() -> Void)?
+    var shareClicked: (() -> Void)?
+
+    @IBOutlet weak var deleteElement: BottomSheetElement!
+    @IBOutlet weak var editNameElement: BottomSheetElement!
+    @IBOutlet weak var shareElement: BottomSheetElement!
+
     // MARK: - Initialization
 
     override func viewDidLoad() {
@@ -18,6 +28,10 @@ class WalletDetailMoreBottomSheetViewController: UIViewController {
         view.backgroundColor = UIColor.clear
 
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissClicked)))
+
+        deleteElement.onClick = deleteViewClicked
+        editNameElement.onClick = editNameViewClicked
+        shareElement.onClick = shareViewClicked
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +43,18 @@ class WalletDetailMoreBottomSheetViewController: UIViewController {
 
     @objc private func dismissClicked() {
         dismiss(animated: true, completion: nil)
+    }
+
+    @objc private func deleteViewClicked() {
+        deleteClicked?()
+    }
+
+    @objc private func editNameViewClicked() {
+        editNameClicked?()
+    }
+
+    @objc private func shareViewClicked() {
+        shareClicked?()
     }
 
     /*
