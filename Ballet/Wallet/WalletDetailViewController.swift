@@ -15,6 +15,8 @@ import Material
 import MarqueeLabel
 import PromiseKit
 import Cartography
+import MaterialComponents.MaterialBottomSheet
+import RealmSwift
 
 class WalletDetailViewController: UIViewController {
 
@@ -33,6 +35,7 @@ class WalletDetailViewController: UIViewController {
 
     var account: EncryptedAccount!
     var motionIdentifiers: WalletDetailMotionIdentifiers?
+    var accountChangedCompletion: (() -> Void)?
 
     @IBOutlet weak var walletInfoView: UIView!
     @IBOutlet weak var blockiesImageView: UIImageView!
@@ -71,8 +74,8 @@ class WalletDetailViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = Colors.background
-        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
-        navigationItem.backButton.tintColor = Colors.lightPrimaryTextColor
+
+        setupToolbar()
 
         blockiesImageView.layer.cornerRadius = blockiesImageView.bounds.width / 2
         blockiesImageView.layer.masksToBounds = true
@@ -112,6 +115,18 @@ class WalletDetailViewController: UIViewController {
         nameLabel.motionIdentifier = motionIdentifiers?.name
         balanceLabel.motionIdentifier = motionIdentifiers?.balance
         addressLabel.motionIdentifier = motionIdentifiers?.address
+    }
+
+    private func setupToolbar() {
+        navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+        navigationItem.backButton.tintColor = Colors.lightPrimaryTextColor
+
+        let moreImage = UIImage(named: "baseline_more_vert_black_24dp")?.withRenderingMode(.alwaysTemplate)
+        let moreButton = IconButton(image: moreImage)
+        moreButton.tintColor = Colors.lightPrimaryTextColor
+        moreButton.addTarget(self, action: #selector(moreButtonClicked(_:)), for: .touchUpInside)
+
+        navigationItem.rightViews = [moreButton]
     }
 
     private func fillUI() {
@@ -156,6 +171,32 @@ class WalletDetailViewController: UIViewController {
 
     // MARK: - Actions
 
+    @objc private func moreButtonClicked(_ sender: AnyObject) {
+        // View controller the bottom sheet will hold
+        guard let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: "WalletDetailMoreBottomSheet") as? WalletDetailMoreBottomSheetViewController else {
+            return
+        }
+        controller.shareClicked = {
+            let textToShare = "My Ethereum account address: \(self.account.address.hex(eip55: true))\n\nI am using Ballet as my Ethereum and ERC20 Wallet"
+            let controller = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+            controller.popoverPresentationController?.sourceView = self.addressLabel
+            controller.excludedActivityTypes = [UIActivityType.airDrop]
+
+            self.present(controller, animated: true, completion: nil)
+        }
+        controller.editNameClicked = {
+            self.performSegue(withIdentifier: "editNameSegue", sender: self)
+        }
+        controller.deleteClicked = {
+            self.performSegue(withIdentifier: "deleteAccountSegue", sender: self)
+        }
+
+        // Initialize the bottom sheet with the view controller just created
+        let bottomSheet = MDCBottomSheetController(contentViewController: controller)
+        // Present the bottom sheet
+        present(bottomSheet, animated: true, completion: nil)
+    }
+
     @objc private func copyAddressButtonClicked() {
         UIPasteboard.general.string = account.address.hex(eip55: true)
 
@@ -177,6 +218,27 @@ class WalletDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "erc20TokenListSegue", let controller = segue.destination as? WalletERC20TokenListCollectionViewController {
             controller.account = account
+        } else if segue.identifier == "editNameSegue", let controller = segue.destination as? WalletDetailEditNameViewController {
+            controller.account = account
+            controller.completion = { name in
+                self.nameLabel.text = name
+            }
+        } else if segue.identifier == "deleteAccountSegue", let controller = segue.destination as? WalletDetailDeleteAccountViewController {
+            controller.account = account
+            controller.completion = { deleted in
+                if deleted {
+                    // Reset accounts first
+                    LoggedInUser.shared.resetAccounts()
+
+                    // Set accounts
+                    if let accounts: [Account] = try? Realm().objects(Account.self).map({ $0 }) {
+                        LoggedInUser.shared.setAccounts(accounts: accounts)
+                    }
+
+                    self.navigationController?.popViewController(animated: true)
+                    self.accountChangedCompletion?()
+                }
+            }
         }
     }
 }

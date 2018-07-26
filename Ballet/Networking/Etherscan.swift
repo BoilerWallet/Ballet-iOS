@@ -43,8 +43,7 @@ struct Etherscan {
             "address": address.hex(eip55: false),
             "page": "\(page)",
             "offset": "\(size)",
-            "sort": "\(order.rawValue)",
-            "apikey": "PRH62S7HN4XPSUXBIXF9HZATS3UVSC6BFY"
+            "sort": "\(order.rawValue)"
         ]
         Alamofire.request(
             "\(etherscanUrl)/api",
@@ -59,7 +58,18 @@ struct Etherscan {
 
             do {
                 let json = try JSONDecoder().decode(EtherscanTransactionResponse.self, from: data)
-                completion(json.result, nil)
+
+                var hashes: [String: Bool] = [:]
+                let array = json.result.filter { obj in
+                    let hex = obj.hash.hex()
+                    if let b = hashes[hex], b {
+                        return false
+                    } else {
+                        hashes[hex] = true
+                        return true
+                    }
+                }
+                completion(array, nil)
             } catch {
                 completion(nil, error)
             }

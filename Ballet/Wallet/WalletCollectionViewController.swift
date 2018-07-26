@@ -282,6 +282,10 @@ class WalletCollectionViewController: UICollectionViewController {
                 cell.addressLabel.shapePreset = .square
 
                 controller.motionIdentifiers = .init(container: containerId, blockies: blockiesId, name: nameId, balance: balanceId, address: addressId)
+
+                controller.accountChangedCompletion = {
+                    self.reloadCollection()
+                }
             }
         }
     }
