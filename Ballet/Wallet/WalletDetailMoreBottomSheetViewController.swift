@@ -46,14 +46,17 @@ class WalletDetailMoreBottomSheetViewController: UIViewController {
     }
 
     @objc private func deleteViewClicked() {
+        dismissClicked()
         deleteClicked?()
     }
 
     @objc private func editNameViewClicked() {
+        dismissClicked()
         editNameClicked?()
     }
 
     @objc private func shareViewClicked() {
+        dismissClicked()
         shareClicked?()
     }
 

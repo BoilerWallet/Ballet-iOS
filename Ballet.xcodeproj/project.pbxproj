@@ -61,6 +61,7 @@
 		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
 		0EB05B3820FFBC840000BE23 /* EncryptedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB05B3720FFBC840000BE23 /* EncryptedAccount.swift */; };
 		0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */; };
+		0EBD21962109C8A600D3BA55 /* WalletDetailEditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD21952109C8A600D3BA55 /* WalletDetailEditNameViewController.swift */; };
 		0EC2071F21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2071E21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift */; };
 		0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */; };
 		0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */; };
@@ -183,6 +184,7 @@
 		0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumQuantity+ConvertFromWei.swift"; sourceTree = "<group>"; };
 		0EB05B3720FFBC840000BE23 /* EncryptedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedAccount.swift; sourceTree = "<group>"; };
 		0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailDefaultTableViewCell.swift; sourceTree = "<group>"; };
+		0EBD21952109C8A600D3BA55 /* WalletDetailEditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailEditNameViewController.swift; sourceTree = "<group>"; };
 		0EC2071E21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigDecimal+NormalizeZerosTests.swift"; sourceTree = "<group>"; };
 		0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableView.swift; sourceTree = "<group>"; };
 		0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableViewCell.swift; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 				0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */,
 				0EAC89292044676500865634 /* WalletDetailViewController.swift */,
 				0EDC27732107A7130004AC59 /* WalletDetailMoreBottomSheetViewController.swift */,
+				0EBD21952109C8A600D3BA55 /* WalletDetailEditNameViewController.swift */,
 				0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */,
 				0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */,
 				0E75EF7120E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift */,
@@ -982,6 +985,7 @@
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
 				0E8FE9A020E546840077B107 /* ConstantHolder.swift in Sources */,
 				0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */,
+				0EBD21962109C8A600D3BA55 /* WalletDetailEditNameViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
 				0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */,
 				0EECA44E204B715900AEDF9C /* Promise+UnwrapOptional.swift in Sources */,

@@ -176,8 +176,6 @@ class WalletDetailViewController: UIViewController {
             return
         }
         controller.shareClicked = {
-            controller.dismiss(animated: true, completion: nil)
-
             let textToShare = "My Ethereum account address: \(self.account.address.hex(eip55: true))\n\nI am using Ballet as my Ethereum and ERC20 Wallet"
             let controller = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
             controller.popoverPresentationController?.sourceView = self.addressLabel
@@ -186,13 +184,9 @@ class WalletDetailViewController: UIViewController {
             self.present(controller, animated: true, completion: nil)
         }
         controller.editNameClicked = {
-            controller.dismiss(animated: true, completion: nil)
-
-            Dialog().details("TODO").positive("OK", handler: nil).show(self)
+            self.performSegue(withIdentifier: "editNameSegue", sender: self)
         }
         controller.deleteClicked = {
-            controller.dismiss(animated: true, completion: nil)
-
             Dialog().details("TODO").positive("OK", handler: nil).show(self)
         }
 
@@ -223,6 +217,11 @@ class WalletDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "erc20TokenListSegue", let controller = segue.destination as? WalletERC20TokenListCollectionViewController {
             controller.account = account
+        } else if segue.identifier == "editNameSegue", let controller = segue.destination as? WalletDetailEditNameViewController {
+            controller.account = account
+            controller.completion = { name in
+                self.nameLabel.text = name
+            }
         }
     }
 }
