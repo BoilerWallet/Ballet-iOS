@@ -11,6 +11,7 @@ PODS:
   - CryptoSwift (0.10.0)
   - Curry (4.0.0)
   - DateToolsSwift (4.0.0)
+  - Down (0.5.2)
   - DropDown (2.3.1)
   - Fabric (1.7.2)
   - Keystore (0.1.0):
@@ -159,6 +160,7 @@ DEPENDENCIES:
   - Crashlytics
   - Curry (~> 4.0)
   - DateToolsSwift (~> 4.0)
+  - Down
   - DropDown (~> 2.3)
   - Fabric
   - Keystore (~> 0.1)
@@ -193,6 +195,7 @@ SPEC REPOS:
     - CryptoSwift
     - Curry
     - DateToolsSwift
+    - Down
     - DropDown
     - Fabric
     - Keystore
@@ -227,6 +230,7 @@ SPEC CHECKSUMS:
   CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
   Curry: 887c0b9de9a9947820a59557459c7895e76d7b90
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
+  Down: 587371ad58002b06023d9c602519216862c3acbc
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   Keystore: 32ce430d78978ea72fb0bc39df79a8900e1af932
@@ -251,6 +255,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   Web3: 94f87f301a94cfb064d90baf25e2d3603c332551
 
-PODFILE CHECKSUM: 5aaed712be236e682b52a108460ecb7fe7d72927
+PODFILE CHECKSUM: 47f3ba52b03891fcd2993b80caf2c4fa1c2d38fc
 
 COCOAPODS: 1.5.3

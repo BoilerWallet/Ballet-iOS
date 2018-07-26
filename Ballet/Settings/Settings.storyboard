@@ -333,6 +333,36 @@
             </objects>
             <point key="canvasLocation" x="2232.8000000000002" y="384.55772113943033"/>
         </scene>
+        <!--Settings Open Source Libraries View Controller-->
+        <scene sceneID="hjJ-qQ-5XG">
+            <objects>
+                <viewController id="jgF-tb-pS3" customClass="SettingsOpenSourceLibrariesViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L2a-Rz-vkd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgQ-IB-oLR" customClass="LoadingView" customModule="Ballet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LgQ-IB-oLR" firstAttribute="top" secondItem="mVM-79-nV6" secondAttribute="top" id="2EJ-Iw-5g8"/>
+                            <constraint firstItem="mVM-79-nV6" firstAttribute="bottom" secondItem="LgQ-IB-oLR" secondAttribute="bottom" id="PMO-By-XSk"/>
+                            <constraint firstItem="mVM-79-nV6" firstAttribute="trailing" secondItem="LgQ-IB-oLR" secondAttribute="trailing" id="TaO-vN-aaZ"/>
+                            <constraint firstItem="LgQ-IB-oLR" firstAttribute="leading" secondItem="mVM-79-nV6" secondAttribute="leading" id="kAm-Qy-pgX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mVM-79-nV6"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="LgQ-IB-oLR" id="MXK-8H-bvY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUH-Cb-Cgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="933"/>
+        </scene>
         <!--Settings Change Password View Controller-->
         <scene sceneID="ImB-0o-OKl">
             <objects>
@@ -738,6 +768,7 @@
                         <segue destination="zbg-H8-zmz" kind="show" identifier="selectNetworkSegue" id="E0i-Z2-amA"/>
                         <segue destination="ddH-hO-fvg" kind="show" identifier="tokenTrackerSegue" id="zAl-aO-ybI"/>
                         <segue destination="FsM-HF-mpk" kind="show" identifier="changePasswordSegue" id="AJx-h8-SjU"/>
+                        <segue destination="jgF-tb-pS3" kind="show" identifier="openSourceLibrariesSegue" id="LBb-Xi-SGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uF-yB-j1q" userLabel="First Responder" sceneMemberID="firstResponder"/>

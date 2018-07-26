@@ -88,6 +88,8 @@ class SettingsViewController: UIViewController {
     private func setupAbout() {
         aboutTitle.setupTitleLabel()
         aboutTitle.textColor = Colors.primaryColor
+
+        openSourceLibrariesElement.onClick = openSourceLibrariesClicked
     }
 
     private func setupMore() {
@@ -130,5 +132,9 @@ class SettingsViewController: UIViewController {
 
     private func changePasswordClicked() {
         performSegue(withIdentifier: "changePasswordSegue", sender: self)
+    }
+
+    private func openSourceLibrariesClicked() {
+        performSegue(withIdentifier: "openSourceLibrariesSegue", sender: self)
     }
 }

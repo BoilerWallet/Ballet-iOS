@@ -23,6 +23,8 @@ target 'Ballet' do
   pod 'MaterialComponents/Ink+Extensions'
   pod 'MaterialComponents/BottomSheet'
 
+  pod 'Down'
+
   # Lottie animations
   pod 'lottie-ios', '~> 2.5'
 

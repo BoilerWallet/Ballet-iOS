@@ -63,6 +63,8 @@
 		0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */; };
 		0EBD21962109C8A600D3BA55 /* WalletDetailEditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD21952109C8A600D3BA55 /* WalletDetailEditNameViewController.swift */; };
 		0EBD21982109DC0C00D3BA55 /* WalletDetailDeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD21972109DC0C00D3BA55 /* WalletDetailDeleteAccountViewController.swift */; };
+		0EBD219A2109FF3E00D3BA55 /* SettingsMarkdownAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD21992109FF3E00D3BA55 /* SettingsMarkdownAPI.swift */; };
+		0EBD219C210A2CC300D3BA55 /* SettingsOpenSourceLibrariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD219B210A2CC300D3BA55 /* SettingsOpenSourceLibrariesViewController.swift */; };
 		0EC2071F21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2071E21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift */; };
 		0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */; };
 		0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */; };
@@ -187,6 +189,8 @@
 		0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailDefaultTableViewCell.swift; sourceTree = "<group>"; };
 		0EBD21952109C8A600D3BA55 /* WalletDetailEditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailEditNameViewController.swift; sourceTree = "<group>"; };
 		0EBD21972109DC0C00D3BA55 /* WalletDetailDeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailDeleteAccountViewController.swift; sourceTree = "<group>"; };
+		0EBD21992109FF3E00D3BA55 /* SettingsMarkdownAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMarkdownAPI.swift; sourceTree = "<group>"; };
+		0EBD219B210A2CC300D3BA55 /* SettingsOpenSourceLibrariesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOpenSourceLibrariesViewController.swift; sourceTree = "<group>"; };
 		0EC2071E21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigDecimal+NormalizeZerosTests.swift"; sourceTree = "<group>"; };
 		0EC5244720DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableView.swift; sourceTree = "<group>"; };
 		0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerTableViewCell.swift; sourceTree = "<group>"; };
@@ -460,6 +464,7 @@
 				0EE8F2982041AAC5009DF772 /* RPC.swift */,
 				0ED734372048D4F800763618 /* ETHGasStation.swift */,
 				0E88F745204CB2E500D14511 /* Etherscan.swift */,
+				0EBD21992109FF3E00D3BA55 /* SettingsMarkdownAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				0EC5244920DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift */,
 				0EC5244D20E007AC009FAFEB /* SettingsTrackNewTokenViewController.swift */,
 				0E1A91FF2104E3A500A27FAA /* SettingsChangePasswordViewController.swift */,
+				0EBD219B210A2CC300D3BA55 /* SettingsOpenSourceLibrariesViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -873,6 +879,7 @@
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Keystore/Keystore.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
@@ -904,6 +911,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keystore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
@@ -978,6 +986,7 @@
 				0E6E84F421014D3100F2A601 /* BigDecimal+StringInit.swift in Sources */,
 				0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
+				0EBD219C210A2CC300D3BA55 /* SettingsOpenSourceLibrariesViewController.swift in Sources */,
 				0E1A92002104E3A500A27FAA /* SettingsChangePasswordViewController.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
 				863C8FDA1FF2BB66007D5573 /* ReceiveNavigationViewController.swift in Sources */,
@@ -987,6 +996,7 @@
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
+				0EBD219A2109FF3E00D3BA55 /* SettingsMarkdownAPI.swift in Sources */,
 				0E8FE9A020E546840077B107 /* ConstantHolder.swift in Sources */,
 				0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */,
 				0EBD21962109C8A600D3BA55 /* WalletDetailEditNameViewController.swift in Sources */,

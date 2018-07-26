@@ -42,6 +42,8 @@ class WalletDetailEditNameViewController: UIViewController {
     // MARK: - UI setup
 
     private func setupUI() {
+        view.backgroundColor = Colors.background
+
         // Toolbar
         navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
         navigationItem.backButton.tintColor = Colors.lightPrimaryTextColor
