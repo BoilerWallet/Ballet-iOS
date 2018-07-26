@@ -35,6 +35,7 @@ class WalletDetailViewController: UIViewController {
 
     var account: EncryptedAccount!
     var motionIdentifiers: WalletDetailMotionIdentifiers?
+    var accountChangedCompletion: (() -> Void)?
 
     @IBOutlet weak var walletInfoView: UIView!
     @IBOutlet weak var blockiesImageView: UIImageView!
@@ -187,7 +188,7 @@ class WalletDetailViewController: UIViewController {
             self.performSegue(withIdentifier: "editNameSegue", sender: self)
         }
         controller.deleteClicked = {
-            Dialog().details("TODO").positive("OK", handler: nil).show(self)
+            self.performSegue(withIdentifier: "deleteAccountSegue", sender: self)
         }
 
         // Initialize the bottom sheet with the view controller just created
@@ -221,6 +222,22 @@ class WalletDetailViewController: UIViewController {
             controller.account = account
             controller.completion = { name in
                 self.nameLabel.text = name
+            }
+        } else if segue.identifier == "deleteAccountSegue", let controller = segue.destination as? WalletDetailDeleteAccountViewController {
+            controller.account = account
+            controller.completion = { deleted in
+                if deleted {
+                    // Reset accounts first
+                    LoggedInUser.shared.resetAccounts()
+
+                    // Set accounts
+                    if let accounts: [Account] = try? Realm().objects(Account.self).map({ $0 }) {
+                        LoggedInUser.shared.setAccounts(accounts: accounts)
+                    }
+
+                    self.navigationController?.popViewController(animated: true)
+                    self.accountChangedCompletion?()
+                }
             }
         }
     }

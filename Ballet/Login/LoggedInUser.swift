@@ -22,6 +22,39 @@ class LoggedInUser {
         return SHA3(variant: .keccak256).calculate(for: key)
     }
 
+    enum CheckPasswordError: Error {
+
+        case internalError
+        case passwordWrong
+    }
+
+    static func checkPassword(passwordData: Data) -> Promise<Void> {
+        guard let oldHash = (try? ConstantHolder.passwordHash?.dataWithHexString()) ?? nil, let oldSalt = (try? ConstantHolder.passwordSalt?.dataWithHexString()) ?? nil else {
+            return Promise { seal in
+                seal.reject(CheckPasswordError.internalError)
+            }
+        }
+
+        return Promise { seal in
+            DispatchQueue.global().async {
+                guard let pHash = try? LoggedInUser.hashPassword([UInt8](passwordData), salt: [UInt8](oldSalt)) else {
+                    // PROMISE
+                    seal.reject(CheckPasswordError.internalError)
+                    return
+                }
+
+                if pHash != [UInt8](oldHash) {
+                    // PROMISE
+                    seal.reject(CheckPasswordError.passwordWrong)
+                    return
+                }
+
+                // PROMISE
+                seal.fulfill(())
+            }
+        }
+    }
+
     /*
     static func decryptAndSetAccounts(password: String, accounts: [Account]) -> Promise<()> {
         return Promise { seal in
