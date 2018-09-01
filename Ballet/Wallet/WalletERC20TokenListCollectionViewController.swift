@@ -123,7 +123,7 @@ class WalletERC20TokenListCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WalletERC20TokenListCollectionViewCell
 
         if let element = rows?[indexPath.row] {
-            try cell.setup(with: element, for: account.address)
+            cell.setup(with: element, for: account.address)
         }
 
         return cell

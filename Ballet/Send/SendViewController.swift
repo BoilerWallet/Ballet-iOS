@@ -69,6 +69,7 @@ class SendViewController: UIViewController {
     }
 
     // MARK: - UI setup
+
     private func setupUI() {
         setupToolbar()
         view.backgroundColor = Colors.background
@@ -82,6 +83,11 @@ class SendViewController: UIViewController {
     private func setupToolbar() {
         navigationItem.titleLabel.text = "Send"
         navigationItem.titleLabel.textColor = Colors.lightPrimaryTextColor
+
+        let qrButton = IconButton(image: UIImage(named: "ic_qrcode")?.withRenderingMode(.alwaysTemplate), tintColor: Colors.lightPrimaryTextColor)
+        qrButton.addTarget(self, action: #selector(qrButtonClicked), for: .touchUpInside)
+
+        navigationItem.rightViews = [qrButton]
     }
 
     private func setupFrom() {
@@ -225,7 +231,72 @@ class SendViewController: UIViewController {
 
     // MARK: - Actions
 
-    @objc func currencyButtonClicked() {
+    @objc private func qrButtonClicked() {
+        guard let controller = UIStoryboard(name: "QRScannerController", bundle: nil).instantiateInitialViewController() as? QRScannerController else {
+            return
+        }
+        controller.completion = { str in
+            let error: (_ str: String) -> Void = { str in
+                Dialog().details(str)
+                    .positive("OK", handler: nil)
+                    .show(self)
+            }
+
+            let url = URL(string: str)
+            guard url?.scheme == "ethereum" else {
+                error("Bad QR code")
+                return
+            }
+
+            var str = str
+
+            str = str.deletingPrefix("ethereum:")
+
+            let payable: String
+            let chainId: String?
+            if let atIndex = str.index(of: "@") {
+                payable = String(str[..<atIndex])
+                chainId = String(str[str.index(after: atIndex)..<(str.index(of: "/") ?? str.endIndex)])
+            } else {
+                payable = str
+                chainId = nil
+            }
+
+            let prefix: String?
+            let addressString: String
+            if let dashIndex = payable.index(of: "-") {
+                prefix = String(payable[..<dashIndex])
+                addressString = String(payable[payable.index(after: dashIndex)...])
+            } else {
+                prefix = nil
+                addressString = payable
+            }
+
+            // Check uri
+            if let p = prefix, p != "pay" {
+                // URI malformed
+                error("Bad QR code")
+                return
+            }
+            guard let address = try? EthereumAddress(hex: addressString, eip55: true) else {
+                // Checksum failed
+                error("Address checksum failed")
+                return
+            }
+            if let c = chainId, c != String(RPC.activeUrl.chainId) {
+                // Wrong network
+                error("You are on the wrong network for this QR code. Switch network in the settings page.")
+                return
+            }
+
+            // All correct. Set address.
+            self.toTextField.text = address.hex(eip55: true)
+        }
+
+        present(controller, animated: true, completion: nil)
+    }
+
+    @objc private func currencyButtonClicked() {
         guard let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "TokenTrackerTableViewController") as? SettingsTokenTrackerViewController else {
             return
         }
@@ -294,12 +365,7 @@ class SendViewController: UIViewController {
             sendTransactionButton.isEnabled = true
         }
 
-        guard let u = try? Realm().objects(RPCUrl.self).filter("isActive == true").first, let url = u else {
-            Dialog().details("Could not detect your selected chain. Please check the settings.")
-                .positive("OK", handler: nil)
-                .show(self)
-            return
-        }
+        let url = RPC.activeUrl
 
         guard let selectedFrom = selectedAccount else {
             Dialog().details("Please select a 'from' account").positive("OK", handler: nil).show(self)
