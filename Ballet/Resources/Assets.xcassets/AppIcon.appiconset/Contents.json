@@ -27,7 +27,7 @@
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Spotlight Icon - 40x40@2x-100.jpg",
+      "filename" : "Spotlight Icon - 80x80-100.jpg",
       "scale" : "2x"
     },
     {
@@ -51,7 +51,7 @@
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "Background-2.jpg",
+      "filename" : "Background-3.jpg",
       "scale" : "1x"
     },
     {
@@ -63,13 +63,13 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Settings Icon - 29x29-100.jpg",
+      "filename" : "Spotlight Icon - 29x29-100.jpg",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Settings Icon - 29x29@2x-100.jpg",
+      "filename" : "Spotlight Icon - 29x29@2x-100.jpg",
       "scale" : "2x"
     },
     {
@@ -81,19 +81,19 @@
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Spotlight Icon - 40x40@2x-101.jpg",
+      "filename" : "Spotlight Icon - 40x40@2x-100.jpg",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Background-1.jpg",
+      "filename" : "Background-2.jpg",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Background@2x.jpg",
+      "filename" : "Background-1.jpg",
       "scale" : "2x"
     },
     {

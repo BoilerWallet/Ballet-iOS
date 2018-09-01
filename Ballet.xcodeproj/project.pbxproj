@@ -52,6 +52,10 @@
 		0E8FE9A220E54A0A0077B107 /* DecryptedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE9A120E54A0A0077B107 /* DecryptedAccount.swift */; };
 		0E94A41520E127A500335710 /* SettingsTokenTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */; };
 		0E94A41720E138EE00335710 /* Dialog+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94A41620E138EE00335710 /* Dialog+Defaults.swift */; };
+		0E976139213AF414006593F8 /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E976138213AF414006593F8 /* QRCodeScanner.swift */; };
+		0E97613C213AF817006593F8 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97613B213AF817006593F8 /* QRScannerController.swift */; };
+		0E97613E213AF85E006593F8 /* QRScannerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E97613D213AF85E006593F8 /* QRScannerController.storyboard */; };
+		0E976140213B52AC006593F8 /* String+Manipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97613F213B52AC006593F8 /* String+Manipulation.swift */; };
 		0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */; };
 		0EA476E02047835B003DB1D0 /* SelectAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */; };
 		0EA476E220478382003DB1D0 /* SelectAccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */; };
@@ -178,6 +182,10 @@
 		0E8FE9A120E54A0A0077B107 /* DecryptedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecryptedAccount.swift; sourceTree = "<group>"; };
 		0E94A41420E127A500335710 /* SettingsTokenTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTokenTrackerViewController.swift; sourceTree = "<group>"; };
 		0E94A41620E138EE00335710 /* Dialog+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dialog+Defaults.swift"; sourceTree = "<group>"; };
+		0E976138213AF414006593F8 /* QRCodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
+		0E97613B213AF817006593F8 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		0E97613D213AF85E006593F8 /* QRScannerController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRScannerController.storyboard; sourceTree = "<group>"; };
+		0E97613F213B52AC006593F8 /* String+Manipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Manipulation.swift"; sourceTree = "<group>"; };
 		0EA476DC204755B2003DB1D0 /* DashedBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderView.swift; sourceTree = "<group>"; };
 		0EA476DF2047835B003DB1D0 /* SelectAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectAccount.storyboard; sourceTree = "<group>"; };
 		0EA476E120478382003DB1D0 /* SelectAccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountCollectionViewController.swift; sourceTree = "<group>"; };
@@ -420,6 +428,16 @@
 			path = ToolboxTests;
 			sourceTree = "<group>";
 		};
+		0E97613A213AF7F5006593F8 /* QRScannerController */ = {
+			isa = PBXGroup;
+			children = (
+				0E976138213AF414006593F8 /* QRCodeScanner.swift */,
+				0E97613D213AF85E006593F8 /* QRScannerController.storyboard */,
+				0E97613B213AF817006593F8 /* QRScannerController.swift */,
+			);
+			path = QRScannerController;
+			sourceTree = "<group>";
+		};
 		0EA476DE20478219003DB1D0 /* SelectAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +560,7 @@
 				0E054447203F906600603F31 /* Dialog */,
 				0ECA6BB0203C6EB0001247F8 /* LoadingView */,
 				0E7F7681203B7F2600DDD6F0 /* PopUpController */,
+				0E97613A213AF7F5006593F8 /* QRScannerController */,
 				0EED236B1FE86E4F007F137F /* Colors.swift */,
 				863449E81FEC231E00738516 /* LabelExtension.swift */,
 				0EE80149203E661F00EDD123 /* TextField+MaterialDefault.swift */,
@@ -557,6 +576,7 @@
 				0E8FE99D20E545BE0077B107 /* Data+HexString.swift */,
 				0E8FE99F20E546840077B107 /* ConstantHolder.swift */,
 				0EE1DA612102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift */,
+				0E97613F213B52AC006593F8 /* String+Manipulation.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -744,6 +764,7 @@
 				86BED7B81FEB186400165571 /* Receive.storyboard in Resources */,
 				8665F6EC1FE9AFE6008D84F5 /* TabBar.storyboard in Resources */,
 				0E27364F20DBFCF8001820F4 /* material_checkbox.json in Resources */,
+				0E97613E213AF85E006593F8 /* QRScannerController.storyboard in Resources */,
 				0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */,
 				86E819EA1FE717B00086952E /* Login.storyboard in Resources */,
 				863449E51FEC18B800738516 /* Settings.storyboard in Resources */,
@@ -950,6 +971,7 @@
 				0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
 				0E8FE99E20E545BE0077B107 /* Data+HexString.swift in Sources */,
+				0E97613C213AF817006593F8 /* QRScannerController.swift in Sources */,
 				0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */,
 				86E819EC1FE717B90086952E /* LoginViewController.swift in Sources */,
 				0EC5244820DFFAAD009FAFEB /* SettingsTokenTrackerTableView.swift in Sources */,
@@ -995,9 +1017,11 @@
 				8665F6F11FE9C042008D84F5 /* TabBarViewController.swift in Sources */,
 				0E672D4C1FE70A9D00917D05 /* ViewController.swift in Sources */,
 				0E054449203F907E00603F31 /* DialogBuilder.swift in Sources */,
+				0E976139213AF414006593F8 /* QRCodeScanner.swift in Sources */,
 				0EEB23601FF1A8CB009ED044 /* WalletNavigationViewController.swift in Sources */,
 				0EBD219A2109FF3E00D3BA55 /* SettingsMarkdownAPI.swift in Sources */,
 				0E8FE9A020E546840077B107 /* ConstantHolder.swift in Sources */,
+				0E976140213B52AC006593F8 /* String+Manipulation.swift in Sources */,
 				0E88F746204CB2E500D14511 /* Etherscan.swift in Sources */,
 				0EBD21962109C8A600D3BA55 /* WalletDetailEditNameViewController.swift in Sources */,
 				863449E91FEC231E00738516 /* LabelExtension.swift in Sources */,
