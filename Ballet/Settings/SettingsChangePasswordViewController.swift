@@ -86,8 +86,8 @@ class SettingsChangePasswordViewController: UIViewController {
         textField.autocorrectionType = .no
         textField.returnKeyType = .done
         textField.delegate = self
-        textField.detailColor = Color.red.base
-        textField.detail = detail
+        textField.errorColor = Color.red.base
+        textField.error = detail
         textField.addTarget(self, action: editingTarget, for: .editingChanged)
     }
 

@@ -120,7 +120,7 @@ class SendViewController: UIViewController {
         toTextField.returnKeyType = .done
         toTextField.delegate = self
 
-        toTextField.detailColor = Color.red.base
+        toTextField.errorColor = Color.red.base
     }
 
     private func setupAmount() {
@@ -138,7 +138,7 @@ class SendViewController: UIViewController {
         amountTextField.returnKeyType = .done
         amountTextField.delegate = self
 
-        amountTextField.detailColor = Color.red.base
+        amountTextField.errorColor = Color.red.base
     }
 
     private func setupFee() {
@@ -373,14 +373,14 @@ class SendViewController: UIViewController {
         }
 
         guard let to = toTextField.text, let toAddress = try? EthereumAddress(hex: to, eip55: true) else {
-            toTextField.detail = "Checksum didn't match"
+            toTextField.error = "Checksum didn't match"
             toTextField.isErrorRevealed = true
             return
         }
         toTextField.isErrorRevealed = false
 
         guard let amountStr = amountTextField.text?.replacingOccurrences(of: ",", with: "."), var amount = BigUDecimal(string: amountStr) else {
-            amountTextField.detail = "Please type in a value"
+            amountTextField.error = "Please type in a value"
             amountTextField.isErrorRevealed = true
             return
         }
@@ -393,7 +393,7 @@ class SendViewController: UIViewController {
         // Make sure we don't have decimal places
         // Make sure we don't have more decimals than allowed. This would cause problems later
         guard amount.exponent >= 0 else {
-            amountTextField.detail = "Too many decimals. Max: \(selectedCurrency?.decimals ?? 18)"
+            amountTextField.error = "Too many decimals. Max: \(selectedCurrency?.decimals ?? 18)"
             amountTextField.isErrorRevealed = true
             return
         }
@@ -403,7 +403,7 @@ class SendViewController: UIViewController {
         let amountBigUInt = amount.significand * BigUInt(10).power(amount.exponent)
 
         guard let gasLimitStr = gasTextField.text, let gasLimit = UInt(gasLimitStr) else {
-            gasTextField.detail = "Please type in a value"
+            gasTextField.error = "Please type in a value"
             gasTextField.isErrorRevealed = true
             return
         }

@@ -81,8 +81,8 @@ class LoginViewController: UIViewController {
         passwordTextfield.autocorrectionType = .no
         passwordTextfield.returnKeyType = .done
         passwordTextfield.delegate = self
-        passwordTextfield.detailColor = Color.red.base
-        passwordTextfield.detail = "Password is too weak. At least 8 characters."
+        passwordTextfield.errorColor = Color.red.base
+        passwordTextfield.error = "Password is too weak. At least 8 characters."
         passwordTextfield.addTarget(self, action: #selector(passwordTextfieldChanged), for: .editingChanged)
         // UI test specific
         passwordTextfield.accessibilityIdentifier = "password_text"
@@ -93,8 +93,8 @@ class LoginViewController: UIViewController {
         passwordConfirmationTextfield.autocorrectionType = .no
         passwordConfirmationTextfield.returnKeyType = .done
         passwordConfirmationTextfield.delegate = self
-        passwordConfirmationTextfield.detailColor = Color.red.base
-        passwordConfirmationTextfield.detail = "Your passwords didn't match"
+        passwordConfirmationTextfield.errorColor = Color.red.base
+        passwordConfirmationTextfield.error = "Your passwords didn't match"
         passwordConfirmationTextfield.addTarget(self, action: #selector(passwordTextfieldChanged), for: .editingChanged)
         // UI test specific
         passwordConfirmationTextfield.accessibilityIdentifier = "confirm_password_text"
