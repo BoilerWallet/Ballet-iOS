@@ -94,7 +94,8 @@ platform :ios do
     # Increment build number
     latest_bn = latest_testflight_build_number(
       username: 'ballet@boilertalk.com',
-      app_identifier: 'com.boilertalk.ballet'
+      app_identifier: 'com.boilertalk.ballet',
+      version: "1.0"
     )
     increment_build_number(
       build_number: latest_bn + 1
