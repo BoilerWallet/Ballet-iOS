@@ -6,14 +6,14 @@ PODS:
     - SipHash (~> 1.2)
   - BlockiesSwift (0.1.2)
   - Cartography (3.1.0)
-  - Crashlytics (3.12.0):
-    - Fabric (~> 1.9.0)
+  - Crashlytics (3.13.2):
+    - Fabric (~> 1.10.2)
   - CryptoSwift (0.15.0)
   - Curry (4.0.2)
   - DateToolsSwift (4.0.0)
-  - Down (0.6.4)
+  - Down (0.8.5)
   - DropDown (2.3.13)
-  - Fabric (1.9.0)
+  - Fabric (1.10.2)
   - Keystore (0.1.0):
     - CryptoSwift (~> 0.8)
     - secp256k1.swift (~> 0.1)
@@ -131,22 +131,22 @@ PODS:
     - Motion/Core (= 1.4.3)
   - Motion/Core (1.4.3)
   - Nimble (7.3.4)
-  - PromiseKit (6.8.3):
-    - PromiseKit/CorePromise (= 6.8.3)
-    - PromiseKit/Foundation (= 6.8.3)
-    - PromiseKit/UIKit (= 6.8.3)
-  - PromiseKit/CorePromise (6.8.3)
-  - PromiseKit/Foundation (6.8.3):
+  - PromiseKit (6.9.0):
+    - PromiseKit/CorePromise (= 6.9.0)
+    - PromiseKit/Foundation (= 6.9.0)
+    - PromiseKit/UIKit (= 6.9.0)
+  - PromiseKit/CorePromise (6.9.0)
+  - PromiseKit/Foundation (6.9.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.3):
+  - PromiseKit/UIKit (6.9.0):
     - PromiseKit/CorePromise
   - Quick (1.3.4)
-  - Realm (3.14.0):
-    - Realm/Headers (= 3.14.0)
-  - Realm/Headers (3.14.0)
-  - RealmSwift (3.14.0):
-    - Realm (= 3.14.0)
-  - Runes (4.2.1)
+  - Realm (3.16.2):
+    - Realm/Headers (= 3.16.2)
+  - Realm/Headers (3.16.2)
+  - RealmSwift (3.16.2):
+    - Realm (= 3.16.2)
+  - Runes (4.2.2)
   - secp256k1.swift (0.1.4)
   - SipHash (1.2.2)
   - TPKeyboardAvoiding (1.3.2)
@@ -236,13 +236,13 @@ SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   BlockiesSwift: 22d8d56dd187e6bfd16cb8c8fbd4fd4896c3e65d
   Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Crashlytics: 611738c7847f8291a1a51084e35987b86ba6b3ee
   CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
   Curry: e2388a19084bb0977d7318e39048d66550569bf0
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
-  Down: 1beb9bd476a61c7f34cb42773e5c2b405d15122d
+  Down: d2554b5006cf45bdb2bc6f19d91ca4fec6a45b31
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Keystore: 32ce430d78978ea72fb0bc39df79a8900e1af932
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
@@ -252,11 +252,11 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  PromiseKit: 97397236f9e9c443d5b70a941d49cad25160af7a
   Quick: f4f7f063c524394c73ed93ac70983c609805d481
-  Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
-  RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
-  Runes: bd3f507a2e20016fa24df180bf149651bcbf5ebb
+  Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
+  RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
+  Runes: 80a0a08e1759ead661eff6f0bcca7c3e20592151
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
@@ -264,4 +264,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 47f3ba52b03891fcd2993b80caf2c4fa1c2d38fc
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
