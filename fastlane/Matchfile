@@ -1,4 +1,4 @@
-git_url "git@github.com:BoilerWallet/certificates-Ballet.git"
+git_url "https://github.com/BoilerWallet/certificates-Ballet.git"
 
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
 
