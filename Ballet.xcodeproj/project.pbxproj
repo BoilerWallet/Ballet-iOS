@@ -1203,7 +1203,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 674H4J83CA;
-				INFOPLIST_FILE = "$(SRCROOT)/Ballet/Resources/Info.plist";
+				INFOPLIST_FILE = Ballet/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.ballet;
@@ -1226,7 +1226,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 674H4J83CA;
-				INFOPLIST_FILE = "$(SRCROOT)/Ballet/Resources/Info.plist";
+				INFOPLIST_FILE = Ballet/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.ballet;
