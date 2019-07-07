@@ -20,6 +20,7 @@
 		0E1A92002104E3A500A27FAA /* SettingsChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A91FF2104E3A500A27FAA /* SettingsChangePasswordViewController.swift */; };
 		0E27364F20DBFCF8001820F4 /* material_checkbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E27364E20DBFCF8001820F4 /* material_checkbox.json */; };
 		0E2A53DC20DAA2B3006334A1 /* UIImage+FromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */; };
+		0E2F581422D26B2500F58F72 /* MnemonicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F581322D26B2500F58F72 /* MnemonicTests.swift */; };
 		0E302199204B000C003BA886 /* TransactionConfirmationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */; };
 		0E40E58C20E268F100BA9C4B /* BigDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E40E58B20E268F100BA9C4B /* BigDecimal.swift */; };
 		0E40E58E20E2690700BA9C4B /* BigUDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E40E58D20E2690700BA9C4B /* BigUDecimal.swift */; };
@@ -65,6 +66,9 @@
 		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
 		0EB05B3820FFBC840000BE23 /* EncryptedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB05B3720FFBC840000BE23 /* EncryptedAccount.swift */; };
 		0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */; };
+		0EB47BAB22D20E8B00E93EF8 /* Mnemonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB47BAA22D20E8B00E93EF8 /* Mnemonic.swift */; };
+		0EB47BAF22D20F0E00E93EF8 /* Data+MnemonicBitArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB47BAE22D20F0E00E93EF8 /* Data+MnemonicBitArray.swift */; };
+		0EB47BB122D20F4700E93EF8 /* MnemonicLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB47BB022D20F4700E93EF8 /* MnemonicLanguage.swift */; };
 		0EBD21962109C8A600D3BA55 /* WalletDetailEditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD21952109C8A600D3BA55 /* WalletDetailEditNameViewController.swift */; };
 		0EBD21982109DC0C00D3BA55 /* WalletDetailDeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD21972109DC0C00D3BA55 /* WalletDetailDeleteAccountViewController.swift */; };
 		0EBD219A2109FF3E00D3BA55 /* SettingsMarkdownAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD21992109FF3E00D3BA55 /* SettingsMarkdownAPI.swift */; };
@@ -144,6 +148,7 @@
 		0E1A91FF2104E3A500A27FAA /* SettingsChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangePasswordViewController.swift; sourceTree = "<group>"; };
 		0E27364E20DBFCF8001820F4 /* material_checkbox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = material_checkbox.json; sourceTree = "<group>"; };
 		0E2A53DB20DAA2B3006334A1 /* UIImage+FromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FromColor.swift"; sourceTree = "<group>"; };
+		0E2F581322D26B2500F58F72 /* MnemonicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicTests.swift; sourceTree = "<group>"; };
 		0E302198204B000C003BA886 /* TransactionConfirmationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationResultViewController.swift; sourceTree = "<group>"; };
 		0E40E58B20E268F100BA9C4B /* BigDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigDecimal.swift; sourceTree = "<group>"; };
 		0E40E58D20E2690700BA9C4B /* BigUDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigUDecimal.swift; sourceTree = "<group>"; };
@@ -195,6 +200,9 @@
 		0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumQuantity+ConvertFromWei.swift"; sourceTree = "<group>"; };
 		0EB05B3720FFBC840000BE23 /* EncryptedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedAccount.swift; sourceTree = "<group>"; };
 		0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailDefaultTableViewCell.swift; sourceTree = "<group>"; };
+		0EB47BAA22D20E8B00E93EF8 /* Mnemonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mnemonic.swift; sourceTree = "<group>"; };
+		0EB47BAE22D20F0E00E93EF8 /* Data+MnemonicBitArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+MnemonicBitArray.swift"; sourceTree = "<group>"; };
+		0EB47BB022D20F4700E93EF8 /* MnemonicLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicLanguage.swift; sourceTree = "<group>"; };
 		0EBD21952109C8A600D3BA55 /* WalletDetailEditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailEditNameViewController.swift; sourceTree = "<group>"; };
 		0EBD21972109DC0C00D3BA55 /* WalletDetailDeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailDeleteAccountViewController.swift; sourceTree = "<group>"; };
 		0EBD21992109FF3E00D3BA55 /* SettingsMarkdownAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMarkdownAPI.swift; sourceTree = "<group>"; };
@@ -305,6 +313,14 @@
 				0E1A91FD2104BBDF00A27FAA /* SettingsElement.swift */,
 			);
 			path = SettingsElement;
+			sourceTree = "<group>";
+		};
+		0E2F581222D26B0A00F58F72 /* MnemonicTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E2F581322D26B2500F58F72 /* MnemonicTests.swift */,
+			);
+			path = MnemonicTests;
 			sourceTree = "<group>";
 		};
 		0E40E58A20E268DF00BA9C4B /* BigDecimal */ = {
@@ -421,6 +437,7 @@
 		0E87F94C204A287900742C0A /* ToolboxTests */ = {
 			isa = PBXGroup;
 			children = (
+				0E2F581222D26B0A00F58F72 /* MnemonicTests */,
 				0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */,
 				0E6E84F72101643E00F2A601 /* BigDecimal+StringInitTests.swift */,
 				0EC2071E21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift */,
@@ -446,6 +463,16 @@
 				0EA476E32047858F003DB1D0 /* SelectAccountCollectionViewCell.swift */,
 			);
 			path = SelectAccount;
+			sourceTree = "<group>";
+		};
+		0EB47BA922D20E5D00E93EF8 /* Mnemonic */ = {
+			isa = PBXGroup;
+			children = (
+				0EB47BAA22D20E8B00E93EF8 /* Mnemonic.swift */,
+				0EB47BAE22D20F0E00E93EF8 /* Data+MnemonicBitArray.swift */,
+				0EB47BB022D20F4700E93EF8 /* MnemonicLanguage.swift */,
+			);
+			path = Mnemonic;
 			sourceTree = "<group>";
 		};
 		0ECA6BB0203C6EB0001247F8 /* LoadingView */ = {
@@ -554,6 +581,7 @@
 		86439AB31FE7C8CC00060944 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				0EB47BA922D20E5D00E93EF8 /* Mnemonic */,
 				0EDC27752107B7EE0004AC59 /* BottomSheet */,
 				0E40E58A20E268DF00BA9C4B /* BigDecimal */,
 				0E05444E203F95C900603F31 /* Database */,
@@ -961,6 +989,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */,
+				0EB47BAF22D20F0E00E93EF8 /* Data+MnemonicBitArray.swift in Sources */,
 				0E1A91FE2104BBDF00A27FAA /* SettingsElement.swift in Sources */,
 				0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */,
 				0EE8F29B2041B392009DF772 /* RPCUrl.swift in Sources */,
@@ -985,6 +1014,8 @@
 				0EC5244C20DFFFCC009FAFEB /* ERC20TrackedToken.swift in Sources */,
 				0E40E58C20E268F100BA9C4B /* BigDecimal.swift in Sources */,
 				0EC5244A20DFFAC1009FAFEB /* SettingsTokenTrackerTableViewCell.swift in Sources */,
+				0EB47BB122D20F4700E93EF8 /* MnemonicLanguage.swift in Sources */,
+				0EB47BAB22D20E8B00E93EF8 /* Mnemonic.swift in Sources */,
 				863449EB1FEC335100738516 /* SettingsViewController.swift in Sources */,
 				0E505F8C203AF3530037ACE3 /* BlockiesSelectionView.swift in Sources */,
 				0E054450203F95D700603F31 /* Account.swift in Sources */,
@@ -1046,6 +1077,7 @@
 				0E672D5F1FE70A9E00917D05 /* BalletTests.swift in Sources */,
 				0E87F94E204A289100742C0A /* String+WeiConversionTests.swift in Sources */,
 				0EC2071F21023D4D0055E497 /* BigDecimal+NormalizeZerosTests.swift in Sources */,
+				0E2F581422D26B2500F58F72 /* MnemonicTests.swift in Sources */,
 				0E6E84F82101643E00F2A601 /* BigDecimal+StringInitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
