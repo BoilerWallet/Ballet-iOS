@@ -93,8 +93,8 @@ platform :ios do
 
     # Increment build number
     latest_bn = latest_testflight_build_number(
-      username: 'ballet@boilertalk.com',
-      app_identifier: 'com.boilertalk.ballet',
+      username: 'koray@koska.at',
+      app_identifier: 'com.koraykoska.ballet',
       version: "1.0"
     )
     increment_build_number(
@@ -108,8 +108,8 @@ platform :ios do
 
     # Testflight
     upload_to_testflight(
-      username: 'ballet@boilertalk.com',
-      app_identifier: 'com.boilertalk.ballet',
+      username: 'koray@koska.at',
+      app_identifier: 'com.koraykoska.ballet',
       skip_waiting_for_build_processing: true
     )
   end

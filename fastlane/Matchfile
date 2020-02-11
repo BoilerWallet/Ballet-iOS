@@ -2,8 +2,8 @@ git_url "https://github.com/BoilerWallet/certificates-Ballet.git"
 
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier ["com.boilertalk.ballet"]
-username "ballet@boilertalk.com" # Your Apple Developer Portal username
+app_identifier ["com.koraykoska.ballet"]
+username "koray@koska.at" # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`
 # Remove the # in the beginning of the line to enable the other options
