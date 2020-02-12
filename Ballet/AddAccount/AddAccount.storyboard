@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQa-Ge-sjd">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQa-Ge-sjd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,17 +13,17 @@
             <objects>
                 <viewController id="DQa-Ge-sjd" customClass="AddAccountViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zDV-Mb-L6r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mR-9V-3pn" customClass="TPKeyboardAvoidingScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="810"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoA-QV-yPK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xud-2h-Vmj">
-                                                <rect key="frame" x="16" y="8" width="343" height="24"/>
+                                                <rect key="frame" x="16" y="8" width="382" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="7VH-MW-FwT"/>
                                                 </constraints>
@@ -35,14 +32,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sca-TA-WH4" customClass="BlockiesSelectionView" customModule="Ballet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="40" width="375" height="250"/>
+                                                <rect key="frame" x="0.0" y="40" width="414" height="276"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Sca-TA-WH4" secondAttribute="height" multiplier="3:2" id="Ppg-XI-OUu"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td1-QL-2ej" customClass="MDCFlatButton">
-                                                <rect key="frame" x="259" y="298" width="100" height="36"/>
+                                                <rect key="frame" x="298" y="324" width="100" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="PH1-Be-19V"/>
@@ -50,11 +47,10 @@
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66X-jP-8fr" customClass="TextField" customModule="Material">
-                                                <rect key="frame" x="16" y="370" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="396" width="382" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pQU-wL-V7K"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -85,7 +81,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-6L-2eX" customClass="MDCRaisedButton">
-                                <rect key="frame" x="259" y="623" width="100" height="36"/>
+                                <rect key="frame" x="298" y="818" width="100" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="D6S-JE-fJ6"/>
@@ -93,7 +89,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQz-IJ-zw9" customClass="LoadingView" customModule="Ballet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -102,7 +98,7 @@
                             <constraint firstItem="yqy-6L-2eX" firstAttribute="top" secondItem="9mR-9V-3pn" secondAttribute="bottom" constant="8" id="2Zy-6X-c4y"/>
                             <constraint firstItem="RQz-IJ-zw9" firstAttribute="top" secondItem="zDV-Mb-L6r" secondAttribute="top" id="4SX-Vg-SEh"/>
                             <constraint firstItem="9mR-9V-3pn" firstAttribute="leading" secondItem="gyv-vi-ZnD" secondAttribute="leading" id="6pP-Xf-s3i"/>
-                            <constraint firstItem="gyv-vi-ZnD" firstAttribute="bottom" secondItem="RQz-IJ-zw9" secondAttribute="bottom" id="Da6-MR-bxS"/>
+                            <constraint firstAttribute="bottom" secondItem="RQz-IJ-zw9" secondAttribute="bottom" id="Da6-MR-bxS"/>
                             <constraint firstItem="RQz-IJ-zw9" firstAttribute="trailing" secondItem="gyv-vi-ZnD" secondAttribute="trailing" id="KcN-ki-Fql"/>
                             <constraint firstItem="gyv-vi-ZnD" firstAttribute="bottom" secondItem="yqy-6L-2eX" secondAttribute="bottom" constant="8" id="N0Q-Cw-xiT"/>
                             <constraint firstItem="RQz-IJ-zw9" firstAttribute="leading" secondItem="gyv-vi-ZnD" secondAttribute="leading" id="N6P-ON-gJe"/>

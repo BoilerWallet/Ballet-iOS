@@ -55,6 +55,9 @@ class TabBarViewController: TabsController {
         tabBar.setTabItemsColor(Colors.accentColor, for: .selected)
         tabBar.setTabItemsColor(Colors.accentColor, for: .highlighted)
 
+        // NonScrollable TabBar
+        tabBar.tabBarStyle = .nonScrollable
+
         // Animation
         motionTransitionType = .none
     }
