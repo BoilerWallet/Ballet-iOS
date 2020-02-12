@@ -170,7 +170,7 @@ class LoginViewController: UIViewController {
             self.present(tabController, animated: false, completion: nil)
         }.catch(on: DispatchQueue.main) { error in
             if let e = error as? LoginError, e == .passwordWrong {
-                self.passwordTextfield.detail = "Your password is wrong. Please try again."
+                self.passwordTextfield.error = "Your password is wrong. Please try again."
                 self.passwordTextfield.isErrorRevealed = true
             } else {
                 print(error)

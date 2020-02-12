@@ -56,7 +56,7 @@ class WalletDetailEditNameViewController: UIViewController {
         nameTextField.autocorrectionType = .no
         nameTextField.returnKeyType = .done
         nameTextField.delegate = self
-        nameTextField.detailColor = Color.red.base
+        nameTextField.errorColor = Color.red.base
         nameTextField.addTarget(self, action: #selector(nameTextFieldChanged), for: .editingChanged)
         nameTextField.text = account.account.name
 

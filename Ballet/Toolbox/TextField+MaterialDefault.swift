@@ -16,6 +16,5 @@ extension TextField {
         dividerActiveColor = Colors.primary.darken2
         placeholderNormalColor = Color.black.withAlphaComponent(0.54)
         placeholderActiveColor = Colors.primary.darken2.withAlphaComponent(0.87)
-        detailColor = Color.black.withAlphaComponent(0.54)
     }
 }

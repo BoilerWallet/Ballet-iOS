@@ -21,6 +21,8 @@ struct Etherscan {
 
     let rpcUrl: RPCUrl
 
+    let apikey = "YYV92T7NFU45729BFYE3C1KRT73NW2HXIR"
+
     init(rpcUrl: RPCUrl) {
         self.rpcUrl = rpcUrl
     }
@@ -43,7 +45,8 @@ struct Etherscan {
             "address": address.hex(eip55: false),
             "page": "\(page)",
             "offset": "\(size)",
-            "sort": "\(order.rawValue)"
+            "sort": "\(order.rawValue)",
+            "apikey": apikey
         ]
         Alamofire.request(
             "\(etherscanUrl)/api",

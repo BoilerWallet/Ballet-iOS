@@ -63,16 +63,16 @@ class SettingsTrackNewTokenViewController: UIViewController {
         addressInputTextField.autocorrectionType = .no
         addressInputTextField.returnKeyType = .done
         addressInputTextField.delegate = self
-        addressInputTextField.detailColor = Color.red.base
-        addressInputTextField.detail = "Checksum didn't match"
+        addressInputTextField.errorColor = Color.red.base
+        addressInputTextField.error = "Checksum didn't match"
 
         nameInputTextField.placeholder = "ERC20 contract name"
         nameInputTextField.setupProjectDefault()
         nameInputTextField.autocorrectionType = .no
         nameInputTextField.returnKeyType = .done
         nameInputTextField.delegate = self
-        nameInputTextField.detailColor = Color.red.base
-        nameInputTextField.detail = "Enter a name"
+        nameInputTextField.errorColor = Color.red.base
+        nameInputTextField.error = "Enter a name"
 
         // Test button
         testButton.setTitleColor(Colors.accentColor, for: .normal)

@@ -15,7 +15,7 @@ struct RPC {
     private static var defaultMainnetRPCUrl: RPCUrl {
         let mainnet = RPCUrl()
         mainnet.name = "Infura Mainnet"
-        mainnet.url = "https://mainnet.infura.io/v3/9bde93f620304aa4a340c65799ce6796"
+        mainnet.url = "https://mainnet.infura.io/v3/70dda7e4645e40c89a972a0c8693dd5c"
         mainnet.chainId = 1
         mainnet.isActive = true
 
@@ -27,17 +27,17 @@ struct RPC {
 
         let ropsten = RPCUrl()
         ropsten.name = "Infura Ropsten"
-        ropsten.url = "https://ropsten.infura.io/v3/9bde93f620304aa4a340c65799ce6796"
+        ropsten.url = "https://ropsten.infura.io/v3/70dda7e4645e40c89a972a0c8693dd5c"
         ropsten.chainId = 3
 
         let rinkeby = RPCUrl()
         rinkeby.name = "Infura Rinkeby"
-        rinkeby.url = "https://rinkeby.infura.io/v3/9bde93f620304aa4a340c65799ce6796"
+        rinkeby.url = "https://rinkeby.infura.io/v3/70dda7e4645e40c89a972a0c8693dd5c"
         rinkeby.chainId = 4
 
         let kovan = RPCUrl()
         kovan.name = "Infura Kovan"
-        kovan.url = "https://kovan.infura.io/v3/9bde93f620304aa4a340c65799ce6796"
+        kovan.url = "https://kovan.infura.io/v3/70dda7e4645e40c89a972a0c8693dd5c"
         kovan.chainId = 42
 
         return [mainnet, ropsten, rinkeby, kovan]

@@ -71,8 +71,8 @@ class WalletDetailDeleteAccountViewController: UIViewController {
         passwordTextField.autocorrectionType = .no
         passwordTextField.returnKeyType = .done
         passwordTextField.delegate = self
-        passwordTextField.detailColor = Color.red.base
-        passwordTextField.detail = "Your password is wrong. Please try again."
+        passwordTextField.errorColor = Color.red.base
+        passwordTextField.error = "Your password is wrong. Please try again."
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
 
         // Save Button
