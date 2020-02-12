@@ -12,7 +12,7 @@ target 'Ballet' do
   pod 'Curry', '~> 4.0'
 
   # Material
-  pod 'Material', '~> 2.12'
+  pod 'Material'
 
   # Official Material components
   pod 'MaterialComponents/Cards'

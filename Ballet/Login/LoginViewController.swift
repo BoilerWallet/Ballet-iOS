@@ -166,6 +166,7 @@ class LoginViewController: UIViewController {
 
         promise.done(on: DispatchQueue.main) {
             // Login / Register finished. Redirect
+            tabController.modalPresentationStyle = .fullScreen
             self.present(tabController, animated: false, completion: nil)
         }.catch(on: DispatchQueue.main) { error in
             if let e = error as? LoginError, e == .passwordWrong {

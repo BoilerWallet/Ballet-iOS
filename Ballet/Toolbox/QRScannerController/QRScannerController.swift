@@ -43,7 +43,7 @@ class QRScannerController: UIViewController {
         }
         scanner?.completion = { str in
             // Vibration
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            try? AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
 
             // Dismiss
             self.dismiss(animated: true, completion: nil)

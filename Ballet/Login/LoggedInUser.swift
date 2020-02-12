@@ -117,7 +117,7 @@ class LoggedInUser {
             return a
         }
 
-        let decrypted = try DecryptedAccount(privateKey: EthereumPrivateKey(bytes: encrypted.keystore.privateKey(password: password)), account: encrypted.account)
+        let decrypted = try DecryptedAccount(privateKey: EthereumPrivateKey(encrypted.keystore.privateKey(password: password)), account: encrypted.account)
 
         // Cache decrypted accounts
         decryptedAccounts[address] = decrypted
