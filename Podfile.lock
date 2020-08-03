@@ -7,10 +7,10 @@ PODS:
   - Cartography (3.1.0)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
-  - CryptoSwift (1.3.0)
+  - CryptoSwift (1.3.1)
   - Curry (4.0.2)
   - DateToolsSwift (4.0.0)
-  - Down (0.9.0)
+  - Down (0.9.3)
   - DropDown (2.3.13)
   - Fabric (1.10.2)
   - Keystore (0.2.1):
@@ -24,106 +24,115 @@ PODS:
     - Material/Core (= 3.1.8)
   - Material/Core (3.1.8):
     - Motion (~> 3.1.1)
-  - MaterialComponents/AnimationTiming (54.13.0)
-  - MaterialComponents/BottomSheet (54.13.0):
+  - MaterialComponents/AnimationTiming (112.0.1)
+  - MaterialComponents/Availability (112.0.1)
+  - MaterialComponents/BottomSheet (112.0.1):
+    - MaterialComponents/Elevation
     - MaterialComponents/private/KeyboardWatcher
     - MaterialComponents/private/Math
-  - MaterialComponents/Buttons (54.13.0):
-    - MaterialComponents/Ink
-    - MaterialComponents/private/Math
-    - MaterialComponents/private/Shapes
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - MaterialComponents/Buttons (112.0.1):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - "MaterialComponents/Buttons+Extensions (54.13.0)":
-    - "MaterialComponents/Buttons+Extensions/ButtonThemer (= 54.13.0)"
-    - "MaterialComponents/Buttons+Extensions/ColorThemer (= 54.13.0)"
-    - "MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 54.13.0)"
-    - "MaterialComponents/Buttons+Extensions/TypographyThemer (= 54.13.0)"
-  - "MaterialComponents/Buttons+Extensions/ButtonThemer (54.13.0)":
-    - MaterialComponents/Buttons
-    - "MaterialComponents/Buttons+Extensions/ColorThemer"
-    - "MaterialComponents/Buttons+Extensions/TypographyThemer"
-  - "MaterialComponents/Buttons+Extensions/ColorThemer (54.13.0)":
-    - MaterialComponents/Buttons
-    - MaterialComponents/schemes/Color
-  - "MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (54.13.0)":
-    - MaterialComponents/Buttons
-    - MDFTextAccessibility
-  - "MaterialComponents/Buttons+Extensions/TypographyThemer (54.13.0)":
-    - MaterialComponents/Buttons
-    - MaterialComponents/schemes/Typography
-  - MaterialComponents/Cards (54.13.0):
+  - MaterialComponents/Cards (112.0.1):
+    - MaterialComponents/Elevation
     - MaterialComponents/Ink
     - MaterialComponents/private/Icons/ic_check_circle
     - MaterialComponents/private/Math
-    - MaterialComponents/private/Shapes
+    - MaterialComponents/Ripple
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/Dialogs (54.13.0):
+    - MaterialComponents/Shapes
+  - MaterialComponents/Dialogs (112.0.1):
     - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
     - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/Ink (54.13.0):
+  - MaterialComponents/Elevation (112.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
     - MaterialComponents/private/Math
-  - "MaterialComponents/Ink+Extensions (54.13.0)":
-    - "MaterialComponents/Ink+Extensions/ColorThemer (= 54.13.0)"
-  - "MaterialComponents/Ink+Extensions/ColorThemer (54.13.0)":
-    - MaterialComponents/Ink
-    - MaterialComponents/Themes
-  - MaterialComponents/OverlayWindow (54.13.0):
+  - MaterialComponents/Ink (112.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (112.0.1):
+    - MaterialComponents/Availability
     - MaterialComponents/private/Application
-  - MaterialComponents/Palettes (54.13.0)
-  - MaterialComponents/private/Application (54.13.0)
-  - MaterialComponents/private/Icons/Base (54.13.0)
-  - MaterialComponents/private/Icons/ic_check_circle (54.13.0):
+  - MaterialComponents/Palettes (112.0.1)
+  - MaterialComponents/private/Application (112.0.1)
+  - MaterialComponents/private/Color (112.0.1):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/Icons/Base (112.0.1)
+  - MaterialComponents/private/Icons/ic_check_circle (112.0.1):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/KeyboardWatcher (54.13.0):
+  - MaterialComponents/private/KeyboardWatcher (112.0.1):
     - MaterialComponents/private/Application
-  - MaterialComponents/private/Math (54.13.0)
-  - MaterialComponents/private/Overlay (54.13.0)
-  - MaterialComponents/private/Shapes (54.13.0):
-    - MaterialComponents/private/Math
-    - MaterialComponents/ShadowLayer
-  - MaterialComponents/private/ThumbTrack (54.13.0):
+  - MaterialComponents/private/Math (112.0.1)
+  - MaterialComponents/private/Overlay (112.0.1)
+  - MaterialComponents/private/ThumbTrack (112.0.1):
+    - MaterialComponents/Availability
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/schemes/Color (54.13.0)
-  - MaterialComponents/schemes/Typography (54.13.0)
-  - MaterialComponents/ShadowElevations (54.13.0)
-  - MaterialComponents/ShadowLayer (54.13.0):
+  - MaterialComponents/Ripple (112.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (112.0.1)
+  - MaterialComponents/ShadowLayer (112.0.1):
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/Slider (54.13.0):
+  - MaterialComponents/ShapeLibrary (112.0.1):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
+  - MaterialComponents/Shapes (112.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Slider (112.0.1):
+    - MaterialComponents/Elevation
     - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
     - MaterialComponents/private/ThumbTrack
     - MaterialComponents/ShadowElevations
-  - "MaterialComponents/Slider+Extensions (54.13.0)":
-    - "MaterialComponents/Slider+Extensions/ColorThemer (= 54.13.0)"
-  - "MaterialComponents/Slider+Extensions/ColorThemer (54.13.0)":
-    - MaterialComponents/Palettes
-    - MaterialComponents/schemes/Color
-    - MaterialComponents/Slider
-  - MaterialComponents/Snackbar (54.13.0):
+  - MaterialComponents/Snackbar (112.0.1):
     - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
     - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
     - MaterialComponents/OverlayWindow
     - MaterialComponents/private/Application
     - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
     - MaterialComponents/private/Overlay
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
-  - MaterialComponents/Themes (54.13.0):
-    - MaterialComponents/schemes/Color
-    - MaterialComponents/schemes/Typography
-  - MaterialComponents/Typography (54.13.0):
+  - MaterialComponents/Typography (112.0.1):
     - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+    - MDFTextAccessibility
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
   - Motion (3.1.3):
@@ -147,7 +156,7 @@ PODS:
     - Realm (= 3.21.0)
   - Runes (4.2.2)
   - secp256k1.swift (0.1.4)
-  - TPKeyboardAvoiding (1.3.3)
+  - TPKeyboardAvoiding (1.3.4)
   - Web3 (0.4.2):
     - Web3/Core (= 0.4.2)
     - Web3/HTTPExtension (= 0.4.2)
@@ -178,13 +187,13 @@ DEPENDENCIES:
   - lottie-ios (~> 2.5)
   - MarqueeLabel (~> 3.1)
   - Material
-  - MaterialComponents/BottomSheet
-  - "MaterialComponents/Buttons+Extensions"
-  - MaterialComponents/Cards
-  - MaterialComponents/Dialogs
-  - "MaterialComponents/Ink+Extensions"
-  - "MaterialComponents/Slider+Extensions"
-  - MaterialComponents/Snackbar
+  - MaterialComponents/BottomSheet (~> 112.0)
+  - MaterialComponents/Buttons (~> 112.0)
+  - MaterialComponents/Cards (~> 112.0)
+  - MaterialComponents/Dialogs (~> 112.0)
+  - MaterialComponents/Ink (~> 112.0)
+  - MaterialComponents/Slider (~> 112.0)
+  - MaterialComponents/Snackbar (~> 112.0)
   - Nimble (~> 7.0)
   - PromiseKit (~> 6.0)
   - Quick (~> 1.2)
@@ -234,17 +243,17 @@ SPEC CHECKSUMS:
   BlockiesSwift: 22d8d56dd187e6bfd16cb8c8fbd4fd4896c3e65d
   Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
-  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
+  CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
   Curry: e2388a19084bb0977d7318e39048d66550569bf0
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
-  Down: 1cdbca4963b542d0ef34ebb3e10ff48382bdf761
+  Down: 4553b984236807e384fa0ef7c7e360ef9f7c425d
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Keystore: 597080d47ce010cec4b001820ee4273ca03485e1
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
-  MaterialComponents: 3399c262334c35e4994a7b25ad1e9a3ce48dce07
+  MaterialComponents: 5be6bf8c20183474a84c9852b5b45703ad49cf3a
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
@@ -255,9 +264,9 @@ SPEC CHECKSUMS:
   RealmSwift: 3183cc1ad48378fbcd634311b22c0e6c44021152
   Runes: 80a0a08e1759ead661eff6f0bcca7c3e20592151
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
-  TPKeyboardAvoiding: 6dd3fe3268b8f2627beb7ff3d82a3cacbdf66a36
+  TPKeyboardAvoiding: 7c2187e2338052b2c5be4a8052f297fdb124e261
   Web3: 7b2c30f98f24cc290bc671ab525d7a30a2afbc73
 
-PODFILE CHECKSUM: 32d0e8b90f0ae4b57d0b21e2eb5569c6510776d5
+PODFILE CHECKSUM: 24534ca08d8315118433a0ccef346ed67c3a167c
 
 COCOAPODS: 1.8.4
