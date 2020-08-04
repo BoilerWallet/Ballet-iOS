@@ -22,6 +22,7 @@ target 'Ballet' do
   pod 'MaterialComponents/Dialogs', '~> 112.0'
   pod 'MaterialComponents/Ink', '~> 112.0'
   pod 'MaterialComponents/BottomSheet', '~> 112.0'
+  pod 'MaterialComponents/BottomNavigation', '~> 112.0'
 
   pod 'Down'
 

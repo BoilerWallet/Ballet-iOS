@@ -26,6 +26,17 @@ PODS:
     - Motion (~> 3.1.1)
   - MaterialComponents/AnimationTiming (112.0.1)
   - MaterialComponents/Availability (112.0.1)
+  - MaterialComponents/BottomNavigation (112.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
   - MaterialComponents/BottomSheet (112.0.1):
     - MaterialComponents/Elevation
     - MaterialComponents/private/KeyboardWatcher
@@ -187,6 +198,7 @@ DEPENDENCIES:
   - lottie-ios (~> 2.5)
   - MarqueeLabel (~> 3.1)
   - Material
+  - MaterialComponents/BottomNavigation (~> 112.0)
   - MaterialComponents/BottomSheet (~> 112.0)
   - MaterialComponents/Buttons (~> 112.0)
   - MaterialComponents/Cards (~> 112.0)
@@ -267,6 +279,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: 7c2187e2338052b2c5be4a8052f297fdb124e261
   Web3: 7b2c30f98f24cc290bc671ab525d7a30a2afbc73
 
-PODFILE CHECKSUM: 24534ca08d8315118433a0ccef346ed67c3a167c
+PODFILE CHECKSUM: 8ced51e9c15ac947032256bbcfbfdca68040f831
 
 COCOAPODS: 1.8.4

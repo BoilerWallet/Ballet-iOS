@@ -1,27 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bZ5-GZ-Ecj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZxV-uy-rpF">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar View Controller-->
-        <scene sceneID="3AS-64-0Oq">
+        <scene sceneID="SKL-xR-akB">
             <objects>
-                <tabBarController id="bZ5-GZ-Ecj" customClass="TabBarViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HOc-xs-lJE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xao-rm-h91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ZxV-uy-rpF" customClass="TabBarViewController" customModule="Ballet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mm8-Uo-fKh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpj-Gb-6Sp" customClass="MDCBottomNavigationBar">
+                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="uEc-hK-v4F"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ptz-3J-5ti">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BoS-ii-fdQ" firstAttribute="trailing" secondItem="mpj-Gb-6Sp" secondAttribute="trailing" id="8ZW-Az-in3"/>
+                            <constraint firstItem="BoS-ii-fdQ" firstAttribute="bottom" secondItem="mpj-Gb-6Sp" secondAttribute="bottom" id="Bir-hL-RS2"/>
+                            <constraint firstItem="Ptz-3J-5ti" firstAttribute="top" secondItem="Mm8-Uo-fKh" secondAttribute="top" id="Wq9-NN-TDm"/>
+                            <constraint firstItem="mpj-Gb-6Sp" firstAttribute="leading" secondItem="BoS-ii-fdQ" secondAttribute="leading" id="XN1-Xe-xvC"/>
+                            <constraint firstItem="BoS-ii-fdQ" firstAttribute="trailing" secondItem="Ptz-3J-5ti" secondAttribute="trailing" id="YXC-In-Cvn"/>
+                            <constraint firstItem="Ptz-3J-5ti" firstAttribute="leading" secondItem="BoS-ii-fdQ" secondAttribute="leading" id="o2f-75-FMt"/>
+                            <constraint firstItem="mpj-Gb-6Sp" firstAttribute="top" secondItem="Ptz-3J-5ti" secondAttribute="bottom" id="zQZ-F0-2nb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BoS-ii-fdQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomBar" destination="mpj-Gb-6Sp" id="fez-Ao-n1H"/>
+                        <outlet property="containerView" destination="Ptz-3J-5ti" id="Ahd-Hf-3Ps"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QeH-60-C2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-489" y="168"/>
+            <point key="canvasLocation" x="-514" y="89"/>
         </scene>
     </scenes>
 </document>
