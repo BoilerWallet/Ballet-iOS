@@ -98,7 +98,7 @@ platform :ios do
       version: "1.0"
     )
     increment_build_number(
-      build_number: latest_bn + 1
+      build_number: latest_bn + 2
     )
 
     bn = get_build_number
