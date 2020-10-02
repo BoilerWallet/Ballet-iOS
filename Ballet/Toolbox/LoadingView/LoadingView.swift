@@ -20,7 +20,7 @@ class LoadingView: UIView {
 
     private(set) var blurView: UIView?
 
-    private(set) var loadingView: LOTAnimationView!
+    private(set) var loadingView: AnimationView!
 
     private(set) var loading: Bool = false
 
@@ -95,7 +95,7 @@ class LoadingView: UIView {
         backgroundView.isOpaque = false
 
         // Loading animation
-        loadingView = LOTAnimationView(name: "material_loading_jump")
+        loadingView = AnimationView(name: "material_loading_jump")
         backgroundView.addSubview(loadingView)
 
         constrain(backgroundView, loadingView) { background, loading in

@@ -123,7 +123,7 @@ class BlockiesSelectionElement: UIView {
     private var imageView: UIImageView!
     private var addressLabel: UILabel!
     private var selectionView: UIView!
-    private var selectionCheckView: LOTAnimationView!
+    private var selectionCheckView: AnimationView!
     private var clickView: UIView!
 
     private(set) var isSelected = false
@@ -141,7 +141,7 @@ class BlockiesSelectionElement: UIView {
         selectionView = UIView()
         selectionView.backgroundColor = Colors.primaryColor.withAlphaComponent(0.56)
 
-        selectionCheckView = LOTAnimationView(name: "material_check_pink")
+        selectionCheckView = AnimationView(name: "material_check_pink")
         selectionView.addSubview(selectionCheckView)
 
         setSelected(false)

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Boilertalk. All rights reserved.
 //
 
+import Dispatch
+import Foundation
 import Web3
 import Keystore
 import Web3PromiseKit

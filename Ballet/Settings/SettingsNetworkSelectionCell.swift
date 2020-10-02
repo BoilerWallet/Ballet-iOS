@@ -24,7 +24,7 @@ class SettingsNetworkSelectionCell: TableViewCell {
 
     @IBOutlet weak var networkUrlLabel: UILabel!
 
-    private var checkbox: LOTAnimationView!
+    private var checkbox: AnimationView!
 
     // MARK: - Initialization
 
@@ -47,7 +47,7 @@ class SettingsNetworkSelectionCell: TableViewCell {
         networkNameLabel.setupTitleLabel()
         networkUrlLabel.setupSubTitleLabel()
 
-        checkbox = LOTAnimationView(name: "material_checkbox")
+        checkbox = AnimationView(name: "material_checkbox")
         checkbox.animationSpeed = 2.5
         addSubview(checkbox)
 
@@ -70,7 +70,7 @@ class SettingsNetworkSelectionCell: TableViewCell {
         if url.isActive {
             checkbox.play()
         } else {
-            checkbox.animationProgress = 0
+            checkbox.currentProgress = .zero
         }
     }
 }

@@ -48,13 +48,13 @@ struct Etherscan {
             "sort": "\(order.rawValue)",
             "apikey": apikey
         ]
-        Alamofire.request(
+        AF.request(
             "\(etherscanUrl)/api",
             method: .get,
             parameters: parameters,
             headers: ["Accept": "application/json"]
         ).responseData { response in
-            guard let data = response.result.value else {
+            guard let data = try? response.result.get() else {
                 completion(nil, response.error)
                 return
             }

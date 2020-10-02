@@ -34,6 +34,8 @@ class WalletNavigationViewController: NavigationController {
     // MARK: - UI setup
 
     private func setupUI() {
+        (navigationBar as? NavigationBar)?.backButtonImage = UIImage(named: "baseline_arrow_back_ios_black_24pt")?.withRenderingMode(.alwaysTemplate)
+
         navigationBar.backgroundColor = Colors.primaryColor
 
         // Set tintcolor for navigationbar (for example back button)

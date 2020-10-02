@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZxV-uy-rpF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZxV-uy-rpF">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hV-cl-f6i">
+                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpj-Gb-6Sp" customClass="MDCBottomNavigationBar">
                                 <rect key="frame" x="0.0" y="611" width="375" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,17 +32,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BoS-ii-fdQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BoS-ii-fdQ" firstAttribute="trailing" secondItem="mpj-Gb-6Sp" secondAttribute="trailing" id="8ZW-Az-in3"/>
+                            <constraint firstItem="5hV-cl-f6i" firstAttribute="top" secondItem="Ptz-3J-5ti" secondAttribute="bottom" id="7Do-2R-LXM"/>
+                            <constraint firstAttribute="trailing" secondItem="mpj-Gb-6Sp" secondAttribute="trailing" id="8ZW-Az-in3"/>
                             <constraint firstItem="BoS-ii-fdQ" firstAttribute="bottom" secondItem="mpj-Gb-6Sp" secondAttribute="bottom" id="Bir-hL-RS2"/>
+                            <constraint firstAttribute="trailing" secondItem="5hV-cl-f6i" secondAttribute="trailing" id="CnP-RF-0mw"/>
                             <constraint firstItem="Ptz-3J-5ti" firstAttribute="top" secondItem="Mm8-Uo-fKh" secondAttribute="top" id="Wq9-NN-TDm"/>
-                            <constraint firstItem="mpj-Gb-6Sp" firstAttribute="leading" secondItem="BoS-ii-fdQ" secondAttribute="leading" id="XN1-Xe-xvC"/>
-                            <constraint firstItem="BoS-ii-fdQ" firstAttribute="trailing" secondItem="Ptz-3J-5ti" secondAttribute="trailing" id="YXC-In-Cvn"/>
-                            <constraint firstItem="Ptz-3J-5ti" firstAttribute="leading" secondItem="BoS-ii-fdQ" secondAttribute="leading" id="o2f-75-FMt"/>
+                            <constraint firstItem="mpj-Gb-6Sp" firstAttribute="leading" secondItem="Mm8-Uo-fKh" secondAttribute="leading" id="XN1-Xe-xvC"/>
+                            <constraint firstAttribute="trailing" secondItem="Ptz-3J-5ti" secondAttribute="trailing" id="YXC-In-Cvn"/>
+                            <constraint firstAttribute="bottom" secondItem="5hV-cl-f6i" secondAttribute="bottom" id="aIZ-1C-7ux"/>
+                            <constraint firstItem="Ptz-3J-5ti" firstAttribute="leading" secondItem="Mm8-Uo-fKh" secondAttribute="leading" id="o2f-75-FMt"/>
+                            <constraint firstItem="5hV-cl-f6i" firstAttribute="leading" secondItem="Mm8-Uo-fKh" secondAttribute="leading" id="zBL-xi-AnB"/>
                             <constraint firstItem="mpj-Gb-6Sp" firstAttribute="top" secondItem="Ptz-3J-5ti" secondAttribute="bottom" id="zQZ-F0-2nb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="BoS-ii-fdQ"/>
                     </view>
                     <connections>
                         <outlet property="bottomBar" destination="mpj-Gb-6Sp" id="fez-Ao-n1H"/>
@@ -49,4 +58,9 @@
             <point key="canvasLocation" x="-514" y="89"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

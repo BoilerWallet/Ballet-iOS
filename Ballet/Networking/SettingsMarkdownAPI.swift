@@ -15,8 +15,8 @@ struct SettingsMarkdownAPI {
     static let openSourceLibrariesRoute = "https://storage.googleapis.com/boilertalk/Ballet/OpenSourceLibraries.md"
 
     static func getOpenSourceLibraries(completion: @escaping ((_ data: Data?, _ error: Error?) -> Void)) {
-        Alamofire.request(openSourceLibrariesRoute, method: .get).responseData { response in
-            guard let data = response.result.value else {
+        AF.request(openSourceLibrariesRoute, method: .get).responseData { response in
+            guard let data = try? response.result.get() else {
                 completion(nil, response.error)
                 return
             }

@@ -13,12 +13,12 @@ import PromiseKit
 struct ETHGasStation {
 
     static func getGasPrice(completion: @escaping ((_ gasPrice: ETHGasStationGasPrice?, _ error: Error?) -> Void)) {
-        Alamofire.request(
+        AF.request(
             "https://ethgasstation.info/json/ethgasAPI.json",
             method: .get,
             headers: ["Accept": "application/json"]
         ).responseData { response in
-            guard let data = response.result.value else {
+            guard let data = try? response.result.get() else {
                 completion(nil, response.error)
                 return
             }
