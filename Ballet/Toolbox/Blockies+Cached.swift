@@ -9,7 +9,7 @@
 import Foundation
 import BlockiesSwift
 
-private var cachedBlockies: [String: (low: UIImage, medium: UIImage, high: UIImage)] = [:]
+private var cachedBlockies: SynchronizedDictionary<String, (low: UIImage, medium: UIImage, high: UIImage)> = [:]
 
 extension Blockies {
 

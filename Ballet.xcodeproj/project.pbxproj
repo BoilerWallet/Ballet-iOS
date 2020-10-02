@@ -14,6 +14,7 @@
 		0E054450203F95D700603F31 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05444F203F95D700603F31 /* Account.swift */; };
 		0E054452203FA8A400603F31 /* WalletCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */; };
 		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
+		0E095FD624D8419A009E75D8 /* SynchronizedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E095FD524D8419A009E75D8 /* SynchronizedDictionary.swift */; };
 		0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */; };
 		0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */; };
 		0E0D4D122527987B00880018 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0D4D112527987B00880018 /* Realm */; };
@@ -159,6 +160,7 @@
 		0E05444F203F95D700603F31 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0E054451203FA8A400603F31 /* WalletCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewController.swift; sourceTree = "<group>"; };
 		0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E095FD524D8419A009E75D8 /* SynchronizedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedDictionary.swift; sourceTree = "<group>"; };
 		0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionCell.swift; sourceTree = "<group>"; };
 		0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkSelectionTableViewController.swift; sourceTree = "<group>"; };
 		0E1A91FD2104BBDF00A27FAA /* SettingsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsElement.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 				0E8FE99F20E546840077B107 /* ConstantHolder.swift */,
 				0EE1DA612102520900DA315D /* SolidityInvocation+CreateTransactionAsync.swift */,
 				0E97613F213B52AC006593F8 /* String+Manipulation.swift */,
+				0E095FD524D8419A009E75D8 /* SynchronizedDictionary.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -1048,6 +1051,7 @@
 				0E6E84F421014D3100F2A601 /* BigDecimal+StringInit.swift in Sources */,
 				0EA476DD204755B2003DB1D0 /* DashedBorderView.swift in Sources */,
 				0EE8014A203E661F00EDD123 /* TextField+MaterialDefault.swift in Sources */,
+				0E095FD624D8419A009E75D8 /* SynchronizedDictionary.swift in Sources */,
 				0EBD219C210A2CC300D3BA55 /* SettingsOpenSourceLibrariesViewController.swift in Sources */,
 				0E1A92002104E3A500A27FAA /* SettingsChangePasswordViewController.swift in Sources */,
 				0EED236C1FE86E4F007F137F /* Colors.swift in Sources */,
@@ -1249,7 +1253,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 9T4AR9N5WH;
 				INFOPLIST_FILE = Ballet/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1275,7 +1279,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 9T4AR9N5WH;
 				INFOPLIST_FILE = Ballet/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

@@ -15,13 +15,14 @@ target 'Ballet' do
   #pod 'Material'
 
   # Official Material components
-  pod 'MaterialComponents/Cards'
-  pod 'MaterialComponents/Buttons+Extensions'
-  pod 'MaterialComponents/Snackbar'
-  pod 'MaterialComponents/Slider+Extensions'
-  pod 'MaterialComponents/Dialogs'
-  pod 'MaterialComponents/Ink+Extensions'
-  pod 'MaterialComponents/BottomSheet'
+  pod 'MaterialComponents/Cards', '~> 112.0'
+  pod 'MaterialComponents/Buttons', '~> 112.0'
+  pod 'MaterialComponents/Snackbar', '~> 112.0'
+  pod 'MaterialComponents/Slider', '~> 112.0'
+  pod 'MaterialComponents/Dialogs', '~> 112.0'
+  pod 'MaterialComponents/Ink', '~> 112.0'
+  pod 'MaterialComponents/BottomSheet', '~> 112.0'
+  pod 'MaterialComponents/BottomNavigation', '~> 112.0'
 
   #pod 'Down'
 
