@@ -11,6 +11,7 @@ import Web3
 import RealmSwift
 import Curry
 import Runes
+import Web3PromiseKit
 
 class SettingsTokenTrackerTableView: UITableView {
 

@@ -8,11 +8,11 @@ target 'Ballet' do
   # Pods for Ballet
 
   # Hot functional shit
-  pod 'Runes', '~> 4.1'
-  pod 'Curry', '~> 4.0'
+  #pod 'Runes', '~> 4.1'
+  #pod 'Curry', '~> 4.0'
 
   # Material
-  pod 'Material'
+  #pod 'Material'
 
   # Official Material components
   pod 'MaterialComponents/Cards'
@@ -23,31 +23,31 @@ target 'Ballet' do
   pod 'MaterialComponents/Ink+Extensions'
   pod 'MaterialComponents/BottomSheet'
 
-  pod 'Down'
+  #pod 'Down'
 
   # Lottie animations
-  pod 'lottie-ios', '~> 2.5'
+  #pod 'lottie-ios', '~> 2.5'
 
   # Dropdown
   pod 'DropDown', '~> 2.3'
 
   # MarqueeLabel
-  pod 'MarqueeLabel', '~> 3.1'
+  #pod 'MarqueeLabel', '~> 3.1'
 
   # Keyboard avoiding
-  pod 'TPKeyboardAvoiding', '~> 1.3'
+  #pod 'TPKeyboardAvoiding', '~> 1.3'
 
   # Cartography
-  pod 'Cartography', '~> 3.0'
+  #pod 'Cartography', '~> 3.0'
 
   # Networking
-  pod 'Alamofire', '~> 4.6'
+  #pod 'Alamofire', '~> 4.6'
 
   # Image
-  pod 'AlamofireImage', '~> 3.3'
+  #pod 'AlamofireImage', '~> 3.3'
 
   # Database
-  pod 'RealmSwift', '~> 3.0'
+  #pod 'RealmSwift', '~> 3.0'
 
   # DateTools
   pod 'DateToolsSwift', '~> 4.0'
@@ -56,13 +56,13 @@ target 'Ballet' do
   pod 'BlockiesSwift', '~> 0.1'
 
   # Web3
-  pod 'Web3', '~> 0.3'
-  pod 'Web3/PromiseKit', '~> 0.3'
-  pod 'Web3/ContractABI', '~> 0.3'
-  pod 'Keystore', '~> 0.1'
+  #pod 'Web3', '~> 0.3'
+  #pod 'Web3/PromiseKit', '~> 0.3'
+  #pod 'Web3/ContractABI', '~> 0.3'
+  #pod 'Keystore', '~> 0.1'
 
   # PromiseKit
-  pod 'PromiseKit', '~> 6.0'
+  #pod 'PromiseKit', '~> 6.0'
 
   # Fabric
   pod 'Fabric'

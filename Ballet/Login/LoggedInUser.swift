@@ -10,6 +10,7 @@ import Foundation
 import CryptoSwift
 import Keystore
 import Web3
+import Web3PromiseKit
 
 class LoggedInUser {
 

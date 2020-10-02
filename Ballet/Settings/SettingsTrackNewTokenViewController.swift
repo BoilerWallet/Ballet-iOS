@@ -10,6 +10,8 @@ import UIKit
 import Material
 import MaterialComponents.MaterialButtons
 import Web3
+import Web3PromiseKit
+import Web3ContractABI
 
 class SettingsTrackNewTokenViewController: UIViewController {
 

@@ -1,29 +1,10 @@
 PODS:
-  - Alamofire (4.9.1)
-  - AlamofireImage (3.6.0):
-    - Alamofire (~> 4.9)
-  - BigInt (4.0.0)
   - BlockiesSwift (0.1.2)
-  - Cartography (3.1.0)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
-  - CryptoSwift (1.3.0)
-  - Curry (4.0.2)
   - DateToolsSwift (4.0.0)
-  - Down (0.9.0)
   - DropDown (2.3.13)
   - Fabric (1.10.2)
-  - Keystore (0.2.1):
-    - CryptoSwift (~> 1.0)
-    - secp256k1.swift (~> 0.1)
-  - lottie-ios (2.5.3)
-  - MarqueeLabel (3.2.1):
-    - MarqueeLabel/ObjC (= 3.2.1)
-  - MarqueeLabel/ObjC (3.2.1)
-  - Material (3.1.8):
-    - Material/Core (= 3.1.8)
-  - Material/Core (3.1.8):
-    - Motion (~> 3.1.1)
   - MaterialComponents/AnimationTiming (54.13.0)
   - MaterialComponents/BottomSheet (54.13.0):
     - MaterialComponents/private/KeyboardWatcher
@@ -126,58 +107,15 @@ PODS:
     - MaterialComponents/private/Application
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
-  - Motion (3.1.3):
-    - Motion/Core (= 3.1.3)
-  - Motion/Core (3.1.3)
   - Nimble (7.3.4)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
-    - PromiseKit/CorePromise
   - Quick (1.3.4)
-  - Realm (3.21.0):
-    - Realm/Headers (= 3.21.0)
-  - Realm/Headers (3.21.0)
-  - RealmSwift (3.21.0):
-    - Realm (= 3.21.0)
-  - Runes (4.2.2)
-  - secp256k1.swift (0.1.4)
-  - TPKeyboardAvoiding (1.3.3)
-  - Web3 (0.4.2):
-    - Web3/Core (= 0.4.2)
-    - Web3/HTTPExtension (= 0.4.2)
-  - Web3/ContractABI (0.4.2):
-    - Web3/Core
-  - Web3/Core (0.4.2):
-    - BigInt (~> 4.0)
-    - CryptoSwift (~> 1.0)
-    - secp256k1.swift (~> 0.1)
-  - Web3/HTTPExtension (0.4.2):
-    - Web3/Core
-  - Web3/PromiseKit (0.4.2):
-    - PromiseKit/CorePromise (~> 6.0)
-    - Web3/Core
 
 DEPENDENCIES:
-  - Alamofire (~> 4.6)
-  - AlamofireImage (~> 3.3)
   - BlockiesSwift (~> 0.1)
-  - Cartography (~> 3.0)
   - Crashlytics
-  - Curry (~> 4.0)
   - DateToolsSwift (~> 4.0)
-  - Down
   - DropDown (~> 2.3)
   - Fabric
-  - Keystore (~> 0.1)
-  - lottie-ios (~> 2.5)
-  - MarqueeLabel (~> 3.1)
-  - Material
   - MaterialComponents/BottomSheet
   - "MaterialComponents/Buttons+Extensions"
   - MaterialComponents/Cards
@@ -186,78 +124,33 @@ DEPENDENCIES:
   - "MaterialComponents/Slider+Extensions"
   - MaterialComponents/Snackbar
   - Nimble (~> 7.0)
-  - PromiseKit (~> 6.0)
   - Quick (~> 1.2)
-  - RealmSwift (~> 3.0)
-  - Runes (~> 4.1)
-  - TPKeyboardAvoiding (~> 1.3)
-  - Web3 (~> 0.3)
-  - Web3/ContractABI (~> 0.3)
-  - Web3/PromiseKit (~> 0.3)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - AlamofireImage
-    - BigInt
     - BlockiesSwift
-    - Cartography
     - Crashlytics
-    - CryptoSwift
-    - Curry
     - DateToolsSwift
-    - Down
     - DropDown
     - Fabric
-    - Keystore
-    - lottie-ios
-    - MarqueeLabel
-    - Material
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
-    - Motion
     - Nimble
-    - PromiseKit
     - Quick
-    - Realm
-    - RealmSwift
-    - Runes
-    - secp256k1.swift
-    - TPKeyboardAvoiding
-    - Web3
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
-  BigInt: 2aad1a9942dc932ec8b84290d2c564a3d76f97ab
   BlockiesSwift: 22d8d56dd187e6bfd16cb8c8fbd4fd4896c3e65d
-  Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
-  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
-  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
-  Curry: e2388a19084bb0977d7318e39048d66550569bf0
+  Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
-  Down: 1cdbca4963b542d0ef34ebb3e10ff48382bdf761
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
-  Keystore: 597080d47ce010cec4b001820ee4273ca03485e1
-  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
-  MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
-  Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
+  Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   MaterialComponents: 3399c262334c35e4994a7b25ad1e9a3ce48dce07
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
-  Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Quick: f4f7f063c524394c73ed93ac70983c609805d481
-  Realm: 38e9dcb19104b58407167d99f70d4995f7c16023
-  RealmSwift: 3183cc1ad48378fbcd634311b22c0e6c44021152
-  Runes: 80a0a08e1759ead661eff6f0bcca7c3e20592151
-  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
-  TPKeyboardAvoiding: 6dd3fe3268b8f2627beb7ff3d82a3cacbdf66a36
-  Web3: 7b2c30f98f24cc290bc671ab525d7a30a2afbc73
 
-PODFILE CHECKSUM: 32d0e8b90f0ae4b57d0b21e2eb5569c6510776d5
+PODFILE CHECKSUM: d69f5eb5d7fa3255fdffca5da962f26edfb07fc6
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

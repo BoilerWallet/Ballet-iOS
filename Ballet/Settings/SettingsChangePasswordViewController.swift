@@ -13,6 +13,7 @@ import PromiseKit
 import Keystore
 import Web3
 import RealmSwift
+import Web3PromiseKit
 
 class SettingsChangePasswordViewController: UIViewController {
 

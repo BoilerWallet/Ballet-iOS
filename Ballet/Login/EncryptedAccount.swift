@@ -8,6 +8,7 @@
 
 import Web3
 import Keystore
+import Web3PromiseKit
 
 struct EncryptedAccount {
 

@@ -13,6 +13,7 @@ import BlockiesSwift
 import Cartography
 import MaterialComponents.MaterialCards
 import BigInt
+import Web3PromiseKit
 
 class WalletCollectionViewCell: UICollectionViewCell {
 

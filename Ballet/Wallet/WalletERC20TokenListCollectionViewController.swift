@@ -10,6 +10,7 @@ import UIKit
 import Material
 import RealmSwift
 import Web3
+import Web3PromiseKit
 
 private let reuseIdentifier = "erc20TokenListCell"
 

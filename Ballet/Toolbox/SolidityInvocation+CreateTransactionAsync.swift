@@ -6,7 +6,10 @@
 //  Copyright © 2018 Boilertalk. All rights reserved.
 //
 
+import Foundation
 import Web3
+import Web3PromiseKit
+import Web3ContractABI
 
 enum SolidityInvocationCreateTransactionError: Error {
 

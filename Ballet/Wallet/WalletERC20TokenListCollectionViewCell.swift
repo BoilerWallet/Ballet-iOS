@@ -8,6 +8,8 @@
 
 import UIKit
 import Web3
+import Web3ContractABI
+import Web3PromiseKit
 
 class WalletERC20TokenListCollectionViewCell: UICollectionViewCell {
 

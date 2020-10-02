@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,11 @@
 		0E054454203FAA2600603F31 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E054453203FAA2600603F31 /* WalletCollectionViewCell.swift */; };
 		0E098C4320D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4220D97D3A00643BB3 /* SettingsNetworkSelectionCell.swift */; };
 		0E098C4520D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E098C4420D982EA00643BB3 /* SettingsNetworkSelectionTableViewController.swift */; };
+		0E0D4D122527987B00880018 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0D4D112527987B00880018 /* Realm */; };
+		0E0D4D142527987B00880018 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0D4D132527987B00880018 /* RealmSwift */; };
+		0E0D4D1A252798AE00880018 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0D4D19252798AE00880018 /* AlamofireImage */; };
+		0E0D4D20252798C000880018 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0D4D1F252798C000880018 /* Alamofire */; };
+		0E0D4D26252798E900880018 /* Cartography in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0D4D25252798E900880018 /* Cartography */; };
 		0E1A91FE2104BBDF00A27FAA /* SettingsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A91FD2104BBDF00A27FAA /* SettingsElement.swift */; };
 		0E1A92002104E3A500A27FAA /* SettingsChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A91FF2104E3A500A27FAA /* SettingsChangePasswordViewController.swift */; };
 		0E27364F20DBFCF8001820F4 /* material_checkbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E27364E20DBFCF8001820F4 /* material_checkbox.json */; };
@@ -40,8 +45,13 @@
 		0E6E84F82101643E00F2A601 /* BigDecimal+StringInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84F72101643E00F2A601 /* BigDecimal+StringInitTests.swift */; };
 		0E6EB33A2049F1A10053F88B /* TransactionConfirmation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6EB3392049F1A10053F88B /* TransactionConfirmation.storyboard */; };
 		0E6EB33C2049F1CE0053F88B /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EB33B2049F1CE0053F88B /* TransactionConfirmationViewController.swift */; };
+		0E7162DE252783D0007CCEA9 /* Web3PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7162DD252783D0007CCEA9 /* Web3PromiseKit */; };
+		0E7162E0252783D0007CCEA9 /* Web3ContractABI in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7162DF252783D0007CCEA9 /* Web3ContractABI */; };
+		0E7162E2252783D0007CCEA9 /* Web3 in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7162E1252783D0007CCEA9 /* Web3 */; };
 		0E75EF7020E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75EF6F20E15D1800E92FE7 /* WalletERC20TokenListCollectionViewController.swift */; };
 		0E75EF7220E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75EF7120E15D8200E92FE7 /* WalletERC20TokenListCollectionViewCell.swift */; };
+		0E7EBE882527972800976F9D /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7EBE872527972800976F9D /* PromiseKit */; };
+		0E7EBE8E2527977300976F9D /* Keystore in Frameworks */ = {isa = PBXBuildFile; productRef = 0E7EBE8D2527977300976F9D /* Keystore */; };
 		0E7F7683203B7F6000DDD6F0 /* PopUpController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7F7682203B7F6000DDD6F0 /* PopUpController.storyboard */; };
 		0E7F7685203B808D00DDD6F0 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F7684203B808D00DDD6F0 /* PopUpController.swift */; };
 		0E87F94E204A289100742C0A /* String+WeiConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87F94D204A289100742C0A /* String+WeiConversionTests.swift */; };
@@ -64,6 +74,13 @@
 		0EA476E620478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA476E520478AE0003DB1D0 /* UIImageView+BlockiesSetup.swift */; };
 		0EAC892A2044676500865634 /* WalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC89292044676500865634 /* WalletDetailViewController.swift */; };
 		0EAC892C20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC892B20446B8B00865634 /* EthereumQuantity+ConvertFromWei.swift */; };
+		0EACDFA62527991400D5C7B8 /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = 0EACDFA52527991400D5C7B8 /* TPKeyboardAvoiding */; };
+		0EACDFAC2527994100D5C7B8 /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 0EACDFAB2527994100D5C7B8 /* MarqueeLabel */; };
+		0EACDFB22527996F00D5C7B8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0EACDFB12527996F00D5C7B8 /* Lottie */; };
+		0EACDFB82527999B00D5C7B8 /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = 0EACDFB72527999B00D5C7B8 /* Down */; };
+		0EACDFBE252799D300D5C7B8 /* Material in Frameworks */ = {isa = PBXBuildFile; productRef = 0EACDFBD252799D300D5C7B8 /* Material */; };
+		0EACDFC425279A0B00D5C7B8 /* Curry in Frameworks */ = {isa = PBXBuildFile; productRef = 0EACDFC325279A0B00D5C7B8 /* Curry */; };
+		0EACDFCA25279A3900D5C7B8 /* Runes in Frameworks */ = {isa = PBXBuildFile; productRef = 0EACDFC925279A3900D5C7B8 /* Runes */; };
 		0EB05B3820FFBC840000BE23 /* EncryptedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB05B3720FFBC840000BE23 /* EncryptedAccount.swift */; };
 		0EB3CBF520B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB3CBF420B8290200EEC0BC /* WalletDetailDefaultTableViewCell.swift */; };
 		0EB47BAB22D20E8B00E93EF8 /* Mnemonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB47BAA22D20E8B00E93EF8 /* Mnemonic.swift */; };
@@ -263,6 +280,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0D4D142527987B00880018 /* RealmSwift in Frameworks */,
+				0EACDFB22527996F00D5C7B8 /* Lottie in Frameworks */,
+				0EACDFB82527999B00D5C7B8 /* Down in Frameworks */,
+				0E0D4D122527987B00880018 /* Realm in Frameworks */,
+				0E0D4D1A252798AE00880018 /* AlamofireImage in Frameworks */,
+				0E7EBE882527972800976F9D /* PromiseKit in Frameworks */,
+				0E7162E0252783D0007CCEA9 /* Web3ContractABI in Frameworks */,
+				0EACDFBE252799D300D5C7B8 /* Material in Frameworks */,
+				0E0D4D20252798C000880018 /* Alamofire in Frameworks */,
+				0E7EBE8E2527977300976F9D /* Keystore in Frameworks */,
+				0E7162E2252783D0007CCEA9 /* Web3 in Frameworks */,
+				0EACDFAC2527994100D5C7B8 /* MarqueeLabel in Frameworks */,
+				0EACDFCA25279A3900D5C7B8 /* Runes in Frameworks */,
+				0EACDFC425279A0B00D5C7B8 /* Curry in Frameworks */,
+				0EACDFA62527991400D5C7B8 /* TPKeyboardAvoiding in Frameworks */,
+				0E0D4D26252798E900880018 /* Cartography in Frameworks */,
+				0E7162DE252783D0007CCEA9 /* Web3PromiseKit in Frameworks */,
 				BA747B51C0D3133F0E105F2C /* Pods_Ballet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,6 +722,25 @@
 			dependencies = (
 			);
 			name = Ballet;
+			packageProductDependencies = (
+				0E7162DD252783D0007CCEA9 /* Web3PromiseKit */,
+				0E7162DF252783D0007CCEA9 /* Web3ContractABI */,
+				0E7162E1252783D0007CCEA9 /* Web3 */,
+				0E7EBE872527972800976F9D /* PromiseKit */,
+				0E7EBE8D2527977300976F9D /* Keystore */,
+				0E0D4D112527987B00880018 /* Realm */,
+				0E0D4D132527987B00880018 /* RealmSwift */,
+				0E0D4D19252798AE00880018 /* AlamofireImage */,
+				0E0D4D1F252798C000880018 /* Alamofire */,
+				0E0D4D25252798E900880018 /* Cartography */,
+				0EACDFA52527991400D5C7B8 /* TPKeyboardAvoiding */,
+				0EACDFAB2527994100D5C7B8 /* MarqueeLabel */,
+				0EACDFB12527996F00D5C7B8 /* Lottie */,
+				0EACDFB72527999B00D5C7B8 /* Down */,
+				0EACDFBD252799D300D5C7B8 /* Material */,
+				0EACDFC325279A0B00D5C7B8 /* Curry */,
+				0EACDFC925279A3900D5C7B8 /* Runes */,
+			);
 			productName = Ballet;
 			productReference = 0E672D461FE70A9D00917D05 /* Ballet.app */;
 			productType = "com.apple.product-type.application";
@@ -771,6 +824,22 @@
 				Base,
 			);
 			mainGroup = 0E672D3D1FE70A9D00917D05;
+			packageReferences = (
+				0E7162DC252783D0007CCEA9 /* XCRemoteSwiftPackageReference "Web3" */,
+				0E7EBE862527972800976F9D /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				0E7EBE8C2527977300976F9D /* XCRemoteSwiftPackageReference "Keystore" */,
+				0E0D4D102527987B00880018 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				0E0D4D18252798AE00880018 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				0E0D4D1E252798C000880018 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0E0D4D24252798E900880018 /* XCRemoteSwiftPackageReference "Cartography" */,
+				0EACDFA42527991400D5C7B8 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */,
+				0EACDFAA2527994100D5C7B8 /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
+				0EACDFB02527996F00D5C7B8 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				0EACDFB62527999B00D5C7B8 /* XCRemoteSwiftPackageReference "Down" */,
+				0EACDFBC252799D300D5C7B8 /* XCRemoteSwiftPackageReference "Material" */,
+				0EACDFC225279A0B00D5C7B8 /* XCRemoteSwiftPackageReference "Curry" */,
+				0EACDFC825279A3800D5C7B8 /* XCRemoteSwiftPackageReference "Runes" */,
+			);
 			productRefGroup = 0E672D471FE70A9D00917D05 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -898,15 +967,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BalletTests/Pods-BalletTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BalletTests/Pods-BalletTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BalletTests/Pods-BalletTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -918,61 +984,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ballet/Pods-Ballet-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/BlockiesSwift/BlockiesSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/Keystore/Keystore.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Web3/Web3.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
-				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ballet/Pods-Ballet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlockiesSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keystore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Runes.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ballet/Pods-Ballet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1218,7 +1235,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1234,8 +1252,11 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 9T4AR9N5WH;
 				INFOPLIST_FILE = Ballet/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.koraykoska.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c4205d3f-4d16-404c-bef4-d3a817feabfc";
@@ -1257,8 +1278,11 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 9T4AR9N5WH;
 				INFOPLIST_FILE = Ballet/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.koraykoska.ballet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "68b3f2ed-a640-4e45-9ab8-3aaec4ccc06b";
@@ -1278,7 +1302,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYTD2A7AY2;
 				INFOPLIST_FILE = BalletTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.BalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1296,7 +1324,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYTD2A7AY2;
 				INFOPLIST_FILE = BalletTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.BalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1313,7 +1345,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYTD2A7AY2;
 				INFOPLIST_FILE = BalletUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.BalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1330,7 +1366,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYTD2A7AY2;
 				INFOPLIST_FILE = BalletUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boilertalk.BalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1379,6 +1419,209 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E0D4D102527987B00880018 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.7;
+			};
+		};
+		0E0D4D18252798AE00880018 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		0E0D4D1E252798C000880018 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		0E0D4D24252798E900880018 /* XCRemoteSwiftPackageReference "Cartography" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/robb/Cartography";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		0E7162DC252783D0007CCEA9 /* XCRemoteSwiftPackageReference "Web3" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Boilertalk/Web3.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+		0E7EBE862527972800976F9D /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.13.3;
+			};
+		};
+		0E7EBE8C2527977300976F9D /* XCRemoteSwiftPackageReference "Keystore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Boilertalk/Keystore.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+		0EACDFA42527991400D5C7B8 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/michaeltyson/TPKeyboardAvoiding";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.4;
+			};
+		};
+		0EACDFAA2527994100D5C7B8 /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cbpowell/MarqueeLabel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.3;
+			};
+		};
+		0EACDFB02527996F00D5C7B8 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+		0EACDFB62527999B00D5C7B8 /* XCRemoteSwiftPackageReference "Down" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iwasrobbed/Down";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.3;
+			};
+		};
+		0EACDFBC252799D300D5C7B8 /* XCRemoteSwiftPackageReference "Material" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CosmicMind/Material";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+		0EACDFC225279A0B00D5C7B8 /* XCRemoteSwiftPackageReference "Curry" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thoughtbot/Curry";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		0EACDFC825279A3800D5C7B8 /* XCRemoteSwiftPackageReference "Runes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thoughtbot/Runes";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E0D4D112527987B00880018 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E0D4D102527987B00880018 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		0E0D4D132527987B00880018 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E0D4D102527987B00880018 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		0E0D4D19252798AE00880018 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E0D4D18252798AE00880018 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		0E0D4D1F252798C000880018 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E0D4D1E252798C000880018 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		0E0D4D25252798E900880018 /* Cartography */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E0D4D24252798E900880018 /* XCRemoteSwiftPackageReference "Cartography" */;
+			productName = Cartography;
+		};
+		0E7162DD252783D0007CCEA9 /* Web3PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E7162DC252783D0007CCEA9 /* XCRemoteSwiftPackageReference "Web3" */;
+			productName = Web3PromiseKit;
+		};
+		0E7162DF252783D0007CCEA9 /* Web3ContractABI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E7162DC252783D0007CCEA9 /* XCRemoteSwiftPackageReference "Web3" */;
+			productName = Web3ContractABI;
+		};
+		0E7162E1252783D0007CCEA9 /* Web3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E7162DC252783D0007CCEA9 /* XCRemoteSwiftPackageReference "Web3" */;
+			productName = Web3;
+		};
+		0E7EBE872527972800976F9D /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E7EBE862527972800976F9D /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+		0E7EBE8D2527977300976F9D /* Keystore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E7EBE8C2527977300976F9D /* XCRemoteSwiftPackageReference "Keystore" */;
+			productName = Keystore;
+		};
+		0EACDFA52527991400D5C7B8 /* TPKeyboardAvoiding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EACDFA42527991400D5C7B8 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */;
+			productName = TPKeyboardAvoiding;
+		};
+		0EACDFAB2527994100D5C7B8 /* MarqueeLabel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EACDFAA2527994100D5C7B8 /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
+			productName = MarqueeLabel;
+		};
+		0EACDFB12527996F00D5C7B8 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EACDFB02527996F00D5C7B8 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		0EACDFB72527999B00D5C7B8 /* Down */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EACDFB62527999B00D5C7B8 /* XCRemoteSwiftPackageReference "Down" */;
+			productName = Down;
+		};
+		0EACDFBD252799D300D5C7B8 /* Material */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EACDFBC252799D300D5C7B8 /* XCRemoteSwiftPackageReference "Material" */;
+			productName = Material;
+		};
+		0EACDFC325279A0B00D5C7B8 /* Curry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EACDFC225279A0B00D5C7B8 /* XCRemoteSwiftPackageReference "Curry" */;
+			productName = Curry;
+		};
+		0EACDFC925279A3900D5C7B8 /* Runes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EACDFC825279A3800D5C7B8 /* XCRemoteSwiftPackageReference "Runes" */;
+			productName = Runes;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E672D3E1FE70A9D00917D05 /* Project object */;
 }
